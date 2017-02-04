@@ -1,0 +1,127 @@
+let mapleader = ","
+colorscheme delek
+
+"Pathogen
+filetype off
+call pathogen#infect()
+call pathogen#helptags()
+
+set tabstop=4
+set expandtab
+set shiftwidth=4
+set tw=90
+set mouse=a
+set ic
+set incsearch
+set ruler
+filetype indent on
+
+filetype plugin indent on
+syntax on
+filetype plugin on
+set ofu=syntaxcomplete#Complete
+
+highlight SpellBad ctermbg=Black ctermfg=Red
+
+match ErrorMsg '\%>100v.\+'
+match ErrorMsg '\s\+\%#\@<!$'
+autocmd InsertLeave * redraw!
+
+"riv.rst
+let g:riv_disable_folding=1
+
+nnoremap <leader>en :silent! lfirst<CR>
+
+"tabs
+nnoremap <leader>tn :silent! tabn<CR>
+nnoremap <leader>tp :silent! tabp<CR>
+
+"CtrlP
+let g:ctrlp_max_files=0
+let g:ctrlp_max_depth=80
+let g:ctrlp_clear_cache_on_exit = 1
+let g:ctrlp_cache_dir = '~/.cache/ctrlp'
+let g:ctrlp_map = '<leader>l'
+let g:ctrlp_working_path_mode = 0
+let g:ctrlp_user_command = 'ag %s -i --nocolor --nogroup --hidden
+      \ --ignore .git
+      \ --ignore .svn
+      \ --ignore .hg
+      \ --ignore .DS_Store
+      \ --ignore "docs_*"
+      \ -g "\.(py|java|cc|c|cpp|js|css|html|htm|log|txt|org|md|tex|toc|thrift)$"'
+let g:ctrlp_match_func = {'match': 'pymatcher#PyMatch'}
+
+"NERDTree
+nnoremap <leader>nt :NERDTreeToggle<CR>
+
+"jedi (disable all by default for speed)
+let g:jedi#auto_initialization = 0
+let g:jedi#auto_vim_configuration = 0
+autocmd FileType python setlocal completeopt-=preview
+
+"syntastic
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 0
+let g:syntastic_check_on_open = 0
+let g:syntastic_check_on_wq = 0
+highlight SyntasticError guibg=#2f0000
+highlight SyntasticErrorSign guifg=white guibg=red
+highlight SyntasticErrorLine guifg=white guibg=red
+highlight SyntasticWarningLine guifg=white guibg=red
+let g:syntastic_enable_signs = 1
+let g:syntastic_python_checkers = ['flake8']
+let g:syntastic_python_flake8_args = "--max-line-length=100"
+let g:syntastic_cpp_compiler = 'clang++'
+let g:syntastic_cpp_compiler_options = ' -std=c++11 -stdlib=libc++'
+nnoremap <leader>en :silent! lnext<CR>
+nnoremap <leader>ep :silent! lprev<CR>
+
+"vim-go
+let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
+let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
+au FileType go nmap <leader>r <Plug>(go-run)
+au FileType go nmap <leader>b <Plug>(go-build)
+au FileType go nmap <leader>t <Plug>(go-test)
+au FileType go nmap <leader>c <Plug>(go-coverage)
+au FileType go nmap <Leader>ds <Plug>(go-def-split)
+au FileType go nmap <Leader>dv <Plug>(go-def-vertical)
+au FileType go nmap <Leader>dt <Plug>(go-def-tab)
+au FileType go nmap <Leader>gd <Plug>(go-doc)
+au FileType go nmap <Leader>gv <Plug>(go-doc-vertical)
+au FileType go nmap <Leader>gb <Plug>(go-doc-browser)
+au FileType go nmap <Leader>s <Plug>(go-implements)
+au FileType go nmap <Leader>i <Plug>(go-info)
+au FileType go nmap <Leader>e <Plug>(go-rename)
+
+"clojure
+au Filetype clojure nmap <Leader>r :Require<cr>
+autocmd FileType clojure setlocal completeopt-=preview
+
+"for vim in mac; make backspace work as expected
+set backspace=indent,eol,start
+
+"filetype specific indentation
+autocmd Filetype javascript setlocal ts=4 sts=4 sw=4
+
+"custom functions
+autocmd BufWrite * :call DeleteTrailingWS()
+func! DeleteTrailingWS()
+    exe "normal mz"
+    %s/\s\+$//ge
+    exe "normal 'z"
+endfunc
+
+function s:MkNonExDir(file, buf)
+    if empty(getbufvar(a:buf, '&buftype')) && a:file!~#'\v^\w+\:\/'
+        let dir=fnamemodify(a:file, ':h')
+        if !isdirectory(dir)
+            call mkdir(dir, 'p')
+        endif
+    endif
+endfunction
+
+augroup BWCCreateDir
+    autocmd!
+    autocmd BufWritePre * :call s:MkNonExDir(expand('<afile>'), +expand('<abuf>'))
+augroup END
