@@ -1,0 +1,7 @@
+alias rm='rm -i'
+alias mv='mv -i'
+alias cp='cp -i'
+alias e=emacs
+
+alias httpserver='python -m SimpleHTTPServer'
+
