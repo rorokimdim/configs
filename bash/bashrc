@@ -1,0 +1,5 @@
+alias e=emacs
+export EDITOR=vim
+
+alias rm='rm -i'
+alias vim='DYLD_FORCE_FLAT_NAMESPACE=1 vim'
