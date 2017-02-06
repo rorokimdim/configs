@@ -1,4 +1,7 @@
 (require 'evil)
+
+;; Enable evil mode by default
+;; To toggle evil mode use Ctrl-z
 (evil-mode t)
 
 (require 'evil-surround)

@@ -61,6 +61,9 @@
     ;; http://www.emacswiki.org/emacs/Smex
     smex
 
+    ;; easy command to restart emacs daemon
+    restart-emacs
+
     ;; project navigation
     projectile
 
