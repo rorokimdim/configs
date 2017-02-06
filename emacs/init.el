@@ -78,6 +78,8 @@
 
     ;; Vim mode
     evil
+    evil-leader
+    evil-surround
 
     ;; Smartscan
     smartscan
@@ -151,3 +153,11 @@
 
 ;; Keyboard shortcuts
 (load "keys.el")
+
+;; Vim mode
+(load "evil-mode.el")
+
+;;
+;; Done end of my config.
+;; Feel free to delete the rest if emacs adds it.
+;;
