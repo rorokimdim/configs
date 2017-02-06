@@ -157,6 +157,10 @@
 ;; Vim mode
 (load "evil-mode.el")
 
+;; Get rid of messsage buffer. I seldom need it.
+(setq-default message-log-max nil)
+(kill-buffer "*Messages*")
+
 ;;
 ;; Done end of my config.
 ;; Feel free to delete the rest if emacs adds it.
