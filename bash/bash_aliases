@@ -6,3 +6,6 @@ alias e="emacsclient -a '' -t"
 
 alias httpserver='python -m SimpleHTTPServer'
 
+if [ -f ~/.custom_bash_aliases ]; then
+    . ~/.custom_bash_aliases
+fi
