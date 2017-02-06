@@ -22,7 +22,8 @@
 
 ;; shortcuts for lisp interaction mode
 (evil-leader/set-key-for-mode 'lisp-interaction-mode
-    "e" 'eval-last-sexp)
+    "e" 'eval-last-sexp
+    "p" 'eval-print-last-sexp)
 
 ;; shortcuts for emacs-lisp mode
 (evil-leader/set-key-for-mode 'emacs-lisp-mode
