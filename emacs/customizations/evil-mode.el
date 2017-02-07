@@ -22,7 +22,7 @@
 
 ;; shortcuts for lisp interaction mode
 (evil-leader/set-key-for-mode 'lisp-interaction-mode
-    "e" 'eval-last-sexp
+    "e" 'eval-defun
     "p"  (lambda ()
            (interactive)
            (forward-char)
@@ -30,7 +30,7 @@
 
 ;; shortcuts for emacs-lisp mode
 (evil-leader/set-key-for-mode 'emacs-lisp-mode
-    "e" 'eval-last-sexp
+    "e" 'eval-defun
     "r" 'eval-current-buffer)
 
 ;; shortcuts for python mode
