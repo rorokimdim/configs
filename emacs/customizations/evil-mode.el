@@ -18,7 +18,8 @@
     "l" 'next-buffer
     "w" 'save-buffer
     "k" 'kill-buffer
-    "d" 'dired)
+    "d" 'dired
+    "t" 'ansi-term)
 
 ;; shortcuts for lisp interaction mode
 (evil-leader/set-key-for-mode 'lisp-interaction-mode
