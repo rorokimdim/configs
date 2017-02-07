@@ -73,18 +73,21 @@
     ;; edit html tags like sexps
     tagedit
 
-    ;; Python environment
+    ;; python environment
     elpy
 
-    ;; Org mode
+    ;; org mode
     org-plus-contrib
 
-    ;; Vim mode
+    ;; vim mode
     evil
     evil-leader
     evil-surround
 
-    ;; Smartscan
+    ;; aggressive indent mode
+    aggressive-indent
+
+    ;; smartscan
     smartscan
 
     ;; git integration

@@ -1,5 +1,11 @@
 ;; Customizations relating to editing a buffer.
 
+;; aggressive-indent-mode hooks
+(add-hook 'emacs-lisp-mode-hook #'aggressive-indent-mode)
+(add-hook 'python-mode-hook #'aggressive-indent-mode)
+(add-hook 'clojure-mode-hook #'aggressive-indent-mode)
+(add-hook 'lisp-interaction-mode-hook #'aggressive-indent-mode)
+
 ;; Key binding to use "hippie expand" for text autocompletion
 ;; http://www.emacswiki.org/emacs/HippieExpand
 (global-set-key (kbd "M-/") 'hippie-expand)
