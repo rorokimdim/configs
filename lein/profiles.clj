@@ -2,7 +2,7 @@
   :user {
     :plugins [
       [lein-gorilla "0.3.6"]
-      [cider/cider-nrepl "0.8.1"]
+      [cider/cider-nrepl "0.15.0-SNAPSHOT"]
       [luminus/lein-template "2.9.10.74"]
     ]
     :dependencies [
