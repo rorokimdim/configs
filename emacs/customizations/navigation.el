@@ -57,5 +57,8 @@
 (smex-initialize)
 (global-set-key (kbd "M-x") 'smex)
 
-;; projectile everywhere!
+;; Enables projectile globally
 (projectile-global-mode)
+
+;; Allows find-alternate-file command ('a' to resuse same buffer)
+(put 'dired-find-alternate-file 'disabled nil)

@@ -18,6 +18,9 @@
     "l" 'next-buffer
     "w" 'save-buffer
     "k" 'kill-buffer
+    "*" (lambda ()
+          (interactive)
+          (mapc 'kill-buffer (buffer-list)))
     "d" 'dired
     "t" 'ansi-term
     "o" 'other-window
@@ -48,11 +51,10 @@
 
 ;; Shortcuts for clojure mode
 (evil-leader/set-key-for-mode 'clojure-mode
-    "c" 'cider-jack-in
-    "f" 'cider-format-buffer
-    "r" (lambda ()
-          (interactive)
-          (cider-load-buffer)
-          (cider-switch-to-repl-buffer))
-    "e" 'eval-last-sexp
-    "d" 'cider-doc)
+  "c" 'cider-jack-in
+  "f" 'cider-format-buffer
+  "r" (lambda ()
+        (interactive)
+        (cider-load-buffer)
+        (cider-switch-to-repl-buffer))
+  "e" 'eval-last-sexp)
