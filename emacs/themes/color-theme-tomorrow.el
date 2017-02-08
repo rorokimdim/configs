@@ -62,7 +62,7 @@
                    (blue . "#bbdaff")
                    (purple . "#ebbbff")))
     (night-bright . ((background . "#000000")
-                     (current-line . "#2a2a2a")
+                     ;;(current-line . "#2a2a2a")
                      (selection . "#424242")
                      (foreground . "#eaeaea")
                      (comment . "#969896")
