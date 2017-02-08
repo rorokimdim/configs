@@ -11,7 +11,7 @@
 (global-evil-leader-mode)
 (evil-leader/set-leader ",")
 
-;; general shortcuts
+;; General shortcuts
 (evil-leader/set-key
     "b" 'switch-to-buffer
     "h" 'previous-buffer
@@ -19,9 +19,14 @@
     "w" 'save-buffer
     "k" 'kill-buffer
     "d" 'dired
-    "t" 'ansi-term)
+    "t" 'ansi-term
+    "o" 'other-window
+    "0" 'delete-window
+    "1" 'delete-other-windows
+    "2" 'split-window-below
+    "3" 'split-window-right)
 
-;; shortcuts for lisp interaction mode
+;; Shortcuts for lisp interaction mode
 (evil-leader/set-key-for-mode 'lisp-interaction-mode
     "e" 'eval-defun
     "p"  (lambda ()
@@ -29,19 +34,19 @@
            (forward-char)
            (eval-print-last-sexp)))
 
-;; shortcuts for emacs-lisp mode
+;; Shortcuts for emacs-lisp mode
 (evil-leader/set-key-for-mode 'emacs-lisp-mode
     "e" 'eval-defun
     "r" 'eval-current-buffer)
 
-;; shortcuts for python mode
+;; Shortcuts for python mode
 (evil-leader/set-key-for-mode 'python-mode
     "r" (lambda ()
           (interactive)
           (run-python)
           (switch-to-buffer "*Python*")))
 
-;; shortcuts for clojure mode
+;; Shortcuts for clojure mode
 (evil-leader/set-key-for-mode 'clojure-mode
     "c" 'cider-jack-in
     "f" 'cider-format-buffer
