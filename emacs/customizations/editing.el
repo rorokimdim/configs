@@ -2,7 +2,6 @@
 
 ;; aggressive-indent-mode hooks
 (add-hook 'emacs-lisp-mode-hook #'aggressive-indent-mode)
-(add-hook 'python-mode-hook #'aggressive-indent-mode)
 (add-hook 'clojure-mode-hook #'aggressive-indent-mode)
 (add-hook 'lisp-interaction-mode-hook #'aggressive-indent-mode)
 
