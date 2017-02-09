@@ -59,3 +59,15 @@
 
 ;; Enables projectile globally
 (projectile-global-mode)
+
+;; Switch neotree's root dir on projectile-switch-project
+(setq projectile-switch-project-action 'neotree-projectile-action)
+
+;; Custom variable
+(custom-set-variables
+   '(helm-follow-mode-persistent t)
+   '(neo-window-width 50))
+
+;; Custome faces
+(custom-set-faces
+ '(helm-selection-line ((t (:background "dark slate gray" :distant-foreground "white")))))

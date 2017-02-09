@@ -14,6 +14,7 @@
 ;; General shortcuts
 (evil-leader/set-key
   "b" 'switch-to-buffer
+  "f" 'helm-projectile-ag
   "h" 'previous-buffer
   "l" 'next-buffer
   "w" 'save-buffer
@@ -22,7 +23,7 @@
         (interactive)
         (mapc 'kill-buffer (buffer-list)))
   "n" 'neotree-toggle
-  "d" 'neotree-dir
+  "d" 'projectile-switch-project
   "t" 'multi-term
   "x" 'smex
   "o" 'other-window
