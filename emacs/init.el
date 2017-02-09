@@ -168,6 +168,6 @@
 (kill-buffer "*Messages*")
 
 ;;
-;; Done end of my config.
+;; End of config.
 ;; Feel free to delete the rest if emacs adds it.
 ;;

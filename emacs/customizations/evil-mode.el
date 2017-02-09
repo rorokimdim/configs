@@ -13,21 +13,26 @@
 
 ;; General shortcuts
 (evil-leader/set-key
-    "b" 'switch-to-buffer
-    "h" 'previous-buffer
-    "l" 'next-buffer
-    "w" 'save-buffer
-    "k" 'kill-buffer
-    "*" (lambda ()
-          (interactive)
-          (mapc 'kill-buffer (buffer-list)))
-    "d" 'dired
-    "t" 'ansi-term
-    "o" 'other-window
-    "0" 'delete-window
-    "1" 'delete-other-windows
-    "2" 'split-window-below
-    "3" 'split-window-right)
+  "b" 'switch-to-buffer
+  "h" 'previous-buffer
+  "l" 'next-buffer
+  "w" 'save-buffer
+  "k" 'kill-buffer
+  "*" (lambda ()
+        (interactive)
+        (mapc 'kill-buffer (buffer-list)))
+  "d" 'dired
+  "t" 'ansi-term
+  "x" 'smex
+  "o" 'other-window
+  "0" 'delete-window
+  "1" 'delete-other-windows
+  "2" 'split-window-below
+  "3" 'split-window-right)
+
+;; Disable evil for modes where it doesn't work well
+(add-to-list 'evil-emacs-state-modes 'calculator-mode)
+(add-to-list 'evil-emacs-state-modes 'cider-repl-mode)
 
 ;; Shortcuts for lisp interaction mode
 (evil-leader/set-key-for-mode 'lisp-interaction-mode
