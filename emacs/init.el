@@ -56,7 +56,7 @@
     ;; of ido
     ido-ubiquitous
 
-    ;; Enhances M-x to allow easier execution of commands. Provides
+    ;; enhances M-x to allow easier execution of commands. Provides
     ;; a filterable list of possible commands in the minibuffer
     ;; http://www.emacswiki.org/emacs/Smex
     smex
@@ -96,7 +96,7 @@
     ;; file browser
     neotree
 
-    ;; Silver Searcher
+    ;; silver searcher
     ag
 
     ;; helm
@@ -184,20 +184,3 @@
 ;; End of config.
 ;; Feel free to delete the rest if emacs adds it.
 ;;
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(coffee-tab-width 2)
- '(helm-follow-mode-persistent t)
- '(neo-window-width 50)
- '(package-selected-packages
-   (quote
-    (magit helm-projectile helm-ag ag neotree smartscan multi-term aggressive-indent evil-surround evil-leader evil org-plus-contrib elpy tagedit rainbow-delimiters projectile restart-emacs smex ido-ubiquitous cider clojure-mode-extra-font-locking clojure-mode paredit))))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(helm-selection-line ((t (:background "dark slate gray" :distant-foreground "white")))))
