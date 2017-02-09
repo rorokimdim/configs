@@ -22,7 +22,7 @@
         (interactive)
         (mapc 'kill-buffer (buffer-list)))
   "d" 'dired
-  "t" 'ansi-term
+  "t" 'multi-term
   "x" 'smex
   "o" 'other-window
   "0" 'delete-window
@@ -30,9 +30,12 @@
   "2" 'split-window-below
   "3" 'split-window-right)
 
-;; Disable evil for modes where it doesn't work well
+;; Disable evil for modes where it's worse
 (add-to-list 'evil-emacs-state-modes 'calculator-mode)
 (add-to-list 'evil-emacs-state-modes 'cider-repl-mode)
+
+;; Start term-mode in emacs mode
+(evil-set-initial-state 'term-mode 'emacs)
 
 ;; Shortcuts for lisp interaction mode
 (evil-leader/set-key-for-mode 'lisp-interaction-mode

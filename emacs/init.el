@@ -87,6 +87,9 @@
     ;; aggressive indent mode
     aggressive-indent
 
+    ;; better term
+    multi-term
+
     ;; smartscan
     smartscan
 
@@ -171,3 +174,18 @@
 ;; End of config.
 ;; Feel free to delete the rest if emacs adds it.
 ;;
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(coffee-tab-width 2)
+ '(package-selected-packages
+   (quote
+    (multi-term tagedit smex smartscan restart-emacs rainbow-delimiters projectile paredit org-plus-contrib magit ido-ubiquitous evil-surround evil-leader elpy clojure-mode-extra-font-locking cider aggressive-indent))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
