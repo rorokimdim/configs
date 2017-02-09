@@ -21,7 +21,8 @@
   "*" (lambda ()
         (interactive)
         (mapc 'kill-buffer (buffer-list)))
-  "d" 'dired
+  "s" 'speedbar
+  "d" 'cd
   "t" 'multi-term
   "x" 'smex
   "o" 'other-window

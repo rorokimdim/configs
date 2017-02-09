@@ -62,3 +62,6 @@
 
 ;; Allows find-alternate-file command ('a' to resuse same buffer)
 (put 'dired-find-alternate-file 'disabled nil)
+
+;; Show all files in speedbar
+(setq speedbar-show-unknown-files t)
