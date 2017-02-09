@@ -2,9 +2,16 @@
 ;; M- to replace all matches under cursor
 (global-smartscan-mode t)
 
+;; Use F3 to show buffer list
 (global-set-key [f3]
                 (lambda ()
                   (interactive)
                   (list-buffers)
                   (delete-other-windows)
                   (switch-to-buffer "*Buffer List*")))
+
+;; Use F9 to kill all buffers
+(global-set-key [f9]
+                (lambda ()
+                  (interactive)
+                  (mapc 'kill-buffer (buffer-list))))
