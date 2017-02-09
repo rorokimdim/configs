@@ -21,8 +21,8 @@
   "*" (lambda ()
         (interactive)
         (mapc 'kill-buffer (buffer-list)))
-  "s" 'speedbar
-  "d" 'cd
+  "n" 'neotree-toggle
+  "d" 'neotree-dir
   "t" 'multi-term
   "x" 'smex
   "o" 'other-window
@@ -67,3 +67,9 @@
         (cider-load-buffer)
         (cider-switch-to-repl-buffer))
   "e" 'eval-last-sexp)
+
+;; Fix shortcuts for neotree
+(evil-define-key 'normal neotree-mode-map (kbd "TAB") 'neotree-enter)
+(evil-define-key 'normal neotree-mode-map (kbd "SPC") 'neotree-enter)
+(evil-define-key 'normal neotree-mode-map (kbd "q") 'neotree-hide)
+(evil-define-key 'normal neotree-mode-map (kbd "RET") 'neotree-enter)

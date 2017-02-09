@@ -93,6 +93,9 @@
     ;; smartscan
     smartscan
 
+    ;; file browser
+    neotree
+
     ;; git integration
     magit))
 
