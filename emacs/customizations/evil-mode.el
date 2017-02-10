@@ -76,6 +76,10 @@
         (cider-switch-to-repl-buffer))
   "e" 'eval-last-sexp)
 
+;; Shortcuts for restclient mode
+(evil-leader/set-key-for-mode 'restclient-mode
+  "e" 'restclient-http-send-current)
+
 ;; Fix shortcuts for neotree
 (evil-define-key 'normal neotree-mode-map (kbd "TAB") 'neotree-enter)
 (evil-define-key 'normal neotree-mode-map (kbd "SPC") 'neotree-enter)

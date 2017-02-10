@@ -103,6 +103,9 @@
     helm-ag
     helm-projectile
 
+    ;; restclient
+    restclient
+
     ;; git integration
     magit))
 
@@ -175,10 +178,6 @@
 
 ;; Vim mode
 (load "evil-mode.el")
-
-;; Get rid of messsage buffer. I seldom need it.
-(setq-default message-log-max nil)
-(kill-buffer "*Messages*")
 
 ;; Load any personal configs that is specific to the
 ;; machine I'm using.
