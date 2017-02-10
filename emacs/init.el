@@ -180,6 +180,11 @@
 (setq-default message-log-max nil)
 (kill-buffer "*Messages*")
 
+;; Load any personal configs that is specific to the
+;; machine I'm using.
+(when (file-exists-p "personal.el")
+  (load "personal.el"))
+
 ;;
 ;; End of config.
 ;; Feel free to delete the rest if emacs adds it.

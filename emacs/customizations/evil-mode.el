@@ -33,19 +33,26 @@
   "3" 'split-window-right)
 
 ;; Disable evil for modes where it's worse
-(add-to-list 'evil-emacs-state-modes 'calculator-mode)
-(add-to-list 'evil-emacs-state-modes 'cider-repl-mode)
-
-;; Start term-mode in emacs mode
-(evil-set-initial-state 'term-mode 'emacs)
+(cl-loop for mode in '(
+                       calculator-mode
+                       cider-docview-mode
+                       cider-inspector-mode
+                       cider-macroexpansion-mode
+                       cider-repl-mode
+                       cider-stacktrace-mode
+                       cider-test-report-mode
+                       cider-repl-mode
+                       term-mode
+                       )
+         do (evil-set-initial-state mode 'emacs))
 
 ;; Shortcuts for lisp interaction mode
 (evil-leader/set-key-for-mode 'lisp-interaction-mode
-    "e" 'eval-defun
-    "p"  (lambda ()
-           (interactive)
-           (forward-char)
-           (eval-print-last-sexp)))
+  "e" 'eval-defun
+  "p"  (lambda ()
+         (interactive)
+         (forward-char)
+         (eval-print-last-sexp)))
 
 ;; Shortcuts for emacs-lisp mode
 (evil-leader/set-key-for-mode 'emacs-lisp-mode

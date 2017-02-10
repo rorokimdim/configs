@@ -15,3 +15,7 @@
                 (lambda ()
                   (interactive)
                   (mapc 'kill-buffer (buffer-list))))
+
+;; Use F2 and F4 to switch buffers
+(global-set-key [f2] 'switch-to-buffer)
+(global-set-key [f4] 'previous-buffer)
