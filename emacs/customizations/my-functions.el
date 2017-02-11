@@ -14,3 +14,13 @@
   (interactive)
   (forward-char)
   (eval-print-last-sexp))
+
+(defun my-buffer-toggle (switcher)
+  "Toggles buffer using SWITCHER function, skipping over any useless buffers."
+  (interactive)
+  (funcall switcher)
+  (dolist (prefix '("*Messages*"
+                    "*nrepl-server"
+                    "*Completions*"))
+    (when (string-prefix-p prefix (buffer-name))
+      (funcall switcher))))

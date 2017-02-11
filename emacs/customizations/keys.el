@@ -2,7 +2,7 @@
 (global-set-key [f2] 'my-eval-and-replace)
 
 ;; Use F3 and F4 to switch buffers
-(global-set-key [f3] 'previous-buffer)
+(global-set-key [f3] (lambda () (interactive) (my-buffer-toggle 'previous-buffer)))
 (global-set-key [f4] 'switch-to-buffer)
 
 ;; Use F5 to show buffer list

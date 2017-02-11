@@ -18,8 +18,8 @@
         (interactive)
         (call-interactively #'projectile-ag)
         (delete-window))
-  "h" 'previous-buffer
-  "l" 'next-buffer
+  "h" (lambda () (interactive) (my-buffer-toggle 'previous-buffer))
+  "l" (lambda () (interactive) (my-buffer-toggle 'next-buffer))
   "w" 'save-buffer
   "k" 'kill-buffer
   "*" (lambda ()
