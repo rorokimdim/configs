@@ -72,4 +72,5 @@
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 
 ;; enable yasnippet globally
+(setq yas-snippet-dirs '("~/.emacs.d/snippets"))
 (yas-global-mode 1)
