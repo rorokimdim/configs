@@ -81,10 +81,11 @@
 (evil-leader/set-key-for-mode 'clojure-mode
   "cj" 'cider-jack-in
   "cd" 'cider-doc
+  "cgd" 'cider-grimoire-web
+  "cf" 'cider-format-buffer
+  "gs" 'lispy-goto-symbol
   ">" 'lispyville->
   "<" 'lispyville-<
-  "gs" 'lispy-goto-symbol
-  "f" 'cider-format-buffer
   "r" 'cider-load-buffer-and-switch-to-repl-buffer
   "eb" 'cider-load-buffer
   "ee" 'cider-eval-last-sexp
