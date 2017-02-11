@@ -14,7 +14,10 @@
 ;; General shortcuts
 (evil-leader/set-key
   "b" 'switch-to-buffer
-  "f" 'helm-projectile-ag
+  "f" (lambda ()
+        (interactive)
+        (call-interactively #'projectile-ag)
+        (delete-window))
   "h" 'previous-buffer
   "l" 'next-buffer
   "w" 'save-buffer
@@ -23,7 +26,11 @@
         (interactive)
         (mapc 'kill-buffer (buffer-list)))
   "n" 'neotree-toggle
-  "d" 'projectile-switch-project
+  "d" (lambda ()
+        (interactive)
+        (let ((ndir (read-directory-name "Enter directory: ")))
+          (cd ndir)
+          (projectile-switch-project-by-name ndir)))
   "t" 'multi-term
   "x" 'smex
   "o" 'other-window
@@ -49,6 +56,8 @@
 ;; Shortcuts for lisp interaction mode
 (evil-leader/set-key-for-mode 'lisp-interaction-mode
   "e" 'eval-defun
+  ">" 'lispyville->
+  "<" 'lispyville-<
   "p"  (lambda ()
          (interactive)
          (forward-char)
@@ -56,25 +65,29 @@
 
 ;; Shortcuts for emacs-lisp mode
 (evil-leader/set-key-for-mode 'emacs-lisp-mode
-    "e" 'eval-defun
-    "r" 'eval-current-buffer)
-
-;; Shortcuts for python mode
-(evil-leader/set-key-for-mode 'python-mode
-    "r" (lambda ()
-          (interactive)
-          (run-python)
-          (switch-to-buffer "*Python*")))
+  "e" 'eval-defun
+  ">" 'lispyville->
+  "<" 'lispyville-<
+  "r" 'eval-current-buffer)
 
 ;; Shortcuts for clojure mode
 (evil-leader/set-key-for-mode 'clojure-mode
   "c" 'cider-jack-in
+  ">" 'lispyville->
+  "<" 'lispyville-<
   "f" 'cider-format-buffer
   "r" (lambda ()
         (interactive)
         (cider-load-buffer)
         (cider-switch-to-repl-buffer))
   "e" 'eval-last-sexp)
+
+;; Shortcuts for python mode
+(evil-leader/set-key-for-mode 'python-mode
+  "r" (lambda ()
+        (interactive)
+        (run-python)
+        (switch-to-buffer "*Python*")))
 
 ;; Shortcuts for restclient mode
 (evil-leader/set-key-for-mode 'restclient-mode

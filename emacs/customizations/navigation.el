@@ -65,9 +65,4 @@
 
 ;; Custom variable
 (custom-set-variables
-   '(helm-follow-mode-persistent t)
    '(neo-window-width 50))
-
-;; Custome faces
-(custom-set-faces
- '(helm-selection-line ((t (:background "dark slate gray" :distant-foreground "white")))))
