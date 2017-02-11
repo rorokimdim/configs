@@ -70,3 +70,6 @@
 
 ;; delete trailing whitespace on save
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
+
+;; enable yasnippet globally
+(yas-global-mode 1)

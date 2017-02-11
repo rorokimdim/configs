@@ -102,6 +102,10 @@
     lispy
     lispyville
 
+    ;; https://github.com/joaotavora/yasnippet
+    yasnippet
+    clojure-snippets
+
     ;; git integration
     magit))
 
