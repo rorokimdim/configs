@@ -1,15 +1,5 @@
 ;; Use F2 to eval-and-replace lisp expressions
-(defun eval-and-replace ()
-  "Replace preceding sexp with its value."
-  (interactive)
-  (forward-char)
-  (backward-kill-sexp)
-  (condition-case nil
-                  (prin1 (eval (read (current-kill 0)))
-                         (current-buffer))
-                  (error (message "Invalid expression")
-                         (insert (current-kill 0)))))
-(global-set-key [f2] 'eval-and-replace)
+(global-set-key [f2] 'my-eval-and-replace)
 
 ;; Use F3 and F4 to switch buffers
 (global-set-key [f3] 'previous-buffer)
@@ -28,5 +18,3 @@
                 (lambda ()
                   (interactive)
                   (mapc 'kill-buffer (buffer-list))))
-
-

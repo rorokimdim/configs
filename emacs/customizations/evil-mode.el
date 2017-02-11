@@ -55,32 +55,42 @@
 
 ;; Shortcuts for lisp interaction mode
 (evil-leader/set-key-for-mode 'lisp-interaction-mode
-  "e" 'eval-defun
   ">" 'lispyville->
   "<" 'lispyville-<
-  "p"  (lambda ()
-         (interactive)
-         (forward-char)
-         (eval-print-last-sexp)))
+  "gs" 'lispy-goto-symbol
+  "eb" 'eval-current-buffer
+  "ee" 'eval-last-sexp
+  "ef" 'eval-defun
+  "ep" 'my-eval-print-last-sexp
+  "er" 'eval-region
+  "ex" 'my-eval-and-replace)
 
 ;; Shortcuts for emacs-lisp mode
 (evil-leader/set-key-for-mode 'emacs-lisp-mode
-  "e" 'eval-defun
   ">" 'lispyville->
   "<" 'lispyville-<
-  "r" 'eval-current-buffer)
+  "gs" 'lispy-goto-symbol
+  "eb" 'eval-current-buffer
+  "ee" 'eval-last-sexp
+  "ef" 'eval-defun
+  "ep" 'my-eval-print-last-sexp
+  "er" 'eval-region
+  "ex" 'my-eval-and-replace)
 
 ;; Shortcuts for clojure mode
 (evil-leader/set-key-for-mode 'clojure-mode
-  "c" 'cider-jack-in
+  "cj" 'cider-jack-in
+  "cd" 'cider-doc
   ">" 'lispyville->
   "<" 'lispyville-<
+  "gs" 'lispy-goto-symbol
   "f" 'cider-format-buffer
-  "r" (lambda ()
-        (interactive)
-        (cider-load-buffer)
-        (cider-switch-to-repl-buffer))
-  "e" 'eval-last-sexp)
+  "r" 'cider-load-buffer-and-switch-to-repl-buffer
+  "eb" 'cider-load-buffer
+  "ee" 'cider-eval-last-sexp
+  "ef" 'cider-eval-defun-at-point
+  "er" 'cider-eval-region
+  "ex" 'cider-eval-last-sexp-and-replace)
 
 ;; Shortcuts for python mode
 (evil-leader/set-key-for-mode 'python-mode
