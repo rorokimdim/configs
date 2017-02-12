@@ -13,6 +13,14 @@
 
 ;; General shortcuts
 (evil-leader/set-key
+  "gs" 'lispy-goto-symbol
+  "eb" 'eval-buffer
+  "ee" 'eval-last-sexp
+  "ef" 'eval-defun
+  "ep" 'my-eval-print-last-sexp
+  "er" 'eval-region
+  "ex" 'my-eval-and-replace
+
   "b" 'switch-to-buffer
   "f" (lambda ()
         (interactive)
@@ -53,29 +61,13 @@
                        )
          do (evil-set-initial-state mode 'emacs))
 
-;; Shortcuts for lisp interaction mode
-(evil-leader/set-key-for-mode 'lisp-interaction-mode
-  ">" 'lispyville->
-  "<" 'lispyville-<
-  "gs" 'lispy-goto-symbol
-  "eb" 'eval-current-buffer
-  "ee" 'eval-last-sexp
-  "ef" 'eval-defun
-  "ep" 'my-eval-print-last-sexp
-  "er" 'eval-region
-  "ex" 'my-eval-and-replace)
-
-;; Shortcuts for emacs-lisp mode
-(evil-leader/set-key-for-mode 'emacs-lisp-mode
-  ">" 'lispyville->
-  "<" 'lispyville-<
-  "gs" 'lispy-goto-symbol
-  "eb" 'eval-current-buffer
-  "ee" 'eval-last-sexp
-  "ef" 'eval-defun
-  "ep" 'my-eval-print-last-sexp
-  "er" 'eval-region
-  "ex" 'my-eval-and-replace)
+;; Shortcuts for lisp modes
+(dolist (m '(lisp-interaction-mode
+             emacs-lisp-mode
+             clojure-mode))
+  (evil-leader/set-key-for-mode m
+    ">" 'lispyville->
+    "<" 'lispyville-<))
 
 ;; Shortcuts for clojure mode
 (evil-leader/set-key-for-mode 'clojure-mode
@@ -83,9 +75,6 @@
   "cd" 'cider-doc
   "cgd" 'cider-grimoire-web
   "cf" 'cider-format-buffer
-  "gs" 'lispy-goto-symbol
-  ">" 'lispyville->
-  "<" 'lispyville-<
   "r" 'cider-load-buffer-and-switch-to-repl-buffer
   "eb" 'cider-load-buffer
   "ee" 'cider-eval-last-sexp
@@ -109,3 +98,9 @@
 (evil-define-key 'normal neotree-mode-map (kbd "SPC") 'neotree-enter)
 (evil-define-key 'normal neotree-mode-map (kbd "q") 'neotree-hide)
 (evil-define-key 'normal neotree-mode-map (kbd "RET") 'neotree-enter)
+
+;; Use Ctrl-e to go to end of line, like in emacs
+(define-key evil-normal-state-map "\C-e" 'evil-end-of-line)
+(define-key evil-insert-state-map "\C-e" 'end-of-line)
+(define-key evil-visual-state-map "\C-e" 'evil-end-of-line)
+(define-key evil-motion-state-map "\C-e" 'evil-end-of-line)
