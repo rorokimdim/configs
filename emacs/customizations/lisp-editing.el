@@ -14,5 +14,4 @@
              scheme-mode-hook
              clojure-mode-hook
              cider-repl-mode-hook))
-  (add-hook h #'enable-paredit-mode)
-  (add-hook h #'evil-paredit-mode))
+  (add-hook h #'enable-paredit-mode))

@@ -97,8 +97,10 @@
 ;; Fix shortcuts for neotree
 (evil-define-key 'normal neotree-mode-map (kbd "TAB") 'neotree-enter)
 (evil-define-key 'normal neotree-mode-map (kbd "SPC") 'neotree-enter)
-(evil-define-key 'normal neotree-mode-map (kbd "q") 'neotree-hide)
 (evil-define-key 'normal neotree-mode-map (kbd "RET") 'neotree-enter)
+(evil-define-key 'normal neotree-mode-map (kbd "c") 'neotree-change-root)
+(evil-define-key 'normal neotree-mode-map (kbd "d") 'neotree-dir)
+(evil-define-key 'normal neotree-mode-map (kbd "q") 'neotree-hide)
 
 ;; Use Ctrl-e to go to end of line, like in emacs
 (define-key evil-normal-state-map "\C-e" 'evil-end-of-line)

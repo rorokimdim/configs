@@ -100,7 +100,6 @@
 
     ;; paredit mode
     paredit
-    evil-paredit
 
     ;; https://github.com/joaotavora/yasnippet
     yasnippet
