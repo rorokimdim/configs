@@ -98,9 +98,9 @@
     ;; https://github.com/magnars/multiple-cursors.el
     multiple-cursors
 
-    ;; helps with lisp editing
-    lispy
-    lispyville
+    ;; paredit mode
+    paredit
+    evil-paredit
 
     ;; https://github.com/joaotavora/yasnippet
     yasnippet

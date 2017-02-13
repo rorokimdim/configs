@@ -4,15 +4,14 @@
 (add-hook 'lisp-interaction-mode-hook 'turn-on-eldoc-mode)
 (add-hook 'ielm-mode-hook 'turn-on-eldoc-mode)
 
-;; Add lipy-mode hooks
-(add-hook 'emacs-lisp-mode-hook (lambda () (lispy-mode 1)))
-(add-hook 'eval-expression-minibuffer-setup-hook (lambda () (lispy-mode 1)))
-(add-hook 'ielm-mode-hook (lambda () (lispy-mode 1)))
-(add-hook 'lisp-mode-hook (lambda () (lispy-mode 1)))
-(add-hook 'lisp-interaction-mode-hook (lambda () (lispy-mode 1)))
-(add-hook 'scheme-mode-hook (lambda () (lispy-mode 1)))
-(add-hook 'clojure-mode-hook (lambda () (lispy-mode 1)))
-(add-hook 'cider-repl-mode-hook (lambda () (lispy-mode 1)))
-
-;; Add lispyville-mode hook to lispy-mode
-(add-hook 'lispy-mode-hook #'lispyville-mode)
+;; Enable paredit for all lispy modes
+(autoload 'enable-paredit-mode "paredit" "Turn on pseudo-structural editing of Lisp code." t)
+(dolist (h '(emacs-lisp-mode-hook
+             eval-expression-minibuffer-setup-hook
+             ielm-mode-hook
+             lisp-mode-hook
+             lisp-interaction-mode-hook
+             scheme-mode-hook
+             clojure-mode-hook
+             cider-repl-mode-hook))
+  (add-hook h #'enable-paredit-mode))

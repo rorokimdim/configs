@@ -13,7 +13,8 @@
 
 ;; General shortcuts
 (evil-leader/set-key
-  "gs" 'lispy-goto-symbol
+  "gs" 'find-function
+  "gd" 'describe-function
   "eb" 'eval-buffer
   "ee" 'eval-last-sexp
   "ef" 'eval-defun
@@ -66,8 +67,8 @@
              emacs-lisp-mode
              clojure-mode))
   (evil-leader/set-key-for-mode m
-    ">" 'lispyville->
-    "<" 'lispyville-<))
+    ">" 'paredit-forward-slurp-sexp
+    "<" 'paredit-backward-slurp-sexp))
 
 ;; Shortcuts for clojure mode
 (evil-leader/set-key-for-mode 'clojure-mode
