@@ -21,12 +21,7 @@
   "ep" 'my-eval-print-last-sexp
   "er" 'eval-region
   "ex" 'my-eval-and-replace
-
   "b" 'switch-to-buffer
-  "f" (lambda ()
-        (interactive)
-        (call-interactively #'projectile-ag)
-        (delete-window))
   "h" (lambda () (interactive) (my-buffer-toggle 'previous-buffer))
   "l" (lambda () (interactive) (my-buffer-toggle 'next-buffer))
   "w" 'save-buffer
@@ -35,11 +30,17 @@
         (interactive)
         (mapc 'kill-buffer (buffer-list)))
   "n" 'neotree-toggle
-  "d" (lambda ()
+  "d" 'neotree-dir
+  "f" 'ag
+  "pd" (lambda ()
         (interactive)
         (let ((ndir (read-directory-name "Enter directory: ")))
           (cd ndir)
           (projectile-switch-project-by-name ndir)))
+  "pf" (lambda ()
+        (interactive)
+        (call-interactively #'projectile-ag)
+        (delete-window))
   "t" 'multi-term
   "x" 'smex
   "o" 'other-window
