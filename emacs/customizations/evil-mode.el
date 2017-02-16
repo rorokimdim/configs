@@ -11,11 +11,17 @@
 (global-evil-leader-mode)
 (evil-leader/set-leader ",")
 
-;; Insert mode shortcuts
-(define-key evil-insert-state-map (kbd "M-j") 'sp-newline)
-(define-key evil-insert-state-map (kbd "M->") 'sp-forward-slurp-sexp)
-(define-key evil-insert-state-map (kbd "M-<") 'sp-backward-slurp-sexp)
-(define-key evil-insert-state-map (kbd "C-a") 'evil-beginning-of-line)
+;; Shortcuts that should work on both insert and normal mode
+(cl-loop for (key f) in '(("M-0" sp-forward-slurp-sexp)
+                          ("M-9" sp-backward-slurp-sexp)
+                          ("M-a" evil-beginning-of-line)
+                          ("M-e" evil-end-of-line)
+                          ("C-a" evil-beginning-of-line)
+                          ("C-e" evil-end-of-line)
+                          ("M-n" evil-next-line)
+                          ("M-p" evil-previous-line))
+         do (define-key evil-normal-state-map (kbd key) f)
+            (define-key evil-insert-state-map (kbd key) f))
 
 ;; General shortcuts
 (evil-leader/set-key
@@ -75,10 +81,14 @@
              scheme-mode
              clojure-mode))
   (evil-leader/set-key-for-mode m
-    "j" 'sp-newline
-    "l" 'sp-down-sexp
-    ">" 'sp-forward-slurp-sexp
-    "<" 'sp-backward-slurp-sexp))
+    ")" 'sp-forward-slurp-sexp
+    "(" 'sp-backward-slurp-sexp
+    "s0" 'sp-forward-slurp-sexp
+    "s9" 'sp-backward-slurp-sexp
+    "sh" 'sp-previous-sexp
+    "sl" 'sp-next-sexp
+    "sj" 'sp-down-sexp
+    "sk" 'sp-up-sexp))
 
 ;; Shortcuts for clojure mode
 (evil-leader/set-key-for-mode 'clojure-mode
