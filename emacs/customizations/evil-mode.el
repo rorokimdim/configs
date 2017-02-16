@@ -11,6 +11,12 @@
 (global-evil-leader-mode)
 (evil-leader/set-leader ",")
 
+;; Insert mode shortcuts
+(define-key evil-insert-state-map (kbd "M-j") 'sp-newline)
+(define-key evil-insert-state-map (kbd "M->") 'sp-forward-slurp-sexp)
+(define-key evil-insert-state-map (kbd "M-<") 'sp-backward-slurp-sexp)
+(define-key evil-insert-state-map (kbd "C-a") 'evil-beginning-of-line)
+
 ;; General shortcuts
 (evil-leader/set-key
   "gs" 'find-function
@@ -66,13 +72,17 @@
 ;; Shortcuts for lisp modes
 (dolist (m '(lisp-interaction-mode
              emacs-lisp-mode
+             scheme-mode
              clojure-mode))
   (evil-leader/set-key-for-mode m
+    "j" 'sp-newline
+    "l" 'sp-down-sexp
     ">" 'sp-forward-slurp-sexp
     "<" 'sp-backward-slurp-sexp))
 
 ;; Shortcuts for clojure mode
 (evil-leader/set-key-for-mode 'clojure-mode
+  "cc" 'cider-connect
   "cj" 'cider-jack-in
   "cd" 'cider-doc
   "cgd" 'cider-grimoire-web
