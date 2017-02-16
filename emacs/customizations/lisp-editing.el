@@ -1,11 +1,4 @@
-;; eldoc-mode shows documentation in the minibuffer when writing code
-;; http://www.emacswiki.org/emacs/ElDoc
-(add-hook 'emacs-lisp-mode-hook 'turn-on-eldoc-mode)
-(add-hook 'lisp-interaction-mode-hook 'turn-on-eldoc-mode)
-(add-hook 'ielm-mode-hook 'turn-on-eldoc-mode)
-
-;; Enable paredit for all lispy modes
-(autoload 'enable-paredit-mode "paredit" "Turn on pseudo-structural editing of Lisp code." t)
+;; Enable lispy hooks for all lispy modes
 (dolist (h '(emacs-lisp-mode-hook
              eval-expression-minibuffer-setup-hook
              ielm-mode-hook
@@ -14,4 +7,12 @@
              scheme-mode-hook
              clojure-mode-hook
              cider-repl-mode-hook))
-  (add-hook h #'enable-paredit-mode))
+  (add-hook h #'smartparens-mode)
+  (add-hook h 'turn-on-eldoc-mode)
+  (add-hook h 'prettify-symbols-mode)
+  (add-hook h 'my-add-pretty-symbols))
+
+;; Customize faces for smartparens
+(custom-set-faces
+  '(sp-pair-overlay-face ((t (:background "gray19"))))
+  '(show-paren-match ((t (:background "dark red")))))

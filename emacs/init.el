@@ -98,8 +98,8 @@
     ;; https://github.com/magnars/multiple-cursors.el
     multiple-cursors
 
-    ;; paredit mode
-    paredit
+    ;; smartparens
+    smartparens
 
     ;; https://github.com/joaotavora/yasnippet
     yasnippet
@@ -158,7 +158,6 @@
 
 ;; Language-specific setups
 (load "setup-clojure.el")
-(load "setup-js.el")
 (load "setup-python.el")
 
 ;; Keyboard shortcuts

@@ -68,8 +68,8 @@
              emacs-lisp-mode
              clojure-mode))
   (evil-leader/set-key-for-mode m
-    ">" 'paredit-forward-slurp-sexp
-    "<" 'paredit-backward-slurp-sexp))
+    ">" 'sp-forward-slurp-sexp
+    "<" 'sp-backward-slurp-sexp))
 
 ;; Shortcuts for clojure mode
 (evil-leader/set-key-for-mode 'clojure-mode

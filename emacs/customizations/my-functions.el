@@ -25,3 +25,22 @@
                     "*Completions*"))
     (when (string-prefix-p prefix (buffer-name))
       (funcall switcher))))
+
+(defun my-add-pretty-symbols ()
+  "Sets my pretty-symbol mappings."
+  (setq prettify-symbols-alist
+        '(
+          ("alpha" . 945)
+          ("beta" . 946)
+          ("gamma" . 947)
+          ("delta" . 948)
+          ("epsilon" . 949)
+          ("zeta" . 950)
+          ("eta" . 951)
+          ("theta" . 952)
+          ("lambda" . 955)
+          ("mu" . 956)
+          ("pi" . 960)
+          ("phi" . 966)
+          ("psi" . 968)
+          ("omega" . 969))))
