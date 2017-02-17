@@ -21,8 +21,10 @@
 (set-face-attribute 'default nil :height 140)
 
 ;; Customize faces for smartparens
+(custom-set-variables '(hl-sexp-background-color nil))
+(custom-set-variables '(hl-sexp-foreground-color "#00FFFF"))
 (custom-set-faces
-  '(sp-pair-overlay-face ((t (:background "gray19"))))
+  '(sp-pair-overlay-face ((t (:background nil))))
   '(show-paren-match ((t (:background "dark red")))))
 
 ;; Emacs gui fame size

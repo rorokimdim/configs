@@ -9,5 +9,6 @@
              cider-repl-mode-hook))
   (add-hook h #'smartparens-mode)
   (add-hook h 'turn-on-eldoc-mode)
+  (add-hook h 'highlight-sexp-mode)
   (add-hook h 'prettify-symbols-mode)
   (add-hook h 'my-add-pretty-symbols))

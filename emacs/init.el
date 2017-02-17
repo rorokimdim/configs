@@ -66,6 +66,9 @@
     ;; colorful parenthesis matching
     rainbow-delimiters
 
+    ;; highlight current sexp to facilitate lisp editing
+    highlight-sexp
+
     ;; edit html tags like sexps
     tagedit
 
