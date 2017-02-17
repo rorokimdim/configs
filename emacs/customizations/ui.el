@@ -22,7 +22,7 @@
 
 ;; Customize faces for smartparens
 (custom-set-variables '(hl-sexp-background-color "#303030"))
-(custom-set-variables '(hl-sexp-foreground-color "#FAF0E6"))
+(custom-set-variables '(hl-sexp-foreground-color nil))
 (custom-set-faces
   '(sp-pair-overlay-face ((t (:background nil))))
   '(show-paren-match ((t (:background "dark red")))))
