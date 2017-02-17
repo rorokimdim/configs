@@ -20,6 +20,11 @@
 ;; Increase font size for better readability
 (set-face-attribute 'default nil :height 140)
 
+;; Customize faces for smartparens
+(custom-set-faces
+  '(sp-pair-overlay-face ((t (:background "gray19"))))
+  '(show-paren-match ((t (:background "dark red")))))
+
 ;; Emacs gui fame size
 (setq initial-frame-alist '((top . 0) (left . 0) (width . 177) (height . 53)))
 

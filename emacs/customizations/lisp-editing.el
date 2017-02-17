@@ -11,8 +11,3 @@
   (add-hook h 'turn-on-eldoc-mode)
   (add-hook h 'prettify-symbols-mode)
   (add-hook h 'my-add-pretty-symbols))
-
-;; Customize faces for smartparens
-(custom-set-faces
-  '(sp-pair-overlay-face ((t (:background "gray19"))))
-  '(show-paren-match ((t (:background "dark red")))))
