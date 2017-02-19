@@ -23,7 +23,8 @@
                     "*nrepl-server"
                     "*racket-command-output*"
                     "*Backtrace*"
-                    "*Completions*"))
+                    "*Completions*"
+                    "*Geiser dbg*"))
     (when (string-prefix-p prefix (buffer-name))
       (funcall switcher))))
 

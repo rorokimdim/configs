@@ -4,7 +4,6 @@
              ielm-mode-hook
              lisp-mode-hook
              lisp-interaction-mode-hook
-             racket-mode-hook
              scheme-mode-hook
              clojure-mode-hook
              cider-repl-mode-hook))
@@ -13,3 +12,6 @@
   (add-hook h 'highlight-sexp-mode)
   (add-hook h 'prettify-symbols-mode)
   (add-hook h 'my-add-pretty-symbols))
+
+;; Setup geiser
+(setq geiser-active-implementations '(racket))

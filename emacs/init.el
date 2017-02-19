@@ -37,9 +37,8 @@
 ;; Add in your own as you wish:
 (defvar my-packages
   '(
-    ;; https://github.com/greghendershott/racket-mode
-    ;; Note: Needs 'racket/drracket' to be installed in the system.
-    racket-mode
+    ;; http://www.nongnu.org/geiser/
+    geiser
 
     ;; https://github.com/clojure-emacs/clojure-mode
     clojure-mode

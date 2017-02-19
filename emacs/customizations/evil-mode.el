@@ -72,7 +72,8 @@
                        cider-stacktrace-mode
                        cider-test-report-mode
                        cider-repl-mode
-                       racket-repl-mode
+                       geiser-doc-mode
+                       geiser-repl-mode
                        term-mode
                        )
          do (evil-set-initial-state mode 'emacs))
@@ -80,7 +81,6 @@
 ;; Shortcuts for lisp modes
 (dolist (m '(lisp-interaction-mode
              emacs-lisp-mode
-             racket-mode
              scheme-mode
              clojure-mode))
   (evil-leader/set-key-for-mode m
@@ -100,28 +100,32 @@
   "cd" 'cider-doc
   "cgd" 'cider-grimoire-web
   "cf" 'cider-format-buffer
-  "cr" 'cider-load-buffer-and-switch-to-repl-buffer
+  "r" 'cider-load-buffer-and-switch-to-repl-buffer
   "eb" 'cider-load-buffer
   "ee" 'cider-eval-last-sexp
   "ef" 'cider-eval-defun-at-point
   "er" 'cider-eval-region
   "ex" 'cider-eval-last-sexp-and-replace)
 
-;; Shortcuts for racket mode
-(evil-leader/set-key-for-mode 'racket-mode
-  "rr" (lambda ()
+;; Shortcuts for scheme mode
+(evil-leader/set-key-for-mode 'scheme-mode
+  "r" (lambda ()
          (interactive)
-         (racket-run-and-switch-to-repl)
-         (delete-other-windows))
-  "rd" 'racket-doc
-  "er" 'racket-send-region)
+         (geiser-mode-switch-to-repl-and-enter)
+         (delete-other-windows)
+         (geiser-repl-clear-buffer))
+  "gd" 'geiser-doc-look-up-manual
+  "eb" 'geiser-eval-buffer
+  "ee" 'geiser-eval-last-sexp
+  "ef" 'geiser-eval-definition
+  "er" 'geiser-eval-region)
 
 ;; Shortcuts for python mode
 (evil-leader/set-key-for-mode 'python-mode
-  "pr" (lambda ()
-         (interactive)
-         (run-python)
-         (switch-to-buffer "*Python*")))
+  "r" (lambda ()
+        (interactive)
+        (run-python)
+        (switch-to-buffer "*Python*")))
 
 ;; Shortcuts for restclient mode
 (evil-leader/set-key-for-mode 'restclient-mode
