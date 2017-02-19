@@ -44,6 +44,7 @@
   "n" 'neotree-toggle
   "d" 'neotree-dir
   "f" 'ag
+  "pp" 'projectile-switch-project
   "pd" (lambda ()
         (interactive)
         (let ((ndir (read-directory-name "Enter directory: ")))
