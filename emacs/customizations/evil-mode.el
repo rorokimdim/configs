@@ -80,6 +80,7 @@
 ;; Shortcuts for lisp modes
 (dolist (m '(lisp-interaction-mode
              emacs-lisp-mode
+             racket-mode
              scheme-mode
              clojure-mode))
   (evil-leader/set-key-for-mode m
