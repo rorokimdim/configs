@@ -72,6 +72,7 @@
                        cider-stacktrace-mode
                        cider-test-report-mode
                        cider-repl-mode
+                       racket-repl-mode
                        term-mode
                        )
          do (evil-set-initial-state mode 'emacs))
@@ -98,19 +99,25 @@
   "cd" 'cider-doc
   "cgd" 'cider-grimoire-web
   "cf" 'cider-format-buffer
-  "r" 'cider-load-buffer-and-switch-to-repl-buffer
+  "cr" 'cider-load-buffer-and-switch-to-repl-buffer
   "eb" 'cider-load-buffer
   "ee" 'cider-eval-last-sexp
   "ef" 'cider-eval-defun-at-point
   "er" 'cider-eval-region
   "ex" 'cider-eval-last-sexp-and-replace)
 
+;; Shortcuts for racket mode
+(evil-leader/set-key-for-mode 'racket-mode
+  "rr" 'racket-run-and-switch-to-repl
+  "rd" 'racket-doc
+  "er" 'racket-send-region)
+
 ;; Shortcuts for python mode
 (evil-leader/set-key-for-mode 'python-mode
-  "r" (lambda ()
-        (interactive)
-        (run-python)
-        (switch-to-buffer "*Python*")))
+  "pr" (lambda ()
+         (interactive)
+         (run-python)
+         (switch-to-buffer "*Python*")))
 
 ;; Shortcuts for restclient mode
 (evil-leader/set-key-for-mode 'restclient-mode

@@ -37,6 +37,9 @@
 ;; Add in your own as you wish:
 (defvar my-packages
   '(
+    ;; https://github.com/greghendershott/racket-mode
+    racket-mode
+
     ;; https://github.com/clojure-emacs/clojure-mode
     clojure-mode
 

@@ -21,6 +21,7 @@
   (funcall switcher)
   (dolist (prefix '("*Messages*"
                     "*nrepl-server"
+                    "*racket-command-output*"
                     "*Backtrace*"
                     "*Completions*"))
     (when (string-prefix-p prefix (buffer-name))
