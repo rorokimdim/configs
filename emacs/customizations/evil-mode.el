@@ -111,8 +111,7 @@
   "rr" (lambda ()
          (interactive)
          (racket-run-and-switch-to-repl)
-         (delete-other-windows)
-         (comint-clear-buffer))
+         (delete-other-windows))
   "rd" 'racket-doc
   "er" 'racket-send-region)
 

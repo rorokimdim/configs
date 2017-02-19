@@ -1,6 +1,9 @@
 ;; Use F2 to eval-and-replace lisp expressions
 (global-set-key [f2] 'my-eval-and-replace)
 
+;; Use F7 to clear repl buffer
+(global-set-key [f7] 'comint-clear-buffer)
+
 ;; Use F3 and F4 to switch buffers
 (global-set-key [f3] (lambda () (interactive) (my-buffer-toggle 'previous-buffer)))
 (global-set-key [f4] 'switch-to-buffer)
