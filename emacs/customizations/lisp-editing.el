@@ -4,6 +4,7 @@
              ielm-mode-hook
              lisp-mode-hook
              lisp-interaction-mode-hook
+             racket-mode-hook
              scheme-mode-hook
              clojure-mode-hook
              cider-repl-mode-hook))

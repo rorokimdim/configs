@@ -108,7 +108,11 @@
 
 ;; Shortcuts for racket mode
 (evil-leader/set-key-for-mode 'racket-mode
-  "rr" 'racket-run-and-switch-to-repl
+  "rr" (lambda ()
+         (interactive)
+         (racket-run-and-switch-to-repl)
+         (delete-other-windows)
+         (comint-clear-buffer))
   "rd" 'racket-doc
   "er" 'racket-send-region)
 
