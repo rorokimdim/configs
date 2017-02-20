@@ -16,3 +16,8 @@
 
 ;; Setup geiser
 (setq geiser-active-implementations '(racket))
+
+;; Prevent smarparens from autoclosing single quotes
+(require 'smartparens)
+(sp-with-modes sp--lisp-modes
+  (sp-local-pair "'" nil :actions nil))

@@ -4,7 +4,7 @@
 (dolist (h '(emacs-lisp-mode-hook
              clojure-mode-hook
              lisp-interaction-mode-hook
-             racket-mode-hook))
+             scheme-mode-hook))
   (add-hook h #'aggressive-indent-mode))
 
 ;; Key binding to use "hippie expand" for text autocompletion
