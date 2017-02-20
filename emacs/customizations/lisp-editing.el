@@ -6,6 +6,7 @@
              lisp-interaction-mode-hook
              scheme-mode-hook
              clojure-mode-hook
+             geiser-repl-mode-hook
              cider-repl-mode-hook))
   (add-hook h #'smartparens-mode)
   (add-hook h 'turn-on-eldoc-mode)

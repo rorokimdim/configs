@@ -68,12 +68,10 @@
                        cider-docview-mode
                        cider-inspector-mode
                        cider-macroexpansion-mode
-                       cider-repl-mode
                        cider-stacktrace-mode
                        cider-test-report-mode
                        cider-repl-mode
                        geiser-doc-mode
-                       geiser-repl-mode
                        term-mode
                        )
          do (evil-set-initial-state mode 'emacs))
@@ -114,7 +112,7 @@
          (geiser-mode-switch-to-repl-and-enter)
          (delete-other-windows)
          (geiser-repl-clear-buffer))
-  "gd" 'geiser-doc-look-up-manual
+  "gd" 'geiser-doc-symbol-at-point
   "eb" 'geiser-eval-buffer
   "ee" 'geiser-eval-last-sexp
   "ef" 'geiser-eval-definition
