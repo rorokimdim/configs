@@ -67,3 +67,8 @@
  "Kills buffer + window on quit-window."
  (interactive)
  (kill-buffer-and-window))
+
+;; Enable mouse support on terminal
+(unless window-system
+  (require 'mouse)
+  (xterm-mouse-mode t))
