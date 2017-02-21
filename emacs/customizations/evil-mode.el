@@ -26,7 +26,7 @@
 ;; General shortcuts
 (evil-leader/set-key
   "gs" 'find-function
-  "gd" 'describe-function
+  "gd" 'evil-goto-definition
   "eb" 'eval-buffer
   "ee" 'eval-last-sexp
   "ef" 'eval-defun
@@ -108,11 +108,10 @@
 ;; Shortcuts for scheme mode
 (evil-leader/set-key-for-mode 'scheme-mode
   "r" (lambda ()
-         (interactive)
-         (geiser-mode-switch-to-repl-and-enter)
-         (delete-other-windows)
-         (geiser-repl-clear-buffer))
-  "gd" 'geiser-doc-symbol-at-point
+        (interactive)
+        (geiser-mode-switch-to-repl-and-enter)
+        (delete-other-windows)
+        (geiser-repl-clear-buffer))
   "eb" 'geiser-eval-buffer
   "ee" 'geiser-eval-last-sexp
   "ef" 'geiser-eval-definition
@@ -123,7 +122,9 @@
   "r" (lambda ()
         (interactive)
         (run-python)
-        (switch-to-buffer "*Python*")))
+        (switch-to-buffer "*Python*"))
+  "gd" 'elpy-goto-definition
+  "pd" 'elpy-doc)
 
 ;; Shortcuts for restclient mode
 (evil-leader/set-key-for-mode 'restclient-mode

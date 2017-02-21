@@ -61,3 +61,9 @@
 
 ;; No bell
 (setq ring-bell-function 'ignore)
+
+;; Override quit-window to kill buffer and window
+(defun quit-window ()
+ "Kills buffer + window on quit-window."
+ (interactive)
+ (kill-buffer-and-window))
