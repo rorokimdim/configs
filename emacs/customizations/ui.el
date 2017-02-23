@@ -50,6 +50,11 @@
 ;; Show column number
 (column-number-mode t)
 
+;; Set fring color to background color
+(set-face-attribute 'fringe nil
+                      :foreground (face-foreground 'default)
+                      :background (face-background 'default))
+
 ;; Don't pop up font menu
 (global-set-key (kbd "s-t") '(lambda () (interactive)))
 
