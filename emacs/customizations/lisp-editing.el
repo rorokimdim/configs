@@ -26,3 +26,6 @@
 (require 'smartparens)
 (sp-with-modes sp--lisp-modes
   (sp-local-pair "'" nil :actions nil))
+
+;; Remove useless comment from scratch buffer
+(setq initial-scratch-message "")
