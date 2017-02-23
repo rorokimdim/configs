@@ -47,6 +47,9 @@
 ;; Full path in title bar
 (setq-default frame-title-format "%b (%f)")
 
+;; Show column number
+(column-number-mode t)
+
 ;; Don't pop up font menu
 (global-set-key (kbd "s-t") '(lambda () (interactive)))
 
