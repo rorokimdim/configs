@@ -128,7 +128,12 @@
 
 ;; Shortcuts for restclient mode
 (evil-leader/set-key-for-mode 'restclient-mode
-  "e" 'restclient-http-send-current)
+  "er" 'restclient-http-send-current-raw
+  "ef" 'restclient-http-send-current
+  "ec" 'restclient-copy-curl-command
+  "rn" 'restclient-jump-next
+  "rp" 'restclient-jump-prev
+  )
 
 ;; Fix shortcuts for neotree
 (evil-define-key 'normal neotree-mode-map (kbd "TAB") 'neotree-enter)
