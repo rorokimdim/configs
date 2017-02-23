@@ -13,19 +13,10 @@
 (setq help-window-select t)
 
 ;; Color Themes
-(add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
-(add-to-list 'load-path "~/.emacs.d/themes")
-(load-theme 'tomorrow-night-bright t)
+(load-theme 'hc-zenburn t)
 
 ;; Increase font size for better readability
 (set-face-attribute 'default nil :height 140)
-
-;; Customize faces for smartparens
-(custom-set-variables '(hl-sexp-background-color "#303030"))
-(custom-set-variables '(hl-sexp-foreground-color nil))
-(custom-set-faces
-  '(sp-pair-overlay-face ((t (:background nil))))
-  '(show-paren-match ((t (:background "dark red")))))
 
 ;; Emacs gui fame size
 (setq initial-frame-alist '((top . 0) (left . 0) (width . 177) (height . 53)))
