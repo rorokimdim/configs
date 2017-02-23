@@ -73,7 +73,7 @@
                        cider-repl-mode
                        geiser-doc-mode
                        term-mode
-                       )
+                       custom-theme-choose-mode)
          do (evil-set-initial-state mode 'emacs))
 
 ;; Shortcuts for lisp modes
