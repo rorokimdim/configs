@@ -17,6 +17,11 @@
 ;; Setup geiser
 (setq geiser-active-implementations '(racket))
 
+;; Get rid of highlight color in smartparens
+(setq sp-highlight-pair-overlay nil)
+(setq sp-highlight-wrap-overlay nil)
+(setq sp-highlight-wrap-tag-overlay nil)
+
 ;; Prevent smarparens from autoclosing single quotes
 (require 'smartparens)
 (sp-with-modes sp--lisp-modes
