@@ -111,9 +111,6 @@
     yasnippet
     clojure-snippets
 
-    ;; color theme
-    hc-zenburn-theme
-
     ;; git integration
     magit))
 

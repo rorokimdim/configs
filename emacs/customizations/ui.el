@@ -13,7 +13,7 @@
 (setq help-window-select t)
 
 ;; Color Themes
-(load-theme 'hc-zenburn t)
+(load-theme 'wombat t)
 
 ;; Increase font size for better readability
 (set-face-attribute 'default nil :height 140)
