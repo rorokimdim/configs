@@ -18,6 +18,9 @@
 ;; Increase font size for better readability
 (set-face-attribute 'default nil :height 140)
 
+;; Use black background
+(add-to-list 'default-frame-alist '(background-color . "#000000"))
+
 ;; Emacs gui fame size
 (setq initial-frame-alist '((top . 0) (left . 0) (width . 177) (height . 53)))
 
