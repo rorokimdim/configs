@@ -47,6 +47,8 @@
 
     elpy
 
+    exec-path-from-shell
+
     evil
     evil-leader
     evil-surround
@@ -70,17 +72,6 @@
     tagedit
     yasnippet))
 
-;; On OS X, an Emacs instance started from the graphical user
-;; interface will have a different environment than a shell in a
-;; terminal window, because OS X does not run a shell during the
-;; login. Obviously this will lead to unexpected results when
-;; calling external utilities like make from Emacs.
-;; This library works around this problem by copying important
-;; environment variables from the user's shell.
-;; https://github.com/purcell/exec-path-from-shell
-(if (eq system-type 'darwin)
-    (add-to-list 'my-packages 'exec-path-from-shell))
-
 (dolist (p my-packages)
   (when (not (package-installed-p p))
     (package-install p)))
@@ -89,9 +80,6 @@
 ;;;;
 ;; Customization
 ;;;;
-
-;; Add a directory to our load path so that when you `load` things
-;; below, Emacs knows where to look for the corresponding file.
 (add-to-list 'load-path "~/.emacs.d/customizations")
 
 ;; Loads my custom functions
@@ -128,11 +116,10 @@
 ;; some user interface elements
 (load "ui.el")
 
-;; Load any personal configs that is specific to the
+;; Load any custom configs that is specific to the
 ;; machine I'm using.
-(when (file-exists-p "personal.el")
-  (load "personal.el"))
-
+(when (file-exists-p "~/.emacs.d/customizations/machine-custom.el")
+  (load "machine-custom.el"))
 ;;
 ;; End of config.
 ;; Feel free to delete the rest if emacs adds it.

@@ -24,7 +24,7 @@
 
 ;; Prevent smarparens from autoclosing single quotes
 (require 'smartparens)
-(sp-with-modes sp--lisp-modes
+(sp-with-modes sp-lisp-modes
   (sp-local-pair "'" nil :actions nil))
 
 ;; Remove useless comment from scratch buffer

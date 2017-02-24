@@ -67,13 +67,6 @@
  (interactive)
  (kill-buffer-and-window))
 
-;; Diminish modes I don't need to check on
-(dolist (m '(projectile-mode
-             undo-tree-mode
-             smartparens-mode
-             highlight-sexp-mode))
-  (diminish m))
-
 ;; Set custom faces
 (custom-set-faces
  '(ido-subdir ((t (:foreground "dark cyan"))))
@@ -87,3 +80,9 @@
 (unless window-system
   (require 'mouse)
   (xterm-mouse-mode t))
+
+;; Cleanup my mode-line
+(eval-after-load "projectile" '(diminish 'projectile-mode))
+(eval-after-load "undo-tree" '(diminish 'undo-tree-mode))
+(eval-after-load "smartparens" '(diminish 'smartparens-mode))
+(eval-after-load "highlight-sexp" '(diminish 'highlight-sexp-mode))
