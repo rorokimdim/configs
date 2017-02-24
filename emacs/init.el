@@ -65,6 +65,8 @@
 
     ;; project navigation
     projectile
+    perspective
+    persp-projectile
 
     ;; colorful parenthesis matching
     rainbow-delimiters
@@ -111,6 +113,9 @@
     yasnippet
     clojure-snippets
 
+    ;; helps clean up modeline
+    diminish
+
     ;; git integration
     magit))
 
@@ -149,10 +154,6 @@
 ;; switch buffers, and choose options from the minibuffer.
 (load "navigation.el")
 
-;; These customizations change the way emacs looks and disable/enable
-;; some user interface elements
-(load "ui.el")
-
 ;; These customizations make editing a bit nicer.
 (load "editing.el")
 
@@ -171,6 +172,10 @@
 
 ;; Vim mode
 (load "evil-mode.el")
+
+;; These customizations change the way emacs looks and disable/enable
+;; some user interface elements
+(load "ui.el")
 
 ;; Load any personal configs that is specific to the
 ;; machine I'm using.

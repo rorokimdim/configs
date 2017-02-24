@@ -63,6 +63,6 @@
 ;; Switch neotree's root dir on projectile-switch-project
 (setq projectile-switch-project-action 'neotree-projectile-action)
 
-;; Custom variable
-(custom-set-variables
-   '(neo-window-width 50))
+;; Perspective mode with projectile
+(persp-mode)
+(require 'persp-projectile)

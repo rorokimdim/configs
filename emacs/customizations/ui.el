@@ -67,6 +67,21 @@
  (interactive)
  (kill-buffer-and-window))
 
+;; Diminish modes I don't need to check on
+(dolist (m '(projectile-mode
+             undo-tree-mode
+             smartparens-mode
+             highlight-sexp-mode))
+  (diminish m))
+
+;; Change perspective name color in mode-line
+(custom-set-faces
+ '(persp-selected-face ((t (:foreground "dark cyan" :weight bold)))))
+
+;; Change neotree width
+(custom-set-variables
+   '(neo-window-width 50))
+
 ;; Enable mouse support on terminal
 (unless window-system
   (require 'mouse)
