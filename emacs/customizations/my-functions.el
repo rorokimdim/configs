@@ -15,6 +15,12 @@
   (forward-char)
   (eval-print-last-sexp))
 
+(defun my-shell-command-to-buffer ()
+  "Runs a shell command and appends output to current buffer starting from current point."
+  (interactive)
+  (with-current-buffer (current-buffer)
+    (insert (shell-command-to-string (read-string "Enter command: ")))))
+
 (defun my-buffer-toggle (switcher)
   "Toggles buffer using SWITCHER function, skipping over any useless buffers."
   (interactive)
