@@ -32,92 +32,43 @@
 (defvar predicate nil)
 (defvar inherit-input-method nil)
 
-;; The packages you want installed. You can also install these
-;; manually with M-x package-install
-;; Add in your own as you wish:
+;; Packages to install
 (defvar my-packages
   '(
-    ;; http://www.nongnu.org/geiser/
-    geiser
+    ag
+    aggressive-indent
 
-    ;; https://github.com/clojure-emacs/clojure-mode
-    clojure-mode
-
-    ;; extra syntax highlighting for clojure
-    clojure-mode-extra-font-locking
-
-    ;; integration with a Clojure REPL
-    ;; https://github.com/clojure-emacs/cider
     cider
+    clojure-mode
+    clojure-mode-extra-font-locking
+    clojure-snippets
 
-    ;; allow ido usage in as many contexts as possible. see
-    ;; customizations/navigation.el line 23 for a description
-    ;; of ido
-    ido-ubiquitous
+    diminish
 
-    ;; enhances M-x to allow easier execution of commands. Provides
-    ;; a filterable list of possible commands in the minibuffer
-    ;; http://www.emacswiki.org/emacs/Smex
-    smex
-
-    ;; easy command to restart emacs daemon
-    restart-emacs
-
-    ;; project navigation
-    projectile
-    perspective
-    persp-projectile
-
-    ;; colorful parenthesis matching
-    rainbow-delimiters
-
-    ;; highlight current sexp to facilitate lisp editing
-    highlight-sexp
-
-    ;; edit html tags like sexps
-    tagedit
-
-    ;; python environment
     elpy
 
-    ;; http://orgmode.org/
-    org
-
-    ;; vim mode
     evil
     evil-leader
     evil-surround
 
-    ;; aggressive indent mode
-    aggressive-indent
-
-    ;; better term
+    geiser
+    highlight-sexp
+    ido-ubiquitous
+    magit
     multi-term
-
-    ;; file browser
-    neotree
-
-    ;; silver searcher
-    ag
-
-    ;; restclient
-    restclient
-
-    ;; https://github.com/magnars/multiple-cursors.el
     multiple-cursors
-
-    ;; smartparens
+    neotree
+    org
+    persp-projectile
+    perspective
+    projectile
+    rainbow-delimiters
+    restart-emacs
+    restclient
     smartparens
-
-    ;; https://github.com/joaotavora/yasnippet
-    yasnippet
-    clojure-snippets
-
-    ;; helps clean up modeline
-    diminish
-
-    ;; git integration
-    magit))
+    smex
+    tagedit
+    yasnippet))
 
 ;; On OS X, an Emacs instance started from the graphical user
 ;; interface will have a different environment than a shell in a
