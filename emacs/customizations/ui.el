@@ -74,8 +74,9 @@
              highlight-sexp-mode))
   (diminish m))
 
-;; Change perspective name color in mode-line
+;; Set custom faces
 (custom-set-faces
+ '(ido-subdir ((t (:foreground "dark cyan"))))
  '(persp-selected-face ((t (:foreground "dark cyan" :weight bold)))))
 
 ;; Change neotree width
