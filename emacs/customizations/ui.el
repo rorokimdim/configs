@@ -15,9 +15,6 @@
 ;; Color Themes
 (load-theme 'wombat t)
 
-;; Increase font size for better readability
-(set-face-attribute 'default nil :height 140)
-
 ;; Emacs gui fame size
 (setq initial-frame-alist '((top . 0) (left . 0) (width . 177) (height . 53)))
 
