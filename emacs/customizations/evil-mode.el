@@ -37,6 +37,7 @@
   "w" 'save-buffer
   "k" 'kill-buffer
   "*" 'projectile-kill-buffers
+  "m" 'mc/mark-all-like-this
   "n" 'neotree-toggle
   "d" 'neotree-dir
   "f" 'ag
