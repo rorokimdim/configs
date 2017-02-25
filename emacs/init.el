@@ -1,3 +1,18 @@
+;;
+;; Tweak garbage collection threshold
+;;
+(defconst initial-gc-cons-threshold gc-cons-threshold)
+(setq gc-cons-threshold (* 128 1024 1024))
+(defun my-minibuffer-setup-hook ()
+    (setq gc-cons-threshold most-positive-fixnum))
+
+(defun my-minibuffer-exit-hook ()
+    (setq gc-cons-threshold 800000))
+
+(add-hook 'minibuffer-setup-hook #'my-minibuffer-setup-hook)
+(add-hook 'minibuffer-exit-hook #'my-minibuffer-exit-hook)
+(add-hook 'after-init-hook (lambda () (setq gc-cons-threshold initial-gc-cons-threshold)))
+
 ;;;;
 ;; Packages
 ;;;;
@@ -24,6 +39,7 @@
 (when (not package-archive-contents)
   (package-refresh-contents))
 
+
 ;; Define he following variables to remove the compile-log warnings
 ;; when defining ido-ubiquitous
 (defvar ido-cur-item nil)
@@ -44,7 +60,6 @@
     clojure-snippets
 
     diminish
-
     elpy
 
     evil
@@ -68,52 +83,56 @@
     smartparens
     smex
     tagedit
-    yasnippet))
+    yasnippet
+
+    use-package))
 
 (dolist (p my-packages)
   (when (not (package-installed-p p))
     (package-install p)))
 
+(eval-when-compile
+  (require 'use-package))
 
 ;;;;
 ;; Customization
 ;;;;
+(byte-recompile-directory "~/.emacs.d/customizations" 0)
 (add-to-list 'load-path "~/.emacs.d/customizations")
 
 ;; Loads my custom functions
-(load "my-functions.el")
+(load "my-functions.elc")
 
 ;; These customizations make it easier for you to navigate files,
 ;; switch buffers, and choose options from the minibuffer.
-(load "navigation.el")
+(load "navigation.elc")
 
 ;; These customizations make editing a bit nicer.
-(load "editing.el")
+(load "editing.elc")
 
 ;; Hard-to-categorize customizations
-(load "misc.el")
+(load "misc.elc")
 
 ;; For editing lisps
-(load "lisp-editing.el")
+(load "lisp-editing.elc")
 
 ;; Language-specific setups
-(load "setup-clojure.el")
-(load "setup-python.el")
+(load "setup-clojure.elc")
+(load "setup-python.elc")
 
 ;; Keyboard shortcuts
-(load "keys.el")
+(load "keys.elc")
 
 ;; Vim mode
-(load "evil-mode.el")
+(load "evil-mode.elc")
 
-;; These customizations change the way emacs looks and disable/enable
-;; some user interface elements
-(load "ui.el")
+;; UI customizations
+(load "ui.elc")
 
 ;; Load any custom configs that is specific to the
 ;; machine I'm using.
-(when (file-exists-p "~/.emacs.d/customizations/machine-custom.el")
-  (load "machine-custom.el"))
+(when (file-exists-p "~/.emacs.d/customizations/machine-custom.elc")
+  (load "machine-custom.elc"))
 ;;
 ;; End of config.
 ;; Feel free to delete the rest if emacs adds it.
