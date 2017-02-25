@@ -10,5 +10,5 @@
 ;; Use F7 to clear repl buffer
 (global-set-key [f7] 'comint-clear-buffer)
 
-;; Use F9 to kill all buffers
-(global-set-key [f9] 'projectile-kill-buffers)
+;; Use F9 to kill current buffer
+(global-set-key [f9] 'kill-buffer-and-window)
