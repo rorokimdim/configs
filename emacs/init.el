@@ -51,6 +51,7 @@
 ;; Packages to install
 (defvar my-packages
   '(
+    ace-jump-mode
     ag
     aggressive-indent
 
@@ -61,6 +62,7 @@
 
     diminish
     elpy
+    expand-region
 
     evil
     evil-leader

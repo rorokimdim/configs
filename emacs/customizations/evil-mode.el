@@ -51,8 +51,9 @@
         (call-interactively #'projectile-ag)
         (delete-window))
   "pp" 'projectile-switch-project
+  "a" 'ace-jump-mode
   "t" 'multi-term
-  "x" 'smex
+  "x" 'er/expand-region
   "o" 'other-window
   "0" 'delete-window
   "1" 'delete-other-windows
