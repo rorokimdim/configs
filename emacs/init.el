@@ -69,7 +69,6 @@
     evil-surround
 
     geiser
-    highlight-sexp
     ido-ubiquitous
     magit
     multi-term

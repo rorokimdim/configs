@@ -25,6 +25,7 @@
 
 ;; General shortcuts
 (evil-leader/set-key
+  "<SPC>" 'kill-this-buffer
   "gs" 'find-function
   "gd" 'evil-goto-definition
   "eb" 'eval-buffer
@@ -35,7 +36,6 @@
   "ex" 'my-eval-and-replace
   "b" 'switch-to-buffer
   "w" 'save-buffer
-  "k" 'kill-buffer
   "*" 'projectile-kill-buffers
   "m" 'mc/mark-all-like-this
   "n" 'neotree-toggle
