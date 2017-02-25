@@ -16,7 +16,7 @@
 (load-theme 'wombat t)
 
 ;; Emacs gui fame size
-(setq initial-frame-alist '((top . 0) (left . 0) (width . 177) (height . 53)))
+(setq initial-frame-alist '((top . 0) (left . 0) (width . 202) (height . 60)))
 
 ;; These settings relate to how emacs interacts with your operating system
 (setq ;; makes killing/yanking interact with the clipboard
