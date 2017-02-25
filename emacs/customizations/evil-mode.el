@@ -82,12 +82,10 @@
   (evil-leader/set-key-for-mode m
     ")" 'sp-forward-slurp-sexp
     "(" 'sp-backward-slurp-sexp
-    "s0" 'sp-forward-slurp-sexp
-    "s9" 'sp-backward-slurp-sexp
-    "sh" 'sp-previous-sexp
-    "sl" 'sp-next-sexp
-    "sj" 'sp-down-sexp
-    "sk" 'sp-up-sexp))
+    "h" 'sp-previous-sexp
+    "l" 'sp-next-sexp
+    "j" 'sp-down-sexp
+    "k" 'sp-up-sexp))
 
 ;; Shortcuts for clojure mode
 (evil-leader/set-key-for-mode 'clojure-mode
