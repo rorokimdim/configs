@@ -55,7 +55,7 @@
   "a" 'ace-jump-mode
   "t" 'multi-term
   "x" 'er/expand-region
-  "o" 'other-window
+  "o" 'ace-window
   "0" 'delete-window
   "1" 'delete-other-windows
   "2" 'split-window-below

@@ -58,6 +58,7 @@
 (defvar my-packages
   '(
     ace-jump-mode
+    ace-window
     ag
     aggressive-indent
 
