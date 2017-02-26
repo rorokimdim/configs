@@ -17,5 +17,3 @@
 ;; Get rid of messsage buffer. I seldom need it.
 (setq-default message-log-max nil)
 (kill-buffer "*Messages*")
-
-

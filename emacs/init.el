@@ -40,13 +40,19 @@
   (package-refresh-contents))
 
 
-;; Define he following variables to remove the compile-log warnings
-;; when defining ido-ubiquitous
+;; Define the following variables to remove the compile-log warnings
+(defvar apropos-do-all nil)
+(defvar ido-auto-merge-work-directories-length nil)
 (defvar ido-cur-item nil)
-(defvar ido-default-item nil)
 (defvar ido-cur-list nil)
-(defvar predicate nil)
+(defvar ido-default-item nil)
+(defvar ido-enable-flex-matching nil)
+(defvar ido-use-filename-at-point nil)
+(defvar ido-use-virtual-buffers nil)
 (defvar inherit-input-method nil)
+(defvar predicate nil)
+(defvar projectile-switch-projection-action nil)
+(defvar smex-save-file nil)
 
 ;; Packages to install
 (defvar my-packages

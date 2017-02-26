@@ -58,7 +58,7 @@
 (global-set-key (kbd "M-x") 'smex)
 
 ;; Enables projectile globally
-(projectile-global-mode)
+(projectile-mode)
 
 ;; Switch neotree's root dir on projectile-switch-project
 (setq projectile-switch-project-action 'neotree-projectile-action)
@@ -66,3 +66,6 @@
 ;; Perspective mode with projectile
 (persp-mode)
 (require 'persp-projectile)
+
+;; Allow dired-find-alternate-file command
+(put 'dired-find-alternate-file 'disabled nil)

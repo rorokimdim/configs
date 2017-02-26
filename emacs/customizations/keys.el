@@ -12,3 +12,6 @@
 
 ;; Use F9 to kill current buffer
 (global-set-key [f9] 'kill-buffer-and-window)
+
+;; Use F12 for dired
+(global-set-key [f12] 'dired)
