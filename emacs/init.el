@@ -69,6 +69,7 @@
 
     evil
     evil-leader
+    evil-magit
     evil-surround
 
     geiser

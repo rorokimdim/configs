@@ -146,3 +146,6 @@
 (define-key evil-insert-state-map "\C-e" 'end-of-line)
 (define-key evil-visual-state-map "\C-e" 'evil-end-of-line)
 (define-key evil-motion-state-map "\C-e" 'evil-end-of-line)
+
+;; Use evil-magit
+(require 'evil-magit)
