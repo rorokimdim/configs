@@ -47,6 +47,7 @@
         (let ((ndir (read-directory-name "Enter directory: ")))
           (cd ndir)
           (projectile-switch-project-by-name ndir)))
+  "pf" 'projectile-find-file
   "ps" (lambda ()
         (interactive)
         (call-interactively #'projectile-ag)
