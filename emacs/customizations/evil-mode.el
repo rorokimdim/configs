@@ -38,7 +38,7 @@
   "*" 'projectile-kill-buffers
   "m" 'mc/mark-all-like-this
   "n" 'neotree-toggle
-  "d" 'neotree-dir
+  "d" 'ido-dired
   "f" 'ido-find-file
   "s" 'ag
   "pb" 'projectile-switch-to-buffer
@@ -56,6 +56,7 @@
   "a" 'ace-jump-mode
   "t" 'multi-term
   "x" 'er/expand-region
+  "q" 'kill-buffer-and-window
   "o" 'ace-window
   "0" 'delete-window
   "1" 'delete-other-windows
