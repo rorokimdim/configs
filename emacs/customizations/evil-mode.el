@@ -47,7 +47,7 @@
         (let ((ndir (read-directory-name "Enter directory: ")))
           (cd ndir)
           (projectile-switch-project-by-name ndir)))
-  "pf" (lambda ()
+  "ps" (lambda ()
         (interactive)
         (call-interactively #'projectile-ag)
         (delete-window))
