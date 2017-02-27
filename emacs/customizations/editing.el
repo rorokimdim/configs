@@ -47,10 +47,10 @@
                                                "backups"))))
 (setq auto-save-default nil)
 
-;; yay rainbows!
+;; Enable rainbows
 (add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
 
-;; use 2 spaces for tabs
+;; Use 2 spaces for tabs
 (defun die-tabs ()
   (interactive)
   (set-variable 'tab-width 2)
@@ -58,7 +58,7 @@
   (untabify (region-beginning) (region-end))
   (keyboard-quit))
 
-;; fix weird os x kill error
+;; Fix weird os x kill error
 (defun ns-get-pasteboard ()
   "Returns the value of the pasteboard, or nil for unsupported formats."
   (condition-case nil
@@ -67,7 +67,7 @@
 
 (setq electric-indent-mode nil)
 
-;; delete trailing whitespace on save
+;; Delete trailing whitespace on save
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 
 ;; yasnippet
@@ -77,3 +77,6 @@
   :config
   (setq yas-snippet-dirs '("~/.emacs.d/snippets"))
   (yas-global-mode 1))
+
+;; Enable save-place mode
+(save-place-mode 1)
