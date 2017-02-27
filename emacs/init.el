@@ -71,6 +71,7 @@
     evil-leader
     evil-magit
     evil-surround
+    evil-visualstar
 
     geiser
     ido-ubiquitous
