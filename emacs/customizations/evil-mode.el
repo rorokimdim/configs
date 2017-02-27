@@ -150,3 +150,6 @@
 
 ;; Use evil-magit
 (require 'evil-magit)
+
+;; Treat emacs symbol as a word to facilitate symbol searching
+(with-eval-after-load 'evil (defalias #'forward-evil-word #'forward-evil-symbol))
