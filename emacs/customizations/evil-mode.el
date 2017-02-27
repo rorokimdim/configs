@@ -34,7 +34,7 @@
   "er" 'eval-region
   "ex" 'my-eval-and-replace
   "b" 'switch-to-buffer
-  "w" 'save-buffer
+  "w" 'persp-switch
   "*" 'projectile-kill-buffers
   "m" 'mc/mark-all-like-this
   "n" 'neotree-toggle
