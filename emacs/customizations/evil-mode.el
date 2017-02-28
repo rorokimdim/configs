@@ -114,7 +114,8 @@
   "eb" 'geiser-eval-buffer
   "ee" 'geiser-eval-last-sexp
   "ef" 'geiser-eval-definition
-  "er" 'geiser-eval-region)
+  "er" 'geiser-eval-region
+  "gm" 'geiser-doc-look-up-manual)
 
 ;; Shortcuts for python mode
 (evil-leader/set-key-for-mode 'python-mode
@@ -131,8 +132,7 @@
   "ef" 'restclient-http-send-current
   "ec" 'restclient-copy-curl-command
   "rn" 'restclient-jump-next
-  "rp" 'restclient-jump-prev
-  )
+  "rp" 'restclient-jump-prev)
 
 ;; Fix shortcuts for neotree
 (evil-define-key 'normal neotree-mode-map (kbd "TAB") 'neotree-enter)
