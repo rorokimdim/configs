@@ -109,6 +109,9 @@
 ;; Loads my custom functions
 (load "my-functions.elc")
 
+;; Vim mode
+(load "evil-mode.elc")
+
 ;; These customizations make it easier for you to navigate files,
 ;; switch buffers, and choose options from the minibuffer.
 (load "navigation.elc")
@@ -128,9 +131,6 @@
 
 ;; Keyboard shortcuts
 (load "keys.elc")
-
-;; Vim mode
-(load "evil-mode.elc")
 
 ;; UI customizations
 (load "ui.elc")

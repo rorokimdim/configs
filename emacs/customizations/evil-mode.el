@@ -37,7 +37,7 @@
   "w" 'persp-switch
   "*" 'projectile-kill-buffers
   "m" 'mc/mark-all-like-this
-  "n" 'neotree-toggle
+  "n" 'my-neotree-projectile-project-dir
   "d" 'ido-dired
   "f" 'ido-find-file
   "s" 'ag
@@ -52,7 +52,7 @@
         (interactive)
         (call-interactively #'projectile-ag)
         (delete-window))
-  "pp" 'projectile-switch-project
+  "pp" 'projectile-persp-switch-project
   "a" 'ace-jump-mode
   "t" 'multi-term
   "x" 'er/expand-region

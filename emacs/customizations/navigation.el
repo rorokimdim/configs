@@ -60,9 +60,6 @@
 ;; Enables projectile globally
 (projectile-mode)
 
-;; Switch neotree's root dir on projectile-switch-project
-(setq projectile-switch-project-action 'neotree-projectile-action)
-
 ;; Perspective mode with projectile
 (persp-mode)
 (require 'persp-projectile)
