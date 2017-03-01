@@ -52,3 +52,11 @@
           ("phi" . 966)
           ("psi" . 968)
           ("omega" . 969))))
+
+(defun my-python-add-breakpoint ()
+  "Adds ipbp trace."
+  (interactive)
+  (forward-char)
+  (newline-and-indent)
+  (insert "import ipdb; ipdb.set_trace()")
+  (highlight-lines-matching-regexp "^[ ]*import ipdb; ipdb.set_trace()"))

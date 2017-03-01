@@ -124,7 +124,8 @@
         (run-python)
         (switch-to-buffer "*Python*"))
   "gd" 'elpy-goto-definition
-  "pd" 'elpy-doc)
+  "pd" 'elpy-doc
+  "pt" 'my-python-add-breakpoint)
 
 ;; Shortcuts for restclient mode
 (evil-leader/set-key-for-mode 'restclient-mode
