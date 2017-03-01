@@ -34,6 +34,21 @@
     (when (string-prefix-p prefix (buffer-name))
       (funcall switcher))))
 
+(defun my-get-sanitized-projectile-buffer-names ()
+  "Gets list of sorted projectile buffer names without the non-file-or-process buffers."
+  (sort (mapcar #'buffer-name (projectile-buffers-with-file-or-process (projectile-project-buffers))) 'string<))
+
+(defun my-projectile-buffer-toggle ()
+  "Toggles projectile buffers."
+  (interactive)
+  (if (string= "-" (projectile-project-name))
+    (call-interactively 'ido-switch-buffer)
+    (let* ((buffer-name-list (my-get-sanitized-projectile-buffer-names))
+           (i (cl-position (buffer-name) buffer-name-list)))
+      (if i
+        (switch-to-buffer (nth (mod (+ i 1) (length buffer-name-list)) buffer-name-list))
+        (call-interactively 'ido-switch-buffer)))))
+
 (defun my-add-pretty-symbols ()
   "Sets my pretty-symbol mappings."
   (setq prettify-symbols-alist
