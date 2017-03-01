@@ -49,7 +49,6 @@
 ;; Shows a list of buffers
 (global-set-key (kbd "C-x C-b") 'ibuffer)
 
-
 ;; Enhances M-x to allow easier execution of commands. Provides
 ;; a filterable list of possible commands in the minibuffer
 ;; http://www.emacswiki.org/emacs/Smex
@@ -59,6 +58,7 @@
 
 ;; Enables projectile globally
 (projectile-mode)
+(setq projectile-switch-project-action 'projectile-dired)
 
 ;; Perspective mode with projectile
 (persp-mode)

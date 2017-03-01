@@ -139,6 +139,7 @@
 ;; machine I'm using.
 (when (file-exists-p "~/.emacs.d/customizations/machine-custom.elc")
   (load "machine-custom.elc"))
+
 ;;
 ;; End of config.
 ;; Feel free to delete the rest if emacs adds it.
