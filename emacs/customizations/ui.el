@@ -46,17 +46,16 @@
                              ((or (eq system-type 'gnu/linux) (eq system-type 'linux)) "xsel -ob")))
 
 (unless window-system
-  (when (getenv "DISPLAY")
-    (defun cut-function (text &optional push)
-      (with-temp-buffer
-        (insert text)
-        (call-process-region (point-min) (point-max) my-copy-command)))
-    (defun paste-function()
-      (let ((output (shell-command-to-string my-paste-command)))
-        (unless (string= (car kill-ring) output)
-          output)))
-    (setq interprogram-cut-function 'cut-function)
-    (setq interprogram-paste-function 'paste-function)))
+  (defun cut-function (text &optional push)
+    (with-temp-buffer
+      (insert text)
+      (call-process-region (point-min) (point-max) my-copy-command)))
+  (defun paste-function()
+    (let ((output (shell-command-to-string my-paste-command)))
+      (unless (string= (car kill-ring) output)
+        output)))
+  (setq interprogram-cut-function 'cut-function)
+  (setq interprogram-paste-function 'paste-function))
 
 ;; No cursor blinking, it's distracting
 (blink-cursor-mode 0)
