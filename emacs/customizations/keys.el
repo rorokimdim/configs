@@ -2,7 +2,9 @@
 (global-set-key [f2] 'my-eval-and-replace)
 
 ;; User F3 to toggle buffers
-(global-set-key [f3] 'next-buffer)
+(global-set-key [f3] (lambda()
+                       (interactive)
+                       (my-buffer-toggle 'next-buffer)))
 
 ;; Use F7 to clear repl buffer
 (global-set-key [f7] 'comint-clear-buffer)

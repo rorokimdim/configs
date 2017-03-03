@@ -39,12 +39,21 @@
   "*" (lambda ()
         (interactive)
         (mapc 'kill-buffer (buffer-list)))
+  "h" (lambda ()
+        (interactive)
+        (my-buffer-toggle 'previous-buffer))
+  "l" (lambda ()
+        (interactive)
+        (my-buffer-toggle 'next-buffer))
   "m" 'mc/mark-all-like-this
   "n" 'neotree-toggle
   "d" 'ido-dired
   "f" 'ido-find-file
   "s" 'ag
-  "t" 'multi-term
+  "t" (lambda ()
+        (interactive)
+        (call-interactively 'term)
+        (call-interactively 'end-of-buffer))
   "x" 'er/expand-region
   "q" 'kill-buffer-and-window
   "o" 'ace-window
@@ -62,7 +71,6 @@
                        cider-test-report-mode
                        cider-repl-mode
                        geiser-doc-mode
-                       term-mode
                        custom-theme-choose-mode)
          do (evil-set-initial-state mode 'emacs))
 
@@ -75,8 +83,8 @@
     ")" 'sp-forward-slurp-sexp
     "(" 'sp-backward-slurp-sexp
     "i" 'sp-down-sexp
-    "h" 'sp-beginning-of-sexp
-    "l" 'sp-end-of-sexp))
+    "j" 'sp-beginning-of-sexp
+    "k" 'sp-end-of-sexp))
 
 ;; Shortcuts for clojure mode
 (evil-leader/set-key-for-mode 'clojure-mode

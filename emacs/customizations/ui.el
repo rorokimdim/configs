@@ -112,8 +112,21 @@
 
 ;; Remove the *Compile-Log* buffer if it's empty
 (add-hook 'emacs-startup-hook
-  (lambda ()
-    (let ((compile-log-buffer (get-buffer "*Compile-Log*")))
-      (when (and compile-log-buffer
-                 (= (buffer-size compile-log-buffer) 0))
+          (lambda ()
+            (let ((compile-log-buffer (get-buffer "*Compile-Log*")))
+              (when (and compile-log-buffer
+                         (= (buffer-size compile-log-buffer) 0))
                 (kill-buffer compile-log-buffer)))))
+
+;;
+;; Configure term
+;;
+; Kill buffer on exit
+(defadvice term-handle-exit
+    (after term-kill-buffer-on-exit activate)
+  (kill-buffer))
+; Default to bash
+(defvar my-term-shell "/bin/bash")
+(defadvice term (before force-bash)
+  (interactive (list my-term-shell)))
+(ad-activate 'term)

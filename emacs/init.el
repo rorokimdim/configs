@@ -75,7 +75,6 @@
     geiser
     ido-ubiquitous
     magit
-    multi-term
     multiple-cursors
     neotree
     org
