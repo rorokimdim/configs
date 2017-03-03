@@ -25,6 +25,7 @@
 
 ;; General shortcuts
 (evil-leader/set-key
+  "," 'ace-jump-mode
   "gs" 'find-function
   "gd" 'evil-goto-definition
   "eb" 'eval-buffer
@@ -43,17 +44,16 @@
   "s" 'ag
   "pb" 'projectile-switch-to-buffer
   "pd" (lambda ()
-        (interactive)
-        (let ((ndir (read-directory-name "Enter directory: ")))
-          (cd ndir)
-          (projectile-switch-project-by-name ndir)))
+         (interactive)
+         (let ((ndir (read-directory-name "Enter directory: ")))
+           (cd ndir)
+           (projectile-switch-project-by-name ndir)))
   "pf" 'projectile-find-file
   "ps" (lambda ()
-        (interactive)
-        (call-interactively #'projectile-ag)
-        (delete-window))
+         (interactive)
+         (call-interactively #'projectile-ag)
+         (delete-window))
   "pp" 'projectile-persp-switch-project
-  "a" 'ace-jump-mode
   "t" 'multi-term
   "x" 'er/expand-region
   "q" 'kill-buffer-and-window
@@ -64,8 +64,7 @@
   "3" 'split-window-right)
 
 ;; Disable evil for modes where it's worse
-(cl-loop for mode in '(
-                       calculator-mode
+(cl-loop for mode in '(calculator-mode
                        cider-docview-mode
                        cider-inspector-mode
                        cider-macroexpansion-mode
@@ -85,10 +84,9 @@
   (evil-leader/set-key-for-mode m
     ")" 'sp-forward-slurp-sexp
     "(" 'sp-backward-slurp-sexp
-    "h" 'sp-previous-sexp
-    "l" 'sp-next-sexp
-    "j" 'sp-down-sexp
-    "k" 'sp-up-sexp))
+    "i" 'sp-down-sexp
+    "h" 'sp-beginning-of-sexp
+    "l" 'sp-end-of-sexp))
 
 ;; Shortcuts for clojure mode
 (evil-leader/set-key-for-mode 'clojure-mode
