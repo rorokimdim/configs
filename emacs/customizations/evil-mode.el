@@ -25,6 +25,7 @@
 
 ;; General shortcuts
 (evil-leader/set-key
+  "<SPC>" 'eval-expression
   "," 'ace-jump-mode
   "gs" 'find-function
   "gd" 'evil-goto-definition

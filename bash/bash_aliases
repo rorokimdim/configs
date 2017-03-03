@@ -1,7 +1,7 @@
 alias rm='rm -i'
 alias mv='mv -i'
 alias cp='cp -i'
-alias e="emacsclient -a '' -t"
+alias e="emacsclient -n"
 
 alias httpserver='python -m SimpleHTTPServer'
 
