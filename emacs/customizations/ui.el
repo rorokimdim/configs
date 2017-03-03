@@ -94,8 +94,7 @@
 
 ;; Set custom faces
 (custom-set-faces
- '(ido-subdir ((t (:foreground "dark cyan"))))
- '(persp-selected-face ((t (:foreground "dark cyan" :weight bold)))))
+ '(ido-subdir ((t (:foreground "dark cyan")))))
 
 ;; Change neotree width
 (custom-set-variables
@@ -107,7 +106,6 @@
   (xterm-mouse-mode t))
 
 ;; Cleanup my mode-line
-(eval-after-load "projectile" '(diminish 'projectile-mode))
 (eval-after-load "undo-tree" '(diminish 'undo-tree-mode))
 (eval-after-load "smartparens" '(diminish 'smartparens-mode))
 (eval-after-load "eldoc" '(diminish 'eldoc-mode))

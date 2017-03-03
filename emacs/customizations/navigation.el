@@ -56,13 +56,8 @@
 (smex-initialize)
 (global-set-key (kbd "M-x") 'smex)
 
-;; Enables projectile globally
-(projectile-mode)
-(setq projectile-switch-project-action 'projectile-dired)
-
-;; Perspective mode with projectile
-(persp-mode)
-(require 'persp-projectile)
-
 ;; Allow dired-find-alternate-file command
 (put 'dired-find-alternate-file 'disabled nil)
+
+;; Every time when the neotree window is opened, let it find current file and jump to node
+(setq neo-smart-open t)

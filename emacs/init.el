@@ -47,7 +47,6 @@
 (defvar ido-use-virtual-buffers nil)
 (defvar inherit-input-method nil)
 (defvar predicate nil)
-(defvar projectile-switch-projection-action nil)
 (defvar smex-save-file nil)
 
 ;; Packages to install
@@ -80,9 +79,6 @@
     multiple-cursors
     neotree
     org
-    projectile
-    persp-projectile
-    perspective
     rainbow-delimiters
     restart-emacs
     restclient

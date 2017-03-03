@@ -36,25 +36,14 @@
   "er" 'eval-region
   "ex" 'my-eval-and-replace
   "b" 'switch-to-buffer
-  "w" 'persp-switch
-  "*" 'projectile-kill-buffers
+  "*" (lambda ()
+        (interactive)
+        (mapc 'kill-buffer (buffer-list)))
   "m" 'mc/mark-all-like-this
-  "n" 'my-neotree-projectile-project-dir
+  "n" 'neotree-toggle
   "d" 'ido-dired
   "f" 'ido-find-file
   "s" 'ag
-  "pb" 'projectile-switch-to-buffer
-  "pd" (lambda ()
-         (interactive)
-         (let ((ndir (read-directory-name "Enter directory: ")))
-           (cd ndir)
-           (projectile-switch-project-by-name ndir)))
-  "pf" 'projectile-find-file
-  "ps" (lambda ()
-         (interactive)
-         (call-interactively #'projectile-ag)
-         (delete-window))
-  "pp" 'projectile-persp-switch-project
   "t" 'multi-term
   "x" 'er/expand-region
   "q" 'kill-buffer-and-window

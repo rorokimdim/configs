@@ -1,8 +1,8 @@
 ;; Use F2 to eval-and-replace lisp expressions
 (global-set-key [f2] 'my-eval-and-replace)
 
-;; User F3 to toggle between project buffers
-(global-set-key [f3] 'my-projectile-buffer-toggle)
+;; User F3 to toggle buffers
+(global-set-key [f3] 'next-buffer)
 
 ;; Use F7 to clear repl buffer
 (global-set-key [f7] 'comint-clear-buffer)
