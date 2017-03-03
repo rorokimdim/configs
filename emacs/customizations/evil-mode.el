@@ -71,6 +71,7 @@
                        cider-test-report-mode
                        cider-repl-mode
                        geiser-doc-mode
+                       image-mode
                        custom-theme-choose-mode)
          do (evil-set-initial-state mode 'emacs))
 
