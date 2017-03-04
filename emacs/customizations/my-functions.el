@@ -25,6 +25,8 @@
   "Toggles buffer using SWITCHER function, skipping over any useless buffers."
   (interactive)
   (funcall switcher)
+  (when (string= "*terminal*" (buffer-name))
+    (call-interactively 'end-of-buffer))
   (dolist (prefix '("*Messages*"
                     "*Compile-Log*"
                     "*nrepl-server"

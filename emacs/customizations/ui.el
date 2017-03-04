@@ -123,15 +123,20 @@
 ;;
 ;; Configure term
 ;;
-; Kill buffer on exit
+
+;; Kill buffer on exit
 (defadvice term-handle-exit
     (after term-kill-buffer-on-exit activate)
   (kill-buffer))
-; Default to bash
+;; Default to bash
 (defvar my-term-shell "/bin/bash")
 (defadvice term (before force-bash)
   (interactive (list my-term-shell)))
 (ad-activate 'term)
+;; Use C-x as command prefix
+(add-hook 'term-mode-hook
+          '(lambda ()
+             (term-set-escape-char ?\C-x)))
 
 ;; Ag
 (setq ag-highlight-search t)
