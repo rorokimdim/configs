@@ -6,6 +6,9 @@
                        (interactive)
                        (my-buffer-toggle 'next-buffer)))
 
+;; Use F4 to change window layout
+(global-set-key [f4] 'rotate-layout)
+
 ;; Use F7 to clear repl buffer
 (global-set-key [f7] 'comint-clear-buffer)
 

@@ -130,3 +130,7 @@
 (defadvice term (before force-bash)
   (interactive (list my-term-shell)))
 (ad-activate 'term)
+
+;; Ag
+(setq ag-highlight-search t)
+(setq ag-reuse-window 't)

@@ -81,6 +81,7 @@
     rainbow-delimiters
     restart-emacs
     restclient
+    rotate
     smartparens
     smex
     tagedit

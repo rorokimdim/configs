@@ -49,7 +49,10 @@
   "n" 'neotree-toggle
   "d" 'ido-dired
   "f" 'ido-find-file
-  "s" 'ag
+  "s" (lambda ()
+        (interactive)
+        (call-interactively 'ag)
+        (delete-window))
   "t" (lambda ()
         (interactive)
         (call-interactively 'term)
