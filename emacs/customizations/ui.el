@@ -109,6 +109,8 @@
 (eval-after-load "undo-tree" '(diminish 'undo-tree-mode))
 (eval-after-load "smartparens" '(diminish 'smartparens-mode))
 (eval-after-load "eldoc" '(diminish 'eldoc-mode))
+(eval-after-load "anzu" '(diminish 'anzu-mode))
+(eval-after-load "magit" '(diminish 'auto-revert-mode))
 
 ;; Remove the *Compile-Log* buffer if it's empty
 (add-hook 'emacs-startup-hook
