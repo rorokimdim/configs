@@ -56,6 +56,7 @@
     ace-window
     ag
     aggressive-indent
+    anzu
 
     cider
     clojure-mode
@@ -71,6 +72,7 @@
     evil-magit
     evil-surround
     evil-visualstar
+    evil-anzu
 
     geiser
     ido-ubiquitous

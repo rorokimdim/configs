@@ -163,3 +163,6 @@
 
 ;; Enable visualstar mode
 (global-evil-visualstar-mode)
+
+;; Enable evil-anzu mode
+(with-eval-after-load 'evil (require 'evil-anzu))

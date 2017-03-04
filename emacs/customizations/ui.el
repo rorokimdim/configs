@@ -134,3 +134,6 @@
 ;; Ag
 (setq ag-highlight-search t)
 (setq ag-reuse-window 't)
+
+;; Anzu mode
+(global-anzu-mode +1)
