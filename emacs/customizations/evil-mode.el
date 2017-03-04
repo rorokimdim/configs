@@ -27,6 +27,10 @@
 (evil-leader/set-key
   "<SPC>" 'eval-expression
   "," 'ace-jump-mode
+  "wh" 'evil-window-left
+  "wl" 'evil-window-right
+  "wk" 'evil-window-up
+  "wj" 'evil-window-down
   "gs" 'find-function
   "gd" 'evil-goto-definition
   "eb" 'eval-buffer
