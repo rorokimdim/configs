@@ -26,8 +26,10 @@
   (interactive)
   (funcall switcher)
   (dolist (prefix '("*Messages*"
+                    "*Compile-Log*"
                     "*nrepl-server"
                     "*racket-command-output*"
+                    "*scratch*"
                     "*Backtrace*"
                     "*Completions*"
                     "*Geiser dbg*"))

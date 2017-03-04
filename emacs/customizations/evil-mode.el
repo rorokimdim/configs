@@ -93,8 +93,8 @@
     ")" 'sp-forward-slurp-sexp
     "(" 'sp-backward-slurp-sexp
     "i" 'sp-down-sexp
-    "j" 'sp-beginning-of-sexp
-    "k" 'sp-end-of-sexp))
+    "k" 'sp-beginning-of-sexp
+    "j" 'sp-end-of-sexp))
 
 ;; Shortcuts for clojure mode
 (evil-leader/set-key-for-mode 'clojure-mode
