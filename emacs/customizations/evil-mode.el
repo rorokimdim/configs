@@ -31,6 +31,7 @@
   "wl" 'evil-window-right
   "wk" 'evil-window-up
   "wj" 'evil-window-down
+  "ww" 'rotate-layout
   "gs" 'find-function
   "gd" 'evil-goto-definition
   "eb" 'eval-buffer
