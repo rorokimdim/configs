@@ -88,6 +88,7 @@
 (dolist (m '(lisp-interaction-mode
              emacs-lisp-mode
              scheme-mode
+             cider-repl-mode
              clojure-mode))
   (evil-leader/set-key-for-mode m
     ")" 'sp-forward-slurp-sexp
@@ -98,17 +99,17 @@
 
 ;; Shortcuts for clojure mode
 (evil-leader/set-key-for-mode 'clojure-mode
-  "cc" 'cider-connect
-  "cj" 'cider-jack-in
-  "cd" 'cider-doc
+  "cc"  'cider-connect
+  "cj"  'cider-jack-in
+  "cd"  'cider-doc
   "cgd" 'cider-grimoire-web
-  "cf" 'cider-format-buffer
-  "r" 'cider-load-buffer-and-switch-to-repl-buffer
-  "eb" 'cider-load-buffer
-  "ee" 'cider-eval-last-sexp
-  "ef" 'cider-eval-defun-at-point
-  "er" 'cider-eval-region
-  "ex" 'cider-eval-last-sexp-and-replace)
+  "cf"  'cider-format-buffer
+  "r"   'cider-load-buffer-and-switch-to-repl-buffer
+  "eb"  'cider-load-buffer
+  "ee"  'cider-eval-last-sexp
+  "ef"  'cider-eval-defun-at-point
+  "er"  'cider-eval-region
+  "ex"  'cider-eval-last-sexp-and-replace)
 
 ;; Shortcuts for scheme mode
 (evil-leader/set-key-for-mode 'scheme-mode

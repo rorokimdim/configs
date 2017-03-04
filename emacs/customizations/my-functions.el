@@ -34,7 +34,7 @@
                     "*Completions*"
                     "*Geiser dbg*"))
     (when (string-prefix-p prefix (buffer-name))
-      (funcall switcher))))
+      (my-buffer-toggle switcher))))
 
 (defun my-add-pretty-symbols ()
   "Sets my pretty-symbol mappings."
