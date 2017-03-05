@@ -85,32 +85,6 @@
                        custom-theme-choose-mode)
          do (evil-set-initial-state mode 'emacs))
 
-;; Shortcuts for lisp modes
-(dolist (m '(lisp-interaction-mode
-             emacs-lisp-mode
-             scheme-mode
-             cider-repl-mode
-             clojure-mode))
-  (evil-leader/set-key-for-mode m
-    ")" 'sp-forward-slurp-sexp
-    "(" 'sp-backward-slurp-sexp
-    "i" 'sp-down-sexp
-    "k" 'sp-beginning-of-sexp
-    "j" 'sp-end-of-sexp))
-
-;; Shortcuts for scheme mode
-(evil-leader/set-key-for-mode 'scheme-mode
-  "r" (lambda ()
-        (interactive)
-        (geiser-mode-switch-to-repl-and-enter)
-        (delete-other-windows)
-        (geiser-repl-clear-buffer))
-  "eb" 'geiser-eval-buffer
-  "ee" 'geiser-eval-last-sexp
-  "ef" 'geiser-eval-definition
-  "er" 'geiser-eval-region
-  "gm" 'geiser-doc-look-up-manual)
-
 ;; Shortcuts for restclient mode
 (evil-leader/set-key-for-mode 'restclient-mode
   "er" 'restclient-http-send-current-raw

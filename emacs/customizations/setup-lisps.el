@@ -14,9 +14,6 @@
   (add-hook h 'prettify-symbols-mode)
   (add-hook h 'my-add-pretty-symbols))
 
-;; Setup geiser
-(setq geiser-active-implementations '(racket))
-
 ;; Get rid of highlight color in smartparens
 (setq sp-highlight-pair-overlay nil)
 (setq sp-highlight-wrap-overlay nil)
@@ -29,3 +26,17 @@
 
 ;; Remove useless comment from scratch buffer
 (setq initial-scratch-message "")
+
+;; Shortcuts for selected lisp modes
+(require 'evil-leader)
+(dolist (m '(lisp-interaction-mode
+             emacs-lisp-mode
+             scheme-mode
+             cider-repl-mode
+             clojure-mode))
+  (evil-leader/set-key-for-mode m
+    ")" 'sp-forward-slurp-sexp
+    "(" 'sp-backward-slurp-sexp
+    "i" 'sp-down-sexp
+    "k" 'sp-beginning-of-sexp
+    "j" 'sp-end-of-sexp))

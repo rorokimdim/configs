@@ -123,10 +123,11 @@
 ;; Hard-to-categorize customizations
 (load "misc.elc")
 
-;; For editing lisps
-(load "lisp-editing.elc")
+;; For common lispy things
+(load "setup-lisps.elc")
 
 ;; Language-specific setups
+(load "setup-scheme.elc")
 (load "setup-clojure.elc")
 (load "setup-python.elc")
 
