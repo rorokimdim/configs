@@ -53,6 +53,7 @@
 (defvar my-packages
   '(
     ace-jump-mode
+    ace-link
     ace-window
     ag
     aggressive-indent
@@ -134,6 +135,9 @@
 
 ;; UI customizations
 (load "ui.elc")
+
+;; web browsing customizations
+(load "web-browsing.elc")
 
 ;; Load any custom configs that is specific to the
 ;; machine I'm using.

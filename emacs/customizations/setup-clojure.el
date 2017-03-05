@@ -74,9 +74,17 @@
   (interactive)
   (cider-repl-set-ns "user"))
 
-(eval-after-load 'cider
-  '(progn
-     (define-key clojure-mode-map (kbd "C-c C-v") 'cider-start-http-server)
-     (define-key clojure-mode-map (kbd "C-M-r") 'cider-refresh)
-     (define-key clojure-mode-map (kbd "C-c u") 'cider-user-ns)
-     (define-key cider-mode-map (kbd "C-c u") 'cider-user-ns)))
+;; Shortcuts for clojure mode
+(require 'evil-leader)
+(evil-leader/set-key-for-mode 'clojure-mode
+  "cc"  'cider-connect
+  "cj"  'cider-jack-in
+  "cd"  'cider-doc
+  "cgd" 'cider-grimoire-web
+  "cf"  'cider-format-buffer
+  "r"   'cider-load-buffer-and-switch-to-repl-buffer
+  "eb"  'cider-load-buffer
+  "ee"  'cider-eval-last-sexp
+  "ef"  'cider-eval-defun-at-point
+  "er"  'cider-eval-region
+  "ex"  'cider-eval-last-sexp-and-replace)

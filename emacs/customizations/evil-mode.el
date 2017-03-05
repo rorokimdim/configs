@@ -98,20 +98,6 @@
     "k" 'sp-beginning-of-sexp
     "j" 'sp-end-of-sexp))
 
-;; Shortcuts for clojure mode
-(evil-leader/set-key-for-mode 'clojure-mode
-  "cc"  'cider-connect
-  "cj"  'cider-jack-in
-  "cd"  'cider-doc
-  "cgd" 'cider-grimoire-web
-  "cf"  'cider-format-buffer
-  "r"   'cider-load-buffer-and-switch-to-repl-buffer
-  "eb"  'cider-load-buffer
-  "ee"  'cider-eval-last-sexp
-  "ef"  'cider-eval-defun-at-point
-  "er"  'cider-eval-region
-  "ex"  'cider-eval-last-sexp-and-replace)
-
 ;; Shortcuts for scheme mode
 (evil-leader/set-key-for-mode 'scheme-mode
   "r" (lambda ()
@@ -124,16 +110,6 @@
   "ef" 'geiser-eval-definition
   "er" 'geiser-eval-region
   "gm" 'geiser-doc-look-up-manual)
-
-;; Shortcuts for python mode
-(evil-leader/set-key-for-mode 'python-mode
-  "r" (lambda ()
-        (interactive)
-        (run-python)
-        (switch-to-buffer "*Python*"))
-  "gd" 'elpy-goto-definition
-  "pd" 'elpy-doc
-  "pt" 'my-python-add-breakpoint)
 
 ;; Shortcuts for restclient mode
 (evil-leader/set-key-for-mode 'restclient-mode

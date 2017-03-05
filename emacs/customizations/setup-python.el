@@ -9,5 +9,8 @@
     "r" (lambda ()
           (interactive)
           (run-python)
-          (switch-to-buffer "*Python*")))
+          (switch-to-buffer "*Python*"))
+    "gd" 'elpy-goto-definition
+    "pd" 'elpy-doc
+    "pt" 'my-python-add-breakpoint)
   (elpy-enable))
