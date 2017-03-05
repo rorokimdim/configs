@@ -85,22 +85,6 @@
                        custom-theme-choose-mode)
          do (evil-set-initial-state mode 'emacs))
 
-;; Shortcuts for restclient mode
-(evil-leader/set-key-for-mode 'restclient-mode
-  "er" 'restclient-http-send-current-raw
-  "ef" 'restclient-http-send-current
-  "ec" 'restclient-copy-curl-command
-  "rn" 'restclient-jump-next
-  "rp" 'restclient-jump-prev)
-
-;; Fix shortcuts for neotree
-(evil-define-key 'normal neotree-mode-map (kbd "TAB") 'neotree-enter)
-(evil-define-key 'normal neotree-mode-map (kbd "SPC") 'neotree-enter)
-(evil-define-key 'normal neotree-mode-map (kbd "RET") 'neotree-enter)
-(evil-define-key 'normal neotree-mode-map (kbd "c") 'neotree-change-root)
-(evil-define-key 'normal neotree-mode-map (kbd "d") 'neotree-dir)
-(evil-define-key 'normal neotree-mode-map (kbd "q") 'neotree-hide)
-
 ;; Use Ctrl-e to go to end of line, like in emacs
 (define-key evil-normal-state-map "\C-e" 'evil-end-of-line)
 (define-key evil-insert-state-map "\C-e" 'end-of-line)

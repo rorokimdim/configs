@@ -126,6 +126,12 @@
 ;; For common lispy things
 (load "setup-lisps.elc")
 
+;; Neotree setup
+(load "setup-neotree.el")
+
+;; Restclient mode setup
+(load "setup-restclient.elc")
+
 ;; Language-specific setups
 (load "setup-scheme.elc")
 (load "setup-clojure.elc")

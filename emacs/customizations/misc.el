@@ -11,9 +11,6 @@
 ;; Go straight to scratch buffer on startup
 (setq inhibit-startup-message t)
 
-;; Use restclient mode for .rest files
-(add-to-list 'auto-mode-alist '("\\.rest\\'" . restclient-mode))
-
 ;; Get rid of messsage buffer. I seldom need it.
 (setq-default message-log-max nil)
 (kill-buffer "*Messages*")
