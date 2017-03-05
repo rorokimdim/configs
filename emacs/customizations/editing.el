@@ -47,9 +47,6 @@
                                                "backups"))))
 (setq auto-save-default nil)
 
-;; Enable rainbows
-(add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
-
 ;; Use 2 spaces for tabs
 (defun die-tabs ()
   (interactive)

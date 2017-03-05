@@ -82,6 +82,7 @@
     neotree
     org
     rainbow-delimiters
+    rainbow-blocks
     restart-emacs
     restclient
     rotate
