@@ -94,6 +94,7 @@
 
 ;; Set custom faces
 (custom-set-faces
+ '(hl-sexp-face ((t (:background "Black"))))
  '(ido-subdir ((t (:foreground "dark cyan")))))
 
 ;; Change neotree width

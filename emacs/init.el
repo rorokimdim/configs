@@ -75,6 +75,7 @@
     evil-anzu
 
     geiser
+    hl-sexp
     ido-ubiquitous
     magit
     multiple-cursors
@@ -140,7 +141,7 @@
 
 (require 'server)
 (unless (server-running-p)
-    (server-start))
+  (server-start))
 ;;
 ;; End of config.
 ;; Feel free to delete the rest if emacs adds it.
