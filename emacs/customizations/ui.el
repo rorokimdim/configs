@@ -96,12 +96,15 @@
 (custom-set-faces
  '(hl-sexp-face ((t (:background "Black"))))
  '(ido-subdir ((t (:foreground "dark cyan"))))
- '(rainbow-delimiters-depth-2-face ((t (:foreground "dark magenta"))))
- '(rainbow-delimiters-depth-3-face ((t (:foreground "medium purple"))))
- '(rainbow-delimiters-depth-4-face ((t (:foreground "DarkGoldenrod1"))))
- '(rainbow-delimiters-depth-5-face ((t (:foreground "gray100"))))
- '(rainbow-delimiters-depth-6-face ((t (:foreground "pink3"))))
- '(rainbow-delimiters-depth-9-face ((t (:foreground "orange4")))))
+ '(rainbow-delimiters-depth-1-face ((t (:foreground "#78c5d6"))))
+ '(rainbow-delimiters-depth-2-face ((t (:foreground "#bf62a6"))))
+ '(rainbow-delimiters-depth-3-face ((t (:foreground "#459ba8"))))
+ '(rainbow-delimiters-depth-4-face ((t (:foreground "#e868a2"))))
+ '(rainbow-delimiters-depth-5-face ((t (:foreground "#79c267"))))
+ '(rainbow-delimiters-depth-6-face ((t (:foreground "#f28c33"))))
+ '(rainbow-delimiters-depth-7-face ((t (:foreground "#c5d647"))))
+ '(rainbow-delimiters-depth-8-face ((t (:foreground "#f5d63d"))))
+ '(rainbow-delimiters-depth-9-face ((t (:foreground "#78c5d6")))))
 
 ;; Change neotree width
 (custom-set-variables
