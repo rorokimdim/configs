@@ -94,8 +94,9 @@
 
 ;; Set custom faces
 (custom-set-faces
- '(hl-sexp-face ((t (:background "Black"))))
  '(ido-subdir ((t (:foreground "dark cyan"))))
+ '(sp-show-pair-enclosing ((t (:underline t))))
+ '(sp-show-pair-match-face ((t (:underline t))))
  '(rainbow-delimiters-depth-1-face ((t (:foreground "#78c5d6"))))
  '(rainbow-delimiters-depth-2-face ((t (:foreground "#bf62a6"))))
  '(rainbow-delimiters-depth-3-face ((t (:foreground "#459ba8"))))
@@ -108,6 +109,7 @@
 
 ;; Change neotree width
 (custom-set-variables
+   '(sp-show-pair-from-inside t)
    '(neo-window-width 50))
 
 ;; Enable mouse support on terminal

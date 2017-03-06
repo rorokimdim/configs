@@ -76,7 +76,7 @@
     evil-anzu
 
     geiser
-    hl-sexp
+    highlight-parentheses
     ido-ubiquitous
     magit
     multiple-cursors

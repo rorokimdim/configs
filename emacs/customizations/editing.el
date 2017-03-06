@@ -1,12 +1,5 @@
 ;; Customizations relating to editing a buffer.
 
-;; aggressive-indent-mode hooks
-(dolist (h '(emacs-lisp-mode-hook
-             clojure-mode-hook
-             lisp-interaction-mode-hook
-             scheme-mode-hook))
-  (add-hook h #'aggressive-indent-mode))
-
 ;; Key binding to use "hippie expand" for text autocompletion
 ;; http://www.emacswiki.org/emacs/HippieExpand
 (global-set-key (kbd "M-/") 'hippie-expand)
@@ -18,9 +11,6 @@
         try-expand-dabbrev-from-kill
         try-complete-lisp-symbol-partially
         try-complete-lisp-symbol))
-
-;; Highlights matching parenthesis
-(show-paren-mode 1)
 
 ;; Interactive search key bindings. By default, C-s runs
 ;; isearch-forward, so this swaps the bindings.

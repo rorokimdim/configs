@@ -9,15 +9,12 @@
              geiser-repl-mode-hook
              cider-repl-mode-hook))
   (add-hook h #'smartparens-mode)
+  (add-hook h 'show-smartparens-mode)
+  (add-hook h 'highlight-parentheses-mode)
   (add-hook h 'rainbow-delimiters-mode)
   (add-hook h 'turn-on-eldoc-mode)
   (add-hook h 'prettify-symbols-mode)
   (add-hook h 'my-add-pretty-symbols))
-
-;; Get rid of highlight color in smartparens
-(setq sp-highlight-pair-overlay nil)
-(setq sp-highlight-wrap-overlay nil)
-(setq sp-highlight-wrap-tag-overlay nil)
 
 ;; Prevent smarparens from autoclosing single quotes
 (require 'smartparens)
@@ -26,6 +23,13 @@
 
 ;; Remove useless comment from scratch buffer
 (setq initial-scratch-message "")
+
+;; aggressive-indent-mode hooks
+(dolist (h '(emacs-lisp-mode-hook
+             clojure-mode-hook
+             lisp-interaction-mode-hook
+             scheme-mode-hook))
+  (add-hook h #'aggressive-indent-mode))
 
 ;; Shortcuts for selected lisp modes
 (require 'evil-leader)
