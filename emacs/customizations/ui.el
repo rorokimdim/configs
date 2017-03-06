@@ -95,6 +95,7 @@
 ;; Set custom faces
 (custom-set-faces
  '(ido-subdir ((t (:foreground "dark cyan"))))
+ '(hl-paren-face ((t (:weight ultra-bold))) t)
  '(sp-show-pair-enclosing ((t (:underline t))))
  '(sp-show-pair-match-face ((t (:underline t))))
  '(rainbow-delimiters-depth-1-face ((t (:foreground "#78c5d6"))))
@@ -109,6 +110,7 @@
 
 ;; Change neotree width
 (custom-set-variables
+   '(hl-paren-colors (quote ("firebrick1")))
    '(sp-show-pair-from-inside t)
    '(neo-window-width 50))
 
