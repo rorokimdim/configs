@@ -21,6 +21,11 @@
 (sp-with-modes sp-lisp-modes
   (sp-local-pair "'" nil :actions nil))
 
+;; Get rid of highlight color in smartparens
+(setq sp-highlight-pair-overlay nil
+      sp-highlight-wrap-overlay nil
+      sp-highlight-wrap-tag-overlay nil)
+
 ;; Remove useless comment from scratch buffer
 (setq initial-scratch-message "")
 
