@@ -75,6 +75,7 @@
     evil-surround
     evil-visualstar
     evil-anzu
+    vi-tilde-fringe
 
     geiser
     highlight-parentheses

@@ -165,3 +165,6 @@
 (require 'which-key)
 (which-key-mode)
 (which-key-setup-minibuffer)
+
+;; Enable vi-tilde-fringe-mode for all programming modes
+(add-hook 'prog-mode-hook 'vi-tilde-fringe-mode)
