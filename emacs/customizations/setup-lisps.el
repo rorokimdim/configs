@@ -10,7 +10,6 @@
              cider-repl-mode-hook))
   (add-hook h #'smartparens-mode)
   (add-hook h 'show-smartparens-mode)
-  (add-hook h 'highlight-parentheses-mode)
   (add-hook h 'rainbow-delimiters-mode)
   (add-hook h 'turn-on-eldoc-mode)
   (add-hook h 'prettify-symbols-mode)

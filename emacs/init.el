@@ -77,6 +77,7 @@
 
     geiser
     highlight-parentheses
+    hl-sexp
     ido-ubiquitous
     magit
     multiple-cursors
