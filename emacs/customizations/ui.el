@@ -95,6 +95,8 @@
 ;; Set custom faces
 (custom-set-faces
  '(ido-subdir ((t (:foreground "dark cyan"))))
+ '(highlight-indentation-face ((t (:inherit nil))))
+ '(hl-line ((t (:background "Black"))))
  '(hl-paren-face ((t (:weight ultra-bold))) t)
  '(sp-show-pair-enclosing ((t (:underline t))))
  '(sp-show-pair-match-face ((t (:underline t))))
