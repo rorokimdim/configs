@@ -156,3 +156,8 @@
 
 ;; Anzu mode
 (global-anzu-mode +1)
+
+;; Setup which-key mode
+(require 'which-key)
+(which-key-mode)
+(which-key-setup-minibuffer)

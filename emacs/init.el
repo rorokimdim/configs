@@ -69,6 +69,7 @@
     expand-region
 
     evil
+    evil-escape
     evil-leader
     evil-magit
     evil-surround
@@ -91,6 +92,7 @@
     smartparens
     smex
     tagedit
+    which-key
     yasnippet
 
     use-package))
