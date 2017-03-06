@@ -125,6 +125,8 @@
 (eval-after-load "eldoc" '(diminish 'eldoc-mode))
 (eval-after-load "anzu" '(diminish 'anzu-mode))
 (eval-after-load "magit" '(diminish 'auto-revert-mode))
+(eval-after-load "which-key" '(diminish 'which-key-mode))
+(eval-after-load "highlight-parentheses" '(diminish 'highlight-parentheses-mode))
 
 ;; Remove the *Compile-Log* buffer if it's empty
 (add-hook 'emacs-startup-hook
