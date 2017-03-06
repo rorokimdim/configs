@@ -110,6 +110,7 @@
 
 ;; Change neotree width
 (custom-set-variables
+   '(size-indication-mode t)
    '(hl-paren-colors (quote ("firebrick1")))
    '(sp-show-pair-from-inside t)
    '(neo-window-width 50))
@@ -126,6 +127,7 @@
 (eval-after-load "anzu" '(diminish 'anzu-mode))
 (eval-after-load "magit" '(diminish 'auto-revert-mode))
 (eval-after-load "which-key" '(diminish 'which-key-mode))
+(eval-after-load "vi-tilde-fringe" '(diminish 'vi-tilde-fringe-mode))
 (eval-after-load "highlight-parentheses" '(diminish 'highlight-parentheses-mode))
 
 ;; Remove the *Compile-Log* buffer if it's empty
