@@ -64,3 +64,12 @@
   (newline-and-indent)
   (insert "import ipdb; ipdb.set_trace()")
   (highlight-lines-matching-regexp "^[ ]*import ipdb; ipdb.set_trace()"))
+
+(defvar my-workspace-directory
+  "~/workspace/"
+  "Path to my workspace directory")
+(defun my-find-file ()
+  "Defines a custom find-file function."
+  (interactive)
+  (cd (read-directory-name "Directory: " my-workspace-directory))
+  (call-interactively 'find-file-in-repository))

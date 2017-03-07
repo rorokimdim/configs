@@ -54,11 +54,7 @@
   "m" 'mc/mark-all-like-this
   "n" 'neotree-toggle
   "d" 'ido-dired
-  "f" 'ido-find-file
-  "pf" (lambda ()
-         (interactive)
-         (call-interactively 'cd)
-         (call-interactively 'find-file-in-repository))
+  "f" 'my-find-file
   "s" (lambda ()
         (interactive)
         (call-interactively 'ag)
