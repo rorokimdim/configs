@@ -55,6 +55,10 @@
   "n" 'neotree-toggle
   "d" 'ido-dired
   "f" 'ido-find-file
+  "pf" (lambda ()
+         (interactive)
+         (call-interactively 'cd)
+         (call-interactively 'find-file-in-repository))
   "s" (lambda ()
         (interactive)
         (call-interactively 'ag)
@@ -73,13 +77,6 @@
 
 ;; Disable evil for modes where it's worse
 (cl-loop for mode in '(calculator-mode
-                       cider-docview-mode
-                       cider-inspector-mode
-                       cider-macroexpansion-mode
-                       cider-stacktrace-mode
-                       cider-test-report-mode
-                       cider-repl-mode
-                       geiser-doc-mode
                        term-mode
                        image-mode
                        custom-theme-choose-mode)

@@ -77,6 +77,7 @@
     evil-anzu
     vi-tilde-fringe
 
+    find-file-in-repository
     geiser
     highlight-parentheses
     hl-sexp

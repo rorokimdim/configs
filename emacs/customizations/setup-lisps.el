@@ -47,5 +47,6 @@
     ")" 'sp-forward-slurp-sexp
     "(" 'sp-backward-slurp-sexp
     "i" 'sp-down-sexp
+    "I" 'sp-backward-up-sexp
     "k" 'sp-beginning-of-sexp
     "j" 'sp-end-of-sexp))
