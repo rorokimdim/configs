@@ -71,5 +71,5 @@
 (defun my-find-file ()
   "Defines a custom find-file function."
   (interactive)
-  (cd (read-directory-name "Directory: " my-workspace-directory))
+  (cd (read-directory-name "Directory: " (or (ffip-project-root) my-workspace-directory)))
   (call-interactively 'find-file-in-repository))
