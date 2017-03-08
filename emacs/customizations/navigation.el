@@ -58,3 +58,20 @@
 
 ;; Allow dired-find-alternate-file command
 (put 'dired-find-alternate-file 'disabled nil)
+
+;; Use ido-vertical
+(require 'ido-vertical-mode)
+(ido-vertical-mode 1)
+(setq ido-use-faces t)
+(setq ido-vertical-show-count t)
+(setq ido-vertical-define-keys 'C-n-C-p-up-down-left-right)
+(set-face-attribute 'ido-vertical-first-match-face nil
+                    :background "#444444"
+                    :underline nil)
+(set-face-attribute 'ido-vertical-only-match-face nil
+                    :background "#444444"
+                    :foreground "white"
+                    :underline nil)
+(set-face-attribute 'ido-vertical-match-face nil
+                    :foreground "#e37969"
+                    :underline nil)

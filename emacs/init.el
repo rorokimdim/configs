@@ -82,6 +82,7 @@
     highlight-parentheses
     hl-sexp
     ido-ubiquitous
+    ido-vertical-mode
     magit
     multiple-cursors
     neotree
