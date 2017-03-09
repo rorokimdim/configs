@@ -48,16 +48,16 @@
 ;; where to store the cider history.
 (setq cider-repl-history-file "~/.emacs.d/cider-history")
 
-;; wrap when navigating history.
+;; Wrap when navigating history.
 (setq cider-repl-wrap-history t)
 
-;; use clojure mode for other extensions
+;; Use clojure mode for other extensions
 (add-to-list 'auto-mode-alist '("\\.edn$" . clojure-mode))
 (add-to-list 'auto-mode-alist '("\\.boot$" . clojure-mode))
 (add-to-list 'auto-mode-alist '("\\.cljs.*$" . clojure-mode))
 (add-to-list 'auto-mode-alist '("lein-env" . enh-ruby-mode))
 
-;; setup some keys
+;; Setup some keys
 (defun cider-start-http-server ()
   (interactive)
   (cider-load-current-buffer)
@@ -73,6 +73,13 @@
 (defun cider-user-ns ()
   (interactive)
   (cider-repl-set-ns "user"))
+
+;; Use clj-refactor
+(require 'clj-refactor)
+(add-hook 'clojure-mode-hook (lambda ()
+                               (clj-refactor-mode 1)
+                               (yas-minor-mode 1)
+                               (cljr-add-keybindings-with-prefix "C-c C-m")))
 
 ;; Shortcuts for clojure mode
 (require 'evil-leader)

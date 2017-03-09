@@ -60,9 +60,11 @@
     anzu
 
     cider
+    clj-refactor
     clojure-mode
     clojure-mode-extra-font-locking
     clojure-snippets
+    datomic-snippets
 
     diminish
     elpy
@@ -87,8 +89,8 @@
     multiple-cursors
     neotree
     org
-    rainbow-delimiters
     rainbow-blocks
+    rainbow-delimiters
     restart-emacs
     restclient
     rotate
@@ -145,6 +147,9 @@
 
 ;; Keyboard shortcuts
 (load "keys.elc")
+
+;; Setup encryption/decryption
+(load "setup-crypto.elc")
 
 ;; UI customizations
 (load "ui.elc")

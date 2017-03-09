@@ -19,7 +19,8 @@
 ;; Prevent smarparens from autoclosing single quotes
 (require 'smartparens)
 (sp-with-modes sp-lisp-modes
-  (sp-local-pair "'" nil :actions nil))
+  (sp-local-pair "'" nil :actions nil)
+  (sp-local-pair "`" nil :actions nil))
 
 ;; Get rid of highlight color in smartparens
 (setq sp-highlight-pair-overlay nil
