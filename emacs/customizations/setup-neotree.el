@@ -9,3 +9,5 @@
 (evil-define-key 'normal neotree-mode-map (kbd "c") 'neotree-change-root)
 (evil-define-key 'normal neotree-mode-map (kbd "d") 'neotree-dir)
 (evil-define-key 'normal neotree-mode-map (kbd "q") 'neotree-hide)
+(evil-define-key 'normal neotree-mode-map (kbd "|") 'neotree-enter-vertical-split)
+(evil-define-key 'normal neotree-mode-map (kbd "-") 'neotree-enter-horizontal-split)

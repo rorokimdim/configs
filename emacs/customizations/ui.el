@@ -100,6 +100,7 @@
  '(hl-paren-face ((t (:weight ultra-bold))) t)
  '(sp-show-pair-enclosing ((t (:underline t))))
  '(sp-show-pair-match-face ((t (:underline t))))
+ '(sp-show-pair-mismatch-face ((t (:strike-through t))))
  '(rainbow-delimiters-depth-1-face ((t (:foreground "#78c5d6"))))
  '(rainbow-delimiters-depth-2-face ((t (:foreground "#bf62a6"))))
  '(rainbow-delimiters-depth-3-face ((t (:foreground "#459ba8"))))
