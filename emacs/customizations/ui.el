@@ -173,3 +173,6 @@
 
 ;; Enable vi-tilde-fringe-mode for all programming modes
 (add-hook 'prog-mode-hook 'vi-tilde-fringe-mode)
+
+;; Enable hl-line mode
+(global-hl-line-mode 1)
