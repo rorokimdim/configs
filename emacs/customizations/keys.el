@@ -19,7 +19,7 @@
 (global-set-key [f9] 'kill-buffer-and-window)
 
 ;; Use F11 for opening list of recent files
-(global-set-key [f11] 'recentf-open-files)
+(global-set-key [f11] 'helm-recentf)
 
 ;; Use F12 for dired
 (global-set-key [f12] 'dired)

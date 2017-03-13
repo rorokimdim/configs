@@ -81,6 +81,7 @@
 
     find-file-in-repository
     geiser
+    helm
     highlight-parentheses
     hl-sexp
     ido-ubiquitous
@@ -96,6 +97,7 @@
     rotate
     smartparens
     smex
+    sqlup-mode
     tagedit
     which-key
     yasnippet
@@ -144,6 +146,7 @@
 (load "setup-scheme.elc")
 (load "setup-clojure.elc")
 (load "setup-python.elc")
+(load "setup-sql.elc")
 
 ;; Keyboard shortcuts
 (load "keys.elc")
