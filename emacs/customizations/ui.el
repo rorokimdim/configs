@@ -95,6 +95,8 @@
 ;; Set custom faces
 (custom-set-faces
  '(ido-subdir ((t (:foreground "dark cyan"))))
+ '(helm-selection ((t (:background "black" :foreground "gray100"))))
+ '(helm-source-header ((t (:weight bold :height 1.3 :family "Sans Serif"))))
  '(highlight-indentation-face ((t (:inherit nil))))
  '(hl-line ((t (:background "Black"))))
  '(hl-paren-face ((t (:weight ultra-bold))) t)

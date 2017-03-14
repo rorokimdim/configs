@@ -32,6 +32,7 @@
                     "*nrepl-server"
                     "*racket-command-output*"
                     "*scratch*"
+                    "*helm"
                     "*Backtrace*"
                     "*Completions*"
                     "*Geiser dbg*"))

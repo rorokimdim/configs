@@ -16,8 +16,9 @@
 ;; recently edited files when you first start emacs
 (setq recentf-save-file (concat user-emacs-directory ".recentf"))
 (require 'recentf)
+(setq recentf-max-saved-items 200
+      recentf-max-menu-items 40)
 (recentf-mode 1)
-(setq recentf-max-menu-items 40)
 
 
 ;; ido-mode allows you to more easily navigate choices. For example,
