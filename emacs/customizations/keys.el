@@ -1,3 +1,20 @@
+;;
+;; Common global shortcuts for both evil/emacs modes
+;;
+
+;; Term
+(global-set-key (kbd "C-x t") 'helm-mt)
+(global-set-key [f6] 'helm-mt)
+
+;; Find file
+(global-set-key (kbd "C-x f") 'my-find-file)
+(global-set-key (kbd "C-x C-f") 'my-find-file)
+
+;; Recent files
+(global-set-key (kbd "C-x C-r") 'helm-recentf)
+(global-set-key (kbd "s-r") 'helm-recentf)
+(global-set-key [f11] 'helm-recentf)
+
 ;; Use F2 to eval-and-replace lisp expressions
 (global-set-key [f2] 'my-eval-and-replace)
 
@@ -17,9 +34,3 @@
 
 ;; Use F9 to kill current buffer
 (global-set-key [f9] 'kill-buffer-and-window)
-
-;; Use F11 for opening list of recent files
-(global-set-key [f11] 'helm-recentf)
-
-;; Use F12 for dired
-(global-set-key [f12] 'dired)

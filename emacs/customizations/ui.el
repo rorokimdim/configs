@@ -178,3 +178,7 @@
 
 ;; Enable hl-line mode
 (global-hl-line-mode 1)
+
+;; Disable hl-line mode for terms
+(add-hook 'eshell-mode-hook (lambda () (setq-local global-hl-line-mode nil)))
+(add-hook 'term-mode-hook (lambda () (setq-local global-hl-line-mode nil)))

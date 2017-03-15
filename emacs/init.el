@@ -81,7 +81,12 @@
 
     find-file-in-repository
     geiser
+
     helm
+
+    multi-term
+    helm-mt
+
     highlight-parentheses
     hl-sexp
     ido-ubiquitous

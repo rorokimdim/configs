@@ -59,17 +59,17 @@
         (interactive)
         (call-interactively 'ag)
         (delete-window))
-  "t" (lambda ()
-        (interactive)
-        (call-interactively 'term)
-        (call-interactively 'end-of-buffer))
+  "t" 'helm-mt
   "x" 'er/expand-region
   "q" 'kill-buffer-and-window
   "o" 'ace-window
   "0" 'delete-window
   "1" 'delete-other-windows
-  "2" 'split-window-below
-  "3" 'split-window-right)
+  "2" 'helm-google-suggest
+  "4" 'helm-recentf
+  "5" 'find-file-in-repository
+  "-" 'split-window-below
+  "|" 'split-window-right)
 
 ;; Disable evil for modes where it's worse
 (cl-loop for mode in '(calculator-mode
