@@ -1,0 +1,25 @@
+[alias]
+    change = !git checkout -b "review/$(uuidgen)"
+    submit = !git push -u origin $(git rev-parse --abbrev-ref HEAD)
+    s = status
+    d = diff
+    co = checkout
+    l = log --name-status
+    ll = !git log --name-status --color | less +'/^commit'
+
+    # View diff of the last commit
+    last = diff HEAD^ HEAD
+
+    # git tree
+    lol = log --no-merges --pretty --oneline --decorate --graph --all
+
+    # My commits
+    mine = log --no-merges --oneline --since='one week ago' --author=ashrestha
+
+    # Short summary of my commits over the last week
+    weekly = log --no-merges --oneline --since='one week ago' --author=ashrestha
+[core]
+	editor = vim
+	excludesfile = ~/.gitignore
+[push]
+	default = simple
