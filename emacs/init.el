@@ -162,6 +162,9 @@
 ;; UI customizations
 (load "ui.elc")
 
+;; Setup term
+(load "setup-term.elc")
+
 ;; web browsing customizations
 (load "web-browsing.elc")
 
