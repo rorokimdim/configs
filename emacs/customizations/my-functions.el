@@ -73,3 +73,9 @@
   (interactive)
   (cd (read-directory-name "Directory: " (or (ffip-project-root) my-workspace-directory)))
   (call-interactively 'find-file-in-repository))
+
+(defun my-open-term ()
+  "Opens term in a solo window."
+  (interactive)
+  (call-interactively 'helm-mt)
+  (delete-other-windows))

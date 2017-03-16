@@ -59,7 +59,7 @@
         (interactive)
         (call-interactively 'ag)
         (delete-window))
-  "t" 'helm-mt
+  "t" 'my-open-term
   "x" 'er/expand-region
   "q" 'kill-buffer-and-window
   "o" 'ace-window
@@ -95,3 +95,8 @@
 
 ;; Enable evil-anzu mode
 (with-eval-after-load 'evil (require 'evil-anzu))
+
+;; Prevent emacs from quitting on :q or :wq
+(defun my-evil-quit (old-fun &rest args)
+  (call-interactively 'kill-buffer-and-window))
+(advice-add #'evil-quit :around #'my-evil-quit)
