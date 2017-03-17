@@ -14,3 +14,10 @@
 ;; Get rid of messsage buffer. I seldom need it.
 (setq-default message-log-max nil)
 (kill-buffer "*Messages*")
+
+;; List of times to show in helm-world-time
+(setq display-time-world-list '(("PST8PDT" "San Francisco")
+                                ("America/Chicago" "Chicago")
+                                ("America/New_York" "New York")
+                                ("Asia/Kathmandu" "Asia/Kathmandu")
+                                ("UTC" "UTC")))

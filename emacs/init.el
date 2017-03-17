@@ -105,6 +105,7 @@
     sqlup-mode
     tagedit
     which-key
+    world-time-mode
     yasnippet
 
     use-package))
