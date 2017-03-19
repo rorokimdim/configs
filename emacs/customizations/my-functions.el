@@ -24,9 +24,14 @@
 (defun my-buffer-toggle (switcher)
   "Toggles buffer using SWITCHER function, skipping over any useless buffers."
   (interactive)
+
   (funcall switcher)
+  (when (string-prefix-p "*terminal" (buffer-name))
+    (call-interactively 'end-of-buffer))
+
   (dolist (prefix '("*Messages*"
                     "*Compile-Log*"
+                    "*magit"
                     "*nrepl-server"
                     "*racket-command-output*"
                     "*scratch*"
@@ -37,6 +42,7 @@
                     "*Geiser dbg*"))
     (when (string-prefix-p prefix (buffer-name))
       (my-buffer-toggle switcher))))
+
 
 (defun my-add-pretty-symbols ()
   "Sets my pretty-symbol mappings."
@@ -78,4 +84,5 @@
   "Opens term in a solo window."
   (interactive)
   (call-interactively 'helm-mt)
+  (call-interactively 'end-of-buffer)
   (delete-other-windows))

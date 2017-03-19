@@ -69,8 +69,22 @@
   "2" 'helm-google-suggest
   "4" 'helm-recentf
   "5" 'find-file-in-repository
-  "-" 'split-window-below
-  "|" 'split-window-right)
+  "\\" (lambda ()
+       (interactive)
+       (call-interactively 'split-window-right)
+       (other-window 1 nil)
+       (switch-to-buffer "*scratch*")
+       (call-interactively 'my-find-file))
+  "-" (lambda ()
+       (interactive)
+       (call-interactively 'split-window-below)
+       (other-window 1 nil)
+       (my-buffer-toggle 'next-buffer))
+  "|" (lambda ()
+       (interactive)
+       (call-interactively 'split-window-right)
+       (other-window 1 nil)
+       (my-buffer-toggle 'next-buffer)))
 
 ;; Disable evil for modes where it's worse
 (cl-loop for mode in '(calculator-mode
