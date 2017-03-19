@@ -77,7 +77,6 @@
     evil-surround
     evil-visualstar
     evil-anzu
-    vi-tilde-fringe
 
     find-file-in-repository
     geiser

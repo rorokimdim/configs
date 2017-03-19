@@ -18,6 +18,7 @@
 (require 'recentf)
 (setq recentf-max-saved-items 200
       recentf-max-menu-items 40)
+(add-to-list 'recentf-exclude "\\ido.last\\'")
 (recentf-mode 1)
 
 

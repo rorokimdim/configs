@@ -132,7 +132,6 @@
 (eval-after-load "anzu" '(diminish 'anzu-mode))
 (eval-after-load "magit" '(diminish 'auto-revert-mode))
 (eval-after-load "which-key" '(diminish 'which-key-mode))
-(eval-after-load "vi-tilde-fringe" '(diminish 'vi-tilde-fringe-mode))
 (eval-after-load "highlight-parentheses" '(diminish 'highlight-parentheses-mode))
 
 ;; Remove the *Compile-Log* buffer if it's empty
@@ -155,5 +154,10 @@
 (which-key-mode)
 (which-key-setup-minibuffer)
 
-;; Enable vi-tilde-fringe-mode for all programming modes
-(add-hook 'prog-mode-hook 'vi-tilde-fringe-mode)
+;; Fringe
+(setq-default left-fringe-width 10)
+(setq-default right-fringe-width 10)
+
+;; Linum
+(setq linum-format "%4d \u2502 ")
+(add-hook 'prog-mode-hook 'linum-mode)
