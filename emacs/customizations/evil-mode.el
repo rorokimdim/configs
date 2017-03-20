@@ -32,6 +32,12 @@
          (call-interactively 'eyebrowse-create-window-config)
          (switch-to-buffer "*scratch*")
          (delete-other-windows))
+  "wt" (lambda ()
+         (interactive)
+         (call-interactively 'eyebrowse-create-window-config)
+         (switch-to-buffer "*scratch*")
+         (delete-other-windows)
+         (call-interactively 'helm-mt))
   "w." 'eyebrowse-switch-to-window-config
   "w," 'eyebrowse-rename-window-config
   "w'" 'eyebrowse-next-window-config
@@ -81,7 +87,7 @@
         (interactive)
         (call-interactively 'ag)
         (delete-window))
-  "t" 'my-open-term
+  "t" 'helm-mt
   "x" 'er/expand-region
   "q" 'kill-buffer-and-window
   "o" 'ace-window

@@ -3,8 +3,8 @@
 ;;
 
 ;; Term
-(global-set-key (kbd "C-x t") 'my-open-term)
-(global-set-key [f6] 'my-open-term)
+(global-set-key (kbd "C-x t") 'helm-mt)
+(global-set-key [f6] 'helm-mt)
 
 ;; Find file
 (global-set-key (kbd "C-x f") 'my-find-file)
