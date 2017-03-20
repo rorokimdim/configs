@@ -71,6 +71,7 @@
     diminish
     elpy
     expand-region
+    eyebrowse
 
     evil
     evil-escape

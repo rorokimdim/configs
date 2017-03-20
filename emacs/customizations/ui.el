@@ -94,6 +94,7 @@
 
 ;; Set custom faces
 (custom-set-faces
+ '(eyebrowse-mode-line-active ((t (:inherit mode-line-emphasis :foreground "light green"))))
  '(ido-subdir ((t (:foreground "dark cyan"))))
  '(helm-selection ((t (:background "black" :foreground "gray100"))))
  '(helm-source-header ((t (:weight bold :height 1.3 :family "Sans Serif"))))
@@ -161,3 +162,6 @@
 ;; Linum
 (setq linum-format "%4d \u2502 ")
 (add-hook 'prog-mode-hook 'linum-mode)
+
+;; Enable eybrowse
+(eyebrowse-mode t)
