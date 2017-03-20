@@ -66,6 +66,8 @@
     clojure-snippets
     datomic-snippets
 
+    dash
+
     diminish
     elpy
     expand-region

@@ -1,19 +1,43 @@
+(require 'dash)
+
 (defun my-eval-and-replace ()
   "Replace preceding sexp with its value."
   (interactive)
   (forward-char)
   (backward-kill-sexp)
   (condition-case nil
-                  (prin1 (eval (read (current-kill 0)))
-                         (current-buffer))
-                  (error (message "Invalid expression")
-                         (insert (current-kill 0)))))
+      (prin1 (eval (read (current-kill 0)))
+             (current-buffer))
+    (error (message "Invalid expression")
+           (insert (current-kill 0)))))
 
 (defun my-eval-print-last-sexp ()
   "Make eval-print-last-sexp work in evil mode."
   (interactive)
   (forward-char)
   (eval-print-last-sexp))
+
+(defvar my-uninteresting-buffer-prefixes
+  '("*Messages*"
+    "*Compile-Log*"
+    "*magit"
+    "*nrepl-server"
+    "*racket-command-output*"
+    "*scratch*"
+    "*helm"
+    "*Helm"
+    "*Backtrace*"
+    "*Completions*"
+    "*Geiser dbg*"
+    " *"))
+
+(defun my-uninteresting-buffer? (buffer-name)
+  "Checks if BUFFER-NAME is uninteresting."
+  (-any? (lambda (x) (string-prefix-p x buffer-name)) my-uninteresting-buffer-prefixes))
+
+(defun my-interesting-buffer-names ()
+  "Gets names of interesting buffers that are currently open."
+  (-remove 'my-uninteresting-buffer? (mapcar (function buffer-name) (buffer-list))))
 
 (defun my-shell-command-to-buffer ()
   "Runs a shell command and appends output to current buffer starting from current point."
@@ -24,31 +48,21 @@
 (defun my-buffer-toggle (switcher)
   "Toggles buffer using SWITCHER function, skipping over any useless buffers."
   (interactive)
+  (if (and (string-prefix-p "*terminal" (buffer-name))
+           (= 1 (length (my-interesting-buffer-names))))
+      (switch-to-buffer "*scratch*")
+    (when (my-interesting-buffer-names)
+      (funcall switcher)
+      (when (my-uninteresting-buffer? (buffer-name))
+        (my-buffer-toggle switcher))))
 
-  (funcall switcher)
   (when (string-prefix-p "*terminal" (buffer-name))
-    (call-interactively 'end-of-buffer))
-
-  (dolist (prefix '("*Messages*"
-                    "*Compile-Log*"
-                    "*magit"
-                    "*nrepl-server"
-                    "*racket-command-output*"
-                    "*scratch*"
-                    "*helm"
-                    "*Helm"
-                    "*Backtrace*"
-                    "*Completions*"
-                    "*Geiser dbg*"))
-    (when (string-prefix-p prefix (buffer-name))
-      (my-buffer-toggle switcher))))
-
+    (call-interactively 'end-of-buffer)))
 
 (defun my-add-pretty-symbols ()
   "Sets my pretty-symbol mappings."
   (setq prettify-symbols-alist
-        '(
-          ("alpha" . 945)
+        '(("alpha" . 945)
           ("beta" . 946)
           ("gamma" . 947)
           ("delta" . 948)
