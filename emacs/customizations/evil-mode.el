@@ -99,6 +99,10 @@
 (define-key evil-visual-state-map "\C-e" 'evil-end-of-line)
 (define-key evil-motion-state-map "\C-e" 'evil-end-of-line)
 
+;; More insert mode shortcuts
+(define-key evil-insert-state-map "\C-x\C-n" 'evil-complete-next-line)
+(define-key evil-insert-state-map "\C-x\C-p" 'evil-complete-previous-line)
+
 ;; Use evil-magit
 (require 'evil-magit)
 
