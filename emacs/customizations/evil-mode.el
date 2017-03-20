@@ -27,10 +27,15 @@
 (evil-leader/set-key
   "<SPC>" 'eval-expression
   "," 'ace-jump-mode
-  "wc" 'eyebrowse-create-window-config
+  "wc" (lambda ()
+         (interactive)
+         (call-interactively 'eyebrowse-create-window-config)
+         (switch-to-buffer "*scratch*")
+         (delete-other-windows))
   "w." 'eyebrowse-switch-to-window-config
   "w," 'eyebrowse-rename-window-config
   "w'" 'eyebrowse-next-window-config
+  "w\"" 'eyebrowse-close-window-config
   "wn" 'eyebrowse-next-window-config
   "wp" 'eyebrowse-prev-window-config
   "w0" 'eyebrowse-switch-to-window-config-0

@@ -29,8 +29,12 @@
 ;; Use F5 to find file in repository
 (global-set-key [f5] 'find-file-in-repository)
 
-;; Use F7 to clear repl buffer
-(global-set-key [f7] 'comint-clear-buffer)
+;; Use F7 and F8 to switch window configs
+(global-set-key [f7] 'eyebrowse-prev-window-config)
+(global-set-key [f8] 'eyebrowse-next-window-config)
+
+;; Use F10 to clear repl buffer
+(global-set-key [f10] 'comint-clear-buffer)
 
 ;; Use F9 to kill current buffer
 (global-set-key [f9] 'kill-buffer-and-window)
