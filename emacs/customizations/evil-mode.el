@@ -89,7 +89,19 @@
   "1" 'delete-other-windows
   "2" 'helm-google-suggest
   "4" 'helm-recentf
-  "5" 'find-file-in-repository
+
+  "50" 'delete-frame
+  "5o" 'other-frame
+  "5c" (lambda ()
+         (interactive)
+         (call-interactively 'make-frame)
+         (switch-to-buffer "*scratch*"))
+  "5t" (lambda ()
+         (interactive)
+         (call-interactively 'make-frame)
+         (switch-to-buffer "*scratch*")
+         (call-interactively 'helm-mt))
+
   "\\" (lambda ()
          (interactive)
          (call-interactively 'split-window-right)
