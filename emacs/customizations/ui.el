@@ -9,6 +9,9 @@
 (when (fboundp 'scroll-bar-mode)
   (scroll-bar-mode -1))
 
+;; Font
+(set-face-attribute 'default nil :font "Monaco-12:antialias=1")
+
 ;; Focus on help window when opened
 (setq help-window-select t)
 
