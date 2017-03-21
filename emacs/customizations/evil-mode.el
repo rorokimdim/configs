@@ -155,6 +155,7 @@
 
 ;; Disable evil for modes where it's worse
 (cl-loop for mode in '(calculator-mode
+                       eshell-mode
                        term-mode
                        image-mode
                        custom-theme-choose-mode)

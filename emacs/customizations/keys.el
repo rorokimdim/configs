@@ -4,7 +4,9 @@
 
 ;; Term
 (global-set-key (kbd "C-x t") 'helm-mt)
-(global-set-key [f6] 'helm-mt)
+
+;; Eshell
+(global-set-key [f6] 'eshell)
 
 ;; Find file
 (global-set-key (kbd "C-x f") 'my-find-file)

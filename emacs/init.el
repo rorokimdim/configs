@@ -70,6 +70,7 @@
 
     diminish
     elpy
+    eshell-autojump
     expand-region
     eyebrowse
 
