@@ -48,7 +48,8 @@
 (defun my-buffer-toggle (switcher)
   "Toggles buffer using SWITCHER function, skipping over any useless buffers."
   (interactive)
-  (if (and (string-prefix-p "*terminal" (buffer-name))
+  (if (and (or (string-prefix-p "*terminal" (buffer-name))
+               (string-prefix-p "*eshell" (buffer-name)))
            (= 1 (length (my-interesting-buffer-names))))
       (switch-to-buffer "*scratch*")
     (when (my-interesting-buffer-names)
