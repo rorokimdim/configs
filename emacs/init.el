@@ -168,6 +168,9 @@
 ;; Setup term
 (load "setup-term.elc")
 
+;; Setup eshell
+(load "setup-eshell.elc")
+
 ;; web browsing customizations
 (load "web-browsing.elc")
 

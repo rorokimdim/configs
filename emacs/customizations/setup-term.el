@@ -13,5 +13,4 @@
              (term-set-escape-char ?\C-x)))
 
 ;; Disable hl-line mode for terms
-(add-hook 'eshell-mode-hook (lambda () (setq-local global-hl-line-mode nil)))
 (add-hook 'term-mode-hook (lambda () (setq-local global-hl-line-mode nil)))
