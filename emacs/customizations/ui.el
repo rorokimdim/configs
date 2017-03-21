@@ -160,11 +160,10 @@
 
 ;; Fringe
 (setq-default left-fringe-width 10)
-(setq-default right-fringe-width 10)
+(setq-default right-fringe-width 0)
 
 ;; Linum
 (setq linum-format "%4d \u2502 ")
-(add-hook 'prog-mode-hook 'linum-mode)
 
 ;; Enable eybrowse
 (eyebrowse-mode t)
