@@ -67,6 +67,7 @@
     datomic-snippets
 
     dash
+    s
 
     diminish
     elpy
