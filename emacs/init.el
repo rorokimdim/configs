@@ -98,6 +98,7 @@
     multiple-cursors
     neotree
     org
+    popwin
     rainbow-blocks
     rainbow-delimiters
     restart-emacs

@@ -167,3 +167,7 @@
 
 ;; Enable eybrowse
 (eyebrowse-mode t)
+
+;; Enable popwin
+(require 'popwin)
+(popwin-mode 1)
