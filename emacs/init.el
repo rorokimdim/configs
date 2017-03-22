@@ -172,7 +172,10 @@
 ;; Setup eshell
 (load "setup-eshell.elc")
 
-;; web browsing customizations
+;; Setup org mode
+(load "setup-org.elc")
+
+;; Web browsing customizations
 (load "web-browsing.elc")
 
 ;; Load any custom configs that is specific to the
