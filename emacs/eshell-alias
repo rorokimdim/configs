@@ -1,5 +1,5 @@
 alias cdw cd ~/workspace/
-alias cda cd /aserver:
+alias aserver cd /aserver:
 alias e find-file $1
 alias ee find-file-other-window $1
 alias d dired $1
