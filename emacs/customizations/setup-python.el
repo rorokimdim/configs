@@ -14,3 +14,6 @@
     "pd" 'elpy-doc
     "pt" 'my-python-add-breakpoint)
   (elpy-enable))
+
+(add-hook 'python-mode-hook 'rainbow-delimiters-mode)
+(add-hook 'python-mode-hook 'highlight-parentheses-mode)

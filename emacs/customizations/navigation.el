@@ -20,7 +20,7 @@
       recentf-max-menu-items 40)
 (setq recentf-exclude
       (append recentf-exclude
-              '("iido.last"
+              '("ido.last"
                 "org/todo.html")))
 (recentf-mode 1)
 
