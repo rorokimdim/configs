@@ -66,6 +66,8 @@
     clojure-snippets
     datomic-snippets
 
+    gnuplot
+
     dash
     s
 

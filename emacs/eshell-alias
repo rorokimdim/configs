@@ -1,10 +1,14 @@
-alias cdc cd ~/workspace/configs/
-alias cdw cd ~/workspace/
-alias aserver cd /aserver:
-alias e find-file $1
-alias ee find-file-other-window $1
-alias d dired $1
-alias gd magit-diff-unstaged
-alias gds magit-diff-staged
-alias clear recenter 0
+alias ll ls -l
+alias l ls
+alias gl magit-log-head
+alias gs magit-status
 alias x exit
+alias clear recenter 0
+alias gds magit-diff-staged
+alias gd magit-diff-unstaged
+alias d dired $1
+alias ee find-file-other-window $1
+alias e find-file $1
+alias aserver cd /aserver:
+alias cdw cd ~/workspace/
+alias cdc cd ~/workspace/configs/
