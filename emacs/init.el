@@ -67,6 +67,7 @@
     datomic-snippets
 
     gnuplot
+    key-chord
 
     dash
     s

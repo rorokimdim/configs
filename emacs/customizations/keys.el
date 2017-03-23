@@ -13,8 +13,6 @@
 (global-set-key (kbd "C-x C-f") 'my-find-file)
 
 ;; Recent files
-(global-set-key (kbd "C-x C-r") 'helm-recentf)
-(global-set-key (kbd "s-r") 'helm-recentf)
 (global-set-key [f11] 'helm-recentf)
 
 ;; Use F2 to eval-and-replace lisp expressions
@@ -40,3 +38,18 @@
 
 ;; Use F9 to kill current buffer
 (global-set-key [f9] 'kill-buffer-and-window)
+
+;; Some useful key chords
+(require 'key-chord)
+(key-chord-define-global "BB" 'ido-switch-buffer)
+(key-chord-define-global "FF" 'my-find-file)
+(key-chord-define-global "RR" 'helm-recentf)
+(key-chord-define-global "SS" 'eshell)
+(key-chord-define-global "WW" 'eyebrowse-switch-to-window-config)
+(key-chord-mode 1)
+
+;; Disable key chord in minibuffer
+(add-hook
+ 'minibuffer-setup-hook
+ (lambda ()
+   (set (make-local-variable 'input-method-function) nil)))
