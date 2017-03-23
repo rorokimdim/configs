@@ -190,6 +190,15 @@
 (require 'server)
 (unless (server-running-p)
   (server-start))
+
+;; Things to do after emacs finishing loading
+(add-hook 'emacs-startup-hook
+          (lambda ()
+            (cd "~/workspace")
+            (eyebrowse-switch-to-window-config-0)
+            (find-file "~/workspace/org/todo.org")
+            (eyebrowse-switch-to-window-config-1)
+            (switch-to-buffer "*scratch*")))
 ;;
 ;; End of config.
 ;; Feel free to delete the rest if emacs adds it.
