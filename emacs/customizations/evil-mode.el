@@ -11,6 +11,12 @@
 (global-evil-leader-mode)
 (evil-leader/set-leader ",")
 
+;; Enable vim like window switching with arrows
+(define-key evil-window-map (kbd "<left>") 'evil-window-left)
+(define-key evil-window-map (kbd "<right>") 'evil-window-right)
+(define-key evil-window-map (kbd "<up>") 'evil-window-up)
+(define-key evil-window-map (kbd "<down>") 'evil-window-down)
+
 ;; Shortcuts that should work on both insert and normal mode
 (cl-loop for (key f) in '(("M-0" sp-forward-slurp-sexp)
                           ("M-9" sp-backward-slurp-sexp)
