@@ -21,7 +21,7 @@
 (setq recentf-exclude
       (append recentf-exclude
               '("ido.last"
-                "org/todo.html")))
+                "org/todo.*")))
 (recentf-mode 1)
 
 

@@ -17,3 +17,4 @@
 
 (add-hook 'python-mode-hook 'rainbow-delimiters-mode)
 (add-hook 'python-mode-hook 'highlight-parentheses-mode)
+(add-hook 'python-mode-hook (lambda () (setq python-indent-offset 4)))
