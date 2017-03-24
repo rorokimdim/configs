@@ -4,6 +4,7 @@
   :config
   (setq-default py-shell-name "ipython")
   (setq-default py-which-bufname "IPython")
+  (setq elpy-rpc-timeout nil)  ; Note: Remember to pip install rope/jedi
   (setq py-force-py-shell-name-p t)
   (evil-leader/set-key-for-mode 'python-mode
     "r" (lambda ()
@@ -15,6 +16,8 @@
     "pt" 'my-python-add-breakpoint)
   (elpy-enable))
 
-(add-hook 'python-mode-hook 'rainbow-delimiters-mode)
-(add-hook 'python-mode-hook 'highlight-parentheses-mode)
-(add-hook 'python-mode-hook (lambda () (setq python-indent-offset 4)))
+(add-hook 'python-mode-hook
+  (lambda ()
+    (rainbow-delimiters-mode)
+    (highlight-parentheses-mode)
+    (setq python-indent-offset 4)))
