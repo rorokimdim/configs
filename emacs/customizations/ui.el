@@ -122,6 +122,7 @@
    '(size-indication-mode t)
    '(hl-paren-colors (quote ("firebrick1")))
    '(sp-show-pair-from-inside t)
+   '(eyebrowse-new-workspace t)
    '(neo-window-width 50))
 
 ;; Enable mouse support on terminal

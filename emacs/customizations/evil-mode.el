@@ -27,28 +27,18 @@
 (evil-leader/set-key
   "<SPC>" 'eval-expression
   "," 'ace-jump-mode
-  "wc" (lambda ()
-         (interactive)
-         (call-interactively 'eyebrowse-create-window-config)
-         (switch-to-buffer "*scratch*")
-         (delete-other-windows))
+  "wc" 'eyebrowse-create-window-config
   "wd" (lambda ()
          (interactive)
          (call-interactively 'eyebrowse-create-window-config)
-         (switch-to-buffer "*scratch*")
-         (delete-other-windows)
          (call-interactively 'ido-dired))
   "wf" (lambda ()
          (interactive)
          (call-interactively 'eyebrowse-create-window-config)
-         (switch-to-buffer "*scratch*")
-         (delete-other-windows)
          (call-interactively 'my-find-file))
   "wt" (lambda ()
          (interactive)
          (call-interactively 'eyebrowse-create-window-config)
-         (switch-to-buffer "*scratch*")
-         (delete-other-windows)
          (call-interactively 'helm-mt))
   "w." 'eyebrowse-switch-to-window-config
   "w," 'eyebrowse-rename-window-config

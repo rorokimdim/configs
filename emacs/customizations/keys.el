@@ -46,6 +46,7 @@
 (key-chord-define-global "RR" 'helm-recentf)
 (key-chord-define-global "SS" 'eshell)
 (key-chord-define-global "WW" 'eyebrowse-switch-to-window-config)
+(key-chord-define-global "\\\\" 'eyebrowse-last-window-config)
 (key-chord-mode 1)
 
 ;; Disable key chord in minibuffer
