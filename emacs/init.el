@@ -92,6 +92,7 @@
 
     find-file-in-repository
     geiser
+    google-this
 
     helm
 
