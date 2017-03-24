@@ -4,6 +4,7 @@
 ;; Shortcuts for restclient mode
 (require 'evil-leader)
 (evil-leader/set-key-for-mode 'restclient-mode
+  "ee" 'restclient-http-send-current-stay-in-window
   "er" 'restclient-http-send-current-raw
   "ef" 'restclient-http-send-current
   "ec" 'restclient-copy-curl-command
