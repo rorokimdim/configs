@@ -78,6 +78,7 @@
     diminish
     elpy
     eshell-autojump
+    eshell-up
     expand-region
     eyebrowse
 
