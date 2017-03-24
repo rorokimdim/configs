@@ -49,6 +49,9 @@
 (defvar predicate nil)
 (defvar smex-save-file nil)
 
+;; Do this before anything 'evil to make 'tab' work in org-mode for org-cycle
+(setq evil-want-C-i-jump nil)
+
 ;; Packages to install
 (defvar my-packages
   '(
@@ -101,7 +104,10 @@
     magit
     multiple-cursors
     neotree
+
     org
+    org-bullets
+
     popwin
     rainbow-blocks
     rainbow-delimiters
