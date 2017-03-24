@@ -76,11 +76,12 @@
     s
 
     diminish
+
     elpy
+
     eshell-autojump
     eshell-up
     expand-region
-    eyebrowse
 
     evil
     evil-escape
@@ -92,9 +93,12 @@
 
     find-file-in-repository
     geiser
+
     google-this
+    google-maps
 
     helm
+    eyebrowse
 
     multi-term
     helm-mt
