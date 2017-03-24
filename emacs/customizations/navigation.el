@@ -16,7 +16,7 @@
 ;; recently edited files when you first start emacs
 (setq recentf-save-file (concat user-emacs-directory ".recentf"))
 (require 'recentf)
-(setq recentf-max-saved-items 200
+(setq recentf-max-saved-items 50
       recentf-max-menu-items 40)
 (setq recentf-exclude
       (append recentf-exclude
