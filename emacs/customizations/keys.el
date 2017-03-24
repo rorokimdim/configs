@@ -2,6 +2,11 @@
 ;; Common global shortcuts for both evil/emacs modes
 ;;
 
+;; Change text scale
+(global-set-key (kbd "C-+") 'text-scale-increase)
+(global-set-key (kbd "C-=") 'text-scale-increase)
+(global-set-key (kbd "C--") 'text-scale-decrease)
+
 ;; Term
 (global-set-key (kbd "C-x t") 'helm-mt)
 
