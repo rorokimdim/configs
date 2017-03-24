@@ -127,7 +127,19 @@
 ;; Enable mouse support on terminal
 (unless window-system
   (require 'mouse)
-  (xterm-mouse-mode t))
+  (xterm-mouse-mode t)
+  (global-set-key
+   [mouse-4]
+   (lambda ()
+     (interactive)
+     (scroll-down 1)))
+  (global-set-key
+   [mouse-5]
+   (lambda ()
+     (interactive)
+     (scroll-up 1)))
+  (defun track-mouse (e))
+  (setq mouse-sel-mode t))
 
 ;; Cleanup my mode-line
 (eval-after-load "undo-tree" '(diminish 'undo-tree-mode))
@@ -171,3 +183,7 @@
 ;; Enable popwin
 (require 'popwin)
 (popwin-mode 1)
+
+;; Enable smooth-scrolling
+(require 'smooth-scrolling)
+(smooth-scrolling-mode 1)
