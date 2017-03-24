@@ -109,6 +109,8 @@
     org
     org-bullets
 
+    sicp
+
     popwin
     rainbow-blocks
     rainbow-delimiters
