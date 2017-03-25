@@ -39,6 +39,7 @@
 (key-chord-define-global "JJ" 'ace-jump-mode)
 (key-chord-define-global "RR" 'helm-recentf)
 (key-chord-define-global "SS" 'eshell)
+(key-chord-define-global "~~" 'bookmark-jump)
 (key-chord-define-global "TT"
                          (lambda ()
                            (interactive)
