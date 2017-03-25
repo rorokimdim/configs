@@ -126,7 +126,6 @@
     rotate
     smartparens
     smex
-    smooth-scrolling
     sqlup-mode
     tagedit
     which-key

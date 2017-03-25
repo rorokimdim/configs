@@ -184,7 +184,3 @@
 ;; Enable popwin
 (require 'popwin)
 (popwin-mode 1)
-
-;; Enable smooth-scrolling
-(require 'smooth-scrolling)
-(smooth-scrolling-mode 1)
