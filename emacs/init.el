@@ -114,8 +114,6 @@
     org
     org-bullets
 
-    osx-dictionary
-
     sicp
 
     popwin
@@ -198,6 +196,9 @@
 
 ;; Web browsing customizations
 (load "web-browsing.elc")
+
+;; Mac OSX specific stuff
+(load "setup-osx.elc")
 
 ;; Load any custom configs that is specific to the
 ;; machine I'm using.
