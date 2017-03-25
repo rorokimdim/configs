@@ -34,6 +34,7 @@
 ;; Key chords
 (require 'key-chord)
 (key-chord-define-global "BB" 'ido-switch-buffer)
+(key-chord-define-global "DD" 'osx-dictionary-search-input)
 (key-chord-define-global "EE" 'eval-expression)
 (key-chord-define-global "FF" 'my-find-file)
 (key-chord-define-global "GG" 'helm-google-suggest)

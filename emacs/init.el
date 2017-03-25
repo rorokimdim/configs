@@ -114,6 +114,8 @@
     org
     org-bullets
 
+    osx-dictionary
+
     sicp
 
     popwin

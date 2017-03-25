@@ -155,10 +155,11 @@
 
 ;; Disable evil for modes where it's worse
 (cl-loop for mode in '(calculator-mode
+                       custom-theme-choose-mode
                        eshell-mode
-                       term-mode
                        image-mode
-                       custom-theme-choose-mode)
+                       osx-dictionary-mode
+                       term-mode)
          do (evil-set-initial-state mode 'emacs))
 
 ;; Use Ctrl-e to go to end of line, like in emacs
