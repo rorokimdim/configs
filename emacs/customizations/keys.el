@@ -35,6 +35,7 @@
 (require 'key-chord)
 (key-chord-define-global "BB" 'ido-switch-buffer)
 (key-chord-define-global "FF" 'my-find-file)
+(key-chord-define-global "JJ" 'ace-jump-mode)
 (key-chord-define-global "RR" 'helm-recentf)
 (key-chord-define-global "SS" 'eshell)
 (key-chord-define-global "TT"
