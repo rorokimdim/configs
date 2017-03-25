@@ -36,6 +36,7 @@
 (key-chord-define-global "BB" 'ido-switch-buffer)
 (key-chord-define-global "EE" 'eval-expression)
 (key-chord-define-global "FF" 'my-find-file)
+(key-chord-define-global "GG" 'helm-google-suggest)
 (key-chord-define-global "JJ" 'ace-jump-mode)
 (key-chord-define-global "RR" 'helm-recentf)
 (key-chord-define-global "SS" 'eshell)
