@@ -101,7 +101,6 @@
         (interactive)
         (call-interactively 'ag)
         (delete-window))
-  "t" 'helm-mt
   "x" 'er/expand-region
   "q" 'kill-buffer-and-window
   "o" 'ace-window
@@ -109,7 +108,6 @@
   "1" 'delete-other-windows
   "2" 'helm-google-suggest
   "4" 'helm-recentf
-  "6" 'eshell
 
   "50" 'delete-frame
   "5o" 'other-frame
