@@ -75,6 +75,7 @@
   "ww" 'rotate-layout
   "wr" 'rotate-window
   "ws" 'ace-swap-window
+  "gb" 'magit-blame
   "gs" 'find-function
   "gd" 'evil-goto-definition
   "eb" 'eval-buffer
