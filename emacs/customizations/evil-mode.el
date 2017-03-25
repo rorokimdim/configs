@@ -37,7 +37,7 @@
 
 ;; General shortcuts
 (evil-leader/set-key
-  "<SPC>" 'eval-expression
+  "<SPC>" 'er/expand-region
   "," 'ace-jump-mode
   "wc" 'eyebrowse-create-window-config
   "wd" (lambda ()
@@ -93,7 +93,7 @@
   "l" (lambda ()
         (interactive)
         (my-buffer-toggle 'next-buffer))
-  "m" 'mc/mark-all-like-this
+  "m" 'mc/mark-more-like-this-extended
   "n" 'neotree-toggle
   "d" 'ido-dired
   "f" 'my-find-file
@@ -101,7 +101,6 @@
         (interactive)
         (call-interactively 'ag)
         (delete-window))
-  "x" 'er/expand-region
   "q" 'kill-buffer-and-window
   "o" 'ace-window
   "0" 'delete-window
