@@ -97,6 +97,7 @@
   "m" 'mc/mark-more-like-this-extended
   "n" 'neotree-toggle
   "d" 'ido-dired
+  "/" 'helm-swoop
   "f" 'my-find-file
   "s" (lambda ()
         (interactive)
