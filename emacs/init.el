@@ -98,6 +98,7 @@
     google-maps
 
     helm
+    helm-swoop
     eyebrowse
 
     multi-term
