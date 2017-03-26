@@ -216,6 +216,10 @@
             (cd "~/workspace")
             (eyebrowse-switch-to-window-config-0)
             (find-file "~/workspace/org/todo.org")
+            (split-window-below)
+            (other-window 1)
+            (find-file "~/workspace/org/notes.org")
+            (other-window 1)
             (eyebrowse-switch-to-window-config-1)
             (switch-to-buffer "*scratch*")))
 ;;

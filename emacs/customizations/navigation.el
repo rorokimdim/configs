@@ -21,6 +21,8 @@
 (setq recentf-exclude
       (append recentf-exclude
               '("ido.last"
+                ".emacs.d/*"
+                "org/notes.*"
                 "org/todo.*")))
 (recentf-mode 1)
 
