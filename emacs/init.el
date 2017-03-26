@@ -98,6 +98,7 @@
     multi-term
     multiple-cursors
     neotree
+    origami
     org
     org-bullets
     popwin

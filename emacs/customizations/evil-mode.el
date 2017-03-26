@@ -35,6 +35,11 @@
          do (define-key evil-normal-state-map (kbd key) f)
             (define-key evil-insert-state-map (kbd key) f))
 
+;; Shortcuts for origami
+(require 'origami)
+(define-key evil-normal-state-map "Z" 'origami-recursively-toggle-node)
+(define-key evil-visual-state-map "Z" 'origami-recursively-toggle-node)
+
 ;; General shortcuts
 (evil-leader/set-key
   "<SPC>" 'er/expand-region

@@ -68,3 +68,6 @@
 
 ;; Enable save-place mode
 (save-place-mode 1)
+
+;; Enable origami globally
+(global-origami-mode)
