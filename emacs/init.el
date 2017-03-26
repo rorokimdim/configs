@@ -61,77 +61,62 @@
     ag
     aggressive-indent
     anzu
-
     cider
     clj-refactor
     clojure-mode
     clojure-mode-extra-font-locking
     clojure-snippets
-    datomic-snippets
-
-    gnuplot
-    key-chord
-
     dash
-    s
-
+    datomic-snippets
     diminish
-
     elpy
-
     eshell-autojump
     eshell-up
-    expand-region
-
     evil
+    evil-anzu
     evil-escape
     evil-leader
     evil-magit
     evil-surround
     evil-visualstar
-    evil-anzu
-
+    expand-region
+    eyebrowse
     find-file-in-repository
     geiser
-
-    google-this
+    gnuplot
     google-maps
-
+    google-this
     helm
-    helm-swoop
-    eyebrowse
-
-    multi-term
     helm-mt
-
+    helm-swoop
     highlight-parentheses
     hl-sexp
     ido-ubiquitous
     ido-vertical-mode
+    key-chord
     magit
+    multi-term
     multiple-cursors
     neotree
-
     org
     org-bullets
-
-    sicp
-
     popwin
     rainbow-blocks
     rainbow-delimiters
     restart-emacs
     restclient
     rotate
+    s
+    sicp
     smartparens
     smex
+    smooth-scrolling
     sqlup-mode
     tagedit
+    use-package
     which-key
     world-time-mode
-    yasnippet
-
-    use-package))
+    yasnippet))
 
 (dolist (p my-packages)
   (when (not (package-installed-p p))
