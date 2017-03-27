@@ -18,5 +18,8 @@
             (lambda ()
               (rainbow-delimiters-mode)
               (highlight-parentheses-mode)
-              (setq python-indent-offset 4)))
-  (elpy-enable))
+              (setq python-indent-offset 4))))
+
+;; For some reason doing this inside use-package block above doesn't always work.
+;; Do it here instead.
+(elpy-enable)
