@@ -97,6 +97,7 @@
 
 ;; Set custom faces
 (custom-set-faces
+ '(cursor ((t (:background "gray82"))))
  '(eyebrowse-mode-line-active ((t (:inherit mode-line-emphasis :foreground "light green"))))
  '(ido-subdir ((t (:foreground "dark cyan"))))
  '(helm-selection ((t (:background "black" :foreground "gray100"))))
