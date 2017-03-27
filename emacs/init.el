@@ -111,7 +111,6 @@
     sicp
     smartparens
     smex
-    smooth-scrolling
     sqlup-mode
     tagedit
     use-package
