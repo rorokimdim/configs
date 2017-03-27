@@ -5,3 +5,11 @@
 ;; Enable org-bullets
 (require 'org-bullets)
 (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
+
+;; Enable org-babel languages
+(org-babel-do-load-languages
+ 'org-babel-load-languages
+ '((emacs-lisp . t)
+   (python . t)
+   (gnuplot . t)
+   (clojure . t)))

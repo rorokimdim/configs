@@ -14,10 +14,9 @@
     "gd" 'elpy-goto-definition
     "pd" 'elpy-doc
     "pt" 'my-python-add-breakpoint)
+  (add-hook 'python-mode-hook
+            (lambda ()
+              (rainbow-delimiters-mode)
+              (highlight-parentheses-mode)
+              (setq python-indent-offset 4)))
   (elpy-enable))
-
-(add-hook 'python-mode-hook
-  (lambda ()
-    (rainbow-delimiters-mode)
-    (highlight-parentheses-mode)
-    (setq python-indent-offset 4)))
