@@ -66,6 +66,13 @@
 ;; Allow dired-find-alternate-file command
 (put 'dired-find-alternate-file 'disabled nil)
 
+;; Use same buffer when jumping to parent dir with "^"
+(add-hook
+ 'dired-mode-hook
+ (lambda ()
+   (define-key dired-mode-map (kbd "^")
+     (lambda () (interactive) (find-alternate-file "..")))))
+
 ;; Use ido-vertical
 (require 'ido-vertical-mode)
 (ido-vertical-mode 1)
