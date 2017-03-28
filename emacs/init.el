@@ -93,6 +93,7 @@
     hl-sexp
     ido-ubiquitous
     ido-vertical-mode
+    jq-mode  ;; install jq command first
     key-chord
     magit
     multi-term
