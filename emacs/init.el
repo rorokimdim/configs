@@ -96,6 +96,7 @@
     jq-mode  ;; install jq command first
     key-chord
     magit
+    move-text
     multi-term
     multiple-cursors
     neotree
