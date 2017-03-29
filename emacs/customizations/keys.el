@@ -47,8 +47,10 @@
 (key-chord-define-global "TT"
                          (lambda ()
                            (interactive)
-                           (call-interactively 'helm-mt)
-                           (term-send-end)))
+                           (if (get-buffer "*terminal*")
+                              (progn (call-interactively 'term)
+                                     (call-interactively 'term-send-end))
+                              (call-interactively 'term))))
 (key-chord-define-global "WW" 'eyebrowse-switch-to-window-config)
 (key-chord-define-global "XX" 'smex)
 (key-chord-define-global "\\\\" 'eyebrowse-last-window-config)

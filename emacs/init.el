@@ -49,6 +49,9 @@
 (defvar predicate nil)
 (defvar smex-save-file nil)
 
+;; Silence ad-redefinition warning
+(setq ad-redefinition-action 'accept)
+
 ;; Do this before anything 'evil to make 'tab' work in org-mode for org-cycle
 (setq evil-want-C-i-jump nil)
 
@@ -87,7 +90,6 @@
     google-maps
     google-this
     helm
-    helm-mt
     helm-swoop
     highlight-parentheses
     hl-sexp
@@ -97,7 +99,6 @@
     key-chord
     magit
     move-text
-    multi-term
     multiple-cursors
     neotree
     origami

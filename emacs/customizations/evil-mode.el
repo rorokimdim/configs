@@ -56,7 +56,7 @@
   "wt" (lambda ()
          (interactive)
          (call-interactively 'eyebrowse-create-window-config)
-         (call-interactively 'helm-mt))
+         (call-interactively 'term))
   "w." 'eyebrowse-switch-to-window-config
   "w," 'eyebrowse-rename-window-config
   "w'" 'eyebrowse-next-window-config
@@ -135,7 +135,7 @@
          (interactive)
          (call-interactively 'make-frame)
          (switch-to-buffer "*scratch*")
-         (call-interactively 'helm-mt))
+         (call-interactively 'term))
 
   "\\" (lambda ()
          (interactive)
