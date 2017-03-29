@@ -194,3 +194,6 @@
 
 ;; Enable move-text default bindings
 (move-text-default-bindings)
+
+;; hl-line
+(setq hl-line-sticky-flag nil)
