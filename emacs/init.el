@@ -116,6 +116,7 @@
     sqlup-mode
     tagedit
     use-package
+    vi-tilde-fringe
     which-key
     world-time-mode
     yasnippet))
