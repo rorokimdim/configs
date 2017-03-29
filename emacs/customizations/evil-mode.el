@@ -179,6 +179,9 @@
 (define-key evil-insert-state-map "\C-x\C-n" 'evil-complete-next-line)
 (define-key evil-insert-state-map "\C-x\C-p" 'evil-complete-previous-line)
 
+;; Remove any search state on ESC key
+(define-key evil-normal-state-map (kbd "<escape>") 'evil-ex-nohighlight)
+
 ;; Use evil-magit
 (require 'evil-magit)
 
