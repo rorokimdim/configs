@@ -118,8 +118,9 @@
  '(rainbow-delimiters-depth-8-face ((t (:foreground "#f5d63d"))))
  '(rainbow-delimiters-depth-9-face ((t (:foreground "#78c5d6")))))
 
-;; Change neotree width
+;; Set custom variables
 (custom-set-variables
+   '(evil-search-module (quote evil-search))
    '(size-indication-mode t)
    '(hl-paren-colors (quote ("firebrick1")))
    '(sp-show-pair-from-inside t)
