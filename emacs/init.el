@@ -80,6 +80,7 @@
     evil-escape
     evil-leader
     evil-magit
+    evil-numbers
     evil-surround
     evil-visualstar
     expand-region
