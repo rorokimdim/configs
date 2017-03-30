@@ -60,10 +60,6 @@
          (interactive)
          (call-interactively 'eyebrowse-create-window-config)
          (call-interactively 'my-find-file))
-  "wt" (lambda ()
-         (interactive)
-         (call-interactively 'eyebrowse-create-window-config)
-         (call-interactively 'term))
   "w." 'eyebrowse-switch-to-window-config
   "w," 'eyebrowse-rename-window-config
   "w'" 'eyebrowse-next-window-config
@@ -138,11 +134,11 @@
          (call-interactively 'make-frame)
          (switch-to-buffer "*scratch*")
          (call-interactively 'my-find-file))
-  "5t" (lambda ()
+  "5s" (lambda ()
          (interactive)
          (call-interactively 'make-frame)
          (switch-to-buffer "*scratch*")
-         (call-interactively 'term))
+         (call-interactively 'eshell))
 
   "\\" (lambda ()
          (interactive)

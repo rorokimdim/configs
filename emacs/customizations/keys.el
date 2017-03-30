@@ -7,6 +7,18 @@
 (global-set-key (kbd "C-=") 'text-scale-increase)
 (global-set-key (kbd "C--") 'text-scale-decrease)
 
+;; Use super-n to switch to nth eyebrowse window
+(global-set-key (kbd "s-0") 'eyebrowse-switch-to-window-config-0)
+(global-set-key (kbd "s-1") 'eyebrowse-switch-to-window-config-1)
+(global-set-key (kbd "s-2") 'eyebrowse-switch-to-window-config-2)
+(global-set-key (kbd "s-3") 'eyebrowse-switch-to-window-config-3)
+(global-set-key (kbd "s-4") 'eyebrowse-switch-to-window-config-4)
+(global-set-key (kbd "s-5") 'eyebrowse-switch-to-window-config-5)
+(global-set-key (kbd "s-6") 'eyebrowse-switch-to-window-config-6)
+(global-set-key (kbd "s-7") 'eyebrowse-switch-to-window-config-7)
+(global-set-key (kbd "s-8") 'eyebrowse-switch-to-window-config-8)
+(global-set-key (kbd "s-9") 'eyebrowse-switch-to-window-config-9)
+
 ;; Use F2 to eval-and-replace lisp expressions
 (global-set-key [f2] 'my-eval-and-replace)
 
@@ -40,6 +52,12 @@
 (key-chord-define-global "GG" 'helm-google-suggest)
 (key-chord-define-global "JJ" 'ace-jump-mode)
 (key-chord-define-global "MM" 'helm-imenu)
+(key-chord-define-global "NN"
+                         (lambda ()
+                           (interactive)
+                           (call-interactively 'eyebrowse-switch-to-window-config-0)
+                           (call-interactively 'evil-window-down)))
+
 (key-chord-define-global "QQ" 'kill-buffer-and-window)
 (key-chord-define-global "RR" 'helm-recentf)
 (key-chord-define-global "SS" 'eshell)
@@ -47,10 +65,8 @@
 (key-chord-define-global "TT"
                          (lambda ()
                            (interactive)
-                           (if (get-buffer "*terminal*")
-                              (progn (call-interactively 'term)
-                                     (call-interactively 'term-send-end))
-                              (call-interactively 'term))))
+                           (call-interactively 'eyebrowse-switch-to-window-config-0)
+                           (call-interactively 'evil-window-up)))
 (key-chord-define-global "WW" 'eyebrowse-switch-to-window-config)
 (key-chord-define-global "XX" 'smex)
 (key-chord-define-global "\\\\" 'eyebrowse-last-window-config)

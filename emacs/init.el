@@ -176,9 +176,6 @@
 ;; UI customizations
 (load "ui.elc")
 
-;; Setup term
-(load "setup-term.elc")
-
 ;; Setup eshell
 (load "setup-eshell.elc")
 
