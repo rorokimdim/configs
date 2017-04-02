@@ -117,6 +117,7 @@
     smartparens
     smex
     sqlup-mode
+    synonymous
     tagedit
     use-package
     vi-tilde-fringe
