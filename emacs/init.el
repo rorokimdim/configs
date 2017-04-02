@@ -61,6 +61,7 @@
     ace-jump-mode
     ace-link
     ace-window
+    aes
     ag
     aggressive-indent
     anzu
