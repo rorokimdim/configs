@@ -19,6 +19,13 @@
 (global-set-key (kbd "s-8") 'eyebrowse-switch-to-window-config-8)
 (global-set-key (kbd "s-9") 'eyebrowse-switch-to-window-config-9)
 
+
+;; Use super-<arrow-key> to switch between windows
+(global-set-key (kbd "s-<left>") 'evil-window-left)
+(global-set-key (kbd "s-<right>") 'evil-window-right)
+(global-set-key (kbd "s-<up>") 'evil-window-up)
+(global-set-key (kbd "s-<down>") 'evil-window-down)
+
 ;; Use F2 to eval-and-replace lisp expressions
 (global-set-key [f2] 'my-eval-and-replace)
 
