@@ -121,6 +121,8 @@
     tagedit
     use-package
     vi-tilde-fringe
+    visual-regexp
+    visual-regexp-steroids
     which-key
     world-time-mode
     yasnippet))
