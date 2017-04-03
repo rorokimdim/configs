@@ -81,7 +81,7 @@
 (defun my-python-add-breakpoint ()
   "Adds ipbp trace."
   (interactive)
-  (forward-char)
+  (call-interactively 'evil-append-line)
   (newline-and-indent)
   (insert "import ipdb; ipdb.set_trace()")
   (highlight-lines-matching-regexp "^[ ]*import ipdb; ipdb.set_trace()"))
@@ -89,8 +89,26 @@
 (defvar my-workspace-directory
   "~/workspace/"
   "Path to my workspace directory")
+
 (defun my-find-file ()
   "Defines a custom find-file function."
   (interactive)
   (cd (read-directory-name "Directory: " (or (ffip-project-root) my-workspace-directory)))
   (call-interactively 'find-file-in-repository))
+
+(defun my-format-date (format)
+  "Inserts date in FORMAT format."
+  (let ((system-time-locale "en_US.UTF-8"))
+    (insert (format-time-string format))))
+
+(defun my-insert-date-and-time ()
+  "Inserts current date and time."
+  (interactive)
+  (my-format-date "[%Y-%m-%d %H:%M:%S [%A, %B]]"))
+
+;;
+;; Key bindings
+;;
+(bind-keys
+ :map global-map
+ ("C-c C-d" . my-insert-date-and-time))
