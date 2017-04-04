@@ -6,6 +6,7 @@
   (setq-default py-which-bufname "IPython")
   (setq elpy-rpc-timeout nil)  ; Note: Remember to pip install rope/jedi
   (setq py-force-py-shell-name-p t)
+  (modify-syntax-entry ?_ "w" python-mode-syntax-table)
   (evil-leader/set-key-for-mode 'python-mode
     "r" (lambda ()
           (interactive)
