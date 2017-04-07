@@ -71,3 +71,6 @@
 
 ;; Enable origami globally
 (global-origami-mode)
+
+;; Enable auto-revert mode
+(global-auto-revert-mode 1)
