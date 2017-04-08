@@ -180,7 +180,8 @@
 ;; UI customizations
 (load "ui.elc")
 
-;; Setup eshell
+;; Setup term and eshell
+(load "setup-term.elc")
 (load "setup-eshell.elc")
 
 ;; Setup org mode
