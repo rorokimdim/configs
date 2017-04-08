@@ -106,6 +106,12 @@
   (interactive)
   (my-format-date "[%Y-%m-%d %H:%M:%S [%A, %B]]"))
 
+(defun my-eshell-ag (string)
+  "Searches for STRING in the current eshell directory using ag command."
+  (interactive)
+  (ag/search string (eshell/pwd))
+  (delete-window))
+
 ;;
 ;; Key bindings
 ;;
