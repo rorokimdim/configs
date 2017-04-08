@@ -106,6 +106,7 @@
   (interactive)
   (my-format-date "[%Y-%m-%d %H:%M:%S [%A, %B]]"))
 
+(require 'ag)
 (defun my-eshell-ag (string)
   "Searches for STRING in the current eshell directory using ag command."
   (interactive)
