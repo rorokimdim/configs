@@ -86,6 +86,7 @@
     evil-visualstar
     expand-region
     eyebrowse
+    f
     find-file-in-repository
     geiser
     gnuplot
