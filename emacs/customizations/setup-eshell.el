@@ -3,6 +3,8 @@
  (lambda ()
    (require 'eshell-autojump)
    (require 'eshell-up)
+   (require 's)
+   (require 'f)
    (remove-hook 'eshell-output-filter-functions 'eshell-postoutput-scroll-to-bottom)
 
    (local-set-key (kbd "C-l")  (lambda ()  (interactive)  (recenter 0)))

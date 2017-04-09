@@ -113,6 +113,10 @@
   (ag/search string (eshell/pwd))
   (delete-window))
 
+(defun my-goto-function (x)
+  "Goes to defintion of a function with name X."
+  (find-function (intern x)))
+
 ;;
 ;; Key bindings
 ;;
