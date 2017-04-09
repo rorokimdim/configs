@@ -1,16 +1,21 @@
-alias pk eshell-up-peek $1
-alias up eshell-up $1
+alias ag my-eshell-ag $1
+alias aserver cd /aserver:
+alias cal (calendar)
 alias cdc cd ~/workspace/configs/
 alias cdw cd ~/workspace/
-alias aserver cd /aserver:
+alias clear recenter 0
+alias d dired $1
 alias e find-file $1
 alias ee find-file-other-window $1
-alias d dired $1
+alias g helm-google-suggest
 alias gd magit-diff-unstaged
 alias gds magit-diff-staged
-alias clear recenter 0
-alias x exit
-alias gs magit-status
 alias gl magit-log-head
+alias gs magit-status
+alias h my-goto-function $1
 alias l ls
 alias ll ls -l
+alias pk eshell-up-peek $1
+alias up eshell-up $1
+alias vim find-file $1
+alias x exit
