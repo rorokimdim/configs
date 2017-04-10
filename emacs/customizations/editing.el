@@ -74,3 +74,6 @@
 
 ;; Enable auto-revert mode
 (global-auto-revert-mode 1)
+
+;; Disable annyoing subscripting in tex-mode
+(eval-after-load "tex-mode" ' (fset 'tex-font-lock-suscript 'ignore))
