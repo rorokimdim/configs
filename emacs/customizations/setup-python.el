@@ -2,6 +2,7 @@
   :ensure t
   :after python
   :config
+  (require 'realgud)
   (setq-default py-shell-name "ipython")
   (setq-default py-which-bufname "IPython")
   (setq elpy-rpc-timeout nil)  ; Note: Remember to pip install rope/jedi
