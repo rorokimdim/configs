@@ -110,6 +110,7 @@
     popwin
     rainbow-blocks
     rainbow-delimiters
+    realgud
     restart-emacs
     restclient
     rotate
