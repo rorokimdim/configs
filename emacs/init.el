@@ -96,6 +96,7 @@
     helm-swoop
     highlight-parentheses
     hl-sexp
+    htmlize
     ido-ubiquitous
     ido-vertical-mode
     jq-mode  ;; install jq command first
@@ -107,6 +108,7 @@
     origami
     org
     org-bullets
+    ox-reveal
     popwin
     rainbow-blocks
     rainbow-delimiters

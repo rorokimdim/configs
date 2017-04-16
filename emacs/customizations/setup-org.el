@@ -24,3 +24,6 @@
 ;; Requires minted packages: sudo tlmgr install minted
 (setq org-latex-listings 'minted
       org-latex-packages-alist '(("" "minted")))
+
+;; For exporting to reveal-js presentations
+(require 'ox-reveal)
