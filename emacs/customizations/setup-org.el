@@ -13,3 +13,14 @@
    (python . t)
    (gnuplot . t)
    (clojure . t)))
+
+;; Use xelatex
+;; Run it multipe times to get toc/page-numbering/references
+(setq org-latex-pdf-process '("xelatex -shell-escape %f"
+                              "xelatex -shell-escape %f"
+                              "xelatex -shell-escape %f"))
+
+;; Use minted for source-code highlighting
+;; Requires minted packages: sudo tlmgr install minted
+(setq org-latex-listings 'minted
+      org-latex-packages-alist '(("" "minted")))
