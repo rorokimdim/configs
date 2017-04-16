@@ -11,10 +11,6 @@
 ;; Go straight to scratch buffer on startup
 (setq inhibit-startup-message t)
 
-;; Get rid of messsage buffer. I seldom need it.
-(setq-default message-log-max nil)
-(kill-buffer "*Messages*")
-
 ;; Follow symlinks to version controlled file without prompting
 (setq vc-follow-symlinks t)
 
