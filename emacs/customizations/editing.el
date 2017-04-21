@@ -77,3 +77,9 @@
 
 ;; Disable annyoing subscripting in tex-mode
 (eval-after-load "tex-mode" ' (fset 'tex-font-lock-suscript 'ignore))
+
+;; Enable spell checking
+(add-hook 'text-mode-hook 'flyspell-mode)
+(add-hook 'prog-mode-hook 'flyspell-prog-mode)
+(setq flyspell-issue-message-flag nil)
+(add-to-list 'ispell-skip-region-alist '("^#+BEGIN_SRC" . "^#+END_SRC"))
