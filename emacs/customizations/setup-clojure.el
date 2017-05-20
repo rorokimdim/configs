@@ -64,12 +64,6 @@
                                (yas-minor-mode 1)
                                (cljr-add-keybindings-with-prefix "C-c C-m")))
 
-;; Start up figwheel on cider-jack-in-clojurescript
-(setq cider-cljs-lein-repl
-  "(do (require 'figwheel-sidecar.repl-api)
-         (figwheel-sidecar.repl-api/start-figwheel!)
-         (figwheel-sidecar.repl-api/cljs-repl))")
-
 ;; Shortcuts for clojure mode
 (require 'evil-leader)
 (evil-leader/set-key-for-mode 'clojure-mode
