@@ -126,6 +126,7 @@
     tagedit
     use-package
     vi-tilde-fringe
+    virtualenvwrapper
     visual-regexp
     visual-regexp-steroids
     which-key

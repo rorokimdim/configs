@@ -38,3 +38,9 @@
 ;; For some reason doing this inside use-package block above doesn't always work.
 ;; Do it here instead.
 (elpy-enable)
+
+;; Setup virtualenvwrapper
+(require 'virtualenvwrapper)
+(venv-initialize-interactive-shells)
+(venv-initialize-eshell)
+(setq venv-location "~/venvs")
