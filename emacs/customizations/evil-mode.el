@@ -95,7 +95,7 @@
   "b" 'switch-to-buffer
   "*" (lambda ()
         (interactive)
-        (mapc 'kill-buffer (buffer-list)))
+        (mapc 'kill-buffer (delq "*scratch*" (buffer-list))))
   "h" (lambda ()
         (interactive)
         (my-buffer-toggle 'previous-buffer))
