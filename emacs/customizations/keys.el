@@ -59,21 +59,12 @@
 (key-chord-define-global "GG" 'helm-google-suggest)
 (key-chord-define-global "JJ" 'ace-jump-mode)
 (key-chord-define-global "MM" 'helm-imenu)
-(key-chord-define-global "NN"
-                         (lambda ()
-                           (interactive)
-                           (call-interactively 'eyebrowse-switch-to-window-config-0)
-                           (call-interactively 'evil-window-down)))
 
 (key-chord-define-global "QQ" 'kill-buffer-and-window)
 (key-chord-define-global "RR" 'helm-recentf)
 (key-chord-define-global "SS" 'eshell)
 (key-chord-define-global "~~" 'helm-bookmarks)
-(key-chord-define-global "TT"
-                         (lambda ()
-                           (interactive)
-                           (call-interactively 'eyebrowse-switch-to-window-config-0)
-                           (call-interactively 'evil-window-up)))
+
 (key-chord-define-global "WW" 'eyebrowse-switch-to-window-config)
 (key-chord-define-global "XX" 'smex)
 (key-chord-define-global "\\\\" 'eyebrowse-last-window-config)
