@@ -26,6 +26,10 @@
 (global-set-key (kbd "s-<up>") 'evil-window-up)
 (global-set-key (kbd "s-<down>") 'evil-window-down)
 
+;; Shortcuts for frame size
+(global-set-key (kbd "s-<return>") 'toggle-frame-fullscreen)
+(global-set-key (kbd "C-s-<268632077>") 'toggle-frame-maximized)  ;; ctrl + super + m
+
 ;; Use F2 to eval-and-replace lisp expressions
 (global-set-key [f2] 'my-eval-and-replace)
 
