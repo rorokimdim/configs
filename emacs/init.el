@@ -210,6 +210,9 @@
 
 (setq diary-file "~/workspace/org/diary")
 
+;; Confirm before killing emacs
+(setq confirm-kill-emacs 'y-or-n-p)
+
 ;; Things to do after emacs finishing loading
 (add-hook 'emacs-startup-hook
           (lambda ()

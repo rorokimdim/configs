@@ -96,6 +96,12 @@
   (cd (read-directory-name "Directory: " (or (ffip-project-root) my-workspace-directory)))
   (call-interactively 'find-file-in-repository))
 
+(defun my-find-config-file ()
+  "Finds a config file."
+  (interactive)
+  (cd "~/workspace/configs/")
+  (call-interactively 'find-file-in-repository))
+
 (defun my-format-date (format)
   "Inserts date in FORMAT format."
   (let ((system-time-locale "en_US.UTF-8"))

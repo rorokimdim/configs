@@ -18,6 +18,8 @@
 (global-set-key (kbd "s-7") 'eyebrowse-switch-to-window-config-7)
 (global-set-key (kbd "s-8") 'eyebrowse-switch-to-window-config-8)
 (global-set-key (kbd "s-9") 'eyebrowse-switch-to-window-config-9)
+(global-set-key (kbd "s-,") 'eyebrowse-prev-window-config)
+(global-set-key (kbd "s-.") 'eyebrowse-next-window-config)
 
 
 ;; Use super-<arrow-key> to switch between windows
@@ -44,9 +46,8 @@
 ;; Use F5 to find file in repository
 (global-set-key [f5] 'find-file-in-repository)
 
-;; Use F7 and F8 to switch window configs
-(global-set-key [f7] 'eyebrowse-prev-window-config)
-(global-set-key [f8] 'eyebrowse-next-window-config)
+;; Use F7 to find a config file
+(global-set-key [f7] 'my-find-config-file)
 
 ;; Use F10 to clear repl buffer
 (global-set-key [f10] 'comint-clear-buffer)
