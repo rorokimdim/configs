@@ -35,9 +35,6 @@
 ;; display port in repl buffer name
 (setq nrepl-buffer-name-show-port t)
 
-;; go right to the REPL buffer when it's finished connecting
-(setq cider-repl-pop-to-buffer-on-connect t)
-
 ;; remove the help banner
 (setq cider-repl-display-help-banner nil)
 
@@ -56,6 +53,9 @@
 (add-to-list 'auto-mode-alist '("\\.boot$" . clojure-mode))
 (add-to-list 'auto-mode-alist '("\\.cljs.*$" . clojure-mode))
 (add-to-list 'auto-mode-alist '("lein-env" . enh-ruby-mode))
+
+;; Do not go to the REPL buffer on cider-connect
+(setq cider-repl-pop-to-buffer-on-connect nil)
 
 ;; Use clj-refactor
 (require 'clj-refactor)
@@ -78,3 +78,8 @@
   "ef"  'cider-eval-defun-at-point
   "er"  'cider-eval-region
   "ex"  'cider-eval-last-sexp-and-replace)
+
+;; Shortcuts for cider repl
+(define-key cider-repl-mode-map (kbd "<up>") 'cider-repl-previous-input)
+(define-key cider-repl-mode-map (kbd "<down>") 'cider-repl-next-input)
+(define-key cider-repl-mode-map (kbd "C-l") 'cider-repl-clear-buffer)
