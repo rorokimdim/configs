@@ -74,7 +74,10 @@
   "cf"  'cider-format-buffer
   "r"   'cider-switch-to-repl-buffer
   "eb"  'cider-load-buffer
-  "ee"  'cider-eval-last-sexp
+  "ee"  (lambda ()
+          (interactive)
+          (forward-char)
+          (cider-eval-last-sexp))
   "ef"  'cider-eval-defun-at-point
   "er"  'cider-eval-region
   "ex"  'cider-eval-last-sexp-and-replace)
