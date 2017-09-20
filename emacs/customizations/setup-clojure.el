@@ -72,7 +72,7 @@
   "cd"  'cider-doc
   "cgd" 'cider-grimoire-web
   "cf"  'cider-format-buffer
-  "r"   'cider-load-buffer-and-switch-to-repl-buffer
+  "r"   'cider-switch-to-repl-buffer
   "eb"  'cider-load-buffer
   "ee"  'cider-eval-last-sexp
   "ef"  'cider-eval-defun-at-point
