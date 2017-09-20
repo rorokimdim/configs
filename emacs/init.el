@@ -98,7 +98,7 @@
     highlight-parentheses
     hl-sexp
     htmlize
-    ido-ubiquitous
+    ido-completing-read+
     ido-vertical-mode
     jq-mode  ;; install jq command first
     key-chord
@@ -118,7 +118,6 @@
     restclient
     rotate
     s
-    sicp
     smartparens
     smex
     sqlup-mode
