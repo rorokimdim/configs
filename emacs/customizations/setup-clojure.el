@@ -86,3 +86,10 @@
 (define-key cider-repl-mode-map (kbd "<up>") 'cider-repl-previous-input)
 (define-key cider-repl-mode-map (kbd "<down>") 'cider-repl-next-input)
 (define-key cider-repl-mode-map (kbd "C-l") 'cider-repl-clear-buffer)
+
+;; Make cider-debugger keys work in evil mode
+(defun my-cider-debug-toggle-insert-state ()
+  (if cider--debug-mode
+      (evil-insert-state)
+    (evil-normal-state)))
+(add-hook 'cider--debug-mode-hook 'my-cider-debug-toggle-insert-state)
