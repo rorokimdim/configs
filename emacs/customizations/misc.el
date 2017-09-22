@@ -20,3 +20,6 @@
                                 ("America/New_York" "New York")
                                 ("Asia/Kathmandu" "Asia/Kathmandu")
                                 ("UTC" "UTC")))
+
+;; Enable helm-descbinds-mode
+(helm-descbinds-mode)

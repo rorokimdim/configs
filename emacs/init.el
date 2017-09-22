@@ -68,7 +68,6 @@
     anzu
     cider
     clj-refactor
-    cljr-helm
     clojure-mode
     clojure-mode-extra-font-locking
     clojure-snippets
@@ -97,8 +96,14 @@
     gnuplot
     google-maps
     google-this
+
     helm
+    helm-cider
+    helm-describe-modes
+    helm-descbinds
     helm-swoop
+    cljr-helm
+
     highlight-parentheses
     hl-sexp
     htmlize
@@ -110,9 +115,11 @@
     move-text
     multiple-cursors
     neotree
-    origami
+
     org
     org-bullets
+    origami
+
     ox-reveal
     popwin
     rainbow-blocks

@@ -93,7 +93,8 @@
 (defun my-find-file ()
   "Defines a custom find-file function."
   (interactive)
-  (cd (read-directory-name "Directory: " (or (ffip-project-root) my-workspace-directory)))
+  ;; Comment this out for now. Some bug in ffip-project-root that I need to look into later.
+  ;; (cd (read-directory-name "Directory: " (or (ffip-project-root) my-workspace-directory)))
   (call-interactively 'find-file-in-repository))
 
 (defun my-find-config-file ()

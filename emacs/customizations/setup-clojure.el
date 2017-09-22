@@ -99,3 +99,6 @@
       (evil-insert-state)
     (evil-normal-state)))
 (add-hook 'cider--debug-mode-hook 'my-cider-debug-toggle-insert-state)
+
+;; Enable helm-cider
+(helm-cider-mode 1)
