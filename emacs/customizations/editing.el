@@ -14,8 +14,9 @@
 
 ;; Enable company mode globally
 (add-hook 'after-init-hook 'global-company-mode)
-(add-to-list 'company-backends 'company-math-symbols-unicode)
-(add-to-list 'company-backends 'company-restclient)
+(with-eval-after-load 'company
+  (add-to-list 'company-backends 'company-math-symbols-unicode)
+  (add-to-list 'company-backends 'company-restclient))
 
 ;; Interactive search key bindings. By default, C-s runs
 ;; isearch-forward, so this swaps the bindings.
