@@ -72,6 +72,9 @@
     clojure-mode
     clojure-mode-extra-font-locking
     clojure-snippets
+    company
+    company-math
+    company-restclient
     dash
     datomic-snippets
     diminish
@@ -192,6 +195,9 @@
 
 ;; Setup org mode
 (load "setup-org.elc")
+
+;; Setup tex mode
+(load "setup-tex.elc")
 
 ;; Web browsing customizations
 (load "web-browsing.elc")

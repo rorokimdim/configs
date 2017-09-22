@@ -12,6 +12,11 @@
         try-complete-lisp-symbol-partially
         try-complete-lisp-symbol))
 
+;; Enable company mode globally
+(add-hook 'after-init-hook 'global-company-mode)
+(add-to-list 'company-backends 'company-math-symbols-unicode)
+(add-to-list 'company-backends 'company-restclient)
+
 ;; Interactive search key bindings. By default, C-s runs
 ;; isearch-forward, so this swaps the bindings.
 (global-set-key (kbd "C-s") 'isearch-forward-regexp)
@@ -74,9 +79,6 @@
 
 ;; Enable auto-revert mode
 (global-auto-revert-mode 1)
-
-;; Disable annyoing subscripting in tex-mode
-(eval-after-load "tex-mode" ' (fset 'tex-font-lock-suscript 'ignore))
 
 ;; Enable spell checking
 (add-hook 'text-mode-hook 'flyspell-mode)
