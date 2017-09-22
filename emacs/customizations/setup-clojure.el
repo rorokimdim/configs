@@ -61,8 +61,10 @@
 (require 'clj-refactor)
 (add-hook 'clojure-mode-hook (lambda ()
                                (clj-refactor-mode 1)
-                               (yas-minor-mode 1)
-                               (cljr-add-keybindings-with-prefix "C-c C-m")))
+                               (yas-minor-mode 1)))
+
+(require 'cljr-helm)
+(define-key clojure-mode-map (kbd "C-c C-r") 'cljr-helm)
 
 ;; Shortcuts for clojure mode
 (require 'evil-leader)
@@ -70,8 +72,9 @@
   "cc"  'cider-connect
   "cj"  'cider-jack-in
   "cd"  'cider-doc
-  "cgd" 'cider-grimoire-web
+  "cgd" 'cider-grimoire
   "cf"  'cider-format-buffer
+  "gd"  'cider-find-dwim
   "r"   'cider-switch-to-repl-buffer
   "eb"  'cider-load-buffer
   "ee"  (lambda ()
@@ -80,7 +83,10 @@
           (cider-eval-last-sexp))
   "ef"  'cider-eval-defun-at-point
   "er"  'cider-eval-region
-  "ex"  'cider-eval-last-sexp-and-replace)
+  "ex"  (lambda ()
+          (interactive)
+          (forward-char)
+          (cider-eval-last-sexp-and-replace)))
 
 ;; Shortcuts for cider repl
 (define-key cider-repl-mode-map (kbd "<up>") 'cider-repl-previous-input)

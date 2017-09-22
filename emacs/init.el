@@ -68,6 +68,7 @@
     anzu
     cider
     clj-refactor
+    cljr-helm
     clojure-mode
     clojure-mode-extra-font-locking
     clojure-snippets
