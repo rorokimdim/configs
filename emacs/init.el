@@ -121,6 +121,7 @@
     origami
 
     ox-reveal
+    paxedit
     popwin
     rainbow-blocks
     rainbow-delimiters
@@ -129,6 +130,7 @@
     restclient
     rotate
     s
+
     smartparens
     smex
     sqlup-mode
