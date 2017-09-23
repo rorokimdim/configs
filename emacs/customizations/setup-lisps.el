@@ -54,6 +54,7 @@
     "I" 'sp-backward-up-sexp
     "k" 'sp-beginning-of-sexp
     "j" 'sp-end-of-sexp
+    "y" 'paxedit-copy
     "^" 'paxedit-sexp-raise))
 
 (eval-after-load "paxedit"
@@ -63,7 +64,6 @@
           (define-key paxedit-mode-map (kbd "M-<down>") 'paxedit-backward-end)
           (define-key paxedit-mode-map (kbd "M-b") 'paxedit-previous-symbol)
           (define-key paxedit-mode-map (kbd "M-f") 'paxedit-next-symbol)
-          (define-key paxedit-mode-map (kbd "C-%") 'paxedit-copy)
           (define-key paxedit-mode-map (kbd "C-&") 'paxedit-kill)
           (define-key paxedit-mode-map (kbd "C-*") 'paxedit-delete)
           ;; Symbol backward/forward kill

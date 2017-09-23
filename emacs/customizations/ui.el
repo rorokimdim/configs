@@ -154,6 +154,7 @@
 (eval-after-load "highlight-parentheses" '(diminish 'highlight-parentheses-mode))
 (eval-after-load "vi-tilde-fringe" '(diminish 'vi-tilde-fringe-mode))
 (eval-after-load "flyspell" '(diminish 'flyspell-mode))
+(eval-after-load "paxedit" '(diminish 'paxedit-mode))
 
 ;; Remove the *Compile-Log* buffer if it's empty
 (add-hook 'emacs-startup-hook
