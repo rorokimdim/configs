@@ -25,20 +25,25 @@ filetype off
 
 """Start of Plug stuff
 call plug#begin('~/.vim/plugged')
-Plug 'tpope/vim-surround'
+Plug 'davidhalter/jedi-vim'
+Plug 'easymotion/vim-easymotion'
+Plug 'ervandew/supertab'
+Plug 'guns/vim-sexp'
+Plug 'haya14busa/incsearch-easymotion.vim'
+Plug 'haya14busa/incsearch.vim'
+Plug 'kien/rainbow_parentheses.vim'
+Plug 'scrooloose/nerdtree'
+Plug 'tpope/vim-fireplace'
 Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-salve'
+Plug 'tpope/vim-sexp-mappings-for-regular-people'
+Plug 'tpope/vim-surround'
+Plug 'venantius/vim-cljfmt'
+Plug 'venantius/vim-eastwood'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-syntastic/syntastic'
-Plug 'easymotion/vim-easymotion'
-Plug 'haya14busa/incsearch.vim'
-Plug 'haya14busa/incsearch-easymotion.vim'
-Plug 'scrooloose/nerdtree'
-Plug 'davidhalter/jedi-vim'
-Plug 'ervandew/supertab'
-Plug 'tpope/vim-fireplace'
-Plug 'venantius/vim-eastwood'
-Plug 'venantius/vim-cljfmt'
 call plug#end()
 """End of Plug stuff
 
@@ -78,6 +83,12 @@ let g:syntastic_enable_signs = 1
 nnoremap <leader>en :silent! lnext<CR>
 nnoremap <leader>ep :silent! lprev<CR>
 
+"""Rainbow parentheses everywhere
+autocmd VimEnter * RainbowParenthesesToggle
+autocmd Syntax * RainbowParenthesesLoadRound
+autocmd Syntax * RainbowParenthesesLoadSquare
+autocmd Syntax * RainbowParenthesesLoadBraces
+
 """Easymotion
 map <Leader> <Plug>(easymotion-prefix)
 nmap <Leader>, <Plug>(easymotion-overwin-f)
@@ -107,7 +118,10 @@ autocmd FileType python setlocal completeopt-=preview "Do not show popup doc
 """Clojure
 autocmd Filetype clojure nmap <Leader>r :Require<cr>
 autocmd FileType clojure setlocal completeopt-=preview  "Do not show popup doc
+autocmd BufRead,BufNewFile *.cljs setlocal filetype=clojure
+autocmd BufRead,BufNewFile *.boot setlocal filetype=clojure
 let g:syntastic_clojure_checkers = ['eastwood']
+let g:clj_fmt_autosave = 0  "Do not auto format; let me do it as needed with :Cljfmt
 
 """NERDTree
 nnoremap <leader>nt :NERDTreeToggle<CR>
@@ -131,12 +145,12 @@ match ExtraWhitespace /\s\+$\|\t/
 highlight Search cterm=NONE ctermfg=black ctermbg=white
 
 """Custom functions
-autocmd BufWrite * :call DeleteTrailingWS()
 func! DeleteTrailingWS()
     exe "normal mz"
     %s/\s\+$//ge
     exe "normal 'z"
 endfunc
+autocmd BufWrite * :call DeleteTrailingWS()
 
 "With cursor on line call :Underline
 function! s:Underline(chars)
