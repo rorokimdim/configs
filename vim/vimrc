@@ -1,3 +1,22 @@
+"""IMPORTANT. Do this first to setup vim-plug
+" 1. Follow instructions in https://github.com/junegunn/vim-plug#installation.
+"    (put the plug.vim file in ~/.vim/autoload directory)
+"""
+
+"""IMPORTANT. If using neovim do the following.
+" 1. Install neovim using `brew install neovim`
+" 2. create ~/.config/nvim/init.vim with these contents (without the comment quotes):
+"
+"    set runtimepath^=~/.vim runtimepath+=~/.vim/after
+"    let &packpath = &runtimepath
+"    source ~/.vimrc
+"
+"""
+
+"""IMPORTANT. Do this after finishing the above steps.
+" 1. Open vim/nvim and run :PlugInstall
+"""
+
 let mapleader = ","
 colorscheme delek
 
@@ -18,24 +37,22 @@ filetype plugin indent on
 syntax on
 filetype plugin on
 
-"""Start of Vundle stuff
-set rtp+=~/.vim/bundle/Vundle.vim
-
-call vundle#begin()
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'tpope/vim-surround'
-Plugin 'tpope/vim-fugitive'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-Plugin 'vim-syntastic/syntastic'
-Plugin 'easymotion/vim-easymotion'
-Plugin 'haya14busa/incsearch.vim'
-Plugin 'haya14busa/incsearch-easymotion.vim'
-Plugin 'scrooloose/nerdtree'
-Plugin 'davidhalter/jedi-vim'
-Plugin 'ervandew/supertab'
-call vundle#end()
-"""End of Vundle stuff
+"""Start of Plug stuff
+call plug#begin('~/.vim/plugged')
+Plug 'VundleVim/Vundle.vim'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-fugitive'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'vim-syntastic/syntastic'
+Plug 'easymotion/vim-easymotion'
+Plug 'haya14busa/incsearch.vim'
+Plug 'haya14busa/incsearch-easymotion.vim'
+Plug 'scrooloose/nerdtree'
+Plug 'davidhalter/jedi-vim'
+Plug 'ervandew/supertab'
+call plug#end()
+"""End of Plug stuff
 
 filetype plugin indent on
 
@@ -84,6 +101,9 @@ autocmd FileType python setlocal completeopt-=preview "Do not show popup doc
 """Tabs
 nnoremap <leader>tn :silent! tabn<CR>
 nnoremap <leader>tp :silent! tabp<CR>
+
+"""Unhighlight last search on escape
+nnoremap <Esc> :nohlsearch<CR><Esc>
 
 """Custom functions
 autocmd BufWrite * :call DeleteTrailingWS()
