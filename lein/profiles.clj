@@ -6,6 +6,8 @@
                   [thunknyc/nrepl-profile "0.1.0-SNAPSHOT"]
                   [lein-gorilla "0.4.0"]
                   ]
-        :dependencies []
+        :dependencies [[jonase/eastwood "0.2.4" :exclusions [org.clojure/clojure]]
+                       [cljfmt "0.5.1"]
+                       ]
         }
  }
