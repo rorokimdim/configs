@@ -1,6 +1,11 @@
 {
-  :user {
-    :plugins []
-    :dependencies []
-  }
-}
+ :user {
+        :plugins [[org.clojure/tools.nrepl "0.2.12"]
+                  [cider/cider-nrepl "0.16.0-SNAPSHOT"]
+                  [refactor-nrepl "2.4.0-SNAPSHOT"]
+                  [thunknyc/nrepl-profile "0.1.0-SNAPSHOT"]
+                  [lein-gorilla "0.4.0"]
+                  ]
+        :dependencies []
+        }
+ }
