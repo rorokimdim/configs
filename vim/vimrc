@@ -105,6 +105,17 @@ nnoremap <leader>tp :silent! tabp<CR>
 """Unhighlight last search on escape
 nnoremap <Esc> :nohlsearch<CR><Esc>
 
+"""Highlight rows which are too long
+highlight OverLength ctermbg=red ctermfg=white guibg=#592929
+match OverLength /\%101v.\+/
+
+"""Highlight all tabs and trailing whitespace characters
+highlight ExtraWhitespace ctermbg=white guibg=white
+match ExtraWhitespace /\s\+$\|\t/
+
+"""Set highlight color for search
+highlight Search cterm=NONE ctermfg=black ctermbg=white
+
 """Custom functions
 autocmd BufWrite * :call DeleteTrailingWS()
 func! DeleteTrailingWS()
