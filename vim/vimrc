@@ -33,6 +33,7 @@ Plug 'haya14busa/incsearch-easymotion.vim'
 Plug 'haya14busa/incsearch.vim'
 Plug 'kien/rainbow_parentheses.vim'
 Plug 'scrooloose/nerdtree'
+Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-fireplace'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-repeat'
@@ -122,6 +123,7 @@ autocmd BufRead,BufNewFile *.cljs setlocal filetype=clojure
 autocmd BufRead,BufNewFile *.boot setlocal filetype=clojure
 let g:syntastic_clojure_checkers = ['eastwood']
 let g:clj_fmt_autosave = 0  "Do not auto format; let me do it as needed with :Cljfmt
+map <Leader>cc :Connect nrepl://localhost:9777<CR>
 
 """NERDTree
 nnoremap <leader>nt :NERDTreeToggle<CR>
