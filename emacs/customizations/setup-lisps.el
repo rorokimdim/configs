@@ -39,7 +39,7 @@
   (add-hook h #'aggressive-indent-mode))
 
 ;;
-;; Key bindings for smartparens
+;; Key bindings for smartparens/paxedit
 ;;
 (require 'evil-leader)
 (dolist (m '(lisp-interaction-mode
@@ -57,19 +57,30 @@
     "y" 'paxedit-copy
     "^" 'paxedit-sexp-raise))
 
+(evil-define-key 'normal paxedit-mode-map
+  ">e" 'paxedit-transpose-forward
+  "<e" 'paxedit-transpose-backward
+  "<I" (lambda ()
+         (interactive)
+         (paxedit-backward-up 1)
+         (evil-append 1))
+  ">I" (lambda ()
+         (interactive)
+         (paxedit-backward-end 1)
+         (backward-char)
+         (evil-insert 1))
+  "<<" 'paxedit-previous-symbol
+  ">>" 'paxedit-next-symbol
+  ">k" 'paxedit-forward-kill
+  "<k" 'paxedit-backward-kill
+  ">)" 'sp-forward-barf-sexp
+  "<(" 'sp-backward-barf-sexp)
+
 (eval-after-load "paxedit"
-  '(progn (define-key paxedit-mode-map (kbd "M-<right>") 'paxedit-transpose-forward)
-          (define-key paxedit-mode-map (kbd "M-<left>") 'paxedit-transpose-backward)
-          (define-key paxedit-mode-map (kbd "M-<up>") 'paxedit-backward-up)
-          (define-key paxedit-mode-map (kbd "M-<down>") 'paxedit-backward-end)
-          (define-key paxedit-mode-map (kbd "M-b") 'paxedit-previous-symbol)
-          (define-key paxedit-mode-map (kbd "M-f") 'paxedit-next-symbol)
-          (define-key paxedit-mode-map (kbd "C-&") 'paxedit-kill)
-          (define-key paxedit-mode-map (kbd "C-*") 'paxedit-delete)
-          ;; Symbol backward/forward kill
-          (define-key paxedit-mode-map (kbd "C-w") 'paxedit-backward-kill)
-          (define-key paxedit-mode-map (kbd "M-w") 'paxedit-forward-kill)
-          ;; Symbol manipulation
-          (define-key paxedit-mode-map (kbd "M-u") 'paxedit-symbol-change-case)
-          (define-key paxedit-mode-map (kbd "C-@") 'paxedit-symbol-copy)
-          (define-key paxedit-mode-map (kbd "C-#") 'paxedit-symbol-kill)))
+  '(progn
+     (define-key paxedit-mode-map (kbd "C-&") 'paxedit-kill)
+     (define-key paxedit-mode-map (kbd "C-*") 'paxedit-delete)
+     ;; Symbol manipulation
+     (define-key paxedit-mode-map (kbd "M-u") 'paxedit-symbol-change-case)
+     (define-key paxedit-mode-map (kbd "C-@") 'paxedit-symbol-copy)
+     (define-key paxedit-mode-map (kbd "C-#") 'paxedit-symbol-kill)))
