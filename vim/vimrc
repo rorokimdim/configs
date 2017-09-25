@@ -18,8 +18,6 @@
 """
 
 let mapleader = ","
-colorscheme delek
-
 set nocompatible
 filetype off
 
@@ -28,6 +26,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'davidhalter/jedi-vim'
 Plug 'easymotion/vim-easymotion'
 Plug 'ervandew/supertab'
+Plug 'flazz/vim-colorschemes'
 Plug 'guns/vim-sexp'
 Plug 'haya14busa/incsearch-easymotion.vim'
 Plug 'haya14busa/incsearch.vim'
@@ -60,6 +59,9 @@ set ic
 set incsearch
 set ruler
 set nofoldenable
+
+"""Color scheme
+colorscheme jellybeans
 
 """Setup backup/swap dir
 set backup
