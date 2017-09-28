@@ -80,6 +80,7 @@
     elpy
     eshell-autojump
     eshell-up
+
     evil
     evil-anzu
     evil-escape
@@ -88,6 +89,8 @@
     evil-numbers
     evil-surround
     evil-visualstar
+
+    bind-map
     expand-region
     eyebrowse
     f

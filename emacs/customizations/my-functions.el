@@ -124,6 +124,30 @@
   "Goes to defintion of a function with name X."
   (find-function (intern x)))
 
+(defun my-create-frame-with-scratch ()
+  "Creates a frame and switches to scratch buffer."
+  (interactive)
+  (call-interactively 'make-frame)
+  (switch-to-buffer "*scratch*"))
+
+(defun my-create-frame-with-dired ()
+  "Creates a frame and calls ido-dired."
+  (interactive)
+  (call-interactively 'my-create-frame-with-scratch)
+  (call-interactively 'ido-dired))
+
+(defun my-create-frame-with-find-file ()
+  "Creates a frame and calls my-find-file."
+  (interactive)
+  (call-interactively 'my-create-frame-with-scratch)
+  (call-interactively 'my-find-file))
+
+(defun my-create-frame-with-eshell ()
+  "Creates a frame and runs eshell."
+  (interactive)
+  (call-interactively 'my-create-frame-with-scratch)
+  (call-interactively 'eshell))
+
 ;;
 ;; Key bindings
 ;;

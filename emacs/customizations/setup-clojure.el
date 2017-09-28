@@ -51,7 +51,7 @@
 ;; Use clojure mode for other extensions
 (add-to-list 'auto-mode-alist '("\\.edn$" . clojure-mode))
 (add-to-list 'auto-mode-alist '("\\.boot$" . clojure-mode))
-(add-to-list 'auto-mode-alist '("\\.cljs.*$" . clojure-mode))
+(add-to-list 'auto-mode-alist '("\\.cljs.*$" . clojurescript-mode))
 (add-to-list 'auto-mode-alist '("lein-env" . enh-ruby-mode))
 
 ;; Do not go to the REPL buffer on cider-connect
@@ -67,26 +67,31 @@
 (define-key clojure-mode-map (kbd "C-c C-r") 'cljr-helm)
 
 ;; Shortcuts for clojure mode
-(require 'evil-leader)
-(evil-leader/set-key-for-mode 'clojure-mode
-  "cc"  'cider-connect
-  "cj"  'cider-jack-in
-  "cd"  'cider-doc
-  "cgd" 'cider-grimoire
-  "cf"  'cider-format-buffer
-  "gd"  'cider-find-dwim
-  "r"   'cider-switch-to-repl-buffer
-  "eb"  'cider-load-buffer
-  "ee"  (lambda ()
-          (interactive)
-          (forward-char)
-          (cider-eval-last-sexp))
-  "ef"  'cider-eval-defun-at-point
-  "er"  'cider-eval-region
-  "ex"  (lambda ()
-          (interactive)
-          (forward-char)
-          (cider-eval-last-sexp-and-replace)))
+(require 'bind-map)
+(bind-map my-clj-cljs-mode-map
+  :keys ("s-,")
+  :evil-keys (",")
+  :evil-states (normal visual)
+  :major-modes (clojure-mode
+                clojurescript-mode)
+  :bindings ("cc" 'cider-connect
+             "cj" 'cider-jack-in
+             "cd" 'cider-doc
+             "cgd"'cider-grimoire
+             "cf" 'cider-format-buffer
+             "gd" 'cider-find-dwim
+             "r"  'cider-switch-to-repl-buffer
+             "eb" 'cider-load-buffer
+             "ee" (lambda ()
+                    (interactive)
+                    (forward-char)
+                    (cider-eval-last-sexp))
+             "ef" 'cider-eval-defun-at-point
+             "er" 'cider-eval-region
+             "ex" (lambda ()
+                    (interactive)
+                    (forward-char)
+                    (cider-eval-last-sexp-and-replace))))
 
 ;; Shortcuts for cider repl
 (define-key cider-repl-mode-map (kbd "<up>") 'cider-repl-previous-input)

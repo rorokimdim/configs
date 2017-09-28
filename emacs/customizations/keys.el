@@ -1,5 +1,7 @@
 ;;
-;; Common global shortcuts for both evil/emacs modes
+;; Common global keyboard shortcuts
+;;
+;; Put mode specific shortcuts elsewhere.
 ;;
 
 ;; Change text scale
@@ -35,44 +37,124 @@
 ;; Use F2 to eval-and-replace lisp expressions
 (global-set-key [f2] 'my-eval-and-replace)
 
-;; User F3 to toggle buffers
-(global-set-key [f3] (lambda()
-                       (interactive)
-                       (my-buffer-toggle 'next-buffer)))
-
 ;; Use F4 to change window layout
 (global-set-key [f4] 'rotate-layout)
-
-;; Use F5 to find file in repository
-(global-set-key [f5] 'find-file-in-repository)
-
-;; Use F7 to find a config file
-(global-set-key [f7] 'my-find-config-file)
 
 ;; Use F10 to clear repl buffer
 (global-set-key [f10] 'comint-clear-buffer)
 
-;; Use F9 to kill current buffer
-(global-set-key [f9] 'kill-buffer-and-window)
+;;
+;; bind-maps
+;; See https://github.com/justbur/emacs-bind-map
+;;
 
+;; For file and buffer stuff
+(require 'bind-map)
+(bind-map my-back-slash-leader-map
+  :keys ("s-\\")
+  :evil-keys ("\\")
+  :evil-states (normal visual)
+  :bindings ("\\" 'ido-switch-buffer
+             "*" (lambda ()
+                   (interactive)
+                   (mapc 'kill-buffer (delq "*scratch*" (buffer-list))))
+             "c" 'my-find-config-file
+             "d" 'ido-dired
+             "f" 'my-find-file
+             "m" 'helm-imenu
+             "n" 'neotree-toggle
+             "r" 'helm-recentf
+             "s" (lambda ()
+                   (interactive)
+                   (call-interactively 'ag)
+                   (delete-window))
+             "x" 'kill-buffer-and-window))
+
+;; For "programs"
+(bind-map my-back-quote-leader-map
+  :keys ("s-`")
+  :evil-keys ("`")
+  :evil-states (normal visual)
+  :bindings ("`" 'eshell
+             "d" 'osx-dictionary-search-input
+             "g" 'helm-google-suggest
+             "c" 'calc
+             "j" 'calendar
+             "t" 'world-time-list))
+
+;; For windows
+(bind-map my-f3-leader-map
+  :keys ("<f3>")
+  :bindings ("c" 'eyebrowse-next-window-config
+             "x" 'eyebrowse-close-window-config
+             "r" 'rotate-window
+             "l" 'rotate-layout
+             "s" 'ace-swap-window
+             "," 'eyebrowse-rename-window-config
+             "o" 'ace-window
+             "0" 'delete-window
+             "1" 'delete-other-windows))
+;; For frames
+(bind-map my-f5-leader-map
+  :keys ("<f5>")
+  :bindings ("c" 'my-create-frame-with-scratch
+             "d" 'my-create-frame-with-dired
+             "f" 'my-create-frame-with-find-file
+             "o" 'other-frame
+             "s" 'my-create-frame-with-eshell
+             "x" 'delete-frame))
+
+;; For anything that needs to be used often
+(bind-map my-comma-leader-map
+  :keys ("s-,")
+  :evil-keys (",")
+  :evil-states (normal visual)
+  :bindings ("<SPC>" 'er/expand-region
+             "," 'ace-jump-mode
+
+             "w0" 'delete-window
+             "w1" 'delete-other-windows
+             "wh" 'evil-window-left
+             "wl" 'evil-window-right
+             "wk" 'evil-window-up
+             "wj" 'evil-window-down
+             "o" 'ace-window
+
+             "gb" 'magit-blame
+
+             "gs" 'find-function
+             "gd" 'evil-goto-definition
+
+             "eb" 'eval-buffer
+             "ee" 'eval-last-sexp
+             "ef" 'eval-defun
+             "ep" 'my-eval-print-last-sexp
+             "er" 'eval-region
+             "ex" 'my-eval-and-replace
+
+             "m" 'mc/mark-more-like-this-extended
+             "/" 'helm-swoop
+
+             "-" (lambda ()
+                   (interactive)
+                   (call-interactively 'split-window-below)
+                   (other-window 1 nil)
+                   (switch-to-buffer "*scratch*"))
+             "|" (lambda ()
+                   (interactive)
+                   (call-interactively 'split-window-right)
+                   (other-window 1 nil)
+                   (switch-to-buffer "*scratch*"))))
+
+;;
 ;; Key chords
+;;
+
 (require 'key-chord)
 (key-chord-define-global "BB" 'ido-switch-buffer)
-(key-chord-define-global "DD" 'osx-dictionary-search-input)
-(key-chord-define-global "EE" 'eval-expression)
-(key-chord-define-global "FF" 'my-find-file)
-(key-chord-define-global "GG" 'helm-google-suggest)
-(key-chord-define-global "JJ" 'ace-jump-mode)
-(key-chord-define-global "MM" 'helm-imenu)
-
-(key-chord-define-global "QQ" 'kill-buffer-and-window)
 (key-chord-define-global "RR" 'helm-recentf)
 (key-chord-define-global "SS" 'eshell)
 (key-chord-define-global "~~" 'helm-bookmarks)
-
-(key-chord-define-global "WW" 'eyebrowse-switch-to-window-config)
-(key-chord-define-global "XX" 'smex)
-(key-chord-define-global "\\\\" 'eyebrowse-last-window-config)
 (key-chord-mode 1)
 
 ;; Disable key chord in minibuffer
