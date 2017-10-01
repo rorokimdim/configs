@@ -86,3 +86,6 @@
 (defun my-evil-quit (old-fun &rest args)
   (call-interactively 'kill-buffer-and-window))
 (advice-add #'evil-quit :around #'my-evil-quit)
+
+;; Allow moving beyond eol
+(setq evil-move-beyond-eol t)

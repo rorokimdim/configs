@@ -135,6 +135,7 @@
     s
 
     smartparens
+    evil-cleverparens
     smex
     sqlup-mode
     synonymous
