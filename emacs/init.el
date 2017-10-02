@@ -66,14 +66,17 @@
     ag
     aggressive-indent
     anzu
+
     cider
     clj-refactor
     clojure-mode
     clojure-mode-extra-font-locking
     clojure-snippets
+
     company
     company-math
     company-restclient
+
     dash
     datomic-snippets
     diminish
@@ -89,6 +92,7 @@
     evil-numbers
     evil-surround
     evil-visualstar
+    vi-tilde-fringe
 
     bind-map
     expand-region
@@ -109,6 +113,12 @@
 
     highlight-parentheses
     hl-sexp
+    rainbow-blocks
+    rainbow-delimiters
+    smartparens
+    evil-cleverparens
+    paxedit
+
     htmlize
     ido-completing-read+
     ido-vertical-mode
@@ -124,30 +134,31 @@
     origami
 
     ox-reveal
-    paxedit
     popwin
-    rainbow-blocks
-    rainbow-delimiters
+
     realgud
     restart-emacs
     restclient
     rotate
     s
 
-    smartparens
-    evil-cleverparens
     smex
     sqlup-mode
     synonymous
     tagedit
     use-package
-    vi-tilde-fringe
+
     virtualenvwrapper
     visual-regexp
     visual-regexp-steroids
     which-key
     world-time-mode
-    yasnippet))
+    yasnippet
+
+    rust-mode
+    racer
+    cargo
+    ))
 
 (dolist (p my-packages)
   (when (not (package-installed-p p))
@@ -192,6 +203,7 @@
 (load "setup-clojure.elc")
 (load "setup-python.elc")
 (load "setup-sql.elc")
+(load "setup-rust.elc")
 
 ;; Keyboard shortcuts
 (load "keys.elc")
