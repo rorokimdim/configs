@@ -13,6 +13,11 @@
 "
 """
 
+"""IMPORTANT. For python stuff, make sure to install the following.
+" 1. jedi: `pip install jedi`
+" 2. flake8: `pip install flake8`
+"""
+
 """IMPORTANT. Do this after finishing the above steps.
 " 1. Open vim/nvim and run :PlugInstall
 """
@@ -110,10 +115,12 @@ let g:syntastic_cpp_compiler = 'clang++'
 let g:syntastic_cpp_compiler_options = ' -std=c++11 -stdlib=libc++'
 
 """Python
+"(Remember to pip install flake8!)
 let g:syntastic_python_checkers = ['flake8']
 let g:syntastic_python_flake8_args = "--max-line-length=100"
 
 "Jedi Vim
+"(Remember to pip install jedi!)
 let g:jedi#completions_enabled = 1
 let g:jedi#popup_on_dot = 0 "Use ctrl-space to show completions instead because this can be slow
 autocmd FileType python setlocal completeopt-=preview "Do not show popup doc
@@ -165,6 +172,7 @@ function! s:Underline(chars)
 endfunction
 command! -nargs=? Underline call s:Underline(<q-args>)
 
+"Auto create non-existent dirs when creating a new file
 function s:MkNonExDir(file, buf)
     if empty(getbufvar(a:buf, '&buftype')) && a:file!~#'\v^\w+\:\/'
         let dir=fnamemodify(a:file, ':h')
@@ -173,7 +181,6 @@ function s:MkNonExDir(file, buf)
         endif
     endif
 endfunction
-
 augroup BWCCreateDir
     autocmd!
     autocmd BufWritePre * :call s:MkNonExDir(expand('<afile>'), +expand('<abuf>'))
