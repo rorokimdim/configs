@@ -165,6 +165,7 @@ function! s:Underline(chars)
 endfunction
 command! -nargs=? Underline call s:Underline(<q-args>)
 
+"Auto create non-existent dirs when creating a new file
 function s:MkNonExDir(file, buf)
     if empty(getbufvar(a:buf, '&buftype')) && a:file!~#'\v^\w+\:\/'
         let dir=fnamemodify(a:file, ':h')
@@ -173,7 +174,6 @@ function s:MkNonExDir(file, buf)
         endif
     endif
 endfunction
-
 augroup BWCCreateDir
     autocmd!
     autocmd BufWritePre * :call s:MkNonExDir(expand('<afile>'), +expand('<abuf>'))
