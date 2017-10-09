@@ -148,6 +148,17 @@
   (call-interactively 'my-create-frame-with-scratch)
   (call-interactively 'eshell))
 
+(defun my-cider-figwheel-repl ()
+  "Starts a figwheel repl."
+  (interactive)
+  (save-some-buffers)
+  (with-current-buffer (cider-current-repl-buffer)
+    (goto-char (point-max))
+    (insert "(require 'figwheel-sidecar.repl-api)
+             (figwheel-sidecar.repl-api/start-figwheel!) ; idempotent
+             (figwheel-sidecar.repl-api/cljs-repl)")
+    (cider-repl-return)))
+
 ;;
 ;; Key bindings
 ;;
