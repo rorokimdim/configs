@@ -81,7 +81,7 @@
 ;; Set fring color to background color
 (set-face-attribute 'fringe nil
                       :foreground (face-foreground 'default)
-                      :background (face-background 'default))
+                      :background "grey20")
 
 ;; Don't pop up font menu
 (global-set-key (kbd "s-t") '(lambda () (interactive)))
