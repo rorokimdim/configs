@@ -59,7 +59,7 @@
 ;; Packages to install
 (defvar my-packages
   '(
-    ace-jump-mode
+    avy
     ace-link
     ace-window
     aes

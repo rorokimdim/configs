@@ -110,7 +110,8 @@
   :evil-keys (",")
   :evil-states (normal visual)
   :bindings ("<SPC>" 'er/expand-region
-             "," 'ace-jump-mode
+             "," 'avy-goto-char
+             "f" 'avy-goto-char-in-line
 
              "w0" 'delete-window
              "w1" 'delete-other-windows
