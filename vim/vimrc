@@ -50,6 +50,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-syntastic/syntastic'
 Plug 'terryma/vim-multiple-cursors'
+Plug 'ntpeters/vim-better-whitespace'
 call plug#end()
 """End of Plug stuff
 
@@ -148,10 +149,6 @@ nnoremap <Esc> :nohlsearch<CR><Esc>
 """Highlight rows which are too long
 highlight OverLength ctermbg=red ctermfg=white guibg=#592929
 match OverLength /\%101v.\+/
-
-"""Highlight all tabs and trailing whitespace characters
-highlight ExtraWhitespace ctermbg=white guibg=white
-match ExtraWhitespace /\s\+$\|\t/
 
 """Set highlight color for search
 highlight Search cterm=NONE ctermfg=black ctermbg=white
