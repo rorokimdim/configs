@@ -152,9 +152,6 @@
 ;;
 
 (require 'key-chord)
-(key-chord-define-global "BB" 'ido-switch-buffer)
-(key-chord-define-global "RR" 'helm-recentf)
-(key-chord-define-global "SS" 'eshell)
 (key-chord-define-global "~~" 'helm-bookmarks)
 (key-chord-mode 1)
 
