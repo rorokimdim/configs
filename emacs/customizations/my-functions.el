@@ -93,6 +93,7 @@
 (defun my-find-file ()
   "Defines a custom find-file function."
   (interactive)
+  (ignore-errors (cd (file-name-directory (buffer-file-name))))
   (cd (read-directory-name "Directory: " (or (ignore-errors (ffip-project-root)) my-workspace-directory)))
   (call-interactively 'find-file-in-repository))
 

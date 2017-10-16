@@ -199,11 +199,12 @@
 (load "setup-restclient.elc")
 
 ;; Language-specific setups
-(load "setup-scheme.elc")
+(load "setup-c.elc")
 (load "setup-clojure.elc")
 (load "setup-python.elc")
-(load "setup-sql.elc")
 (load "setup-rust.elc")
+(load "setup-scheme.elc")
+(load "setup-sql.elc")
 
 ;; Keyboard shortcuts
 (load "keys.elc")
