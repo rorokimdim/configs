@@ -144,6 +144,13 @@ nnoremap <leader>nt :NERDTreeToggle<CR>
 """Tabs
 nnoremap <leader>tn :silent! tabn<CR>
 nnoremap <leader>tp :silent! tabp<CR>
+nnoremap <leader>to :silent! tabnew<CR>
+
+"""Fzf
+nnoremap <leader>;; :silent! Files<CR>
+nnoremap <leader>;l :silent! Lines<CR>
+nnoremap <leader>;b :silent! Buffers<CR>
+nnoremap <leader>;a :silent! Ag<CR>
 
 """Unhighlight last search on escape
 nnoremap <Esc> :nohlsearch<CR><Esc>
