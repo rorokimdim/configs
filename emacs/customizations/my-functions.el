@@ -1,3 +1,4 @@
+(require 'cl)
 (require 'dash)
 
 (defun my-eval-and-replace ()
@@ -158,6 +159,22 @@
              (figwheel-sidecar.repl-api/start-figwheel!) ; idempotent
              (figwheel-sidecar.repl-api/cljs-repl)")
     (cider-repl-return)))
+
+(defun my-get-closest-pathname (file max-level)
+  "Determine the pathname of the first instance of FILE starting from the current directory towards
+   root. This may not do the correct thing in presence of links. If it does not find FILE, then it
+   shall return the name of FILE in the current directory, suitable for creation.
+
+   Copied from: https://www.emacswiki.org/emacs/CompileCommand"
+  (let ((root (expand-file-name "/"))
+        (level 0))
+    (expand-file-name
+     file
+     (loop
+      for d = default-directory then (expand-file-name ".." d)
+      do (setq level (+ level 1))
+      if (file-exists-p (expand-file-name file d)) return d
+      if (equal d root) return nil))))
 
 ;;
 ;; Key bindings
