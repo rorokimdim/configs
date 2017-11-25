@@ -109,6 +109,7 @@
     helm-describe-modes
     helm-descbinds
     helm-swoop
+    helm-tramp
     cljr-helm
 
     highlight-parentheses
@@ -227,6 +228,9 @@
 
 ;; Web browsing customizations
 (load "web-browsing.elc")
+
+;; Tramp customizations
+(load "setup-tramp.elc")
 
 ;; Mac OSX specific stuff
 (load "setup-osx.elc")
