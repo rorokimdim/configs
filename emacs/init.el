@@ -159,6 +159,15 @@
     rust-mode
     racer
     cargo
+
+    go-mode
+    go-eldoc
+    go-snippets
+    go-guru
+    company-go
+
+    erlang
+    company-erlang
     ))
 
 (dolist (p my-packages)
@@ -206,6 +215,8 @@
 (load "setup-rust.elc")
 (load "setup-scheme.elc")
 (load "setup-sql.elc")
+(load "setup-erlang.elc")
+(load "setup-go.elc")
 
 ;; Keyboard shortcuts
 (load "keys.elc")
