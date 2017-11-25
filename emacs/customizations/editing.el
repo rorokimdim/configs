@@ -69,7 +69,6 @@
   :ensure t
   :diminish yas-minor-mode
   :config
-  (setq yas-snippet-dirs '("~/.emacs.d/snippets"))
   (yas-global-mode 1))
 
 ;; Enable save-place mode
