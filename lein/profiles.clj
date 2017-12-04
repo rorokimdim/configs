@@ -9,7 +9,6 @@
                   ]
         :dependencies [[jonase/eastwood "0.2.4" :exclusions [org.clojure/clojure]]
                        [cljfmt "0.5.1"]
-                       [proto-repl "0.3.1"]
                        [compliment "0.3.4"]
                        ]
         }
