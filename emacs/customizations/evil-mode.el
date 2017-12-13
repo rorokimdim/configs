@@ -55,7 +55,8 @@
                        osx-dictionary-mode
                        term-mode
                        world-time-table-mode
-                       cider-stacktrace-mode)
+                       cider-stacktrace-mode
+                       geiser-debug-mode)
          do (evil-set-initial-state mode 'emacs))
 
 ;; Use Ctrl-e to go to end of line, like in emacs
