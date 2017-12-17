@@ -51,6 +51,8 @@ Plug 'ntpeters/vim-better-whitespace'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'fatih/vim-go'
+Plug 'jpalardy/vim-slime'
+Plug 'mklabs/split-term.vim'
 call plug#end()
 """End of Plug stuff
 
@@ -116,6 +118,9 @@ autocmd VimEnter * RainbowParenthesesToggle
 autocmd Syntax * RainbowParenthesesLoadRound
 autocmd Syntax * RainbowParenthesesLoadSquare
 autocmd Syntax * RainbowParenthesesLoadBraces
+
+"""Vim-slime
+let g:slime_target = "neovim"
 
 """Easymotion
 map <Leader> <Plug>(easymotion-prefix)
