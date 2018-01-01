@@ -56,6 +56,7 @@
                        term-mode
                        world-time-table-mode
                        cider-stacktrace-mode
+                       cider-repl-history-mode
                        geiser-debug-mode)
          do (evil-set-initial-state mode 'emacs))
 

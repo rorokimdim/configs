@@ -168,6 +168,8 @@
 
     erlang
     company-erlang
+
+    haskell-mode
     ))
 
 (dolist (p my-packages)
@@ -211,12 +213,13 @@
 ;; Language-specific setups
 (load "setup-c.elc")
 (load "setup-clojure.elc")
+(load "setup-erlang.elc")
+(load "setup-go.elc")
+(load "setup-haskell.elc")
 (load "setup-python.elc")
 (load "setup-rust.elc")
 (load "setup-scheme.elc")
 (load "setup-sql.elc")
-(load "setup-erlang.elc")
-(load "setup-go.elc")
 
 ;; Keyboard shortcuts
 (load "keys.elc")
