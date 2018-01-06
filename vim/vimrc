@@ -14,13 +14,8 @@
 """
 
 """IMPORTANT. For python stuff, make sure to install the following.
-" 1. jedi: `pip install jedi`
-" 2. flake8: `pip install flake8`
-" (3. neovim: `pip install neovim`)
-"""
-
-"""IMPORTANT. For haskell hindent, install hident first.
-" See https://github.com/commercialhaskell/hindent
+" 1. flake8: `pip install flake8`
+" (2. neovim: `pip install neovim`)
 """
 
 """IMPORTANT. Do this after finishing the above steps.
@@ -33,7 +28,8 @@ filetype off
 
 """Start of Plug stuff
 call plug#begin('~/.vim/plugged')
-Plug 'davidhalter/jedi-vim'
+Plug 'zchee/deoplete-jedi'
+Plug 'Shougo/deoplete.nvim'
 Plug 'easymotion/vim-easymotion'
 Plug 'ervandew/supertab'
 Plug 'flazz/vim-colorschemes'
@@ -58,7 +54,6 @@ Plug 'fatih/vim-go'
 Plug 'jpalardy/vim-slime'
 Plug 'mklabs/split-term.vim'
 Plug 'neovimhaskell/haskell-vim'
-Plug 'alx741/vim-hindent'
 call plug#end()
 """End of Plug stuff
 
@@ -149,6 +144,7 @@ let g:syntastic_cpp_compiler_options = ' -std=c++11 -stdlib=libc++'
 "(Remember to pip install flake8!)
 let g:syntastic_python_checkers = ['flake8']
 let g:syntastic_python_flake8_args = "--max-line-length=100"
+let g:deoplete#enable_at_startup = 1
 
 """Haskell
 let g:haskell_indent_if = 3
@@ -160,12 +156,6 @@ let g:haskell_indent_after_bare_where = 2
 let g:haskell_indent_do = 3
 let g:haskell_indent_in = 1
 let g:haskell_indent_guard = 2
-
-"Jedi Vim
-"(Remember to pip install jedi!)
-let g:jedi#completions_enabled = 1
-let g:jedi#popup_on_dot = 0 "Use ctrl-space to show completions instead because this can be slow
-autocmd FileType python setlocal completeopt-=preview "Do not show popup doc
 
 """Tabs
 nnoremap <leader>tn :silent! tabn<CR>
