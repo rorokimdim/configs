@@ -28,8 +28,6 @@ filetype off
 
 """Start of Plug stuff
 call plug#begin('~/.vim/plugged')
-Plug 'zchee/deoplete-jedi'
-Plug 'Shougo/deoplete.nvim'
 Plug 'easymotion/vim-easymotion'
 Plug 'ervandew/supertab'
 Plug 'flazz/vim-colorschemes'
