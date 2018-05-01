@@ -170,6 +170,8 @@
     company-erlang
 
     haskell-mode
+
+    merlin
     ))
 
 (dolist (p my-packages)
@@ -219,6 +221,7 @@
 (load "setup-python.elc")
 (load "setup-rust.elc")
 (load "setup-scheme.elc")
+(load "setup-ocaml.elc")
 (load "setup-sql.elc")
 
 ;; Keyboard shortcuts
