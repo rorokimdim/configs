@@ -16,6 +16,7 @@
                 caml-mode
                 merlin-mode)
   :bindings ("r" 'tuareg-run-ocaml
+             "ef" 'tuareg-eval-phrase
              "ee" 'tuareg-eval-phrase
              "er" 'tuareg-eval-region
              "eb" 'tuareg-eval-buffer))
