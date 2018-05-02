@@ -23,4 +23,6 @@
 ;; Shorcuts for ocaml repl
 (add-hook 'tuareg-interactive-mode-hook
   (lambda ()
+    (define-key tuareg-interactive-mode-map (kbd "<up>") 'comint-previous-input)
+    (define-key tuareg-interactive-mode-map (kbd "<down>") 'comint-next-input)
     (define-key tuareg-interactive-mode-map (kbd "C-l") 'comint-clear-buffer)))
