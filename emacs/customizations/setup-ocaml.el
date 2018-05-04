@@ -30,4 +30,6 @@
 
 ;; Pretty unicode symbols
 (add-hook 'tuareg-mode-hook
-  (lambda() (when (functionp 'prettify-symbols-mode) (prettify-symbols-mode))))
+  (lambda()
+    (modify-syntax-entry ?_ "w")
+    (when (functionp 'prettify-symbols-mode) (prettify-symbols-mode))))
