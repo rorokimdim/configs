@@ -33,3 +33,7 @@
   (lambda()
     (modify-syntax-entry ?_ "w")
     (when (functionp 'prettify-symbols-mode) (prettify-symbols-mode))))
+
+;; Highlight parentheses
+(add-hook 'tuareg-mode-hook 'highlight-parentheses-mode)
+(add-hook 'tuareg-mode-hook 'rainbow-delimiters-mode)
