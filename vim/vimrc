@@ -52,6 +52,7 @@ Plug 'fatih/vim-go'
 Plug 'jpalardy/vim-slime'
 Plug 'mklabs/split-term.vim'
 Plug 'neovimhaskell/haskell-vim'
+Plug 'let-def/ocp-indent-vim'
 call plug#end()
 """End of Plug stuff
 
@@ -154,6 +155,12 @@ let g:haskell_indent_after_bare_where = 2
 let g:haskell_indent_do = 3
 let g:haskell_indent_in = 1
 let g:haskell_indent_guard = 2
+
+""Ocaml
+let g:syntastic_ocaml_checkers = ['merlin']
+let g:opamshare = substitute(system('opam config var share'),'\n$','','''')
+execute "set rtp+=" . g:opamshare . "/merlin/vim"
+execute "set rtp+=~/.vim/plugged/ocp-indent-vim"
 
 """Tabs
 nnoremap <leader>tn :silent! tabn<CR>
