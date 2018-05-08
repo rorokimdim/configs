@@ -1,3 +1,6 @@
+(setenv "OCAML_TOPLEVEL_PATH" (concat (getenv "HOME") "/.opam/system/lib/toplevel"))
+(setenv "CAML_LD_LIBRARY_PATH" (concat (getenv "HOME") "/.opam/system/lib/stublibs:/usr/local/lib/ocaml/stublibs"))
+
 (autoload 'merlin-mode "merlin" nil t nil)
 (add-hook 'tuareg-mode-hook 'merlin-mode t)
 (add-hook 'tuareg-interactive-mode-hook 'merlin-mode t)
