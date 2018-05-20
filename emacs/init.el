@@ -170,6 +170,10 @@
     company-erlang
 
     haskell-mode
+    ghc
+    ghci-completion
+    company-ghc
+    company-ghci
 
     merlin
     ))
