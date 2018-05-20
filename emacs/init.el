@@ -191,6 +191,9 @@
 (byte-recompile-directory "~/.emacs.d/customizations" 0)
 (add-to-list 'load-path "~/.emacs.d/customizations")
 
+;; Mac OSX specific stuff
+(load "setup-osx.elc")
+
 ;; Loads my custom functions
 (load "my-functions.elc")
 
@@ -253,9 +256,6 @@
 
 ;; Tramp customizations
 (load "setup-tramp.elc")
-
-;; Mac OSX specific stuff
-(load "setup-osx.elc")
 
 ;; Load any custom configs that is specific to the
 ;; machine I'm using.
