@@ -104,6 +104,7 @@
  '(helm-source-header ((t (:weight bold :height 1.3 :family "Sans Serif"))))
  '(highlight-indentation-face ((t (:inherit nil))))
  '(hl-line ((t (:background "Black"))))
+ '(hl-sexp-face ((t (:background "dark blue"))))
  '(hl-paren-face ((t (:weight ultra-bold))) t)
  '(sp-show-pair-enclosing ((t (:underline t))))
  '(sp-show-pair-match-face ((t (:underline t))))
@@ -123,7 +124,7 @@
    '(evil-search-module (quote evil-search))
    '(size-indication-mode t)
    '(hl-paren-colors (quote ("firebrick1")))
-   '(sp-show-pair-from-inside t)
+   '(sp-show-pair-from-inside nil)
    '(eyebrowse-new-workspace t)
    '(neo-window-width 50))
 

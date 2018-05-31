@@ -16,4 +16,6 @@
              "er" 'geiser-eval-region))
 
 (with-eval-after-load 'geiser-repl
-    (define-key geiser-repl-mode-map (kbd "C-l") 'geiser-repl-clear-buffer))
+  (define-key geiser-repl-mode-map (kbd "C-l") 'geiser-repl-clear-buffer)
+  (define-key geiser-repl-mode-map (kbd "<up>") 'comint-previous-input)
+  (define-key geiser-repl-mode-map (kbd "<down>") 'comint-next-input))
