@@ -13,6 +13,9 @@
     # git tree
     lol = log --no-merges --pretty --oneline --decorate --graph --all
 
+    # git branches with last commit info
+    blist = for-each-ref --sort=committerdate refs/heads/ --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(color:red)%(objectname:short)%(color:reset) - %(contents:subject) - %(authorname) (%(color:green)%(committerdate:relative)%(color:reset))'
+
     # My commits
     mine = log --no-merges --oneline --since='one week ago' --author=ashrestha
 
