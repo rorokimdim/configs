@@ -3,7 +3,7 @@ alias mv='mv -i'
 alias cp='cp -i'
 alias e="emacsclient -n --alternate-editor vim"
 
-alias httpserver='python -m SimpleHTTPServer'
+alias httpserver='python3 -m http.server'
 
 if [ -f ~/.custom_bash_aliases ]; then
     . ~/.custom_bash_aliases
