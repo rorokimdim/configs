@@ -149,7 +149,7 @@ let g:syntastic_python_flake8_args = "--max-line-length=100"
 let g:deoplete#enable_at_startup = 1
 
 """Haskell
-let g:ghcid_command = "ghcid Main.hs"
+let g:ghcid_command = 'ghcid -c "stack ghci --no-test"'
 let g:haskell_indent_disable = 1  " Use vim-haskell-indent instead
 autocmd Filetype haskell setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
 
