@@ -67,11 +67,10 @@
     aggressive-indent
     anzu
 
-    cider
-    clj-refactor
     clojure-mode
     clojure-mode-extra-font-locking
     clojure-snippets
+    inf-clojure
 
     company
     company-math
@@ -105,12 +104,10 @@
     google-this
 
     helm
-    helm-cider
     helm-describe-modes
     helm-descbinds
     helm-swoop
     helm-tramp
-    cljr-helm
 
     highlight-parentheses
     hl-sexp
@@ -170,10 +167,9 @@
     company-erlang
 
     haskell-mode
-    ghc
-    ghci-completion
-    company-ghc
-    company-ghci
+    flycheck
+    flycheck-haskell
+    dante
 
     merlin
     ))
