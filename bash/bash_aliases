@@ -1,7 +1,7 @@
 alias rm='rm -i'
 alias mv='mv -i'
 alias cp='cp -i'
-alias e="emacsclient -nw -a ''"
+alias e="emacsclient -n --alternate-editor vim"
 
 alias httpserver='python3 -m http.server'
 
