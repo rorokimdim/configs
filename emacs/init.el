@@ -70,7 +70,7 @@
     clojure-mode
     clojure-mode-extra-font-locking
     clojure-snippets
-    inf-clojure
+    spiral
 
     company
     company-math

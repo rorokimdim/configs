@@ -5,7 +5,6 @@
 ;; This is useful for working with camel-case tokens, like names of
 ;; Java classes (e.g. JavaClassName)
 (add-hook 'clojure-mode-hook 'subword-mode)
-(add-hook 'clojure-mode-hook #'inf-clojure-minor-mode)
 
 ;; A little more syntax highlighting
 (require 'clojure-mode-extra-font-locking)
@@ -22,18 +21,33 @@
   :evil-states (normal visual)
   :major-modes (clojure-mode
                 clojurescript-mode)
-  :bindings ("cc" 'inf-clojure
-             "cr" 'inf-clojure-connect
-             "r"  'inf-clojure-switch-to-repl-buffer
-             "eb" 'inf-clojure-eval-buffer
+  :bindings ("cc" 'spiral-connect
+             "ct" 'spiral-connect-to
+             "r"  'spiral-switch-to-repl-buffer
+             "eb" 'spiral-eval-buffer
              "ee" (lambda ()
                     (interactive)
                     (forward-char)
-                    (inf-clojure-eval-last-sexp))
-             "ef" 'inf-clojure-eval-defun
-             "er" 'inf-clojure-eval-region))
+                    (spiral-eval-last-sexp))
+             "ef" 'spiral-eval-top-level-form))
 
-(with-eval-after-load 'inf-clojure
-  (define-key inf-clojure-mode-map (kbd "C-l") 'inf-clojure-clear-repl-buffer)
-  (define-key inf-clojure-mode-map (kbd "<up>") 'comint-previous-input)
-  (define-key inf-clojure-mode-map (kbd "<down>") 'comint-next-input))
+(with-eval-after-load 'spiral-repl
+  (custom-set-variables
+   '(spiral-automatic-ns-sync (quote do-it-without-notify)))
+  (define-key spiral-repl-mode-map (kbd "C-l") 'spiral-repl-clear-buffer)
+  (define-key spiral-repl-mode-map (kbd "<up>") 'spiral-repl-previous-input)
+  (define-key spiral-repl-mode-map (kbd "<down>") 'spiral-repl-next-input))
+
+(defun spiral-repl--clear-region (start end)
+  (mapc #'delete-overlay (overlays-in start end))
+  (delete-region start end))
+
+(defun spiral-repl-clear-buffer ()
+  "Clears spiral's REPL buffer."
+  (interactive)
+  (let ((inhibit-read-only t))
+    (spiral-repl--clear-region (point-min) spiral-repl-prompt-start-mark)
+    (spiral-repl--clear-region spiral-repl-transient-text-start-mark spiral-repl-transient-text-end-mark)
+    (when (< (point) spiral-repl-input-start-mark)
+      (goto-char spiral-repl-input-start-mark))
+    (recenter t)))

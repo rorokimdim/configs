@@ -181,4 +181,4 @@
 ;;
 (bind-keys
  :map global-map
- ("C-c C-d" . my-insert-date-and-time))
+ ("C-c C-t" . my-insert-date-and-time))
