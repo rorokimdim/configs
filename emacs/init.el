@@ -157,21 +157,10 @@
     racer
     cargo
 
-    go-mode
-    go-eldoc
-    go-snippets
-    go-guru
-    company-go
-
-    erlang
-    company-erlang
-
     haskell-mode
     flycheck
     flycheck-haskell
     dante
-
-    merlin
     ))
 
 (dolist (p my-packages)
@@ -217,15 +206,11 @@
 
 ;; Language-specific setups
 (load "setup-c.elc")
-(load "setup-clisp.elc")
 (load "setup-clojure.elc")
-(load "setup-erlang.elc")
-(load "setup-go.elc")
 (load "setup-haskell.elc")
 (load "setup-python.elc")
 (load "setup-rust.elc")
 (load "setup-scheme.elc")
-(load "setup-ocaml.elc")
 (load "setup-sql.elc")
 
 ;; Keyboard shortcuts
