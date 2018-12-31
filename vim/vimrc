@@ -183,6 +183,9 @@ match OverLength /\%101v.\+/
 """Set highlight color for search
 highlight Search cterm=NONE ctermfg=black ctermbg=white
 
+"""Disable auto-wrapping long lines
+set formatoptions-=t
+
 """Custom functions
 func! DeleteTrailingWS()
     exe "normal mz"
