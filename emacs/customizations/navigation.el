@@ -20,10 +20,7 @@
       recentf-max-menu-items 40)
 (setq recentf-exclude
       (append recentf-exclude
-              '("ido.last"
-                ".emacs.d/*"
-                "org/notes.*"
-                "org/todo.*")))
+              '("ido.last")))
 (recentf-mode 1)
 
 
