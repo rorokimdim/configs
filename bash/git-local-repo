@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+
+if [ $# -eq 0 ]; then
+    echo "Usage: $0 new-repo-name"
+    exit 1
+fi
+
+REMOTE_REPOS_DIR=~/workspace/gdrive/repos
+
+NEW_REPO_NAME=$1
+NEW_REPO_LOCAL_PATH=~/workspace/$NEW_REPO_NAME
+NEW_REPO_REMOTE_PATH=$REMOTE_REPOS_DIR/$NEW_REPO_NAME
+
+cd $REMOTE_REPOS_DIR
+git init --bare $NEW_REPO_NAME
+
+mkdir -p $NEW_REPO_LOCAL_PATH
+cd $NEW_REPO_LOCAL_PATH
+git init
+git remote add origin $NEW_REPO_REMOTE_PATH
+echo $NEW_REPO_NAME > "README.rst"
+git add .
+git commit -m "Inital commit."
+git push --set-upstream origin master
