@@ -130,6 +130,7 @@
     org
     org-bullets
     origami
+    ox-rst
 
     ox-reveal
     popwin
@@ -161,6 +162,8 @@
     flycheck
     flycheck-haskell
     dante
+
+    julia-mode
     ))
 
 (dolist (p my-packages)
