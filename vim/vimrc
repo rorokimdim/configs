@@ -153,12 +153,6 @@ let g:ghcid_command = 'ghcid -c "stack ghci --no-test"'
 let g:haskell_indent_disable = 1  " Use vim-haskell-indent instead
 autocmd Filetype haskell setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
 
-""Ocaml
-let g:syntastic_ocaml_checkers = ['merlin']
-let g:opamshare = substitute(system('opam config var share'),'\n$','','''')
-execute "set rtp+=" . g:opamshare . "/merlin/vim"
-execute "set rtp+=~/.vim/plugged/ocp-indent-vim"
-
 """Tabs
 nnoremap <leader>tn :silent! tabn<CR>
 nnoremap <leader>tp :silent! tabp<CR>
