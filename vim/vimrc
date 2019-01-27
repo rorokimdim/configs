@@ -31,7 +31,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'easymotion/vim-easymotion'
 Plug 'ervandew/supertab'
 Plug 'flazz/vim-colorschemes'
-Plug 'guns/vim-sexp'
+Plug 'guns/vim-sexp', { 'for': 'clojure' }
 Plug 'haya14busa/incsearch-easymotion.vim'
 Plug 'haya14busa/incsearch.vim'
 Plug 'kien/rainbow_parentheses.vim'
@@ -39,7 +39,7 @@ Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-repeat'
-Plug 'tpope/vim-sexp-mappings-for-regular-people'
+Plug 'tpope/vim-sexp-mappings-for-regular-people', { 'for': 'clojure' }
 Plug 'tpope/vim-surround'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -49,13 +49,13 @@ Plug 'ntpeters/vim-better-whitespace'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'fatih/vim-go'
-Plug 'jpalardy/vim-slime'
 Plug 'mklabs/split-term.vim'
 Plug 'neovimhaskell/haskell-vim'
 Plug 'ndmitchell/ghcid', { 'rtp': 'plugins/nvim' }
 Plug 'itchyny/vim-haskell-indent'
 Plug 'let-def/ocp-indent-vim'
 Plug 'rizzatti/dash.vim'
+Plug 'JuliaEditorSupport/julia-vim'
 call plug#end()
 """End of Plug stuff
 
