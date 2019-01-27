@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+set -e
 
 if [ $# -eq 0 ]; then
     echo "Usage: $0 new-repo-name"
@@ -7,8 +8,11 @@ fi
 
 REMOTE_REPOS_DIR=~/workspace/gdrive/repos
 
-NEW_REPO_NAME=$1
-NEW_REPO_LOCAL_PATH=~/workspace/$NEW_REPO_NAME
+NEW_REPO_NAME=`basename $1`
+NEW_REPO_DIR=`dirname $1`
+NEW_REPO_DIR_PATH=`cd $NEW_REPO_DIR; pwd`
+NEW_REPO_LOCAL_PATH=$NEW_REPO_DIR_PATH/$NEW_REPO_NAME
+
 NEW_REPO_REMOTE_PATH=$REMOTE_REPOS_DIR/$NEW_REPO_NAME
 
 cd $REMOTE_REPOS_DIR
