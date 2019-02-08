@@ -51,11 +51,16 @@ Plug 'junegunn/fzf.vim'
 Plug 'fatih/vim-go'
 Plug 'mklabs/split-term.vim'
 Plug 'neovimhaskell/haskell-vim'
-Plug 'ndmitchell/ghcid', { 'rtp': 'plugins/nvim' }
 Plug 'itchyny/vim-haskell-indent'
+Plug 'ndmitchell/ghcid', { 'rtp': 'plugins/nvim' }
 Plug 'let-def/ocp-indent-vim'
 Plug 'rizzatti/dash.vim'
 Plug 'JuliaEditorSupport/julia-vim'
+Plug 'autozimu/LanguageClient-neovim', {
+    \ 'branch': 'next',
+    \ 'do': 'bash install.sh',
+    \ }
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 call plug#end()
 """End of Plug stuff
 
@@ -84,6 +89,9 @@ set directory=~/.vim-tmp
 match ErrorMsg '\%>100v.\+'
 match ErrorMsg '\s\+\%#\@<!$'
 autocmd InsertLeave * redraw!
+
+"""Deoplete
+let g:deoplete#enable_at_startup = 1
 
 """Syntastic
 let g:syntastic_always_populate_loc_list = 1
@@ -122,8 +130,41 @@ autocmd Syntax * RainbowParenthesesLoadRound
 autocmd Syntax * RainbowParenthesesLoadSquare
 autocmd Syntax * RainbowParenthesesLoadBraces
 
-"""Vim-slime
-let g:slime_target = "neovim"
+"""LanguageClient
+" See https://github.com/autozimu/LanguageClient-neovim
+"     https://github.com/haskell/haskell-ide-engine#using-hie-with-vim-or-neovim
+"""
+function LC_maps()
+    if has_key(g:LanguageClient_serverCommands, &filetype)
+        nnoremap <buffer> <silent> K :call LanguageClient#textDocument_hover()<cr>
+        nnoremap <buffer> <silent> W :pclose<cr>
+        nnoremap <buffer> <silent> gd :call LanguageClient#textDocument_definition()<CR>
+        nnoremap <buffer> <silent> <F2> :call LanguageClient#textDocument_rename()<CR>
+    endif
+endfunction
+autocmd FileType haskell call LC_maps()
+let g:LanguageClient_serverCommands = {
+    \ 'haskell': ['hie-wrapper'],
+    \ }
+nnoremap <F5> :call LanguageClient_contextMenu()<CR>
+map <Leader>lk :call LanguageClient#textDocument_hover()<CR>
+map <Leader>lg :call LanguageClient#textDocument_definition()<CR>
+map <Leader>lr :call LanguageClient#textDocument_rename()<CR>
+map <Leader>lf :call LanguageClient#textDocument_formatting()<CR>
+map <Leader>lb :call LanguageClient#textDocument_references()<CR>
+map <Leader>la :call LanguageClient#textDocument_codeAction()<CR>
+map <Leader>ls :call LanguageClient#textDocument_documentSymbol()<CR><Paste>
+
+hi link ALEError Error
+hi Warning term=underline cterm=underline ctermfg=Yellow gui=undercurl guisp=Gold
+hi link ALEWarning Warning
+hi link ALEInfo SpellCap
+let g:ale_set_highlights = 0
+let g:ale_sign_error = 'x'
+let g:ale_sign_warning = 'w'
+let g:ale_lint_on_enter = 0
+let g:LanguageClient_diagnosticsSignsMax = 0
+let g:LanguageClient_diagnosticsEnable=0
 
 """Easymotion
 map <Leader> <Plug>(easymotion-prefix)
@@ -206,6 +247,7 @@ function s:MkNonExDir(file, buf)
         endif
     endif
 endfunction
+
 augroup BWCCreateDir
     autocmd!
     autocmd BufWritePre * :call s:MkNonExDir(expand('<afile>'), +expand('<abuf>'))
