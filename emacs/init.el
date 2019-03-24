@@ -132,7 +132,7 @@
     origami
     ox-rst
 
-    ox-reveal
+    org-re-reveal
     popwin
 
     realgud
