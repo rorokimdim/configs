@@ -209,6 +209,7 @@
 
 ;; Language-specific setups
 (load "setup-c.elc")
+(load "setup-clisp.elc")
 (load "setup-clojure.elc")
 (load "setup-haskell.elc")
 (load "setup-python.elc")

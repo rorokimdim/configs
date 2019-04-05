@@ -1,4 +1,6 @@
 (setq inferior-lisp-program "sbcl")
+(setq slime-contribs '(slime-fancy))
+
 (when (file-exists-p "~/quicklisp/slime-helper.el")
   (load (expand-file-name "~/quicklisp/slime-helper.el")))
 
