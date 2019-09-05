@@ -52,3 +52,4 @@
 (venv-initialize-interactive-shells)
 (venv-initialize-eshell)
 (setq venv-location "~/venvs")
+(setenv "WORKON_HOME" "~/venvs")
