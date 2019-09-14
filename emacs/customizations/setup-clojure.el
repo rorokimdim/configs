@@ -11,6 +11,7 @@
 
 ;; Use clojure mode for other extensions
 (add-to-list 'auto-mode-alist '("\\.edn$" . clojure-mode))
+(add-to-list 'auto-mode-alist '("\\.closhrc$" . clojure-mode))
 (add-to-list 'auto-mode-alist '("\\.cljs.*$" . clojurescript-mode))
 
 ;; Shortcuts for clojure mode

@@ -1,4 +1,4 @@
-(setq geiser-active-implementations '(racket))
+(setq geiser-active-implementations '(chicken))
 
 ;; Shortcuts for scheme mode
 (require 'bind-map)
