@@ -55,7 +55,7 @@
                        osx-dictionary-mode
                        term-mode
                        world-time-table-mode
-                       spiral-mode
+                       cider-repl-mode
                        geiser-debug-mode)
          do (evil-set-initial-state mode 'emacs))
 

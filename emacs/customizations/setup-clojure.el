@@ -22,33 +22,20 @@
   :evil-states (normal visual)
   :major-modes (clojure-mode
                 clojurescript-mode)
-  :bindings ("cc" 'spiral-connect
-             "ct" 'spiral-connect-to
-             "r"  'spiral-switch-to-repl-buffer
-             "eb" 'spiral-eval-buffer
+  :bindings ("cj" 'cider-jack-in
+             "cc" 'cider-connect
+             "r"  'cider-switch-to-repl-buffer
+             "eb" 'cider-eval-buffer
              "ee" (lambda ()
                     (interactive)
                     (forward-char)
-                    (spiral-eval-last-sexp))
-             "ef" 'spiral-eval-top-level-form))
+                    (cider-eval-sexp-at-point))
+             "ef" 'cider-eval-defun-at-point
+             "hd" 'cider-doc))
 
-(with-eval-after-load 'spiral-repl
-  (custom-set-variables
-   '(spiral-automatic-ns-sync (quote do-it-without-notify)))
-  (define-key spiral-repl-mode-map (kbd "C-l") 'spiral-repl-clear-buffer)
-  (define-key spiral-repl-mode-map (kbd "<up>") 'spiral-repl-previous-input)
-  (define-key spiral-repl-mode-map (kbd "<down>") 'spiral-repl-next-input))
 
-(defun spiral-repl--clear-region (start end)
-  (mapc #'delete-overlay (overlays-in start end))
-  (delete-region start end))
 
-(defun spiral-repl-clear-buffer ()
-  "Clears spiral's REPL buffer."
-  (interactive)
-  (let ((inhibit-read-only t))
-    (spiral-repl--clear-region (point-min) spiral-repl-prompt-start-mark)
-    (spiral-repl--clear-region spiral-repl-transient-text-start-mark spiral-repl-transient-text-end-mark)
-    (when (< (point) spiral-repl-input-start-mark)
-      (goto-char spiral-repl-input-start-mark))
-    (recenter t)))
+(with-eval-after-load 'cider-repl
+  (define-key cider-repl-mode-map (kbd "C-l") 'cider-repl-clear-buffer)
+  (define-key cider-repl-mode-map (kbd "<up>") 'cider-repl-previous-input)
+  (define-key cider-repl-mode-map (kbd "<down>") 'cider-repl-next-input))
