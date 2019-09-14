@@ -29,6 +29,7 @@
     (evil-local-set-key 'normal (kbd "D") 'sp-kill-sexp)
     (evil-local-set-key 'normal (kbd "<") 'sp-backward-slurp-sexp)
     (evil-local-set-key 'normal (kbd ">") 'sp-forward-slurp-sexp)
+    (evil-local-set-key 'normal (kbd "M-r") 'sp-raise-sexp)
     (evil-local-set-key 'normal (kbd "M-<") 'sp-backward-barf-sexp)
     (evil-local-set-key 'normal (kbd "M->") 'sp-forward-barf-sexp)))
 
