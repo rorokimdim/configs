@@ -17,9 +17,30 @@
          '[clj-time.core :as t]
          '[com.rpl.specter :as s])
 
+(defn start-nrepl
+  ([] (start-nrepl 7888))
+  ([port]
+   (eval
+    `(do
+       (require '[cemerick.pomegranate])
+       (cemerick.pomegranate/add-dependencies
+        :coordinates '[[org.clojure/tools.nrepl "0.2.13"]]
+        :repositories (merge cemerick.pomegranate.aether/maven-central
+                             {"clojars" "https://clojars.org/repo"}))
+       (require '[clojure.tools.nrepl.server])
+       (println "Starting nrepl at" ~port)
+       (defonce server (clojure.tools.nrepl.server/start-server :port ~port))))))
+
 (defn closh-prompt []
   (source-shell "bash" "eval \"$(direnv export bash)\"")
-  "closh $ ")
+  (str (str/replace-first (sh-str pwd) (getenv "HOME") "~") " ($) "))
+
+(defcmd load-script [path]
+  "Loads string from given PATH.
+
+  Uses `realpath` to find the absolute-path of given path.
+  For Mac OS use `brew install coreutils`."
+  (eval (macroexpand `(load-file (sh-str "realpath" ~path)))))
 
 (defcmd cdw []
   (cd (str (System/getenv "HOME") "/" "workspace")))
