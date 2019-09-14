@@ -31,7 +31,6 @@ call plug#begin('~/.vim/plugged')
 Plug 'easymotion/vim-easymotion'
 Plug 'ervandew/supertab'
 Plug 'flazz/vim-colorschemes'
-Plug 'guns/vim-sexp', { 'for': 'clojure' }
 Plug 'haya14busa/incsearch-easymotion.vim'
 Plug 'haya14busa/incsearch.vim'
 Plug 'kien/rainbow_parentheses.vim'
@@ -39,7 +38,16 @@ Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-repeat'
+
+
+Plug 'guns/vim-sexp', { 'for': 'clojure' }
+Plug 'liquidz/vim-iced', {'for': 'clojure'}
 Plug 'tpope/vim-sexp-mappings-for-regular-people', { 'for': 'clojure' }
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'liquidz/vim-iced-project-namespaces', {'for': 'clojure', 'on': 'IcedBrowseNamespace'}
+Plug 'liquidz/vim-iced-function-list', {'for': 'clojure', 'on': 'IcedBrowseFunction'}
+
+
 Plug 'tpope/vim-surround'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -53,6 +61,7 @@ Plug 'mklabs/split-term.vim'
 Plug 'neovimhaskell/haskell-vim'
 Plug 'itchyny/vim-haskell-indent'
 Plug 'ndmitchell/ghcid', { 'rtp': 'plugins/nvim' }
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'let-def/ocp-indent-vim'
 Plug 'rizzatti/dash.vim'
 Plug 'JuliaEditorSupport/julia-vim'
@@ -60,7 +69,6 @@ Plug 'autozimu/LanguageClient-neovim', {
     \ 'branch': 'next',
     \ 'do': 'bash install.sh',
     \ }
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 call plug#end()
 """End of Plug stuff
 
@@ -89,9 +97,6 @@ set directory=~/.vim-tmp
 match ErrorMsg '\%>100v.\+'
 match ErrorMsg '\s\+\%#\@<!$'
 autocmd InsertLeave * redraw!
-
-"""Deoplete
-let g:deoplete#enable_at_startup = 1
 
 """Syntastic
 let g:syntastic_always_populate_loc_list = 1
@@ -186,7 +191,6 @@ let g:syntastic_cpp_compiler_options = ' -std=c++11 -stdlib=libc++'
 """Python
 "(Remember to pip install flake8!)
 let g:syntastic_python_checkers = ['flake8']
-let g:deoplete#enable_at_startup = 1
 
 """Haskell
 let g:ghcid_command = 'ghcid -c "stack ghci --no-test"'
@@ -236,6 +240,28 @@ function! s:Underline(chars)
     put =strpart(uline, 0, nr_columns)
 endfunction
 command! -nargs=? Underline call s:Underline(<q-args>)
+
+set hidden
+
+"Shorcuts for clojure filetype
+autocmd filetype clojure map <leader>cc <Plug>(iced_connect)
+autocmd filetype clojure map <leader>ei <Plug>(iced_eval)<Plug>(sexp_inner_element)
+autocmd filetype clojure map <leader>ee <Plug>(iced_eval)<Plug>(sexp_outer_list)
+autocmd filetype clojure map <leader>en <Plug>(iced_eval_ns)
+autocmd filetype clojure map <leader>et <Plug>(iced_eval_outer_top_list)
+autocmd filetype clojure map <leader>er <Plug>(iced_eval_repl_visual)
+autocmd filetype clojure map <leader>ep <Plug>(iced_print_last)
+autocmd filetype clojure map <leader>eu <Plug>(iced_undef)
+autocmd filetype clojure map <leader>eq <Plug>(iced_interrupt)
+autocmd filetype clojure map <leader>eQ <Plug>(iced_interrupt_all)
+autocmd filetype clojure map <leader>hd <Plug>(iced_clojuredocs_open)
+autocmd filetype clojure map <leader>hh <Plug>(iced_command_palette)
+autocmd filetype clojure map <leader>hs <Plug>(iced_popup_source_show)
+autocmd filetype clojure map <leader>jb <Plug>(iced_def_back)
+autocmd filetype clojure map <leader>jd <Plug>(iced_def_jump)
+autocmd filetype clojure map <leader>jl <Plug>(iced_jump_to_let)
+autocmd filetype clojure map <leader>== <Plug>(iced_format)
+autocmd filetype clojure map <leader>=G <Plug>(iced_format_all)
 
 "Auto create non-existent dirs when creating a new file
 function s:MkNonExDir(file, buf)
