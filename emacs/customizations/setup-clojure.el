@@ -31,7 +31,9 @@
                     (forward-char)
                     (cider-eval-sexp-at-point))
              "ef" 'cider-eval-defun-at-point
-             "hd" 'cider-doc))
+             "hd" 'cider-clojuredocs
+             "hh" 'cider-apropos-select
+             "hw" 'cider-clojuredocs-web))
 
 
 
