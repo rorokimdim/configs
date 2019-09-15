@@ -2,6 +2,7 @@
 
 (cemerick.pomegranate/add-dependencies
  :coordinates '[[org.clojure/math.combinatorics "0.1.6"]
+                [org.clojure/tools.cli "0.4.2"]
                 [cheshire "5.9.0"]
                 [table "0.5.0"]
                 [clj-http "3.10.0"]
@@ -10,7 +11,8 @@
  :repositories (merge cemerick.pomegranate.aether/maven-central
                       {"clojars" "https://clojars.org/repo"}))
 
-(require '[clojure.math.combinatorics :as c]
+(require '[clojure.tools.cli :refer [parse-opts]]
+         '[clojure.math.combinatorics :as c]
          '[cheshire.core :as j]
          '[table.core :refer [table table-str]]
          '[clj-http.client :as http]
@@ -35,8 +37,11 @@
   (source-shell "bash" "eval \"$(direnv export bash)\"")
   (str (str/replace-first (sh-str pwd) (getenv "HOME") "~") " ($) "))
 
-(defcmd closh [path]
-  (load-string (slurp path)))
+(defcmd closh [path & args]
+  (do
+    (load-string (slurp path))
+    (let [sargs (map str args)]
+      (eval `(main ~@sargs)))))
 
 (defcmd cdw []
   (cd (str (System/getenv "HOME") "/" "workspace")))
