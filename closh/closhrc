@@ -19,6 +19,28 @@
          '[clj-time.core :as t]
          '[com.rpl.specter :as s])
 
+;; From https://github.com/mikera/clojure-utils/blob/master/src/main/clojure/mikera/cljutils/namespace.clj#L165
+(defmacro with-ns
+  "Evaluates body in another namespace.  ns is either a namespace
+  object or a symbol.  This makes it possible to define functions in
+  namespaces other than the current one."
+  [ns & body]
+  `(binding [*ns* (the-ns '~ns)]
+     ~@(map (fn [form] `(eval '~form)) body)))
+
+;; From https://github.com/mikera/clojure-utils/blob/master/src/main/clojure/mikera/cljutils/namespace.clj#L173
+(defmacro with-temp-ns
+  "Evaluates body in an anonymous namespace, which is then immediately
+  removed.  The temporary namespace will 'refer' clojure.core."
+  [& body]
+  `(try
+     (create-ns 'sym#)
+     (let [result# (with-ns sym#
+                     (clojure.core/refer-clojure)
+                     ~@body)]
+       result#)
+     (finally (remove-ns 'sym#))))
+
 (defn start-nrepl
   ([] (start-nrepl 7888))
   ([port]
@@ -38,10 +60,13 @@
   (str (str/replace-first (sh-str pwd) (getenv "HOME") "~") " ($) "))
 
 (defcmd closh [path & args]
-  (do
-    (load-string (slurp path))
-    (let [sargs (map str args)]
-      (eval `(main ~@sargs)))))
+  (let [sargs (map str args)
+        main-call (conj sargs 'main)]
+    (eval (macroexpand
+           `(with-temp-ns
+              (eval closh.zero.env/*closh-environment-requires*)
+              (load-string (slurp ~path))
+              (eval ~main-call))))))
 
 (defcmd cdw []
   (cd (str (System/getenv "HOME") "/" "workspace")))
