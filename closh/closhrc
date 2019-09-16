@@ -109,6 +109,13 @@
   "Alias for ranger command."
   (eval (macroexpand `(sh "ranger" ~@args))))
 
+(defcmd git-delete-merged-branches
+  "Deletes local git branches that are merged in remote master."
+  []
+  (let [branches-to-exclude '(develop master stage)
+        grep-exclude-pattern (str/join "\\|" branches-to-exclude)]
+    (sh git branch --merged origin/master | grep -v (identity grep-exclude-pattern) | xargs -n1 git branch -d)))
+
 (defcmd find-files
   "Gets list of files matching a glob-pattern."
   ([glob-pattern] (find-files "." glob-pattern))
