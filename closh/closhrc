@@ -81,10 +81,6 @@
   "CDs to workspace directory."
   (cd (str (getenv "HOME") "/" "workspace")))
 
-(defcmd ls [& args]
-  "Enables color output in ls command."
-  (eval (macroexpand `(sh "ls" "-GFH" ~@args))))
-
 (defcmd e [& args]
   "Opens a file using emacsclient."
   (eval
@@ -126,6 +122,7 @@
 (defn my-closhrc-run-once []
   "Put all stuff that should only be run once here."
   (when (not (:initialized @my-closhrc-state))
+    (source-shell "export CLICOLOR=1") ;; For colored output from `ls` command
     (source-shell (str "source " (System/getenv "HOME") "/" ".bashrc"))
     (swap! my-closhrc-state assoc :initialized true)))
 
