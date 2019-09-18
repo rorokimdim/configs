@@ -19,8 +19,6 @@
          '[clj-time.core :as t]
          '[com.rpl.specter :as s])
 
-(defonce my-closhrc-state (atom {:initialized false}))
-
 ;; From https://github.com/mikera/clojure-utils/blob/master/src/main/clojure/mikera/cljutils/namespace.clj#L165
 (defmacro with-ns
   "Evaluates body in another namespace. ns is either a namespace
@@ -58,11 +56,6 @@
        (println "Starting nrepl at" ~port)
        (defonce server (clojure.tools.nrepl.server/start-server :port ~port))))))
 
-(defn closh-prompt []
-  "Sets up my closh prompt."
-  (source-shell "bash" "eval \"$(direnv export bash)\"")
-  (str (str/replace-first (sh-str pwd) (getenv "HOME") "~") " ($) "))
-
 (defcmd closh [path & args]
   "Runs a file at given `path`. Expects a function named `main` that accepts given `args`."
   (let [sargs (map str args)
@@ -72,18 +65,6 @@
               (eval closh.zero.env/*closh-environment-requires*)
               (load-string (slurp ~path))
               (eval ~main-call))))))
-
-(defcmd reload-closhrc []
-  "Reloads ~/.closhrc file."
-  (load-file (str (getenv "HOME") "/.closhrc")))
-
-(defcmd cdw []
-  "CDs to workspace directory."
-  (cd (str (getenv "HOME") "/" "workspace")))
-
-(defcmd ls [& args]
-  "Enables color output in ls command."
-  (eval (macroexpand `(sh "ls" "-GFH" ~@args))))
 
 (defcmd e [& args]
   "Opens a file using emacsclient."
@@ -95,16 +76,6 @@
          "vim"
          ~@args))))
 
-(defcmd o []
-  "Opens a file selected from fzf using vim."
-  (sh "vim" (sh fzf | (str/trim))))
-
-(defcmd j []
-  "Jumps to a workspace directory."
-  (let [prefix (str (getenv "HOME") "/workspace/")]
-    (cd (str prefix
-             (sh-str "ls" (identity prefix) | fzf)))))
-
 (defcmd r [& args]
   "Alias for ranger command."
   (eval (macroexpand `(sh "ranger" ~@args))))
@@ -115,11 +86,3 @@
   ([path glob-pattern]
    (eval (macroexpand
           `(sh-lines "find" ~path "-name" ~glob-pattern)))))
-
-(defn my-closhrc-run-once []
-  "Put all stuff that should only be run once here."
-  (when (not (:initialized @my-closhrc-state))
-    (source-shell (str "source " (System/getenv "HOME") "/" ".bashrc"))
-    (swap! my-closhrc-state assoc :initialized true)))
-
-(my-closhrc-run-once)
