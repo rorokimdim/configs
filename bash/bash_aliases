@@ -1,7 +1,14 @@
+alias ls="ls -GFh"
 alias rm='rm -i'
 alias mv='mv -i'
 alias cp='cp -i'
 alias e="emacsclient -n --alternate-editor vim"
+
+alias vim='nvim'
+alias v='nvim'
+alias o='vim $(fzf)'
+alias r='ranger'
+alias j='cd ~/workspace/$(ls -d ~/workspace/*/ | sed "s/.*workspace//" | sed "s:/::g" | fzf)'
 
 alias httpserver='python3 -m http.server'
 

@@ -40,6 +40,7 @@
               (local-set-key "\C-l" 'comint-clear-buffer)))
   (add-hook 'python-mode-hook
             (lambda ()
+              (flycheck-mode)
               (rainbow-delimiters-mode)
               (highlight-parentheses-mode)
               (setq python-indent-offset 4))))
