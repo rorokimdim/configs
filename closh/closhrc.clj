@@ -93,3 +93,10 @@
   ([path glob-pattern]
    (eval (macroexpand
           `(sh-lines "find" ~path "-name" ~glob-pattern)))))
+
+(defcmd slurp-json
+  "Slurps json data from a uri."
+  [uri]
+    (-> uri
+      slurp
+      (j/decode true)))

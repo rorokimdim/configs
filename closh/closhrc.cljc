@@ -16,8 +16,8 @@
   (str (str/replace-first (sh-str pwd) (getenv "HOME") "~") " ($) "))
 
 (defcmd reload-closhrc []
-  "Reloads ~/.closhrc file."
-  (load-file (str (getenv "HOME") "/.closhrc")))
+  "Reloads this file."
+  (load-file (str (getenv "HOME") "/.closhrc.cljc")))
 
 (defcmd cdw []
   "CDs to workspace directory."
