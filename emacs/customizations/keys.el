@@ -37,8 +37,9 @@
 ;; Use F2 to eval-and-replace lisp expressions
 (global-set-key [f2] 'my-eval-and-replace)
 
-;; Use F4 to change window layout
+;; Use F4/super-r to change window layout
 (global-set-key [f4] 'rotate-layout)
+(global-set-key (kbd "s-r") 'rotate-layout)
 
 ;; Use F10 to clear repl buffer
 (global-set-key [f10] 'comint-clear-buffer)
