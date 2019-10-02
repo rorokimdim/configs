@@ -56,7 +56,6 @@ Plug 'terryma/vim-multiple-cursors'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-Plug 'fatih/vim-go'
 Plug 'mklabs/split-term.vim'
 Plug 'neovimhaskell/haskell-vim'
 Plug 'itchyny/vim-haskell-indent'
@@ -262,6 +261,21 @@ autocmd filetype clojure map <leader>jd <Plug>(iced_def_jump)
 autocmd filetype clojure map <leader>jl <Plug>(iced_jump_to_let)
 autocmd filetype clojure map <leader>== <Plug>(iced_format)
 autocmd filetype clojure map <leader>=G <Plug>(iced_format_all)
+
+"Special indent configuration for javascript
+autocmd FileType javascript set sw=2
+autocmd FileType javascript set ts=2
+autocmd FileType javascript set sts=2
+
+"Special indent configuration for css
+autocmd FileType css set sw=2
+autocmd FileType css set ts=2
+autocmd FileType css set sts=2
+
+"Special indent configuration for html
+autocmd FileType html set sw=2
+autocmd FileType html set ts=2
+autocmd FileType html set sts=2
 
 "Auto create non-existent dirs when creating a new file
 function s:MkNonExDir(file, buf)
