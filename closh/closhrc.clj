@@ -5,6 +5,7 @@
                 [org.clojure/tools.cli "0.4.2"]
                 [cheshire "5.9.0"]
                 [table "0.5.0"]
+                [rhizome "0.2.9"]
                 [clj-http "3.10.0"]
                 [clj-time "0.14.0"]
                 [com.rpl/specter "1.1.2"]]
@@ -17,6 +18,7 @@
          '[table.core :refer [table table-str]]
          '[clj-http.client :as http]
          '[clj-time.core :as t]
+         '[rhizome.viz :as viz]
          '[com.rpl.specter :as s])
 
 ;; From https://github.com/mikera/clojure-utils/blob/master/src/main/clojure/mikera/cljutils/namespace.clj#L165
