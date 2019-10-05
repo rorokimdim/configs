@@ -39,6 +39,7 @@ Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-repeat'
 
+Plug 'vhdirk/vim-cmake'
 
 Plug 'guns/vim-sexp', { 'for': 'clojure' }
 Plug 'liquidz/vim-iced', {'for': 'clojure'}
@@ -185,7 +186,7 @@ let g:EasyMotion_startofline = 0 " keep cursor column when JK motion
 
 """C++
 let g:syntastic_cpp_compiler = 'clang++'
-let g:syntastic_cpp_compiler_options = ' -std=c++11 -stdlib=libc++'
+let g:syntastic_cpp_compiler_options = ' -std=c++17 -stdlib=libc++'
 
 """Python
 "(Remember to pip install flake8!)
@@ -261,6 +262,10 @@ autocmd filetype clojure map <leader>jd <Plug>(iced_def_jump)
 autocmd filetype clojure map <leader>jl <Plug>(iced_jump_to_let)
 autocmd filetype clojure map <leader>== <Plug>(iced_format)
 autocmd filetype clojure map <leader>=G <Plug>(iced_format_all)
+
+"Shorcuts for cpp filetype
+autocmd filetype cpp map <leader>cc :Dispatch! make -C build<CR>
+autocmd filetype cpp map <leader>r :Term ./build/main<CR>
 
 "Special indent configuration for javascript
 autocmd FileType javascript set sw=2
