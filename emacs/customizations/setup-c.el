@@ -4,6 +4,20 @@
 (add-hook 'c-mode-common-hook 'superword-mode)
 (add-hook 'c++-mode-common-hook 'superword-mode)
 
+(use-package lsp-mode :commands lsp :ensure t)
+(use-package lsp-ui :commands lsp-ui-mode :ensure t)
+(use-package company-lsp
+  :ensure t
+  :commands company-lsp
+  :config (push 'company-lsp company-backends))
+
+(use-package ccls
+  :ensure t
+  :config
+  (setq ccls-executable "ccls")
+  :hook ((c-mode c++-mode objc-mode) .
+         (lambda () (require 'ccls) (lsp))))
+
 ;; Fix indentation of switch statements
 (c-set-offset 'case-label '+)
 

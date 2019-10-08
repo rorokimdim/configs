@@ -153,6 +153,10 @@
     world-time-mode
     yasnippet
 
+    lsp-mode
+    lsp-ui
+    company-lsp
+
     rust-mode
     racer
     cargo
