@@ -55,4 +55,6 @@
                      (shell-command
                       (format "make -C %s/build && %s/build/main" root-dir root-dir))))
              "h" 'lsp-describe-thing-at-point
+             "dd" 'dash-at-point
+             "dl" 'dash-at-point-with-docset
              ))

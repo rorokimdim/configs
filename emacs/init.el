@@ -153,6 +153,8 @@
     world-time-mode
     yasnippet
 
+    dash-at-point
+
     lsp-mode
     lsp-ui
     company-lsp
