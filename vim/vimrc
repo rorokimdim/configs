@@ -40,6 +40,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-repeat'
 
 Plug 'vhdirk/vim-cmake'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 Plug 'guns/vim-sexp', { 'for': 'clojure' }
 Plug 'liquidz/vim-iced', {'for': 'clojure'}
@@ -99,6 +100,7 @@ match ErrorMsg '\s\+\%#\@<!$'
 autocmd InsertLeave * redraw!
 
 """Syntastic
+let g:syntastic_mode_map = { 'passive_filetypes': ['cpp'] }
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 0
 let g:syntastic_check_on_open = 0
@@ -266,6 +268,8 @@ autocmd filetype clojure map <leader>=G <Plug>(iced_format_all)
 "Shorcuts for cpp filetype
 autocmd filetype cpp map <leader>cc :Dispatch! make -C build<CR>
 autocmd filetype cpp map <leader>r :Term ./build/main<CR>
+command! -nargs=+ Cppman silent! call system("tmux split-window cppman " . expand(<q-args>))
+autocmd FileType cpp nnoremap <silent><buffer> K <Esc>:Cppman <cword><CR>
 
 "Special indent configuration for javascript
 autocmd FileType javascript set sw=2
