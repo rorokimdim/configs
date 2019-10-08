@@ -9,7 +9,10 @@
 (use-package company-lsp
   :ensure t
   :commands company-lsp
-  :config (push 'company-lsp company-backends))
+  :config
+  (setq lsp-ui-doc-enable nil)
+  (push 'company-lsp company-backends))
+
 
 (use-package ccls
   :ensure t
@@ -51,4 +54,5 @@
                    (let ((root-dir (file-name-directory (my-get-closest-pathname "CMakeLists.txt" 3))))
                      (shell-command
                       (format "make -C %s/build && %s/build/main" root-dir root-dir))))
+             "h" 'lsp-describe-thing-at-point
              ))
