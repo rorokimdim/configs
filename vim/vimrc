@@ -173,6 +173,29 @@ let g:ale_lint_on_enter = 0
 let g:LanguageClient_diagnosticsSignsMax = 0
 let g:LanguageClient_diagnosticsEnable=0
 
+"""Autocompletion
+" Use 'Enter'-key to accept a suggestion.
+"""
+inoremap <expr> <cr> ((pumvisible())?("\<C-y>"):("\<cr>"))
+
+"In insert/command mode use emacs keys
+inoremap <C-a> <ESC>I
+inoremap <C-e> <ESC>A
+inoremap <C-b> <Left>
+inoremap <C-h> <Left>
+inoremap <C-n> <Down>
+inoremap <C-p> <Up>
+inoremap <C-f> <Right>
+inoremap <C-l> <Right>
+
+cnoremap <C-a> <ESC>I
+cnoremap <C-e> <ESC>A
+cnoremap <C-b> <Left>
+cnoremap <C-h> <Left>
+cnoremap <C-n> <Down>
+cnoremap <C-p> <Up>
+cnoremap <C-l> <Right>
+
 """Easymotion
 map <Leader> <Plug>(easymotion-prefix)
 nmap <Leader>, <Plug>(easymotion-overwin-f)
@@ -269,7 +292,9 @@ autocmd filetype clojure map <leader>=G <Plug>(iced_format_all)
 autocmd filetype cpp map <leader>cc :Dispatch! make -C build<CR>
 autocmd filetype cpp map <leader>r :Term ./build/main<CR>
 command! -nargs=+ Cppman silent! call system("tmux split-window cppman " . expand(<q-args>))
-autocmd FileType cpp nnoremap <silent><buffer> K <Esc>:Cppman <cword><CR>
+autocmd FileType cpp nnoremap <silent><buffer> H <Esc>:Cppman <cword><CR>
+autocmd Filetype cpp nnoremap <silent> K :call <SID>show_documentation()<CR>
+autocmd Filetype cpp setlocal signcolumn=yes
 
 "Special indent configuration for javascript
 autocmd FileType javascript set sw=2
@@ -294,6 +319,14 @@ function s:MkNonExDir(file, buf)
             call mkdir(dir, 'p')
         endif
     endif
+endfunction
+
+function! s:show_documentation()
+  if (index(['vim','help'], &filetype) >= 0)
+    execute 'h '.expand('<cword>')
+  else
+    call CocAction('doHover')
+  endif
 endfunction
 
 augroup BWCCreateDir
