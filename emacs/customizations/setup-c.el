@@ -11,6 +11,10 @@
   :commands company-lsp
   :config
   (setq lsp-ui-doc-enable nil)
+  (setq lsp-eldoc-enable-hover nil)
+  (setq lsp-enable-file-watchers nil)
+  (setq lsp-enable-symbol-highlighting nil)
+  (setq lsp-eldoc-enable-signature-help nil)
   (push 'company-lsp company-backends))
 
 
@@ -28,6 +32,10 @@
 
 ;; Assume I am using cmake
 (dolist (hook '(c-mode-hook c++-mode-hook))
+  (add-hook hook #'smartparens-mode)
+  (add-hook hook 'show-smartparens-mode)
+  (add-hook hook 'highlight-parentheses-mode)
+  (add-hook hook 'rainbow-delimiters-mode)
   (add-hook hook
             (lambda ()
               (set (make-local-variable 'compile-command)
