@@ -183,8 +183,6 @@ inoremap <C-a> <ESC>I
 inoremap <C-e> <ESC>A
 inoremap <C-b> <Left>
 inoremap <C-h> <Left>
-inoremap <C-n> <Down>
-inoremap <C-p> <Up>
 inoremap <C-f> <Right>
 inoremap <C-l> <Right>
 
@@ -192,8 +190,6 @@ cnoremap <C-a> <ESC>I
 cnoremap <C-e> <ESC>A
 cnoremap <C-b> <Left>
 cnoremap <C-h> <Left>
-cnoremap <C-n> <Down>
-cnoremap <C-p> <Up>
 cnoremap <C-l> <Right>
 
 """Easymotion
