@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: TEST_CASE
+# key: tc
+# --
+TEST_CASE(${1:string}) {
+    $0
+}
