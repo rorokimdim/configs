@@ -69,6 +69,9 @@
 ;; More insert mode shortcuts
 (define-key evil-insert-state-map "\C-x\C-n" 'evil-complete-next-line)
 (define-key evil-insert-state-map "\C-x\C-p" 'evil-complete-previous-line)
+(define-key evil-insert-state-map "\C-a" 'evil-beginning-of-line)
+(define-key evil-insert-state-map "\C-l" 'evil-forward-char)
+(define-key evil-insert-state-map "\C-h" 'evil-backward-char)
 
 ;; Remove any search state on ESC key
 (define-key evil-normal-state-map (kbd "<escape>") 'evil-ex-nohighlight)
