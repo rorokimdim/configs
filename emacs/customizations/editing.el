@@ -15,6 +15,7 @@
 ;; Enable company mode globally
 (add-hook 'after-init-hook 'global-company-mode)
 (with-eval-after-load 'company
+  (add-to-list 'company-backends 'company-lua)
   (add-to-list 'company-backends 'company-math-symbols-unicode)
   (add-to-list 'company-backends 'company-restclient))
 

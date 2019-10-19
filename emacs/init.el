@@ -163,6 +163,9 @@
     racer
     cargo
 
+    lua-mode
+    company-lua
+
     haskell-mode
     flycheck
     flycheck-haskell
@@ -217,6 +220,7 @@
 ;;(load "setup-clisp.elc")
 (load "setup-clojure.elc")
 (load "setup-haskell.elc")
+(load "setup-lua.elc")
 (load "setup-python.elc")
 (load "setup-rust.elc")
 (load "setup-scheme.elc")
