@@ -72,10 +72,10 @@
   "Opens a file using emacsclient."
   (eval
    (macroexpand
-    `(sh "/Applications/Emacs.app/Contents/MacOS/bin/emacsclient"
-         "-n"
+    `(sh "emacsclient"
+         "-t"
          "--alternate-editor"
-         "vim"
+         "\"\""
          ~@args))))
 
 (defcmd r [& args]
