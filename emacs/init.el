@@ -165,7 +165,6 @@
     cargo
 
     lua-mode
-    company-lua
 
     haskell-mode
     flycheck
