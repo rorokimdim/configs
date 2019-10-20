@@ -92,6 +92,8 @@
     evil-surround
     evil-visualstar
 
+    emamux
+
     bind-map
     expand-region
     eyebrowse

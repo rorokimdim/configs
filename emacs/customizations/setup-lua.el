@@ -13,7 +13,7 @@
              "ll" (lambda ()
                     (interactive)
                     (let ((game-directory (file-name-directory (my-get-closest-pathname "main.lua" 3))))
-                      (proc (start-process "love" "*love*" "love" game-directory)))
+                      (emamux:run-command (concat "love" " " game-directory))))
              "rq" (lambda ()
                     (interactive)
                     (call-interactively 'lua-kill-process)
