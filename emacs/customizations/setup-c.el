@@ -63,6 +63,11 @@
                      (shell-command
                       (format "make -C %s/build && %s/build/main" root-dir root-dir))))
              "h" 'lsp-describe-thing-at-point
+             "m" (lambda ()
+                   (interactive)
+                   (let ((thing (thing-at-point 'symbol)))
+                     (emamux:run-command (concat "cppman" " " thing " && " "exit"))
+                     (emamux:select-pane (emamux:get-runner-pane-id))))
              "dd" 'dash-at-point
              "dl" 'dash-at-point-with-docset
              "en" 'flymake-goto-next-error
