@@ -39,6 +39,8 @@
 
 ;; Use F4/super-r to change window layout
 (global-set-key [f4] 'rotate-layout)
+(global-set-key (kbd "C-c C-w w") 'rotate-window)
+(global-set-key (kbd "C-c C-w r") 'rotate-layout)
 (global-set-key (kbd "s-r") 'rotate-layout)
 
 ;; Use F10 to clear repl buffer

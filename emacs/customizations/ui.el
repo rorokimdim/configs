@@ -78,11 +78,6 @@
 ;; Show column number
 (column-number-mode t)
 
-;; Set fring color to background color
-(set-face-attribute 'fringe nil
-                      :foreground (face-foreground 'default)
-                      :background "grey20")
-
 ;; Don't pop up font menu
 (global-set-key (kbd "s-t") '(lambda () (interactive)))
 
@@ -153,7 +148,6 @@
 (eval-after-load "magit" '(diminish 'auto-revert-mode))
 (eval-after-load "which-key" '(diminish 'which-key-mode))
 (eval-after-load "highlight-parentheses" '(diminish 'highlight-parentheses-mode))
-(eval-after-load "vi-tilde-fringe" '(diminish 'vi-tilde-fringe-mode))
 (eval-after-load "flyspell" '(diminish 'flyspell-mode))
 (eval-after-load "paxedit" '(diminish 'paxedit-mode))
 
@@ -177,10 +171,6 @@
 (which-key-mode)
 (which-key-setup-minibuffer)
 
-;; Fringe
-(setq-default left-fringe-width 10)
-(setq-default right-fringe-width 0)
-
 ;; Linum
 (setq linum-format "%4d \u2502 ")
 
@@ -202,6 +192,3 @@
 
 ;; hl-line
 (setq hl-line-sticky-flag nil)
-
-;; Enable vi style tilde to indicate empty lines
-(global-vi-tilde-fringe-mode)

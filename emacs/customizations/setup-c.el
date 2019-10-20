@@ -65,4 +65,6 @@
              "h" 'lsp-describe-thing-at-point
              "dd" 'dash-at-point
              "dl" 'dash-at-point-with-docset
+             "en" 'flymake-goto-next-error
+             "ep" 'flymake-goto-prev-error
              ))

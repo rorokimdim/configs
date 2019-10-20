@@ -91,7 +91,6 @@
     evil-numbers
     evil-surround
     evil-visualstar
-    vi-tilde-fringe
 
     bind-map
     expand-region
@@ -255,10 +254,6 @@
 ;; machine I'm using.
 (when (file-exists-p "~/.emacs.d/customizations/machine-custom.elc")
   (load "machine-custom.elc"))
-
-(require 'server)
-(unless (server-running-p)
-  (server-start))
 
 (setq diary-file "~/workspace/org/diary")
 
