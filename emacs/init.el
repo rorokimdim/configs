@@ -171,6 +171,8 @@
     flycheck-haskell
     dante
 
+    ess
+
     julia-mode
     ))
 
@@ -222,6 +224,7 @@
 (load "setup-haskell.elc")
 (load "setup-lua.elc")
 (load "setup-python.elc")
+(load "setup-r.elc")
 (load "setup-rust.elc")
 (load "setup-scheme.elc")
 (load "setup-sql.elc")
