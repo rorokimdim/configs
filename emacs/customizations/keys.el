@@ -75,8 +75,6 @@
              "tr" 'emamux:run-command
              "tl" 'emamux:run-last-command
              "tc" 'emamux:close-panes
-             "t-" 'emamux:split-window
-             "t|" 'emamux:split-window-horizontally
              "x" 'kill-buffer-and-window))
 
 ;; For "programs"
