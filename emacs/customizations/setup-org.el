@@ -47,5 +47,3 @@
           pre.src:before {background-color: %s; color: %s; top: 10px;}</style>\n"
          my-pre-bg my-pre-fg my-pre-bg my-pre-fg))))))
 (add-hook 'org-export-before-processing-hook #'my-org-inline-css-hook)
-
-(require 'org-tempo)
