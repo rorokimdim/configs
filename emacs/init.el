@@ -67,6 +67,8 @@
     aggressive-indent
     anzu
 
+    nord-theme
+
     clojure-mode
     clojure-mode-extra-font-locking
     clojure-snippets
