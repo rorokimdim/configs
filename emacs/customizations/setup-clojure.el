@@ -36,9 +36,9 @@
              "hh" 'cider-apropos-select
              "hw" 'cider-clojuredocs-web))
 
-
-
 (with-eval-after-load 'cider-repl
   (define-key cider-repl-mode-map (kbd "C-l") 'cider-repl-clear-buffer)
   (define-key cider-repl-mode-map (kbd "<up>") 'cider-repl-previous-input)
   (define-key cider-repl-mode-map (kbd "<down>") 'cider-repl-next-input))
+
+(setq cider-repl-display-help-banner nil)
