@@ -12,11 +12,15 @@
         try-complete-lisp-symbol-partially
         try-complete-lisp-symbol))
 
-;; Enable company mode globally
-(add-hook 'after-init-hook 'global-company-mode)
-(with-eval-after-load 'company
-  (add-to-list 'company-backends 'company-math-symbols-unicode)
-  (add-to-list 'company-backends 'company-restclient))
+(use-package company
+    :ensure t
+    :hook (after-init . global-company-mode)
+    :config
+    (add-to-list 'company-backends 'company-math-symbols-unicode)
+    (add-to-list 'company-backends 'company-restclient)
+    :bind (:map company-active-map
+           ("C-n" . company-select-next-or-abort)
+           ("C-p" . company-select-previous-or-abort)))
 
 ;; Interactive search key bindings. By default, C-s runs
 ;; isearch-forward, so this swaps the bindings.
@@ -82,6 +86,5 @@
 
 ;; Enable spell checking
 (add-hook 'text-mode-hook 'flyspell-mode)
-(add-hook 'prog-mode-hook 'flyspell-prog-mode)
 (setq flyspell-issue-message-flag nil)
 (add-to-list 'ispell-skip-region-alist '("^#+BEGIN_SRC" . "^#+END_SRC"))
