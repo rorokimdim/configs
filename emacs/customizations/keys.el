@@ -46,6 +46,9 @@
 ;; Use F10 to clear repl buffer
 (global-set-key [f10] 'comint-clear-buffer)
 
+;; Do not ask for keyword when using ffip-split-window-*
+(setq ffip-split-window-without-asking-for-keyword t)
+
 ;;
 ;; bind-maps
 ;; See https://github.com/justbur/emacs-bind-map
@@ -142,6 +145,9 @@
 
              "m" 'mc/mark-more-like-this-extended
              "/" 'helm-swoop
+
+             "s-" 'ffip-split-window-horizontally
+             "s|" 'ffip-split-window-vertically
 
              "-" (lambda ()
                    (interactive)
