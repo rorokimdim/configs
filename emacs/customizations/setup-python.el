@@ -29,7 +29,7 @@
            (clear-python-buffer))
     "ec" 'clear-python-buffer
     "ef" 'python-shell-send-defun
-    "gd" 'elpy-goto-definition
+    "gd" 'elpy-goto-definition-other-window
     "pd" 'elpy-doc
     "pt" 'my-python-add-breakpoint
     "ve" 'venv-workon)
