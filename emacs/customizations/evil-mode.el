@@ -73,6 +73,10 @@
 (define-key evil-insert-state-map "\C-l" 'evil-forward-char)
 (define-key evil-insert-state-map "\C-h" 'evil-backward-char)
 
+;; Bind confusing macro-record q key to something useful
+(define-key evil-normal-state-map "q" 'evil-quit)
+(define-key evil-normal-state-map "Q" 'evil-quit-all)
+
 ;; Remove any search state on ESC key
 (define-key evil-normal-state-map (kbd "<escape>") 'evil-ex-nohighlight)
 
