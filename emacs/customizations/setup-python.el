@@ -1,8 +1,16 @@
 (defun clear-python-buffer ()
- (let ((old-buffer (buffer-name)))
-             (switch-to-buffer "*Python*")
-             (comint-clear-buffer)
-             (switch-to-buffer old-buffer)))
+  (let ((old-buffer (buffer-name)))
+    (switch-to-buffer "*Python*")
+    (comint-clear-buffer)
+    (switch-to-buffer old-buffer)))
+
+(defun elpy-goto-definition-or-rgrep ()
+  "Go to the definition of the symbol at point, if found. Otherwise, run `elpy-rgrep-symbol'."
+  (interactive)
+  (ring-insert find-tag-marker-ring (point-marker))
+  (condition-case nil (elpy-goto-definition-other-window)
+    (error (elpy-rgrep-symbol
+            (concat "\\(def\\|class\\)\s" (thing-at-point 'symbol) "(")))))
 
 (use-package elpy
   :ensure t
@@ -29,7 +37,7 @@
            (clear-python-buffer))
     "ec" 'clear-python-buffer
     "ef" 'python-shell-send-defun
-    "gd" 'elpy-goto-definition-other-window
+    "gd" 'elpy-goto-definition-or-rgrep
     "pd" 'elpy-doc
     "pt" 'my-python-add-breakpoint
     "ve" 'venv-workon)
