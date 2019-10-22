@@ -81,6 +81,9 @@
     dash
     datomic-snippets
     diminish
+
+    docker-compose-mode
+
     elpy
     eshell-autojump
     eshell-up
