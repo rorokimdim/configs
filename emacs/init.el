@@ -223,6 +223,7 @@
 (load "setup-restclient.elc")
 
 ;; Language-specific setups
+(load "setup-lsp.elc")
 (load "setup-c.elc")
 ;;(load "setup-clisp.elc")
 (load "setup-clojure.elc")
