@@ -92,10 +92,5 @@
 ;; Enable evil-anzu mode
 (with-eval-after-load 'evil (require 'evil-anzu))
 
-;; Prevent emacs from quitting on :q or :wq
-(defun my-evil-quit (old-fun &rest args)
-  (call-interactively 'kill-buffer-and-window))
-(advice-add #'evil-quit :around #'my-evil-quit)
-
 ;; Allow moving beyond eol
 (setq evil-move-beyond-eol t)

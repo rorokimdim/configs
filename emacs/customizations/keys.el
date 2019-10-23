@@ -56,6 +56,7 @@
 
 ;; For file and buffer stuff
 (require 'bind-map)
+(require 'emamux)
 (bind-map my-back-slash-leader-map
   :keys ("s-\\")
   :evil-keys ("\\")
