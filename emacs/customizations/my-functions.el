@@ -18,6 +18,16 @@
   (forward-char)
   (eval-print-last-sexp))
 
+(defun my-quit-if-unique-else-delete-window ()
+  "Quits with evil-quit if active buffer is different from buffers in other visible windows,
+   else just deletes the active window."
+  (interactive)
+  (let* ((bs (mapcar #'window-buffer (window-list)))
+         (matches (remove-if-not (lambda (b) (equal b (current-buffer))) bs))
+         )
+    (if (= (length matches) 1)
+        (evil-quit) (delete-window))))
+
 (defvar my-uninteresting-buffer-prefixes
   '("*Messages*"
     "*Compile-Log*"
