@@ -65,10 +65,19 @@
                    (interactive)
                    (mapc 'kill-buffer (delq "*scratch*" (buffer-list))))
              "c" 'my-find-config-file
-             "d" 'ido-dired
+             "d" (lambda ()
+                   (interactive)
+                   (emamux:tmux-run-command
+                    nil
+                    "new-window"
+                    "cd ~/workspace/$(ls -d ~/workspace/*/ | sed \"s/.*workspace//\" | sed \"s:/::g\" | fzf); exec bash"))
              "f" 'my-find-file
              "m" 'helm-imenu
              "n" 'neotree-toggle
+             "q" 'evil-quit-all
+             "e" (lambda ()
+                   (interactive)
+                   (emamux:tmux-run-command nil "new-window" "emacsclient" "-t"))
              "r" 'helm-recentf
              "s" (lambda ()
                    (interactive)
