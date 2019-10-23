@@ -78,6 +78,16 @@
              "tr" 'emamux:run-command
              "tl" 'emamux:run-last-command
              "tc" 'emamux:close-panes
+             "0" 'eyebrowse-switch-to-window-config-0
+             "1" 'eyebrowse-switch-to-window-config-1
+             "2" 'eyebrowse-switch-to-window-config-2
+             "3" 'eyebrowse-switch-to-window-config-3
+             "4" 'eyebrowse-switch-to-window-config-4
+             "5" 'eyebrowse-switch-to-window-config-5
+             "6" 'eyebrowse-switch-to-window-config-6
+             "7" 'eyebrowse-switch-to-window-config-7
+             "8" 'eyebrowse-switch-to-window-config-8
+             "9" 'eyebrowse-switch-to-window-config-9
              "x" 'kill-buffer-and-window))
 
 ;; For "programs"
