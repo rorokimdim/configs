@@ -83,8 +83,3 @@
 
 ;; Enable auto-revert mode
 (global-auto-revert-mode 1)
-
-;; Enable spell checking
-(add-hook 'text-mode-hook 'flyspell-mode)
-(setq flyspell-issue-message-flag nil)
-(add-to-list 'ispell-skip-region-alist '("^#+BEGIN_SRC" . "^#+END_SRC"))
