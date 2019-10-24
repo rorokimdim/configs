@@ -96,6 +96,10 @@
    (eval (macroexpand
           `(sh-lines "find" ~path "-name" ~glob-pattern)))))
 
+(defcmd decode-json [x]
+  "Decodes json into clojure data structure."
+  (j/decode x true))
+
 (defcmd slurp-json
   "Slurps json data from a uri."
   [uri]
