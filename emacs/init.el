@@ -125,6 +125,7 @@
     htmlize
     ido-completing-read+
     ido-vertical-mode
+    json-mode
     jq-mode  ;; install jq command first
     key-chord
     magit
@@ -234,6 +235,7 @@
 (load "setup-rust.elc")
 (load "setup-scheme.elc")
 (load "setup-sql.elc")
+(load "setup-json.elc")
 
 ;; Keyboard shortcuts
 (load "keys.elc")
