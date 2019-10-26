@@ -131,7 +131,7 @@
     magit
     move-text
     multiple-cursors
-    neotree
+    ranger
 
     org
     org-bullets
@@ -217,8 +217,8 @@
 ;; For common lispy things
 (load "setup-lisps.elc")
 
-;; Neotree setup
-(load "setup-neotree.el")
+;; Ranger setup
+(load "setup-ranger.el")
 
 ;; Restclient mode setup
 (load "setup-restclient.elc")
