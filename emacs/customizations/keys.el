@@ -106,6 +106,7 @@
   :evil-keys ("`")
   :evil-states (normal visual)
   :bindings ("`" 'deer
+             "s" 'eshell
              "d" 'osx-dictionary-search-input
              "g" 'helm-google-suggest
              "c" 'calc
