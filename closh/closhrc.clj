@@ -8,7 +8,8 @@
                 [rhizome "0.2.9"]
                 [clj-http "3.10.0"]
                 [clj-time "0.14.0"]
-                [com.rpl/specter "1.1.2"]]
+                [com.rpl/specter "1.1.2"]
+                [incanter "1.9.3"]]
  :repositories (merge cemerick.pomegranate.aether/maven-central
                       {"clojars" "https://clojars.org/repo"}))
 
@@ -19,7 +20,10 @@
          '[clj-http.client :as http]
          '[clj-time.core :as t]
          '[rhizome.viz :as viz]
-         '[com.rpl.specter :as s])
+         '[com.rpl.specter :as s]
+         '[incanter.core :as i]
+         '[incanter.charts :as icharts]
+         '[incanter.stats :as istats])
 
 ;; From https://github.com/mikera/clojure-utils/blob/master/src/main/clojure/mikera/cljutils/namespace.clj#L165
 (defmacro with-ns
