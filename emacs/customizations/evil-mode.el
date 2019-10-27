@@ -57,7 +57,8 @@
                        world-time-table-mode
                        cider-repl-mode
                        cider-stacktrace-mode
-                       geiser-debug-mode)
+                       geiser-debug-mode
+                       slime-repl-mode)
          do (evil-set-initial-state mode 'emacs))
 
 ;; Use Ctrl-e to go to end of line, like in emacs

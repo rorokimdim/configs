@@ -1,8 +1,8 @@
-(setq inferior-lisp-program "sbcl")
+(setq inferior-lisp-program "ros -Q run")
 (setq slime-contribs '(slime-fancy))
 
-(when (file-exists-p "~/quicklisp/slime-helper.el")
-  (load (expand-file-name "~/quicklisp/slime-helper.el")))
+(when (file-exists-p "~/.roswell/helper.el")
+  (load (expand-file-name "~/.roswell/helper.el")))
 
 ;; Shortcuts for common lisp mode
 (require 'bind-map)

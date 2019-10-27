@@ -226,7 +226,7 @@
 ;; Language-specific setups
 (load "setup-lsp.elc")
 (load "setup-c.elc")
-;;(load "setup-clisp.elc")
+(load "setup-clisp.elc")
 (load "setup-clojure.elc")
 (load "setup-haskell.elc")
 (load "setup-lua.elc")
