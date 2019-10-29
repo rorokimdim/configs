@@ -62,6 +62,8 @@
   :evil-keys ("\\")
   :evil-states (normal visual)
   :bindings ("\\" 'ido-switch-buffer
+             "|" 'ffip-split-window-horizontally
+             "-" 'ffip-split-window-vertically
              "*" (lambda ()
                    (interactive)
                    (mapc 'kill-buffer (delq "*scratch*" (buffer-list))))
@@ -159,8 +161,8 @@
              "m" 'mc/mark-more-like-this-extended
              "/" 'helm-swoop
 
-             "s-" 'ffip-split-window-horizontally
-             "s|" 'ffip-split-window-vertically
+             "s|" 'ffip-split-window-horizontally
+             "s-" 'ffip-split-window-vertically
 
              "-" (lambda ()
                    (interactive)
