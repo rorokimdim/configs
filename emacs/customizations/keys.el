@@ -72,9 +72,8 @@
                     nil
                     "new-window"
                     "cd ~/workspace/$(ls -d ~/workspace/*/ | sed \"s/.*workspace//\" | sed \"s:/::g\" | fzf); exec bash"))
-             "f" 'my-find-file
+             "f" 'find-file-in-project
              "m" 'helm-imenu
-             "n" 'neotree-toggle
              "q" 'evil-quit-all
              "e" (lambda ()
                    (interactive)
@@ -105,7 +104,9 @@
   :keys ("s-`")
   :evil-keys ("`")
   :evil-states (normal visual)
-  :bindings ("`" 'deer
+  :bindings ("`" (lambda ()
+                   (interactive)
+                   (deer (ffip-get-project-root-directory)))
              "s" 'eshell
              "d" 'osx-dictionary-search-input
              "g" 'helm-google-suggest
@@ -125,15 +126,6 @@
              "o" 'ace-window
              "0" 'delete-window
              "1" 'delete-other-windows))
-;; For frames
-(bind-map my-f5-leader-map
-  :keys ("<f5>")
-  :bindings ("c" 'my-create-frame-with-scratch
-             "d" 'my-create-frame-with-dired
-             "f" 'my-create-frame-with-find-file
-             "o" 'other-frame
-             "s" 'my-create-frame-with-eshell
-             "x" 'delete-frame))
 
 ;; For anything that needs to be used often
 (bind-map my-comma-leader-map

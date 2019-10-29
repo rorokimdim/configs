@@ -103,7 +103,7 @@
     expand-region
     eyebrowse
     f
-    find-file-in-repository
+    find-file-in-project
     geiser
     gnuplot
     google-maps

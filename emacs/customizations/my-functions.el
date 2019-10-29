@@ -101,18 +101,11 @@
   "~/workspace/"
   "Path to my workspace directory")
 
-(defun my-find-file ()
-  "Defines a custom find-file function."
-  (interactive)
-  (ignore-errors (cd (file-name-directory (buffer-file-name))))
-  (cd (read-directory-name "Directory: " (or (ignore-errors (ffip-project-root)) my-workspace-directory)))
-  (call-interactively 'find-file-in-repository))
-
 (defun my-find-config-file ()
   "Finds a config file."
   (interactive)
   (cd "~/workspace/configs/")
-  (call-interactively 'find-file-in-repository))
+  (call-interactively 'find-file-in-project))
 
 (defun my-format-date (format)
   "Inserts date in FORMAT format."
@@ -134,30 +127,6 @@
 (defun my-goto-function (x)
   "Goes to defintion of a function with name X."
   (find-function (intern x)))
-
-(defun my-create-frame-with-scratch ()
-  "Creates a frame and switches to scratch buffer."
-  (interactive)
-  (call-interactively 'make-frame)
-  (switch-to-buffer "*scratch*"))
-
-(defun my-create-frame-with-dired ()
-  "Creates a frame and calls ido-dired."
-  (interactive)
-  (call-interactively 'my-create-frame-with-scratch)
-  (call-interactively 'ido-dired))
-
-(defun my-create-frame-with-find-file ()
-  "Creates a frame and calls my-find-file."
-  (interactive)
-  (call-interactively 'my-create-frame-with-scratch)
-  (call-interactively 'my-find-file))
-
-(defun my-create-frame-with-eshell ()
-  "Creates a frame and runs eshell."
-  (interactive)
-  (call-interactively 'my-create-frame-with-scratch)
-  (call-interactively 'eshell))
 
 (defun my-cider-figwheel-repl ()
   "Starts a figwheel repl."
