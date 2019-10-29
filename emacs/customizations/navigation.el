@@ -87,6 +87,9 @@
 (disallow-cd-in-function find-file-noselect-1)
 (disallow-cd-in-function set-visited-file-name)
 
+;; Use fd instead of 'find' for find-file-in-project
+(setq ffip-use-rust-fd t)
+
 ;; Use ido-vertical
 (require 'ido-vertical-mode)
 (ido-vertical-mode 1)
