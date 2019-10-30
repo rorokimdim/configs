@@ -23,10 +23,10 @@
    else just deletes the active window."
   (interactive)
   (let* ((bs (mapcar #'window-buffer (window-list)))
-         (matches (remove-if-not (lambda (b) (equal b (current-buffer))) bs))
-         )
+         (matches (remove-if-not (lambda (b) (equal b (current-buffer))) bs)))
     (if (= (length matches) 1)
-        (kill-this-buffer) (delete-window))))
+        (if (display-graphic-p) (kill-this-buffer) (evil-quit))
+      (delete-window))))
 
 (defvar my-uninteresting-buffer-prefixes
   '("*Messages*"
