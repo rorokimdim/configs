@@ -57,3 +57,15 @@
           pre.src:before {background-color: %s; color: %s; top: 10px;}</style>\n"
          my-pre-bg my-pre-fg my-pre-bg my-pre-fg))))))
 (add-hook 'org-export-before-processing-hook #'my-org-inline-css-hook)
+
+;; Shortcuts for org mode
+(require 'bind-map)
+(bind-map my-org-mode-map
+  :keys ("s-,")
+  :evil-keys (",")
+  :evil-states (normal visual)
+  :major-modes (org-mode)
+  :bindings ("nd" 'narrow-to-defun
+             "ne" 'org-narrow-to-element
+             "ns" 'org-narrow-to-subtree
+             "nw" 'widen))
