@@ -22,6 +22,12 @@
            ("C-n" . company-select-next-or-abort)
            ("C-p" . company-select-previous-or-abort)))
 
+(use-package dumb-jump
+    :ensure t
+    :config
+    (setq dumb-jump-selector 'ivy)
+    (setq dumb-jump-prefer-searcher 'rg))
+
 ;; Interactive search key bindings. By default, C-s runs
 ;; isearch-forward, so this swaps the bindings.
 (global-set-key (kbd "C-s") 'isearch-forward-regexp)

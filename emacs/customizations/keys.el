@@ -136,6 +136,12 @@
   :evil-states (normal visual)
   :bindings ("<SPC>" 'er/expand-region
              "," 'avy-goto-char
+
+             "do" 'dumb-jump-go-other-window
+             "dj" 'dumb-jump-go
+             "db" 'dumb-jump-back
+             "di" 'dumb-jump-go-prompt
+
              "f" 'avy-goto-char-in-line
 
              "w0" 'delete-window

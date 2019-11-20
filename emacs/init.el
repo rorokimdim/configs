@@ -122,6 +122,8 @@
     smartparens
     paxedit
 
+    dumb-jump
+
     htmlize
     ido-completing-read+
     ido-vertical-mode
