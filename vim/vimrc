@@ -48,7 +48,7 @@ Plug 'tpope/vim-sexp-mappings-for-regular-people', { 'for': 'clojure' }
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'liquidz/vim-iced-project-namespaces', {'for': 'clojure', 'on': 'IcedBrowseNamespace'}
 Plug 'liquidz/vim-iced-function-list', {'for': 'clojure', 'on': 'IcedBrowseFunction'}
-
+Plug 'dense-analysis/ale', { 'for': 'clojure' }
 
 Plug 'tpope/vim-surround'
 Plug 'vim-airline/vim-airline'
@@ -112,6 +112,11 @@ highlight SyntasticWarningLine guifg=white guibg=red
 let g:syntastic_enable_signs = 1
 nnoremap <leader>en :silent! lnext<CR>
 nnoremap <leader>ep :silent! lprev<CR>
+
+"""Ale
+"Only run on save
+let g:ale_lint_on_text_changed = 'never'
+let g:ale_lint_on_insert_leave = 0
 
 """Rainbow parentheses everywhere
 let g:rbpt_colorpairs = [
