@@ -278,6 +278,10 @@
 ;; Confirm before killing emacs
 (setq confirm-kill-emacs 'y-or-n-p)
 
+;; Stop annoying temp files from flymake
+(setq flymake-run-in-place nil)
+(setq temporary-file-directory "~/.emacs.d/tmp")
+
 ;; Things to do after emacs finishing loading
 (add-hook 'emacs-startup-hook
           (lambda ()
