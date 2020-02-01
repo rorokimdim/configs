@@ -18,6 +18,7 @@
     :config
     (add-to-list 'company-backends 'company-math-symbols-unicode)
     (add-to-list 'company-backends 'company-restclient)
+    (add-to-list 'company-backends 'company-elm)
     :bind (:map company-active-map
            ("C-n" . company-select-next-or-abort)
            ("C-p" . company-select-previous-or-abort)))

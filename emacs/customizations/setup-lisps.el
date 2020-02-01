@@ -8,6 +8,7 @@
              lisp-interaction-mode-hook
              scheme-mode-hook
              clojure-mode-hook
+             janet-mode-hook
              geiser-repl-mode-hook
              cider-repl-mode-hook))
   (add-hook h #'show-paren-mode)

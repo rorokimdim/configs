@@ -88,6 +88,8 @@
     eshell-autojump
     eshell-up
 
+    elm-mode
+
     evil
     evil-anzu
     evil-escape
@@ -166,6 +168,7 @@
 
     lsp-mode
     lsp-ui
+    lsp-haskell
     company-lsp
 
     rust-mode
@@ -177,7 +180,6 @@
     haskell-mode
     flycheck
     flycheck-haskell
-    dante
 
     ess
 
@@ -237,7 +239,9 @@
 (load "setup-rust.elc")
 (load "setup-scheme.elc")
 (load "setup-sql.elc")
+(load "setup-janet.elc")
 (load "setup-json.elc")
+(load "setup-elm.elc")
 
 ;; Keyboard shortcuts
 (load "keys.elc")
