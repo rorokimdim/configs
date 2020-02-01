@@ -178,8 +178,6 @@
     lua-mode
 
     haskell-mode
-    flycheck
-    flycheck-haskell
 
     ess
 

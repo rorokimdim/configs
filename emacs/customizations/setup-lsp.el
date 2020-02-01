@@ -9,6 +9,7 @@
   ;; (setq lsp-ui-doc-enable nil)
   ;; (setq lsp-eldoc-enable-hover nil)
   ;; (setq lsp-enable-file-watchers nil)
+  (setq lsp-prefer-flymake nil)
   (setq lsp-enable-symbol-highlighting nil)
   (setq lsp-ui-sideline-enable nil)
   ;; (setq lsp-eldoc-enable-signature-help nil)
