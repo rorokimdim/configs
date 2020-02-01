@@ -145,20 +145,7 @@ autocmd Syntax * RainbowParenthesesLoadBraces
 
 """LanguageClient
 " See https://github.com/autozimu/LanguageClient-neovim
-"     https://github.com/haskell/haskell-ide-engine#using-hie-with-vim-or-neovim
 """
-function LC_maps()
-    if has_key(g:LanguageClient_serverCommands, &filetype)
-        nnoremap <buffer> <silent> K :call LanguageClient#textDocument_hover()<cr>
-        nnoremap <buffer> <silent> W :pclose<cr>
-        nnoremap <buffer> <silent> gd :call LanguageClient#textDocument_definition()<CR>
-        nnoremap <buffer> <silent> <F2> :call LanguageClient#textDocument_rename()<CR>
-    endif
-endfunction
-autocmd FileType haskell call LC_maps()
-let g:LanguageClient_serverCommands = {
-    \ 'haskell': ['hie-wrapper'],
-    \ }
 nnoremap <F5> :call LanguageClient_contextMenu()<CR>
 map <Leader>lk :call LanguageClient#textDocument_hover()<CR>
 map <Leader>lg :call LanguageClient#textDocument_definition()<CR>
