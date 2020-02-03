@@ -57,6 +57,7 @@
                        world-time-table-mode
                        cider-repl-mode
                        cider-stacktrace-mode
+                       haskell-interactive-mode
                        geiser-debug-mode
                        slime-repl-mode)
          do (evil-set-initial-state mode 'emacs))
