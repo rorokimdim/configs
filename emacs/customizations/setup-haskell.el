@@ -7,6 +7,7 @@
  '(haskell-process-log t))
 
 (with-eval-after-load 'haskell-mode
+  (define-key haskell-mode-map (kbd "C-c C-c") 'haskell-compile)
   (define-key haskell-mode-map (kbd "C-c C-l") 'haskell-process-load-or-reload)
   (define-key haskell-mode-map (kbd "C-c C-z") 'haskell-interactive-switch)
   (define-key haskell-mode-map (kbd "C-c C-n C-t") 'haskell-process-do-type)
@@ -18,10 +19,24 @@
   (define-key haskell-interactive-mode-map (kbd "C-c C-q") 'haskell-interactive-kill)
   (define-key haskell-interactive-mode-map (kbd "C-l") 'haskell-interactive-mode-clear))
 
+(require 'bind-map)
+(bind-map my-haskell-mode-map
+  :keys ("s-,")
+  :evil-keys (",")
+  :evil-states (normal visual)
+  :major-modes (haskell-mode)
+  :bindings (
+             "if" 'haskell-mode-format-imports
+             "ii" 'haskell-add-import
+             "gd" 'haskell-mode-jump-to-def
+             "hd" 'haskell-describe
+             "hh" 'haskell-hoogle))
+
 (custom-set-variables
-  '(haskell-process-show-debug-tips nil)
-  '(haskell-interactive-popup-errors nil)
-  '(haskell-process-type 'stack-ghci))
+ '(haskell-process-show-debug-tips nil)
+ '(haskell-interactive-popup-errors nil)
+ '(haskell-compile-cabal-build-command "stack build")
+ '(haskell-process-type 'stack-ghci))
 
 (require 'company-ghci)
 (push 'company-ghci company-backends)
