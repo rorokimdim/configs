@@ -168,7 +168,6 @@
 
     lsp-mode
     lsp-ui
-    lsp-haskell
     company-lsp
 
     rust-mode
@@ -178,6 +177,7 @@
     lua-mode
 
     haskell-mode
+    company-ghci
 
     ess
 
@@ -286,5 +286,5 @@
             (switch-to-buffer "*scratch*")))
 ;;
 ;; End of config.
-;; Feel free to delete the rest if emacs adds it.
+;; Okay to delete anything emacs adds below.
 ;;
