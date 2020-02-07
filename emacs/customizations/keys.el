@@ -23,6 +23,8 @@
 (global-set-key (kbd "s-,") 'eyebrowse-prev-window-config)
 (global-set-key (kbd "s-.") 'eyebrowse-next-window-config)
 
+;; Bind C-x k to kill-this-buffer instead of default kill-buffer
+(global-set-key (kbd "C-x k") 'kill-this-buffer)
 
 ;; Use super-<arrow-key> to switch between windows
 (global-set-key (kbd "s-<left>") 'evil-window-left)
@@ -64,27 +66,15 @@
   :bindings ("\\" 'ido-switch-buffer
              "|" 'ffip-split-window-horizontally
              "-" 'ffip-split-window-vertically
-             "*" (lambda ()
-                   (interactive)
-                   (mapc 'kill-buffer (delq "*scratch*" (buffer-list))))
-             "c" 'my-find-config-file
-             "d" (lambda ()
-                   (interactive)
-                   (emamux:tmux-run-command
-                    nil
-                    "new-window"
-                    "cd ~/workspace/$(ls -d ~/workspace/*/ | sed \"s/.*workspace//\" | sed \"s:/::g\" | fzf); exec bash"))
+             "*" 'my-kill-all-buffers
+             "c" 'my-tmux-open-emacs-config
+             "d" 'my-tmux-cd-workspace
              "f" 'find-file-in-project
              "m" 'helm-imenu
              "q" 'evil-quit-all
-             "e" (lambda ()
-                   (interactive)
-                   (emamux:tmux-run-command nil "new-window" "emacsclient" "-t"))
+             "e" 'my-tmux-new-editor
              "r" 'helm-recentf
-             "s" (lambda ()
-                   (interactive)
-                   (call-interactively 'ag)
-                   (delete-window))
+             "s" 'my-search-with-ag
              "ts" 'emamux:send-command
              "tr" 'emamux:run-command
              "tl" 'emamux:run-last-command
@@ -106,9 +96,8 @@
   :keys ("s-`")
   :evil-keys ("`")
   :evil-states (normal visual)
-  :bindings ("`" (lambda ()
-                   (interactive)
-                   (deer (ffip-get-project-root-directory)))
+  :bindings ("`" 'my-browse-project-directory
+             "b" 'helm-bookmarks
              "s" 'eshell
              "d" 'osx-dictionary-search-input
              "g" 'helm-google-suggest
@@ -170,27 +159,5 @@
              "s|" 'ffip-split-window-horizontally
              "s-" 'ffip-split-window-vertically
 
-             "-" (lambda ()
-                   (interactive)
-                   (call-interactively 'split-window-below)
-                   (other-window 1 nil)
-                   (switch-to-buffer "*scratch*"))
-             "|" (lambda ()
-                   (interactive)
-                   (call-interactively 'split-window-right)
-                   (other-window 1 nil)
-                   (switch-to-buffer "*scratch*"))))
-
-;;
-;; Key chords
-;;
-
-(require 'key-chord)
-(key-chord-define-global "~~" 'helm-bookmarks)
-(key-chord-mode 1)
-
-;; Disable key chord in minibuffer
-(add-hook
- 'minibuffer-setup-hook
- (lambda ()
-   (set (make-local-variable 'input-method-function) nil)))
+             "-" 'my-split-window-vertically
+             "|" 'my-split-window-horizontally))

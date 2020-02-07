@@ -131,7 +131,6 @@
     ido-vertical-mode
     json-mode
     jq-mode  ;; install jq command first
-    key-chord
     magit
     move-text
     multiple-cursors

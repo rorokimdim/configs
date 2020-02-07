@@ -28,7 +28,10 @@
 (defun my-add-lispy-shortcuts ()
   "Add shortcuts to a lispy-mode hook."
   (progn
+    (evil-local-set-key 'normal (kbd "Y") 'sp-copy-sexp)
     (evil-local-set-key 'normal (kbd "D") 'sp-kill-sexp)
+    (evil-local-set-key 'normal (kbd "(") 'sp-beginning-of-sexp)
+    (evil-local-set-key 'normal (kbd ")") 'sp-end-of-sexp)
     (evil-local-set-key 'normal (kbd "<") 'sp-backward-slurp-sexp)
     (evil-local-set-key 'normal (kbd ">") 'sp-forward-slurp-sexp)
     (evil-local-set-key 'normal (kbd "M-r") 'sp-raise-sexp)

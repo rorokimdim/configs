@@ -1,5 +1,7 @@
+(require 'ag)
 (require 'cl)
 (require 'dash)
+(require 'emamux)
 
 (defun my-eval-and-replace ()
   "Replace preceding sexp with its value."
@@ -101,12 +103,6 @@
   "~/workspace/"
   "Path to my workspace directory")
 
-(defun my-find-config-file ()
-  "Finds a config file."
-  (interactive)
-  (cd "~/workspace/configs/")
-  (call-interactively 'find-file-in-project))
-
 (defun my-format-date (format)
   "Inserts date in FORMAT format."
   (let ((system-time-locale "en_US.UTF-8"))
@@ -117,11 +113,58 @@
   (interactive)
   (my-format-date "[%Y-%m-%d %H:%M:%S [%A, %B]]"))
 
-(require 'ag)
+(defun my-kill-all-buffers ()
+  "Kills all buffers except *scratch*."
+  (interactive)
+  (mapc 'kill-buffer (delq "*scratch*" (buffer-list))))
+
+(defun my-browse-project-directory ()
+  "Opens deer on project root directory."
+  (interactive)
+  (deer (ffip-get-project-root-directory)))
+
+(defun my-split-window-vertically ()
+  "Splits window vertically."
+  (interactive)
+  (call-interactively 'split-window-below)
+  (other-window 1 nil)
+  (switch-to-buffer "*scratch*"))
+
+(defun my-split-window-horizontally ()
+  "Splits window horizontally."
+  (interactive)
+  (call-interactively 'split-window-right)
+  (other-window 1 nil)
+  (switch-to-buffer "*scratch*"))
+
+(defun my-tmux-cd-workspace ()
+  "Opens a new tmux window on a workspace directory."
+  (interactive)
+  (emamux:tmux-run-command
+   nil
+   "new-window"
+   "cd ~/workspace/$(ls -d ~/workspace/*/ | sed \"s/.*workspace//\" | sed \"s:/::g\" | fzf); exec bash"))
+
+(defun my-tmux-new-editor ()
+  "Opens new instance of editor in a new tmux window."
+  (interactive)
+  (emamux:tmux-run-command nil "new-window" "emacsclient" "-t"))
+
+(defun my-tmux-open-emacs-config ()
+  "Opens a config file in a new tmux window."
+  (interactive)
+  (emamux:tmux-run-command nil "new-window" "cd ~/workspace/configs/emacs/; emacsclient -t $(fd -e el | fzf)"))
+
 (defun my-eshell-ag (string)
   "Searches for STRING in the current eshell directory using ag command."
   (interactive)
   (ag/search string (eshell/pwd))
+  (delete-window))
+
+(defun my-search-with-ag ()
+  "Searches with ag interactively."
+  (interactive)
+  (call-interactively 'ag)
   (delete-window))
 
 (defun my-goto-function (x)
