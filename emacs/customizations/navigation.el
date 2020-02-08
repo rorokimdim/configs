@@ -42,9 +42,8 @@
 ;; in the current directory displayed in the minibuffer
 (setq ido-auto-merge-work-directories-length -1)
 
-;; Includes buffer names of recently open files, even if they're not
-;; open now
-(setq ido-use-virtual-buffers t)
+;; Do not show virtual buffers
+(setq ido-use-virtual-buffers nil)
 
 ;; This enables ido in all contexts where it could be useful, not just
 ;; for selecting buffer and file names
