@@ -45,6 +45,9 @@
 (global-set-key (kbd "C-c C-w r") 'rotate-layout)
 (global-set-key (kbd "s-r") 'rotate-layout)
 
+(global-set-key (kbd "C-c C-n") 'next-buffer)
+(global-set-key (kbd "C-c C-p") 'previous-buffer)
+
 ;; Use F10 to clear repl buffer
 (global-set-key [f10] 'comint-clear-buffer)
 

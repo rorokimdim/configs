@@ -9,9 +9,7 @@
 (with-eval-after-load 'haskell-mode
   (define-key haskell-mode-map (kbd "C-c C-c") 'haskell-compile)
   (define-key haskell-mode-map (kbd "C-c C-l") 'haskell-process-load-or-reload)
-  (define-key haskell-mode-map (kbd "C-c C-z") 'haskell-interactive-switch)
-  (define-key haskell-mode-map (kbd "C-c C-n C-t") 'haskell-process-do-type)
-  (define-key haskell-mode-map (kbd "C-c C-n C-i") 'haskell-process-do-info))
+  (define-key haskell-mode-map (kbd "C-c C-z") 'haskell-interactive-switch))
 
 (with-eval-after-load 'haskell-interactive-mode
   (define-key haskell-interactive-mode-map (kbd "<up>") 'haskell-interactive-mode-history-previous)
