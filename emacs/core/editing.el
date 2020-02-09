@@ -12,17 +12,6 @@
         try-complete-lisp-symbol-partially
         try-complete-lisp-symbol))
 
-(use-package company
-    :ensure t
-    :hook (after-init . global-company-mode)
-    :config
-    (add-to-list 'company-backends 'company-math-symbols-unicode)
-    (add-to-list 'company-backends 'company-restclient)
-    (add-to-list 'company-backends 'company-elm)
-    :bind (:map company-active-map
-           ("C-n" . company-select-next-or-abort)
-           ("C-p" . company-select-previous-or-abort)))
-
 (use-package dumb-jump
     :ensure t
     :config

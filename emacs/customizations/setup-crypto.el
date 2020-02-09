@@ -1,6 +1,3 @@
-(require 'epa-file)
-(epa-file-enable)
-
 (require 'aes)
 (aes-enable-auto-decryption)
 

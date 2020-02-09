@@ -23,6 +23,9 @@
 (global-set-key (kbd "s-,") 'eyebrowse-prev-window-config)
 (global-set-key (kbd "s-.") 'eyebrowse-next-window-config)
 
+;; Show major mode commands
+(global-set-key (kbd "M-X") 'smex-major-mode-commands)
+
 ;; Bind C-x k to kill-this-buffer instead of default kill-buffer
 (global-set-key (kbd "C-x k") 'kill-this-buffer)
 

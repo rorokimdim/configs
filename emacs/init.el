@@ -1,3 +1,12 @@
+(require 'cl)
+(require 'package)
+
+;; Always load newest byte code
+(setq load-prefer-newer t)
+
+;; Warn when opening files bigger than 100MB
+(setq large-file-warning-threshold 100000000)
+
 ;;
 ;; Tweak garbage collection threshold
 ;;
@@ -12,30 +21,6 @@
 (add-hook 'minibuffer-setup-hook #'my-minibuffer-setup-hook)
 (add-hook 'minibuffer-exit-hook #'my-minibuffer-exit-hook)
 (add-hook 'after-init-hook (lambda () (setq gc-cons-threshold initial-gc-cons-threshold)))
-
-;;;;
-;; Packages
-;;;;
-
-;; Define package repositories
-(require 'package)
-(add-to-list 'package-archives
-             '("marmalade" . "http://marmalade-repo.org/packages/") t)
-(add-to-list 'package-archives
-             '("melpa" . "http://melpa.milkbox.net/packages/") t)
-(add-to-list 'package-archives '("org" . "http://orgmode.org/elpa/") t)
-
-;; Load and activate emacs packages. Do this first so that the
-;; packages are loaded before you start trying to modify them.
-;; This also sets the load path.
-(package-initialize)
-
-;; Download the ELPA archive description if needed.
-;; This informs Emacs about the latest versions of all packages, and
-;; makes them available for download.
-(when (not package-archive-contents)
-  (package-refresh-contents))
-
 
 ;; Define the following variables to remove the compile-log warnings
 (defvar apropos-do-all nil)
@@ -53,10 +38,32 @@
 ;; Silence ad-redefinition warning
 (setq ad-redefinition-action 'accept)
 
-;; Do this before anything 'evil to make 'tab' work in org-mode for org-cycle
-(setq evil-want-C-i-jump nil)
+(setq diary-file "~/workspace/org/diary")
 
-;; Packages to install
+;; Confirm before killing emacs
+(setq confirm-kill-emacs 'y-or-n-p)
+
+;; Config changes made through the customize UI will be stored here
+(setq custom-file (expand-file-name "custom.el" "~/.emacs.d"))
+
+;; Things to do after emacs finishing loading
+(add-hook 'emacs-startup-hook
+          (lambda ()
+            (cd "~/workspace")
+            (eyebrowse-switch-to-window-config-1)
+            (switch-to-buffer "*scratch*")
+            (eyebrowse-switch-to-window-config-0)
+            (switch-to-buffer "*scratch*")))
+
+;;
+;; Packages
+;;
+
+;; Define package repositories
+(add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/") t)
+(add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/") t)
+(add-to-list 'package-archives '("org" . "http://orgmode.org/elpa/") t)
+
 (defvar my-packages
   '(
     avy
@@ -182,110 +189,61 @@
 
     ess
 
-    julia-mode
-    ))
+    julia-mode)
+  "A list of packages to ensure are installed at launch.")
 
-(dolist (p my-packages)
-  (when (not (package-installed-p p))
-    (package-install p)))
+(defun my-require-package (package)
+  "Installs PACKAGE unless already installed."
+  (unless (memq package my-packages)
+    (add-to-list 'my-packages package))
+  (unless (package-installed-p package)
+    (package-install package)))
+
+(defun my-require-packages (packages)
+  "Ensures PACKAGES are installed. Missing packages are installed automatically."
+  (mapc #'my-require-package packages))
+
+(defun my-packages-installed-p ()
+  "Checks if all packages in my-packages are installed."
+  (every #'package-installed-p my-packages))
+
+(defun my-install-packages ()
+  "Installs all packages in my-packages."
+  (unless (my-packages-installed-p)
+    (message "%s" "Refreshing package database...")
+    (package-refresh-contents)
+    (message "%s" " done.")
+    (my-require-packages my-packages)))
+
+(defun my-list-foreign-packages ()
+  "Browse installed packages not in my-packages."
+  (interactive)
+  (package-show-package-list
+   (set-difference package-activated-list my-packages)))
+
+(package-initialize)
+(my-install-packages)
 
 (eval-when-compile
   (require 'use-package))
 
-;;;;
-;; Customization
-;;;;
-(byte-recompile-directory "~/.emacs.d/customizations" 0)
-(add-to-list 'load-path "~/.emacs.d/customizations")
 
-;; Mac OSX specific stuff
-(load "setup-osx.elc")
+;;
+;; Load custom scripts
+;;
 
-;; Loads my custom functions
-(load "my-functions.elc")
+(defvar core-dir "~/.emacs.d/core")
+(defvar customizations-dir "~/.emacs.d/customizations")
+(byte-recompile-directory core-dir 0)
+(byte-recompile-directory customizations-dir 0)
 
-;; Vim mode
-(load "evil-mode.elc")
+;; Load all scripts in core directory in lexicographic order
+(mapc 'load (directory-files core-dir 't "^[^#\.].*elc$"))
 
-;; These customizations make it easier for you to navigate files,
-;; switch buffers, and choose options from the minibuffer.
-(load "navigation.elc")
+;; Load all scripts in customizations-dir in lexicographic order
+(mapc 'load (directory-files customizations-dir 't "^[^#\.].*elc$"))
 
-;; These customizations make editing a bit nicer.
-(load "editing.elc")
 
-;; Hard-to-categorize customizations
-(load "misc.elc")
-
-;; For common lispy things
-(load "setup-lisps.elc")
-
-;; Ranger setup
-(load "setup-ranger.el")
-
-;; Restclient mode setup
-(load "setup-restclient.elc")
-
-;; Language-specific setups
-(load "setup-lsp.elc")
-(load "setup-c.elc")
-(load "setup-clisp.elc")
-(load "setup-clojure.elc")
-(load "setup-haskell.elc")
-(load "setup-lua.elc")
-(load "setup-python.elc")
-(load "setup-r.elc")
-(load "setup-rust.elc")
-(load "setup-scheme.elc")
-(load "setup-sql.elc")
-(load "setup-janet.elc")
-(load "setup-json.elc")
-(load "setup-elm.elc")
-
-;; Keyboard shortcuts
-(load "keys.elc")
-
-;; Setup encryption/decryption
-(load "setup-crypto.elc")
-
-;; UI customizations
-(load "ui.elc")
-
-;; Setup term and eshell
-(load "setup-term.elc")
-(load "setup-eshell.elc")
-
-;; Setup org mode
-(load "setup-org.elc")
-
-;; Setup tex mode
-(load "setup-tex.elc")
-
-;; Web browsing customizations
-(load "web-browsing.elc")
-
-;; Tramp customizations
-(load "setup-tramp.elc")
-
-;; Load any custom configs that is specific to the
-;; machine I'm using.
-(when (file-exists-p "~/.emacs.d/customizations/machine-custom.elc")
-  (load "machine-custom.elc"))
-
-(setq diary-file "~/workspace/org/diary")
-
-;; Confirm before killing emacs
-(setq confirm-kill-emacs 'y-or-n-p)
-
-;; Things to do after emacs finishing loading
-(add-hook 'emacs-startup-hook
-          (lambda ()
-            (cd "~/workspace")
-            (eyebrowse-switch-to-window-config-1)
-            (switch-to-buffer "*scratch*")
-            (eyebrowse-switch-to-window-config-0)
-            (switch-to-buffer "*scratch*")))
 ;;
 ;; End of config.
-;; Okay to delete anything emacs adds below.
 ;;
