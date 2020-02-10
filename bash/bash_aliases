@@ -2,11 +2,11 @@ alias ls="ls -GFh"
 alias rm='rm -i'
 alias mv='mv -i'
 alias cp='cp -i'
-alias e='HOME=~/workspace/emacs-configs/default emacsclient -t --alternate-editor ""'
+alias e='emacsclient -t --alternate-editor ""'
 
 alias vim='nvim'
 alias v='nvim'
-alias o='HOME=~/workspace/emacs-configs/default emacsclient -t --alternate-editor "" $(fzf)'
+alias o='emacsclient -t --alternate-editor "" $(fzf)'
 alias r='ranger'
 alias j='cd ~/workspace/$(ls -d ~/workspace/*/ | sed "s/.*workspace//" | sed "s:/::g" | fzf)'
 
