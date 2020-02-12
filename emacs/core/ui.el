@@ -21,6 +21,9 @@
 ;; Emacs gui fame size
 (setq initial-frame-alist '((top . 0) (left . 0) (width . 102) (height . 60)))
 
+;; Issue related to expand-region: Seems to fix selection issue on split windows
+(setq shift-select-mode nil)
+
 ;; These settings relate to how emacs interacts with your operating system
 (setq ;; makes killing/yanking interact with the clipboard
  select-enable-clipboard t
