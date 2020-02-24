@@ -182,8 +182,9 @@
 
     lua-mode
 
-    haskell-mode
     company-ghci
+    flymake-haskell-multi
+    haskell-mode
 
     ccls
 
