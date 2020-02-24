@@ -182,6 +182,8 @@
 
     lua-mode
 
+    flycheck
+
     company-ghci
     flymake-haskell-multi
     haskell-mode

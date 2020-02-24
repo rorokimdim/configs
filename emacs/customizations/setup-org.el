@@ -25,7 +25,14 @@
  '((emacs-lisp . t)
    (python . t)
    (gnuplot . t)
-   (clojure . t)))
+   (dot . t)
+   ))
+
+;; Don't ask to evaluate certain languages
+(defun my-org-confirm-babel-evaluate (lang body)
+  (not (or (string= lang "dot")
+           )))
+(setq org-confirm-babel-evaluate 'my-org-confirm-babel-evaluate)
 
 ;; Use xelatex
 ;; Run it multipe times to get toc/page-numbering/references
@@ -36,13 +43,10 @@
 ;; Use minted for source-code highlighting
 ;; Requires minted packages: sudo tlmgr install minted
 (setq org-latex-listings 'minted
-      org-latex-packages-alist '(("" "minted")))
-
-(setq org-latex-minted-options
-      '(("frame" "single")
-        ("framesep" "6pt")
-        ("mathescape" "true")
-        ))
+      org-latex-packages-alist '(("" "minted"))
+      org-latex-minted-options '(("frame" "single")
+                                 ("framesep" "6pt")
+                                 ("mathescape" "true")))
 
 ;; For exporting to reveal-js presentations
 (require 'org-re-reveal)
