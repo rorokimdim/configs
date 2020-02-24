@@ -38,6 +38,12 @@
 (setq org-latex-listings 'minted
       org-latex-packages-alist '(("" "minted")))
 
+(setq org-latex-minted-options
+      '(("frame" "single")
+        ("framesep" "6pt")
+        ("mathescape" "true")
+        ))
+
 ;; For exporting to reveal-js presentations
 (require 'org-re-reveal)
 
