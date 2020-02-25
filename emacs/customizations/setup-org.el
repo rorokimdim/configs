@@ -34,11 +34,8 @@
            )))
 (setq org-confirm-babel-evaluate 'my-org-confirm-babel-evaluate)
 
-;; Use xelatex
-;; Run it multipe times to get toc/page-numbering/references
-(setq org-latex-pdf-process '("xelatex -shell-escape %f"
-                              "xelatex -shell-escape %f"
-                              "xelatex -shell-escape %f"))
+;; Use latexmk with xelatex
+(setq org-latex-pdf-process '("latexmk --shell-escape -pdf -xelatex %f"))
 
 ;; Use minted for source-code highlighting
 ;; Requires minted packages: sudo tlmgr install minted
