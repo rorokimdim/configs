@@ -115,7 +115,8 @@
   :keys ("s-SPC")
   :evil-keys ("SPC")
   :evil-states (normal visual)
-  :bindings ("'" 'my-tmux-open-shell
+  :bindings ("'" 'my-tmux-open-shell-in-project-directory
+             "\"" 'my-tmux-open-shell-in-buffer-directory
              "d" 'my-tmux-cd-workspace
              ))
 

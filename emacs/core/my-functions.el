@@ -155,7 +155,7 @@
   (interactive)
   (emamux:tmux-run-command nil "new-window" "cd ~/workspace/configs/emacs/; emacsclient -t $(fd -e el | fzf)"))
 
-(defun my-tmux-open-shell ()
+(defun my-tmux-open-shell-in-buffer-directory ()
   "Opens a shell a small tmux window at the top.
    The shell is opened in current buffer's directory. If no buffer is open, opens shell in ~/workspace."
   (interactive)
@@ -166,6 +166,19 @@
    (concat "cd "
            (if buffer-file-name (file-name-directory buffer-file-name) "~/workspace")
            "; exec bash")))
+
+(defun my-tmux-open-shell-in-project-directory ()
+  "Opens a shell a small tmux window at the top.
+   The shell is opened in project directory."
+  (interactive)
+  (emamux:tmux-run-command
+   nil
+   "split-window"
+   "-vb" "-p 20"
+   (concat "cd "
+           (ffip-get-project-root-directory)
+           "; exec bash")))
+
 
 (defun my-eshell-ag (string)
   "Searches for STRING in the current eshell directory using ag command."
