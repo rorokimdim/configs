@@ -31,6 +31,7 @@
 ;; Don't ask to evaluate certain languages
 (defun my-org-confirm-babel-evaluate (lang body)
   (not (or (string= lang "dot")
+           (string= lang "gnuplot")
            )))
 (setq org-confirm-babel-evaluate 'my-org-confirm-babel-evaluate)
 
