@@ -26,12 +26,14 @@
    (python . t)
    (gnuplot . t)
    (dot . t)
+   (R . t)
    ))
 
 ;; Don't ask to evaluate certain languages
 (defun my-org-confirm-babel-evaluate (lang body)
   (not (or (string= lang "dot")
            (string= lang "gnuplot")
+           (string= lang "R")
            )))
 (setq org-confirm-babel-evaluate 'my-org-confirm-babel-evaluate)
 
