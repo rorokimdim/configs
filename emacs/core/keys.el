@@ -74,7 +74,6 @@
              "-" 'ffip-split-window-vertically
              "*" 'my-kill-all-buffers
              "c" 'my-tmux-open-emacs-config
-             "d" 'my-tmux-cd-workspace
              "f" 'find-file-in-project
              "m" 'helm-imenu
              "q" 'evil-quit-all
@@ -110,6 +109,15 @@
              "c" 'calc
              "j" 'calendar
              "t" 'world-time-list))
+
+;; For "shells"
+(bind-map my-space-leader-map
+  :keys ("s-SPC")
+  :evil-keys ("SPC")
+  :evil-states (normal visual)
+  :bindings ("'" 'my-tmux-open-shell
+             "d" 'my-tmux-cd-workspace
+             ))
 
 ;; For windows
 (bind-map my-f3-leader-map
