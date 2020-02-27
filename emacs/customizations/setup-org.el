@@ -34,6 +34,7 @@
   (not (or (string= lang "dot")
            (string= lang "gnuplot")
            (string= lang "R")
+           (string= lang "python")
            )))
 (setq org-confirm-babel-evaluate 'my-org-confirm-babel-evaluate)
 
