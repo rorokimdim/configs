@@ -1,7 +1,12 @@
+;; require all useful elisp libraries even if not used in this file,
+;; so they are available when I need them.
 (require 'ag)
 (require 'cl)
 (require 'dash)
 (require 'emamux)
+(require 'f)
+(require 'ht)
+(require 's)
 
 (defun my-eval-and-replace ()
   "Replace preceding sexp with its value."

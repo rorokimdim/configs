@@ -85,7 +85,12 @@
     company-math
     company-restclient
 
+    ;; elisp libraries
     dash
+    f
+    ht
+    s
+
     datomic-snippets
     diminish
 
@@ -111,7 +116,6 @@
     bind-map
     expand-region
     eyebrowse
-    f
     find-file-in-project
     geiser
     gnuplot
@@ -155,7 +159,6 @@
     restart-emacs
     restclient
     rotate
-    s
 
     smex
     sqlup-mode
