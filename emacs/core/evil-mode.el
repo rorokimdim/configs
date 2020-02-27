@@ -61,6 +61,7 @@
                        cider-repl-mode
                        cider-stacktrace-mode
                        haskell-interactive-mode
+                       inferior-emacs-lisp-mode
                        geiser-debug-mode
                        slime-repl-mode)
          do (evil-set-initial-state mode 'emacs))
