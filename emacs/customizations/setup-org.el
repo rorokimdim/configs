@@ -22,23 +22,31 @@
 ;; Enable org-babel languages
 (org-babel-do-load-languages
  'org-babel-load-languages
- '((emacs-lisp . t)
+ '(
    (clojure . t)
-   (python . t)
-   (gnuplot . t)
    (dot . t)
+   (emacs-lisp . t)
+   (gnuplot . t)
+   (python . t)
    (R . t)
    ))
 
 ;; Don't ask to evaluate certain languages
 (defun my-org-confirm-babel-evaluate (lang body)
-  (not (or (string= lang "dot")
+  (not (or (string= lang "clojure")
+           (string= lang "dot")
+           (string= lang "elisp")
+           (string= lang "emacs-lisp")
            (string= lang "gnuplot")
-           (string= lang "R")
            (string= lang "python")
-           (string= lang "clojure")
+           (string= lang "R")
            )))
 (setq org-confirm-babel-evaluate 'my-org-confirm-babel-evaluate)
+
+;; Do not indent after using org-edit-special
+(setq org-edit-src-content-indentation 0
+      org-src-tab-acts-natively t
+      org-src-preserve-indentation t)
 
 ;; Use latexmk with xelatex
 (setq org-latex-pdf-process '("latexmk --shell-escape -pdf -xelatex %f"))
