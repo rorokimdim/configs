@@ -23,6 +23,7 @@
 (org-babel-do-load-languages
  'org-babel-load-languages
  '((emacs-lisp . t)
+   (clojure . t)
    (python . t)
    (gnuplot . t)
    (dot . t)
@@ -35,6 +36,7 @@
            (string= lang "gnuplot")
            (string= lang "R")
            (string= lang "python")
+           (string= lang "clojure")
            )))
 (setq org-confirm-babel-evaluate 'my-org-confirm-babel-evaluate)
 

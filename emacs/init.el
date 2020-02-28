@@ -80,6 +80,7 @@
     clojure-mode-extra-font-locking
     clojure-snippets
     cider
+    monroe
 
     company
     company-math
