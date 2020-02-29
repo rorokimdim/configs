@@ -98,6 +98,10 @@
 
 ;; Set custom faces
 (custom-set-faces
+ '(font-lock-function-name-face ((t (:foreground "#d7affd" :weight bold))))
+ '(font-lock-variable-name-face ((t (:foreground "#8ac6f2"))))
+ '(org-level-1 ((t (:foreground "#64a8d8" :weight bold))))
+ '(mode-line ((t (:background "#444444" :foreground "#f6f3e8"))))
  '(cursor ((t (:background "gray82"))))
  '(eyebrowse-mode-line-active ((t (:inherit mode-line-emphasis :foreground "light green"))))
  '(ido-subdir ((t (:foreground "dark cyan"))))
