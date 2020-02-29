@@ -74,7 +74,7 @@
     aggressive-indent
     anzu
 
-    nord-theme
+    jbeans-theme
 
     clojure-mode
     clojure-mode-extra-font-locking

@@ -16,7 +16,7 @@
 (setq help-window-select t)
 
 ;; Color Themes
-(load-theme 'nord t)
+(load-theme 'jbeans t)
 
 ;; Emacs gui fame size
 (setq initial-frame-alist '((top . 0) (left . 0) (width . 102) (height . 60)))
