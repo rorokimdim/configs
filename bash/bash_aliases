@@ -9,6 +9,7 @@ alias v='nvim'
 alias o='emacsclient -t --alternate-editor "" $(fzf)'
 alias r='ranger'
 alias j='cd ~/workspace/$(ls -d ~/workspace/*/ | sed "s/.*workspace//" | sed "s:/::g" | fzf)'
+alias tmux='tmux -u'
 
 alias httpserver='python3 -m http.server'
 
