@@ -83,8 +83,10 @@
          (setq default-directory old-dir))
        ;; Set default-directory in the current buffer
        (setq default-directory old-dir))))
-(disallow-cd-in-function find-file-noselect-1)
-(disallow-cd-in-function set-visited-file-name)
+
+(when (not (display-graphic-p))
+  (disallow-cd-in-function find-file-noselect-1)
+  (disallow-cd-in-function set-visited-file-name))
 
 ;; Use fd instead of 'find' for find-file-in-project
 (setq ffip-use-rust-fd t)
