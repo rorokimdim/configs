@@ -1,0 +1,16 @@
+#+LATEX_HEADER: \usepackage[margin=0.75in]{geometry}
+#+LATEX_HEADER: \usepackage{upquote}
+#+LATEX_HEADER: \usepackage{listings}
+#+LATEX_HEADER: \usepackage{booktabs}
+#+LATEX_HEADER: \usepackage{minted}
+#+LATEX_HEADER: \usepackage[table]{xcolor}
+#+LATEX_HEADER: \usepackage{colortbl}
+#+LATEX_HEADER: \usepackage{siunitx}
+#+LATEX_HEADER: \usepackage{tikz}
+#+LATEX_HEADER: \usetikzlibrary{arrows.meta,positioning,shapes,shadows,trees}
+#+LATEX_HEADER: \usepackage{tcolorbox}
+
+#+LATEX: \setlength{\parindent}{0pt}
+#+LATEX: \setlength{\parskip}{1em}
+
+#+OPTIONS: author:nil date:nil
