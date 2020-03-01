@@ -117,6 +117,7 @@
   :evil-states (normal visual)
   :bindings ("'" 'my-tmux-open-shell-in-project-directory
              "\"" 'my-tmux-open-shell-in-buffer-directory
+             "c" 'my-tmux-cd-configs
              "d" 'my-tmux-cd-workspace
              ))
 

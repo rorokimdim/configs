@@ -150,6 +150,14 @@
    "new-window"
    "cd ~/workspace/$(ls -d ~/workspace/*/ | sed \"s/.*workspace//\" | sed \"s:/::g\" | fzf); exec bash"))
 
+(defun my-tmux-cd-configs ()
+  "Opens a new tmux window on a configs directory."
+  (interactive)
+  (emamux:tmux-run-command
+   nil
+   "new-window"
+   "cd ~/workspace/configs/$(ls -d ~/workspace/configs/*/ | sed \"s/.*configs//\" | sed \"s:/::g\" | fzf); exec bash"))
+
 (defun my-tmux-new-editor ()
   "Opens new instance of editor in a new tmux window."
   (interactive)
