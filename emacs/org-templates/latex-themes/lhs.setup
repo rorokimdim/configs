@@ -1,2 +1,5 @@
 #+LATEX_HEADER: \newminted[code]{haskell}{linenos=false, frame=none, xleftmargin=2em}
 #+LATEX_HEADER: \newminted[spec]{haskell}{linenos=false, frame=none, xleftmargin=2em}
+
+# Make parent directories when necessary when tangling code to files
+#+PROPERTY: header-args:haskell :mkdirp yes
