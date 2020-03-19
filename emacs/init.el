@@ -86,10 +86,12 @@
     company-restclient
 
     ;; elisp libraries
+    a
     dash
     f
     ht
     s
+    ts
 
     datomic-snippets
     diminish
