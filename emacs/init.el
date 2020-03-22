@@ -111,7 +111,6 @@
 
     ;; scheme
     geiser
-    racket-mode
 
     ;; org
     org
