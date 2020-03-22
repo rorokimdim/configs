@@ -66,25 +66,6 @@
 
 (defvar my-packages
   '(
-    avy
-    ace-link
-    ace-window
-    aes
-    ag
-    aggressive-indent
-    anzu
-
-    jbeans-theme
-
-    clojure-mode
-    clojure-mode-extra-font-locking
-    clojure-snippets
-    cider
-
-    company
-    company-math
-    company-restclient
-
     ;; elisp libraries
     a
     dash
@@ -93,17 +74,7 @@
     s
     ts
 
-    datomic-snippets
-    diminish
-
-    docker-compose-mode
-
-    elpy
-    eshell-autojump
-    eshell-up
-
-    elm-mode
-
+    ;; evil
     evil
     evil-anzu
     evil-escape
@@ -113,91 +84,100 @@
     evil-surround
     evil-visualstar
 
-    emamux
+    ;; themes
+    jbeans-theme
 
-    bind-map
-    expand-region
-    eyebrowse
-    find-file-in-project
-    geiser
-    gnuplot
-    google-maps
-    google-this
-
-    helm
-    helm-describe-modes
-    helm-descbinds
-    helm-swoop
-    helm-tramp
-
+    ;; general lispy packages
     highlight-parentheses
     hl-sexp
+    paxedit
     rainbow-blocks
     rainbow-delimiters
     smartparens
-    paxedit
 
-    dumb-jump
+    ;; clojure
+    clojure-mode
+    clojure-mode-extra-font-locking
+    clojure-snippets
+    cider
+    datomic-snippets
 
-    htmlize
-    ido-completing-read+
-    ido-vertical-mode
-    json-mode
-    jq-mode  ;; install jq command first
-    magit
-    move-text
-    multiple-cursors
-    ranger
+    ;; c++
+    ccls
 
+    ;; python
+    elpy
+    virtualenvwrapper
+
+    ;; scheme
+    geiser
+    racket-mode
+
+    ;; org
     org
     org-bullets
     origami
     ox-rst
-
     org-re-reveal
-    popwin
 
+    ;; haskell
+    company-ghci
+    flymake-haskell-multi
+    haskell-mode
+
+    ;; rust
+    rust-mode
+
+    ;; rest
+    ace-link
+    ace-window
+    aes
+    ag
+    aggressive-indent
+    anzu
+    avy
+    bind-map
+    company
+    company-math
+    dash-at-point
+    diminish
+    docker-compose-mode
+    dumb-jump
+    emamux
+    eshell-autojump
+    eshell-up
+    expand-region
+    eyebrowse
+    find-file-in-project
+    flycheck
+    helm
+    helm-descbinds
+    helm-describe-modes
+    helm-swoop
+    helm-tramp
+    htmlize
+    ido-completing-read+
+    ido-vertical-mode
+    jq-mode
+    json-mode
+    magit
+    move-text
+    multiple-cursors
+    popwin
+    ranger
     realgud
     restart-emacs
-    restclient
     rotate
-
     smex
     sqlup-mode
     synonymous
     tagedit
     use-package
-
-    virtualenvwrapper
     visual-regexp
     visual-regexp-steroids
     which-key
     world-time-mode
-    yasnippet
-
-    dash-at-point
-
-    lsp-mode
-    lsp-ui
-    company-lsp
-
-    rust-mode
-    racer
-    cargo
-
-    lua-mode
-
-    flycheck
-
-    company-ghci
-    flymake-haskell-multi
-    haskell-mode
-
-    ccls
-
-    ess
-
-    julia-mode)
+    yasnippet)
   "A list of packages to ensure are installed at launch.")
 
 (defun my-require-package (package)
@@ -234,7 +214,6 @@
 
 (eval-when-compile
   (require 'use-package))
-
 
 ;;
 ;; Load custom scripts
