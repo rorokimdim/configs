@@ -220,15 +220,19 @@
 
 (defvar core-dir "~/.emacs.d/core")
 (defvar customizations-dir "~/.emacs.d/customizations")
+(defvar third-party-dir "~/.emacs.d/third-party")
 (byte-recompile-directory core-dir 0)
 (byte-recompile-directory customizations-dir 0)
+(byte-recompile-directory third-party-dir 0)
+
+;; Load all scripts in third-party-dir in lexicographic order
+(mapc 'load (directory-files third-party-dir 't "^[^#\.].*elc$"))
 
 ;; Load all scripts in core directory in lexicographic order
 (mapc 'load (directory-files core-dir 't "^[^#\.].*elc$"))
 
 ;; Load all scripts in customizations-dir in lexicographic order
 (mapc 'load (directory-files customizations-dir 't "^[^#\.].*elc$"))
-
 
 ;;
 ;; End of config.

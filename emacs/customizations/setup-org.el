@@ -28,6 +28,7 @@
    (emacs-lisp . t)
    (gnuplot . t)
    (python . t)
+   (racket . t)
    (R . t)
    ))
 
@@ -39,6 +40,7 @@
            (string= lang "emacs-lisp")
            (string= lang "gnuplot")
            (string= lang "python")
+           (string= lang "racket")
            (string= lang "R")
            )))
 (setq org-confirm-babel-evaluate 'my-org-confirm-babel-evaluate)
@@ -89,4 +91,6 @@
   :bindings ("nd" 'narrow-to-defun
              "ne" 'org-narrow-to-element
              "ns" 'org-narrow-to-subtree
-             "nw" 'widen))
+             "nw" 'widen
+             "t" 'org-babel-tangle
+             ))
