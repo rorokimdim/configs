@@ -94,3 +94,6 @@
              "nw" 'widen
              "t" 'org-babel-tangle
              ))
+
+(require 'evil)
+(evil-define-key 'normal org-mode-map (kb "<tab>") #'org-cycle)
