@@ -217,6 +217,9 @@
 ;; Load custom scripts
 ;;
 
+;; Hack to enable TAB for org-cycle in evil mode
+(setq evil-want-C-i-jump nil)
+
 (defvar core-dir "~/.emacs.d/core")
 (defvar customizations-dir "~/.emacs.d/customizations")
 (defvar third-party-dir "~/.emacs.d/third-party")

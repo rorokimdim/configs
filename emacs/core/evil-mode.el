@@ -1,6 +1,3 @@
-;; Do this before anything 'evil to make 'tab' work in org-mode for org-cycle
-(setq evil-want-C-i-jump nil)
-
 (require 'evil)
 
 ;; Enable evil mode by default
