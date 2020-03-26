@@ -93,7 +93,6 @@
              "ns" 'org-narrow-to-subtree
              "nw" 'widen
              "t" 'org-babel-tangle
+             "el" 'org-latex-export-to-latex
+             "eh" 'org-html-export-to-html
              ))
-
-(require 'evil)
-(evil-define-key 'normal org-mode-map (kb "<tab>") #'org-cycle)

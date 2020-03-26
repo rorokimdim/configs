@@ -74,19 +74,6 @@
     s
     ts
 
-    ;; evil
-    evil
-    evil-anzu
-    evil-escape
-    evil-leader
-    evil-magit
-    evil-numbers
-    evil-surround
-    evil-visualstar
-
-    ;; themes
-    jbeans-theme
-
     ;; general lispy packages
     highlight-parentheses
     hl-sexp
@@ -127,6 +114,9 @@
     ;; rust
     rust-mode
 
+    ;; themes
+    jbeans-theme
+
     ;; rest
     ace-link
     ace-window
@@ -164,7 +154,6 @@
     multiple-cursors
     popwin
     ranger
-    realgud
     restart-emacs
     rotate
     smex
@@ -176,7 +165,17 @@
     visual-regexp-steroids
     which-key
     world-time-mode
-    yasnippet)
+    yasnippet
+
+    ;; evil
+    evil
+    evil-anzu
+    evil-escape
+    evil-leader
+    evil-magit
+    evil-numbers
+    evil-surround
+    evil-visualstar)
   "A list of packages to ensure are installed at launch.")
 
 (defun my-require-package (package)
