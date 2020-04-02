@@ -27,10 +27,7 @@
              "cc" 'cider-connect
              "r"  'cider-switch-to-repl-buffer
              "eb" 'cider-eval-buffer
-             "ee" (lambda ()
-                    (interactive)
-                    (forward-char)
-                    (cider-eval-sexp-at-point))
+             "ee" 'cider-eval-last-sexp
              "ef" 'cider-eval-defun-at-point
              "hd" 'cider-clojuredocs
              "hh" 'cider-apropos-select
