@@ -114,6 +114,10 @@
     ;; rust
     rust-mode
 
+    ;; javascript
+    js2-mode
+    skewer-mode
+
     ;; themes
     jbeans-theme
 
@@ -133,6 +137,7 @@
     docker-compose-mode
     dumb-jump
     emamux
+    emmet-mode
     eshell-autojump
     eshell-up
     expand-region
