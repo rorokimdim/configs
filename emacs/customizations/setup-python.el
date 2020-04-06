@@ -38,7 +38,6 @@
     "ef" 'python-shell-send-defun
     "gd" 'elpy-goto-definition-or-rgrep
     "pd" 'elpy-doc
-    "pt" 'my-python-add-breakpoint
     "ve" 'venv-workon)
   (add-hook 'inferior-python-mode-hook
             (lambda ()

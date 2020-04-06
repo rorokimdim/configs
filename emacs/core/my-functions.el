@@ -99,14 +99,6 @@
           ("psi" . 968)
           ("omega" . 969))))
 
-(defun my-python-add-breakpoint ()
-  "Adds ipbp trace."
-  (interactive)
-  (call-interactively 'evil-append-line)
-  (newline-and-indent)
-  (insert "import ipdb; ipdb.set_trace()")
-  (highlight-lines-matching-regexp "^[ ]*import ipdb; ipdb.set_trace()"))
-
 (defvar my-workspace-directory
   "~/workspace/"
   "Path to my workspace directory")
