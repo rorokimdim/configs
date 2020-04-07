@@ -203,3 +203,7 @@
 ;; hl-line
 (require 'hl-line)
 (setq hl-line-sticky-flag nil)
+
+;; Enable linum-mode in gui
+(if (display-graphic-p)
+    (global-linum-mode 1))
