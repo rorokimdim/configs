@@ -157,6 +157,7 @@
     magit
     move-text
     multiple-cursors
+    neotree
     popwin
     ranger
     restart-emacs

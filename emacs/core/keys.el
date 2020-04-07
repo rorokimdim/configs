@@ -80,6 +80,7 @@
              "e" 'my-tmux-new-editor
              "r" 'helm-recentf
              "s" 'my-search-with-ag
+             "nt" 'neotree-toggle
              "ts" 'emamux:send-command
              "tr" 'emamux:run-command
              "tl" 'emamux:run-last-command

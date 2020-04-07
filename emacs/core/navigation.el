@@ -99,7 +99,10 @@
   :bind
   (:map evil-normal-state-map
         ("g t" . centaur-tabs-forward)
-        ("g T" . centaur-tabs-backward)))
+        ("g T" . centaur-tabs-backward))
+  :hook
+  (ranger-mode . centaur-tabs-local-mode)
+  (neotree-mode . centaur-tabs-local-mode))
 
 (defun centaur-tabs-hide-tab (x)
   (let ((name (format "%s" x)))
