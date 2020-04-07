@@ -88,3 +88,20 @@
 (set-face-attribute 'ido-vertical-match-face nil
                     :foreground "#e37969"
                     :underline nil)
+
+;;
+;; centaur-tabs
+;;
+(use-package centaur-tabs
+  :demand
+  :config
+  (centaur-tabs-mode t)
+  :bind
+  (:map evil-normal-state-map
+        ("g t" . centaur-tabs-forward)
+        ("g T" . centaur-tabs-backward)))
+
+(defun centaur-tabs-hide-tab (x)
+  (let ((name (format "%s" x)))
+    (or
+     (string-prefix-p "*" name))))
