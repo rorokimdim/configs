@@ -5,20 +5,6 @@
 ;; Enable ox-rst
 (require 'ox-rst)
 
-(if (display-graphic-p)
-    (use-package org-bullets
-      :ensure t
-      :init (setq org-bullets-bullet-list
-                  '("◉"
-                    "•"
-                    "○"
-                    "✿"
-                    "❀"
-                    "✸"
-                    ))
-      :config
-      (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))))
-
 ;; Enable org-babel languages
 (org-babel-do-load-languages
  'org-babel-load-languages

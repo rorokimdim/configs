@@ -101,7 +101,6 @@
 
     ;; org
     org
-    org-bullets
     origami
     ox-rst
     org-re-reveal
