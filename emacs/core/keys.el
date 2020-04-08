@@ -26,8 +26,7 @@
 ;; Show major mode commands
 (global-set-key (kbd "M-X") 'smex-major-mode-commands)
 
-;; Bind C-x k to kill-this-buffer instead of default kill-buffer
-(global-set-key (kbd "C-x k") 'kill-this-buffer)
+(global-set-key (kbd "C-x k") 'kill-current-buffer)
 
 ;; Use super-<arrow-key> to switch between windows
 (global-set-key (kbd "s-<left>") 'evil-window-left)
@@ -81,6 +80,10 @@
              "r" 'helm-recentf
              "s" 'my-search-with-ag
              "nt" 'neotree-toggle
+             "pf" 'projectile-find-file
+             "pp" 'centaur-tabs-switch-group
+             "po" 'projectile-switch-project
+             "pc" 'projectile-kill-buffers
              "ts" 'emamux:send-command
              "tr" 'emamux:run-command
              "tl" 'emamux:run-last-command

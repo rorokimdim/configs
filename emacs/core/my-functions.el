@@ -34,7 +34,7 @@
   (let* ((bs (mapcar #'window-buffer (window-list)))
          (matches (remove-if-not (lambda (b) (equal b (current-buffer))) bs)))
     (if (= (length matches) 1)
-        (kill-this-buffer)
+        (kill-current-buffer)
       (delete-window))))
 
 (defvar my-uninteresting-buffer-prefixes
@@ -203,17 +203,6 @@
   "Goes to defintion of a function with name X."
   (find-function (intern x)))
 
-(defun my-cider-figwheel-repl ()
-  "Starts a figwheel repl."
-  (interactive)
-  (save-some-buffers)
-  (with-current-buffer (cider-current-repl-buffer)
-    (goto-char (point-max))
-    (insert "(require 'figwheel-sidecar.repl-api)
-             (figwheel-sidecar.repl-api/start-figwheel!) ; idempotent
-             (figwheel-sidecar.repl-api/cljs-repl)")
-    (cider-repl-return)))
-
 (defun my-get-closest-pathname (file max-level)
   "Determine the pathname of the first instance of FILE starting from the current directory towards
    root. This may not do the correct thing in presence of links. If it does not find FILE, then it
@@ -229,6 +218,11 @@
       do (setq level (+ level 1))
       if (file-exists-p (expand-file-name file d)) return d
       if (equal d root) return nil))))
+
+(defun my-get-workspace-directories ()
+  "Gets paths of directories in workspace."
+  (f-directories my-workspace-directory (lambda (d)
+                                          (not (equal (f-filename d) ".git")))))
 
 ;;
 ;; Key bindings
