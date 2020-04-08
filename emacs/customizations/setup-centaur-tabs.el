@@ -14,4 +14,6 @@
 (defun centaur-tabs-hide-tab (x)
   (let ((name (format "%s" x)))
     (or
-     (string-prefix-p "*" name))))
+     (string-prefix-p "*" name)
+     (and (string-prefix-p "magit" name)
+          (not (file-name-extension name))))))

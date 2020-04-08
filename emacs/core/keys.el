@@ -23,6 +23,10 @@
 (global-set-key (kbd "s-,") 'eyebrowse-prev-window-config)
 (global-set-key (kbd "s-.") 'eyebrowse-next-window-config)
 
+(global-set-key (kbd "<f7>") 'centaur-tabs-forward-group)
+(global-set-key (kbd "<f8>") 'centaur-tabs-switch-group)
+(global-set-key (kbd "<f9>") 'centaur-tabs-forward-group)
+
 ;; Show major mode commands
 (global-set-key (kbd "M-X") 'smex-major-mode-commands)
 
@@ -72,6 +76,8 @@
              "|" 'ffip-split-window-horizontally
              "-" 'ffip-split-window-vertically
              "*" 'my-kill-all-buffers
+             "<" 'centaur-tabs-backward-group
+             ">" 'centaur-tabs-forward-group
              "c" 'my-tmux-open-emacs-config
              "f" 'find-file-in-project
              "m" 'helm-imenu
