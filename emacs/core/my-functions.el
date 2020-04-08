@@ -224,6 +224,11 @@
   (f-directories my-workspace-directory (lambda (d)
                                           (not (equal (f-filename d) ".git")))))
 
+(defun my-centaur-tabs-jump-to (n)
+  (centaur-tabs-select-beg-tab)
+  (dotimes (i n)
+    (centaur-tabs-forward)))
+
 (defun my-neotree-projectile-toggle ()
   "Switches neotree to current project and toggles it."
   (interactive)

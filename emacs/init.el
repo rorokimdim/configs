@@ -50,9 +50,6 @@
 (add-hook 'emacs-startup-hook
           (lambda ()
             (cd "~/workspace")
-            (eyebrowse-switch-to-window-config-1)
-            (switch-to-buffer "*scratch*")
-            (eyebrowse-switch-to-window-config-0)
             (switch-to-buffer "*scratch*")))
 
 ;;
@@ -141,7 +138,6 @@
     eshell-autojump
     eshell-up
     expand-region
-    eyebrowse
     find-file-in-project
     flycheck
     helm

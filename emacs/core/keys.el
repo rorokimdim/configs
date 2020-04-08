@@ -9,20 +9,6 @@
 (global-set-key (kbd "C-=") 'text-scale-increase)
 (global-set-key (kbd "C--") 'text-scale-decrease)
 
-;; Use super-n to switch to nth eyebrowse window
-(global-set-key (kbd "s-0") 'eyebrowse-switch-to-window-config-0)
-(global-set-key (kbd "s-1") 'eyebrowse-switch-to-window-config-1)
-(global-set-key (kbd "s-2") 'eyebrowse-switch-to-window-config-2)
-(global-set-key (kbd "s-3") 'eyebrowse-switch-to-window-config-3)
-(global-set-key (kbd "s-4") 'eyebrowse-switch-to-window-config-4)
-(global-set-key (kbd "s-5") 'eyebrowse-switch-to-window-config-5)
-(global-set-key (kbd "s-6") 'eyebrowse-switch-to-window-config-6)
-(global-set-key (kbd "s-7") 'eyebrowse-switch-to-window-config-7)
-(global-set-key (kbd "s-8") 'eyebrowse-switch-to-window-config-8)
-(global-set-key (kbd "s-9") 'eyebrowse-switch-to-window-config-9)
-(global-set-key (kbd "s-,") 'eyebrowse-prev-window-config)
-(global-set-key (kbd "s-.") 'eyebrowse-next-window-config)
-
 (global-set-key (kbd "<f7>") 'centaur-tabs-forward-group)
 (global-set-key (kbd "<f8>") 'centaur-tabs-switch-group)
 (global-set-key (kbd "<f9>") 'centaur-tabs-forward-group)
@@ -94,16 +80,17 @@
              "tr" 'emamux:run-command
              "tl" 'emamux:run-last-command
              "tc" 'emamux:close-panes
-             "0" 'eyebrowse-switch-to-window-config-0
-             "1" 'eyebrowse-switch-to-window-config-1
-             "2" 'eyebrowse-switch-to-window-config-2
-             "3" 'eyebrowse-switch-to-window-config-3
-             "4" 'eyebrowse-switch-to-window-config-4
-             "5" 'eyebrowse-switch-to-window-config-5
-             "6" 'eyebrowse-switch-to-window-config-6
-             "7" 'eyebrowse-switch-to-window-config-7
-             "8" 'eyebrowse-switch-to-window-config-8
-             "9" 'eyebrowse-switch-to-window-config-9
+             "0" 'centaur-tabs-select-beg-tab
+             "1" (lambda () (interactive) (my-centaur-tabs-jump-to 1))
+             "2" (lambda () (interactive) (my-centaur-tabs-jump-to 2))
+             "3" (lambda () (interactive) (my-centaur-tabs-jump-to 3))
+             "4" (lambda () (interactive) (my-centaur-tabs-jump-to 4))
+             "5" (lambda () (interactive) (my-centaur-tabs-jump-to 5))
+             "6" (lambda () (interactive) (my-centaur-tabs-jump-to 6))
+             "7" (lambda () (interactive) (my-centaur-tabs-jump-to 7))
+             "8" (lambda () (interactive) (my-centaur-tabs-jump-to 8))
+             "9" (lambda () (interactive) (my-centaur-tabs-jump-to 9))
+             "$" 'centaur-tabs-select-end-tab
              "x" 'kill-buffer-and-window))
 
 ;; For "programs"
@@ -134,12 +121,9 @@
 ;; For windows
 (bind-map my-f3-leader-map
   :keys ("<f3>")
-  :bindings ("c" 'eyebrowse-next-window-config
-             "x" 'eyebrowse-close-window-config
-             "r" 'rotate-window
+  :bindings ("r" 'rotate-window
              "l" 'rotate-layout
              "s" 'ace-swap-window
-             "," 'eyebrowse-rename-window-config
              "o" 'ace-window
              "0" 'delete-window
              "1" 'delete-other-windows))

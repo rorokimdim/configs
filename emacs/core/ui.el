@@ -103,7 +103,6 @@
  '(org-level-1 ((t (:foreground "#64a8d8" :weight bold))))
  '(mode-line ((t (:background "#444444" :foreground "#f6f3e8"))))
  '(cursor ((t (:background "gray82"))))
- '(eyebrowse-mode-line-active ((t (:inherit mode-line-emphasis :foreground "light green"))))
  '(ido-subdir ((t (:foreground "dark cyan"))))
  '(helm-source-header ((t (:weight bold :height 1.3 :family "Sans Serif"))))
  '(highlight-indentation-face ((t (:inherit nil))))
@@ -125,12 +124,11 @@
 
 ;; Set custom variables
 (custom-set-variables
-   '(evil-search-module (quote evil-search))
-   '(size-indication-mode t)
-   '(hl-paren-colors (quote ("firebrick1")))
-   '(sp-show-pair-from-inside nil)
-   '(eyebrowse-new-workspace t)
-   '(neo-window-width 50))
+ '(evil-search-module (quote evil-search))
+ '(size-indication-mode t)
+ '(hl-paren-colors (quote ("firebrick1")))
+ '(sp-show-pair-from-inside nil)
+ '(neo-window-width 50))
 
 ;; Enable mouse support on terminal
 (unless window-system
@@ -180,9 +178,6 @@
 (require 'which-key)
 (which-key-mode)
 (which-key-setup-minibuffer)
-
-;; Enable eybrowse
-(eyebrowse-mode t)
 
 ;; Enable popwin
 (require 'popwin)
