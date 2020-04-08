@@ -34,10 +34,7 @@
   (let* ((bs (mapcar #'window-buffer (window-list)))
          (matches (remove-if-not (lambda (b) (equal b (current-buffer))) bs)))
     (if (= (length matches) 1)
-        (if (display-graphic-p)
-            (kill-this-buffer)
-          (or (not (server-edit))
-              (evil-quit)))
+        (kill-this-buffer)
       (delete-window))))
 
 (defvar my-uninteresting-buffer-prefixes
