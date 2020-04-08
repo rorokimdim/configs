@@ -224,6 +224,17 @@
   (f-directories my-workspace-directory (lambda (d)
                                           (not (equal (f-filename d) ".git")))))
 
+(defun my-neotree-projectile-toggle ()
+  "Switches neotree to current project and toggles it."
+  (interactive)
+  (if (neo-global--window-exists-p)
+      (progn
+        (neotree-projectile-action)
+        (neotree-hide))
+    (progn
+      (neotree-projectile-action)
+      (neotree-show))))
+
 ;;
 ;; Key bindings
 ;;
