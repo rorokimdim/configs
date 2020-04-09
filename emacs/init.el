@@ -114,6 +114,9 @@
     js2-mode
     skewer-mode
 
+    ;; go
+    go-mode
+
     ;; themes
     jbeans-theme
 

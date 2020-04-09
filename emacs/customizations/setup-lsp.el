@@ -1,28 +1,27 @@
-(use-package lsp-mode :commands lsp :ensure t)
-(use-package lsp-ui :commands lsp-ui-mode :ensure t)
-(use-package company-lsp
+(use-package lsp-mode
+  :commands (lsp lsp-deferred)
   :ensure t
-  :commands company-lsp
   :config
-  (require 'lsp-mode)
-  (require 'lsp-ui)
+
+  ;; disable file-watchers to improve performance
+  (setq lsp-enable-file-watchers nil)
 
   ;; doc popups are annyoying most of the time
   (setq lsp-ui-doc-enable nil)
 
-  ;; (setq lsp-eldoc-enable-hover nil)
-  ;; (setq lsp-enable-file-watchers nil)
-
-  (setq lsp-prefer-flymake nil)
-  (setq lsp-enable-symbol-highlighting nil)
+  ;; flycheck doesn't seem to work (max depth exceeded error)
+  (setq lsp-diagnostic-package :none)
 
   ;; sidelines are annoying most of the time
   (setq lsp-ui-sideline-enable nil)
-  (setq lsp-ui-flycheck-live-reporting nil)
+  (setq lsp-flycheck-live-reporting nil)
   (setq lsp-ui-sideline-enable nil)
-  (setq lsp-ui-sideline-show-diagnostics nil)
+  (setq lsp-ui-sideline-show-diagnostics nil))
 
-  ;; (setq lsp-eldoc-enable-signature-help nil)
+(use-package lsp-ui :commands lsp-ui-mode :ensure t)
+
+(use-package company-lsp
+  :ensure t
+  :commands company-lsp
+  :config
   (push 'company-lsp company-backends))
-
-
