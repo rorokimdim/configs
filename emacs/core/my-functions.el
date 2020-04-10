@@ -175,7 +175,7 @@
            "; exec bash")))
 
 (defun my-tmux-open-shell-in-project-directory ()
-  "Opens a shell a small tmux window at the top.
+  "Opens a shell in a small tmux window at the top.
    The shell is opened in project directory."
   (interactive)
   (emamux:tmux-run-command
@@ -185,7 +185,6 @@
    (concat "cd "
            (ffip-get-project-root-directory)
            "; exec bash")))
-
 
 (defun my-eshell-ag (string)
   "Searches for STRING in the current eshell directory using ag command."
