@@ -4,7 +4,8 @@
   :config
   :hook ((go-mode . lsp-deferred)
          (before-save . lsp-format-buffer)
-         (before-save . lsp-organize-imports)))
+         (before-save . lsp-organize-imports)
+         ))
 
 (defun my-go-build ()
   (interactive)
