@@ -8,6 +8,7 @@
 #+LATEX_HEADER: \usepackage{siunitx}
 #+LATEX_HEADER: \usepackage{tikz}
 #+LATEX_HEADER: \usetikzlibrary{arrows.meta,positioning,shapes,shadows,trees}
+#+LATEX_HEADER: \usepackage{dirtree}
 #+LATEX_HEADER: \usepackage{tcolorbox}
 
 #+LATEX: \setlength{\parindent}{0pt}
