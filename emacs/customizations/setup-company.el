@@ -9,6 +9,7 @@
   (setq company-minimum-prefix-length 2)
   (setq company-tooltip-align-annotations t)
   (setq company-tooltip-flip-when-above t)
+  (setq company-dabbrev-downcase nil)
   :bind (:map company-active-map
               ("C-n" . company-select-next-or-abort)
               ("C-p" . company-select-previous-or-abort)))
