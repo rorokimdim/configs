@@ -79,3 +79,8 @@
 
 ;; Enable auto-revert mode
 (global-auto-revert-mode 1)
+
+;; Remove trailing whitepsace on save in prog-mode
+(defun my-delete-trailing-whitespaces ()
+  (add-hook 'before-save-hook #'delete-trailing-whitespace nil t))
+(add-hook 'prog-mode-hook #'my-delete-trailing-whitespaces)
