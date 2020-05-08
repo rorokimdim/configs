@@ -33,9 +33,8 @@
   (interactive)
   (let* ((bs (mapcar #'window-buffer (window-list)))
          (matches (remove-if-not (lambda (b) (equal b (current-buffer))) bs)))
-    (if (= (length matches) 1)
-        (kill-current-buffer)
-      (delete-window))))
+    (if (= (length matches) 1) (kill-current-buffer))
+    (if (> (count-windows) 1) (delete-window))))
 
 (defvar my-uninteresting-buffer-prefixes
   '("*Messages*"
