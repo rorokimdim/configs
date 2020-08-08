@@ -2,6 +2,7 @@
 
 apps=(
   stow
+  git
   bash
   brittany
   closh
