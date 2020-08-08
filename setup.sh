@@ -14,3 +14,6 @@ apps=(
 for app in ${apps[@]}; do
   stow -v -R -t $HOME $app
 done
+
+# Symlinks for other targets
+stow -v -R -t "$HOME/Library/Application Support/Code/User" vscode
