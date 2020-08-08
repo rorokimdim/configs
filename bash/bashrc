@@ -1,6 +1,0 @@
-export TERM=screen-256color
-export EDITOR=vim
-
-if [ -f ~/.bash_aliases ]; then
-    . ~/.bash_aliases
-fi
