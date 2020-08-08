@@ -159,7 +159,7 @@
 (defun my-tmux-open-emacs-config ()
   "Opens a config file in a new tmux window."
   (interactive)
-  (emamux:tmux-run-command nil "new-window" "cd ~/workspace/configs/emacs/; emacsclient -t $(fd -e el | fzf)"))
+  (emamux:tmux-run-command nil "new-window" "cd ~/workspace/configs/emacs/.emacs.d; emacsclient -t $(fd -e el | fzf)"))
 
 (defun my-tmux-open-shell-in-buffer-directory ()
   "Opens a shell a small tmux window at the top.
