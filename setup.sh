@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 apps=(
+  stow
   bash
   brittany
   closh
