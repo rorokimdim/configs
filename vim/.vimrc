@@ -83,7 +83,6 @@ set directory=~/.vim-tmp
 
 match ErrorMsg '\%>100v.\+'
 match ErrorMsg '\s\+\%#\@<!$'
-autocmd InsertLeave * redraw!
 
 """Syntastic
 let g:syntastic_mode_map = { 'passive_filetypes': ['cpp'] }
@@ -274,24 +273,24 @@ autocmd filetype clojure map <leader>=G <Plug>(iced_format_all)
 autocmd filetype cpp map <leader>cc :Dispatch! make -C build<CR>
 autocmd filetype cpp map <leader>r :Term ./build/main<CR>
 command! -nargs=+ Cppman silent! call system("tmux split-window cppman " . expand(<q-args>))
-autocmd FileType cpp nnoremap <silent><buffer> H <Esc>:Cppman <cword><CR>
-autocmd Filetype cpp nnoremap <silent> K :call <SID>show_documentation()<CR>
-autocmd Filetype cpp setlocal signcolumn=yes
+autocmd filetype cpp nnoremap <silent><buffer> H <Esc>:Cppman <cword><CR>
+autocmd filetype cpp nnoremap <silent> K :call <SID>show_documentation()<CR>
+autocmd filetype cpp setlocal signcolumn=yes
 
 "Special indent configuration for javascript
-autocmd FileType javascript set sw=2
-autocmd FileType javascript set ts=2
-autocmd FileType javascript set sts=2
+autocmd filetype javascript set sw=2
+autocmd filetype javascript set ts=2
+autocmd filetype javascript set sts=2
 
 "Special indent configuration for css
-autocmd FileType css set sw=2
-autocmd FileType css set ts=2
-autocmd FileType css set sts=2
+autocmd filetype css set sw=2
+autocmd filetype css set ts=2
+autocmd filetype css set sts=2
 
 "Special indent configuration for html
-autocmd FileType html set sw=2
-autocmd FileType html set ts=2
-autocmd FileType html set sts=2
+autocmd filetype html set sw=2
+autocmd filetype html set ts=2
+autocmd filetype html set sts=2
 
 "Auto create non-existent dirs when creating a new file
 function s:MkNonExDir(file, buf)
