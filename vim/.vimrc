@@ -32,7 +32,6 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'kien/rainbow_parentheses.vim'
 Plug 'liquidz/vim-iced', {'for': 'clojure'}
-Plug 'liquidz/vim-iced-asyncomplete', {'for': 'clojure'}
 Plug 'liquidz/vim-iced-coc-source', {'for': 'clojure'}
 Plug 'liquidz/vim-iced-function-list', {'for': 'clojure', 'on': 'IcedBrowseFunction'}
 Plug 'liquidz/vim-iced-project-namespaces', {'for': 'clojure', 'on': 'IcedBrowseNamespace'}
@@ -41,7 +40,6 @@ Plug 'ndmitchell/ghcid', { 'rtp': 'plugins/nvim' }
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'neovimhaskell/haskell-vim'
 Plug 'ntpeters/vim-better-whitespace'
-Plug 'prabirshrestha/asyncomplete.vim'
 Plug 'rizzatti/dash.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'terryma/vim-multiple-cursors'
@@ -248,6 +246,7 @@ command! -nargs=? Underline call s:Underline(<q-args>)
 set hidden
 
 "Shorcuts for clojure filetype
+autocmd VimEnter *.clj,*.cljc call iced#nrepl#auto_connect()
 autocmd filetype clojure map <leader>cc <Plug>(iced_connect)
 autocmd filetype clojure map <leader>cj <Plug>(iced_jack_in)
 autocmd filetype clojure map <leader>ei <Plug>(iced_eval)<Plug>(sexp_inner_element)
