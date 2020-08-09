@@ -3,9 +3,11 @@ alias rm='rm -i'
 alias mv='mv -i'
 alias cp='cp -i'
 alias e='emacsclient -t --alternate-editor ""'
-alias vim='emacsclient -t --alternate-editor ""'
 
 alias v="/usr/local/bin/nvim"
+alias vim="/usr/local/bin/nvim"
+alias vi="/usr/local/bin/nvim"
+
 alias o='emacsclient -t --alternate-editor "" $(fzf)'
 alias r='ranger'
 alias j='cd -P ~/workspace/$(ls -d ~/workspace/*/ | sed "s/.*workspace//" | sed "s:/::g" | fzf)'

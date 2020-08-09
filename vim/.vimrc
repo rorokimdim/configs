@@ -3,16 +3,6 @@
 "    (put the plug.vim file in ~/.vim/autoload directory)
 """
 
-"""IMPORTANT. If using neovim do the following.
-" 1. Install neovim using `brew install neovim`
-" 2. create ~/.config/nvim/init.vim with these contents (without the comment quotes):
-"
-"    set runtimepath^=~/.vim runtimepath+=~/.vim/after
-"    let &packpath = &runtimepath
-"    source ~/.vimrc
-"
-"""
-
 """IMPORTANT. For python stuff, make sure to install the following.
 " 1. flake8: `pip install flake8`
 " (2. neovim: `pip install neovim`)
@@ -23,49 +13,47 @@
 """
 
 let mapleader = ","
+let maplocalleader = "\\"
 set nocompatible
 filetype off
 
 """Start of Plug stuff
 call plug#begin('~/.vim/plugged')
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'dense-analysis/ale', { 'for': 'clojure' }
 Plug 'easymotion/vim-easymotion'
 Plug 'ervandew/supertab'
 Plug 'flazz/vim-colorschemes'
+Plug 'guns/vim-sexp', { 'for': 'clojure' }
 Plug 'haya14busa/incsearch-easymotion.vim'
 Plug 'haya14busa/incsearch.vim'
+Plug 'itchyny/vim-haskell-indent'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
 Plug 'kien/rainbow_parentheses.vim'
+Plug 'liquidz/vim-iced', {'for': 'clojure'}
+Plug 'liquidz/vim-iced-asyncomplete', {'for': 'clojure'}
+Plug 'liquidz/vim-iced-coc-source', {'for': 'clojure'}
+Plug 'liquidz/vim-iced-function-list', {'for': 'clojure', 'on': 'IcedBrowseFunction'}
+Plug 'liquidz/vim-iced-project-namespaces', {'for': 'clojure', 'on': 'IcedBrowseNamespace'}
+Plug 'mklabs/split-term.vim'
+Plug 'ndmitchell/ghcid', { 'rtp': 'plugins/nvim' }
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'neovimhaskell/haskell-vim'
+Plug 'ntpeters/vim-better-whitespace'
+Plug 'prabirshrestha/asyncomplete.vim'
+Plug 'rizzatti/dash.vim'
 Plug 'scrooloose/nerdtree'
+Plug 'terryma/vim-multiple-cursors'
 Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-repeat'
-
-Plug 'vhdirk/vim-cmake'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-
-Plug 'guns/vim-sexp', { 'for': 'clojure' }
-Plug 'liquidz/vim-iced', {'for': 'clojure'}
 Plug 'tpope/vim-sexp-mappings-for-regular-people', { 'for': 'clojure' }
-Plug 'ctrlpvim/ctrlp.vim'
-Plug 'liquidz/vim-iced-project-namespaces', {'for': 'clojure', 'on': 'IcedBrowseNamespace'}
-Plug 'liquidz/vim-iced-function-list', {'for': 'clojure', 'on': 'IcedBrowseFunction'}
-Plug 'dense-analysis/ale', { 'for': 'clojure' }
-
 Plug 'tpope/vim-surround'
+Plug 'vhdirk/vim-cmake'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-syntastic/syntastic'
-Plug 'terryma/vim-multiple-cursors'
-Plug 'ntpeters/vim-better-whitespace'
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'junegunn/fzf.vim'
-Plug 'mklabs/split-term.vim'
-Plug 'neovimhaskell/haskell-vim'
-Plug 'itchyny/vim-haskell-indent'
-Plug 'ndmitchell/ghcid', { 'rtp': 'plugins/nvim' }
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'let-def/ocp-indent-vim'
-Plug 'rizzatti/dash.vim'
-Plug 'JuliaEditorSupport/julia-vim'
 Plug 'autozimu/LanguageClient-neovim', {
     \ 'branch': 'next',
     \ 'do': 'bash install.sh',
@@ -79,7 +67,7 @@ syntax on
 set tabstop=4
 set expandtab
 set shiftwidth=4
-set tw=90
+set tw=120
 set mouse=a
 set ic
 set incsearch
@@ -170,6 +158,8 @@ let g:LanguageClient_diagnosticsEnable=0
 " Use 'Enter'-key to accept a suggestion.
 """
 inoremap <expr> <cr> ((pumvisible())?("\<C-y>"):("\<cr>"))
+let g:SuperTabDefaultCompletionType = "<C-X><C-O>"
+autocmd InsertLeave * if pumvisible() == 0 | pclose | endif
 
 "In insert/command mode use emacs keys
 inoremap <C-a> <ESC>I
@@ -269,9 +259,9 @@ autocmd filetype clojure map <leader>ep <Plug>(iced_print_last)
 autocmd filetype clojure map <leader>eu <Plug>(iced_undef)
 autocmd filetype clojure map <leader>eq <Plug>(iced_interrupt)
 autocmd filetype clojure map <leader>eQ <Plug>(iced_interrupt_all)
-autocmd filetype clojure map <leader>hd <Plug>(iced_popup_document_open)
-autocmd filetype clojure map <leader>hh <Plug>(iced_command_palette)
-autocmd filetype clojure map <leader>hs <Plug>(iced_popup_source_show)
+autocmd filetype clojure map <leader>hd <Plug>(iced_document_open)
+autocmd filetype clojure map <leader>hh <Plug>(iced_clojuredocs_open)
+autocmd filetype clojure map <leader>hs <Plug>(iced_source_show)
 autocmd filetype clojure map <leader>ss <Plug>(iced_stdout_buffer_open)
 autocmd filetype clojure map <leader>sl <Plug>(iced_stdout_buffer_clear)
 autocmd filetype clojure map <leader>sq <Plug>(iced_stdout_buffer_close)

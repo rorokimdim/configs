@@ -1,5 +1,5 @@
 export TERM=screen-256color
-export EDITOR=vim
+export EDITOR='emacsclient -t --alternate-editor ""'
 
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
