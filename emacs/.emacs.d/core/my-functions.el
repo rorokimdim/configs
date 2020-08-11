@@ -2,7 +2,7 @@
 ;; so they are available when I need them.
 (require 'a)
 (require 'ag)
-(require 'cl)
+(require 'cl-lib)
 (require 'dash)
 (require 'emamux)
 (require 'f)

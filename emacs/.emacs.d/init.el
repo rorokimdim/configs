@@ -1,4 +1,4 @@
-(require 'cl)
+(require 'cl-lib)
 (require 'package)
 
 ;; Always load newest byte code
@@ -158,6 +158,7 @@
     multiple-cursors
     neotree
     popwin
+    projectile
     ranger
     restart-emacs
     rotate
@@ -196,7 +197,7 @@
 
 (defun my-packages-installed-p ()
   "Checks if all packages in my-packages are installed."
-  (every #'package-installed-p my-packages))
+  (cl-every #'package-installed-p my-packages))
 
 (defun my-install-packages ()
   "Installs all packages in my-packages."
