@@ -10,6 +10,7 @@ apps=(
   ranger
   tmux
   vim
+  python
   vscode
 )
 

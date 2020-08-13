@@ -217,7 +217,7 @@ nnoremap <Esc> :nohlsearch<CR><Esc>
 
 """Highlight rows which are too long
 highlight OverLength ctermbg=red ctermfg=white guibg=#592929
-match OverLength /\%101v.\+/
+match OverLength /\%161v.\+/
 
 """Set highlight color for search
 highlight Search cterm=NONE ctermfg=black ctermbg=white
