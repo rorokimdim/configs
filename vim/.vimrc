@@ -28,7 +28,6 @@ Plug 'francoiscabrol/ranger.vim'
 Plug 'guns/vim-sexp', { 'for': 'clojure' }
 Plug 'haya14busa/incsearch-easymotion.vim'
 Plug 'haya14busa/incsearch.vim'
-Plug 'itchyny/lightline.vim'
 Plug 'itchyny/vim-haskell-indent'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
@@ -51,6 +50,8 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-sexp-mappings-for-regular-people', { 'for': 'clojure' }
 Plug 'tpope/vim-surround'
 Plug 'vhdirk/vim-cmake'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-syntastic/syntastic'
 Plug 'autozimu/LanguageClient-neovim', {
     \ 'branch': 'next',
