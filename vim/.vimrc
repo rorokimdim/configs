@@ -24,6 +24,7 @@ Plug 'dense-analysis/ale', { 'for': 'clojure' }
 Plug 'easymotion/vim-easymotion'
 Plug 'ervandew/supertab'
 Plug 'flazz/vim-colorschemes'
+Plug 'francoiscabrol/ranger.vim'
 Plug 'guns/vim-sexp', { 'for': 'clojure' }
 Plug 'haya14busa/incsearch-easymotion.vim'
 Plug 'haya14busa/incsearch.vim'
@@ -41,8 +42,8 @@ Plug 'ndmitchell/ghcid', { 'rtp': 'plugins/nvim' }
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'neovimhaskell/haskell-vim'
 Plug 'ntpeters/vim-better-whitespace'
+Plug 'rbgrouleff/bclose.vim'
 Plug 'rizzatti/dash.vim'
-Plug 'scrooloose/nerdtree'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-fugitive'
@@ -85,6 +86,11 @@ set directory=~/.vim-tmp
 
 match ErrorMsg '\%>100v.\+'
 match ErrorMsg '\s\+\%#\@<!$'
+
+"""Ranger
+let g:ranger_map_keys = 0
+let g:ranger_command_override = 'ranger --cmd "set show_hidden=true"'
+nnoremap `` :RangerWorkingDirectoryExistingOrNewTab<CR>
 
 """Syntastic
 let g:syntastic_mode_map = { 'passive_filetypes': ['cpp'] }
@@ -204,9 +210,6 @@ autocmd Filetype haskell setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
 nnoremap <leader>tn :silent! tabn<CR>
 nnoremap <leader>tp :silent! tabp<CR>
 nnoremap <leader>to :silent! tabnew<CR>
-
-"""NERDTree
-nnoremap \n :NERDTreeToggle<CR>
 
 """Fzf
 nnoremap \\ :silent! Buffers<CR>
