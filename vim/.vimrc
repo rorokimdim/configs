@@ -292,6 +292,10 @@ autocmd filetype html set sw=2
 autocmd filetype html set ts=2
 autocmd filetype html set sts=2
 
+"Custom commands
+command! Config execute ":e ~/.vimrc"
+command! Reload execute "source ~/.vimrc"
+
 "Auto create non-existent dirs when creating a new file
 function s:MkNonExDir(file, buf)
     if empty(getbufvar(a:buf, '&buftype')) && a:file!~#'\v^\w+\:\/'
