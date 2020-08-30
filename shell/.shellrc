@@ -2,8 +2,6 @@ export TERM=screen-256color
 export EDITOR='emacsclient -t --alternate-editor ""'
 export FZF_DEFAULT_COMMAND='ag -g ""'
 
-export PS1="\w $ "
-
 if [ -f ~/.aliases ]; then
     source ~/.aliases
 fi
