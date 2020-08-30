@@ -15,4 +15,5 @@ setopt appendhistory
 setopt sharehistory
 setopt incappendhistory
 
+zplug 'zplug/zplug', hook-build:'zplug --self-manage'
 zplug load
