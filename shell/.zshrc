@@ -4,6 +4,10 @@ fi
 
 PROMPT='%~ $ '
 
+if [ -f ~/.zplugrc ]; then
+    source ~/.zplugrc
+fi
+
 #
 # Autocompletion
 #
