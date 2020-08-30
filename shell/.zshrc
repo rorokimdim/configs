@@ -1,3 +1,4 @@
+export VIRTUAL_ENV_DISABLE_PROMPT=0
 PROMPT='%~ $ '
 
 if [ -f ~/.zplugrc ]; then
