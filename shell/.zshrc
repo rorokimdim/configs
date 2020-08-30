@@ -1,7 +1,3 @@
-if [ -f ~/.shellrc ]; then
-    source ~/.shellrc
-fi
-
 PROMPT='%~ $ '
 
 if [ -f ~/.zplugrc ]; then
@@ -14,3 +10,7 @@ fi
 zstyle ':completion:*:*:git:*' script ~/.git-completion.zsh
 fpath=(~/.zsh $fpath)
 autoload -Uz compinit && compinit
+
+if [ -f ~/.shellrc ]; then
+    source ~/.shellrc
+fi
