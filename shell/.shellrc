@@ -1,0 +1,20 @@
+export TERM=screen-256color
+export EDITOR='emacsclient -t --alternate-editor ""'
+export FZF_DEFAULT_COMMAND='ag -g ""'
+
+if [ -f ~/.aliases ]; then
+    source ~/.aliases
+fi
+
+if [ -f ~/.custom_shellrc ]; then
+    source ~/.custom_shellrc
+fi
+
+if [ -n "$ZSH_VERSION" ]; then
+  [ -f ~/.custom_zshrc ] && source ~/.custom_zshrc
+  [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+elif [ -n "$BASH_VERSION" ]; then
+  [ -f ~/.git-completion.bash ] && source ~/.git-completion.bash
+  [ -f ~/.custom_bashrc ] && source ~/.custom_bashrc
+  [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+fi

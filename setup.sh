@@ -3,7 +3,6 @@
 apps=(
   stow
   git
-  bash
   brittany
   closh
   emacs
@@ -11,6 +10,7 @@ apps=(
   tmux
   vim
   python
+  shell
   vscode
 )
 

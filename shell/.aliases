@@ -15,6 +15,6 @@ alias tmux='tmux -u'
 
 alias httpserver='python3 -m http.server'
 
-if [ -f ~/.custom_bash_aliases ]; then
-    . ~/.custom_bash_aliases
+if [ -f ~/.custom_aliases ]; then
+    . ~/.custom_aliases
 fi
