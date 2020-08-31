@@ -141,7 +141,7 @@
   (emamux:tmux-run-command
    nil
    "new-window"
-   "cd ~/workspace/$(ls -d ~/workspace/*/ | sed \"s/.*workspace//\" | sed \"s:/::g\" | fzf); exec bash"))
+   "cd ~/workspace/$(ls -d ~/workspace/*/ | sed \"s/.*workspace//\" | sed \"s:/::g\" | fzf); exec zsh"))
 
 (defun my-tmux-cd-configs ()
   "Opens a new tmux window on a configs directory."
@@ -149,7 +149,7 @@
   (emamux:tmux-run-command
    nil
    "new-window"
-   "cd ~/workspace/configs/$(ls -d ~/workspace/configs/*/ | sed \"s/.*configs//\" | sed \"s:/::g\" | fzf); exec bash"))
+   "cd ~/workspace/configs/$(ls -d ~/workspace/configs/*/ | sed \"s/.*configs//\" | sed \"s:/::g\" | fzf); exec zsh"))
 
 (defun my-tmux-new-editor ()
   "Opens new instance of editor in a new tmux window."
@@ -171,7 +171,7 @@
    "-vb" "-p 20"
    (concat "cd "
            (if buffer-file-name (file-name-directory buffer-file-name) "~/workspace")
-           "; exec bash")))
+           "; exec zsh")))
 
 (defun my-tmux-open-shell-in-project-directory ()
   "Opens a shell in a small tmux window at the top.
@@ -183,7 +183,7 @@
    "-vb" "-p 20"
    (concat "cd "
            (ffip-get-project-root-directory)
-           "; exec bash")))
+           "; exec zsh")))
 
 (defun my-eshell-ag (string)
   "Searches for STRING in the current eshell directory using ag command."
