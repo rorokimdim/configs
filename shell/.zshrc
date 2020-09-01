@@ -14,14 +14,6 @@ bindkey '^xe' edit-command-line
 bindkey '^x^e' edit-command-line
 
 #
-# tmux
-#
-if [ -z "$TMUX" ]
-then
-    tmux attach -t local || tmux new -s local
-fi
-
-#
 # Autocompletion
 #
 fpath=(~/.zsh $fpath)
