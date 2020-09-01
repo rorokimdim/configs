@@ -11,7 +11,6 @@ apps=(
   vim
   python
   shell
-  ipython
   vscode
 )
 
