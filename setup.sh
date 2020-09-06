@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+mkdir -p "~/.emacs.d"
+mkdir -p "~/.config"
+
 apps=(
   stow
   git
