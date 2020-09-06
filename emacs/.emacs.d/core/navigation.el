@@ -47,6 +47,7 @@
 ;; ivy
 (use-package counsel
   :after ivy
+  :diminish
   :bind (("M-x" . counsel-M-x))
   :config (counsel-mode))
 
@@ -62,5 +63,6 @@
 
 (use-package swiper
   :after ivy
+  :diminish
   :bind (("C-s" . swiper)
          ("C-r" . swiper)))
