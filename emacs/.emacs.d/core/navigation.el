@@ -18,36 +18,8 @@
 (require 'recentf)
 (setq recentf-max-saved-items 50
       recentf-max-menu-items 40)
-(setq recentf-exclude
-      (append recentf-exclude
-              '("ido.last")))
 (recentf-mode 1)
 
-
-;; ido-mode allows you to more easily navigate choices. For example,
-;; when you want to switch buffers, ido presents you with a list
-;; of buffers in the the mini-buffer. As you start to type a buffer's
-;; name, ido will narrow down the list of buffers to match the text
-;; you've typed in
-;; http://www.emacswiki.org/emacs/InteractivelyDoThings
-(ido-mode t)
-
-;; This allows partial matches, e.g. "tl" will match "Tyrion Lannister"
-(setq ido-enable-flex-matching t)
-
-;; Turn this behavior off because it's annoying
-(setq ido-use-filename-at-point nil)
-
-;; Don't try to match file across all "work" directories; only match files
-;; in the current directory displayed in the minibuffer
-(setq ido-auto-merge-work-directories-length -1)
-
-;; Do not show virtual buffers
-(setq ido-use-virtual-buffers nil)
-
-;; This enables ido in all contexts where it could be useful, not just
-;; for selecting buffer and file names
-(ido-ubiquitous-mode 1)
 
 ;; Shows a list of buffers
 (global-set-key (kbd "C-x C-b") 'ibuffer)
@@ -72,19 +44,23 @@
 ;; Use fd instead of 'find' for find-file-in-project
 (setq ffip-use-rust-fd t)
 
-;; Use ido-vertical
-(require 'ido-vertical-mode)
-(ido-vertical-mode 1)
-(setq ido-use-faces t)
-(setq ido-vertical-show-count t)
-(setq ido-vertical-define-keys 'C-n-C-p-up-down-left-right)
-(set-face-attribute 'ido-vertical-first-match-face nil
-                    :background "#444444"
-                    :underline nil)
-(set-face-attribute 'ido-vertical-only-match-face nil
-                    :background "#444444"
-                    :foreground "white"
-                    :underline nil)
-(set-face-attribute 'ido-vertical-match-face nil
-                    :foreground "#e37969"
-                    :underline nil)
+;; ivy
+(use-package counsel
+  :after ivy
+  :bind (("M-x" . counsel-M-x))
+  :config (counsel-mode))
+
+(use-package ivy
+  :defer 0.1
+  :diminish
+  :bind (("C-c C-r" . ivy-resume)
+         ("C-x B" . ivy-switch-buffer-other-window))
+  :custom
+  (ivy-count-format "(%d/%d) ")
+  (ivy-use-virtual-buffers nil)
+  :config (ivy-mode))
+
+(use-package swiper
+  :after ivy
+  :bind (("C-s" . swiper)
+         ("C-r" . swiper)))

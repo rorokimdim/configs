@@ -58,7 +58,7 @@
   :keys ("s-\\")
   :evil-keys ("\\")
   :evil-states (normal visual)
-  :bindings ("\\" 'ido-switch-buffer
+  :bindings ("\\" 'counsel-switch-buffer
              "|" 'ffip-split-window-horizontally
              "-" 'ffip-split-window-vertically
              "*" 'my-kill-all-buffers

@@ -119,7 +119,7 @@
 (defun my-browse-project-directory ()
   "Opens deer on project root directory."
   (interactive)
-  (deer (ffip-get-project-root-directory)))
+  (dired (ffip-get-project-root-directory)))
 
 (defun my-split-window-vertically ()
   "Splits window vertically."

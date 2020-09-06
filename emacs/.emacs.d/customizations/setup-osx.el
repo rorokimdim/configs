@@ -1,4 +1,7 @@
 (when (eq system-type 'darwin)
+  ;; ls --dired is not supported in mac
+  (setq dired-use-ls-dired nil)
+
   ;; OSX packages to install
   (defvar my-osx-packages
     '(osx-dictionary))

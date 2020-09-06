@@ -103,7 +103,6 @@
  '(org-level-1 ((t (:foreground "#64a8d8" :weight bold))))
  '(mode-line ((t (:background "#444444" :foreground "#f6f3e8"))))
  '(cursor ((t (:background "gray82"))))
- '(ido-subdir ((t (:foreground "dark cyan"))))
  '(helm-source-header ((t (:weight bold :height 1.3 :family "Sans Serif"))))
  '(highlight-indentation-face ((t (:inherit nil))))
  '(hl-line ((t (:background "Black"))))

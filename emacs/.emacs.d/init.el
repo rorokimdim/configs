@@ -24,13 +24,6 @@
 
 ;; Define the following variables to remove the compile-log warnings
 (defvar apropos-do-all nil)
-(defvar ido-auto-merge-work-directories-length nil)
-(defvar ido-cur-item nil)
-(defvar ido-cur-list nil)
-(defvar ido-default-item nil)
-(defvar ido-enable-flex-matching nil)
-(defvar ido-use-filename-at-point nil)
-(defvar ido-use-virtual-buffers nil)
 (defvar inherit-input-method nil)
 (defvar predicate nil)
 (defvar smex-save-file nil)
@@ -132,6 +125,7 @@
     centaur-tabs
     company
     company-math
+    counsel
     dash-at-point
     diminish
     docker-compose-mode
@@ -149,8 +143,7 @@
     helm-swoop
     helm-tramp
     htmlize
-    ido-completing-read+
-    ido-vertical-mode
+    ivy
     jq-mode
     json-mode
     magit
@@ -159,11 +152,11 @@
     neotree
     popwin
     projectile
-    ranger
     restart-emacs
     rotate
     smex
     sqlup-mode
+    swiper
     synonymous
     tagedit
     use-package
