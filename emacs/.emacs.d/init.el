@@ -1,6 +1,9 @@
 (require 'cl-lib)
 (require 'package)
 
+;; Silence warning about using package cl
+(setq byte-compile-warnings '(cl-functions))
+
 ;; Always load newest byte code
 (setq load-prefer-newer t)
 
