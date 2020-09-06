@@ -72,9 +72,9 @@
              "r" 'helm-recentf
              "s" 'my-search-with-ag
              "nt" 'my-neotree-projectile-toggle
-             "pf" 'projectile-find-file
+             "pf" 'counsel-projectile-find-file
              "pp" 'centaur-tabs-switch-group
-             "po" 'projectile-switch-project
+             "po" 'counsel-projectile-switch-project
              "pc" 'projectile-kill-buffers
              "ts" 'emamux:send-command
              "tr" 'emamux:run-command

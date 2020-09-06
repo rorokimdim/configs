@@ -126,6 +126,7 @@
     company
     company-math
     counsel
+    counsel-projectile
     dash-at-point
     diminish
     docker-compose-mode
