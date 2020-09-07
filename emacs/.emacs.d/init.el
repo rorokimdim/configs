@@ -150,6 +150,7 @@
     ivy
     jq-mode
     json-mode
+    lsp-ui
     magit
     move-text
     multiple-cursors
