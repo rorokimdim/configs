@@ -71,7 +71,7 @@
              "e" 'my-tmux-new-editor
              "r" 'helm-recentf
              "s" 'my-search-with-ag
-             "nt" 'my-neotree-projectile-toggle
+             "b" 'my-neotree-projectile-toggle
              "pf" 'counsel-projectile-find-file
              "pp" 'centaur-tabs-switch-group
              "po" 'counsel-projectile-switch-project
