@@ -46,7 +46,6 @@
               (local-set-key "\C-l" 'comint-clear-buffer)))
   (add-hook 'python-mode-hook
             (lambda ()
-              (flycheck-mode)
               (smartparens-mode)
               (show-smartparens-mode)
               (highlight-parentheses-mode)
