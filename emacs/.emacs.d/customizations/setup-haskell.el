@@ -11,6 +11,7 @@
   (haskell-indentation-mode +1)
   (interactive-haskell-mode +1)
   (define-key haskell-mode-map (kbd "C-c C-c") 'haskell-compile)
+  (define-key haskell-mode-map (kbd "C-c C-f") 'haskell-mode-stylish-buffer)
   (define-key haskell-mode-map (kbd "C-c C-l") 'haskell-process-load-file)
   (define-key haskell-mode-map (kbd "C-c C-z") 'haskell-interactive-switch))
 
@@ -29,6 +30,7 @@
   :bindings (
              "if" 'haskell-mode-format-imports
              "ii" 'haskell-add-import
+             "bf" 'haskell-mode-stylish-buffer
              "gd" 'haskell-mode-jump-to-def
              "hd" 'haskell-describe
              "hh" 'haskell-hoogle))
