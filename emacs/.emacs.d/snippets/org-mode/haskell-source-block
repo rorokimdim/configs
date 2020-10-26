@@ -1,0 +1,9 @@
+# -*- mode: snippet -*-
+# name : #+srcname:..#+begin_src...#+end_src
+# key: hsb
+# group : control structure
+# --
+#+CAPTION: ${1:name}
+#+BEGIN_SRC haskell :tangle ${2:path}
+  $0
+#+END_SRC
