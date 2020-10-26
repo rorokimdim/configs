@@ -61,9 +61,6 @@
 ;; Enable electric-indent-mode
 (setq electric-indent-mode 1)
 
-;; Delete trailing whitespace on save
-(add-hook 'before-save-hook 'delete-trailing-whitespace)
-
 ;; yasnippet
 (use-package yasnippet
   :ensure t
@@ -84,3 +81,4 @@
 (defun my-delete-trailing-whitespaces ()
   (add-hook 'before-save-hook #'delete-trailing-whitespace nil t))
 (add-hook 'prog-mode-hook #'my-delete-trailing-whitespaces)
+(add-hook 'org-mode-hook #'my-delete-trailing-whitespaces)
