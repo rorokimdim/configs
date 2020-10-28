@@ -1,6 +1,7 @@
 export TERM=screen-256color
-export EDITOR='emacsclient -t --alternate-editor ""'
+export EDITOR='e'
 export FZF_DEFAULT_COMMAND='ag -g ""'
+export PATH="$HOME/bin:$PATH"
 
 if [ -f ~/.aliases ]; then
     source ~/.aliases

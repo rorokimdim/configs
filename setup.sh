@@ -2,9 +2,11 @@
 
 mkdir -p "~/.emacs.d"
 mkdir -p "~/.config"
+mkdir -p "~/bin"
 
 apps=(
   stow
+  bin
   git
   brittany
   closh
