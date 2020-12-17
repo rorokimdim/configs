@@ -154,6 +154,7 @@
     neotree
     popwin
     projectile
+    ranger
     restart-emacs
     rotate
     smex
