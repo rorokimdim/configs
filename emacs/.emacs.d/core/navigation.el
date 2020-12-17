@@ -41,6 +41,9 @@
    (define-key dired-mode-map (kbd "^")
      (lambda () (interactive) (find-alternate-file "..")))))
 
+;; Use ranger instead of dired
+(ranger-override-dired-mode t)
+
 ;; Use fd instead of 'find' for find-file-in-project
 (setq ffip-use-rust-fd t)
 
