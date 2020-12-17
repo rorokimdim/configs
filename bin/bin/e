@@ -2,7 +2,7 @@
 
 if [ $# -eq 0 ]
   then
-    emacsclient -t -s tui --alternate-editor ""
+    emacsclient -t --alternate-editor ""
   else
-    emacsclient -t -s tui -e "(find-file \"$1\")" --alternate-editor ""
+    emacsclient -t -e "(find-file \"$1\")" --alternate-editor ""
 fi
