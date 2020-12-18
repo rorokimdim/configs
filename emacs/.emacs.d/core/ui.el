@@ -1,14 +1,3 @@
-;; Turn off the menu bar at the top of each frame because it's distracting
-(menu-bar-mode -1)
-
-;; Get rid of useless tool-bar in gui mode
-(when (fboundp 'tool-bar-mode)
-  (tool-bar-mode -1))
-
-;; Don't show native OS scroll bars for buffers because they're redundant
-(when (fboundp 'scroll-bar-mode)
-  (scroll-bar-mode -1))
-
 ;; Font
 (set-face-attribute 'default nil :font "Monaco-12:antialias=1")
 
