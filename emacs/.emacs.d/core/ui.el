@@ -1,5 +1,5 @@
 ;; Font
-(set-face-attribute 'default nil :font "Monaco-12:antialias=1")
+(set-face-attribute 'default nil :font "Monaco-14:antialias=1")
 
 ;; Focus on help window when opened
 (setq help-window-select t)
