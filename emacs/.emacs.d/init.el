@@ -135,6 +135,7 @@
     emmet-mode
     eshell-autojump
     eshell-up
+    exec-path-from-shell
     expand-region
     find-file-in-project
     flycheck
@@ -214,6 +215,12 @@
 
 (eval-when-compile
   (require 'use-package))
+
+;; Setup PATH for GUIs
+(when (memq window-system '(mac ns x))
+  (setenv "SHELL" "/bin/zsh")
+  (exec-path-from-shell-initialize)
+  (exec-path-from-shell-copy-envs '("PATH")))
 
 ;;
 ;; Load custom scripts
