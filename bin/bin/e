@@ -4,5 +4,11 @@ if [ $# -eq 0 ]
   then
     emacsclient -t --alternate-editor ""
   else
-    emacsclient -t -e "(find-file \"$1\")" --alternate-editor ""
+    ARG=$1
+    if [ -d "${ARG}" ] ; then
+      DIRPATH=$(realpath "$ARG")
+      emacsclient -t -e "(deer \"$DIRPATH/\")" --alternate-editor ""
+    else
+      emacsclient -t -e "(find-file \"$ARG\")" --alternate-editor ""
+    fi
 fi
