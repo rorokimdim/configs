@@ -13,6 +13,10 @@
 (global-set-key (kbd "<f8>") 'centaur-tabs-switch-group)
 (global-set-key (kbd "<f9>") 'centaur-tabs-forward-group)
 
+;; avy
+(global-set-key (kbd "C-c ,") 'avy-goto-char)
+(global-set-key (kbd "C-c f") 'avy-goto-char-in-line)
+
 ;; Show major mode commands
 (global-set-key (kbd "M-X") 'smex-major-mode-commands)
 
@@ -163,7 +167,7 @@
              "er" 'eval-region
              "ex" 'my-eval-and-replace
 
-             "m" 'mc/mark-more-like-this-extended
+             "m" 'ace-mc-add-multiple-cursors
              "/" 'helm-swoop
 
              "s|" 'ffip-split-window-horizontally

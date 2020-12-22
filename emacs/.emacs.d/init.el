@@ -115,6 +115,7 @@
 
     ;; rest
     ace-link
+    ace-mc
     ace-window
     aes
     ag
