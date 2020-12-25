@@ -2,7 +2,8 @@
 
 if [ $# -eq 0 ]
   then
-    emacsclient -t --alternate-editor ""
+    #emacsclient -t --alternate-editor ""
+    emacsclient -t -e '(lambda () (interactive) previous-buffer)' --alternate-editor ""
   else
     ARG=$1
     if [ -d "${ARG}" ] ; then
