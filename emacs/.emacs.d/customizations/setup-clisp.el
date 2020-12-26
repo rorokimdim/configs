@@ -11,7 +11,7 @@
 
   ;; Shortcuts for common lisp mode
   (require 'bind-map)
-  (bind-map my-clisp-mode-map
+  (bind-map my/clisp-mode-map
     :keys ("s-,")
     :evil-keys (",")
     :evil-states (normal visual)

@@ -1,6 +1,6 @@
 ;; Shortcuts for json mode
 (require 'bind-map)
-(bind-map my-json-mode-map
+(bind-map my/json-mode-map
   :evil-keys (",")
   :evil-states (normal visual)
   :major-modes (json-mode)

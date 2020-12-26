@@ -38,30 +38,30 @@
 ;; Sometimes I want clipboard even on non-display terminals, but
 ;; that could be slow depending on how the clipboard is accessed. By
 ;; default don't allow it, other than in certain modes (like restclient-mode).
-(defvar my-allow-non-display-clipboard-default nil)
+(defvar my/allow-non-display-clipboard-default nil)
 
-(defun my-toggle-non-display-clipboard ()
+(defun my/toggle-non-display-clipboard ()
   "Toggles if clipboard copying should be allowed in non-display environemnt by default."
-  (setq my-allow-non-display-clipboard-default
-        (not my-allow-non-display-clipboard-default)))
+  (setq my/allow-non-display-clipboard-default
+        (not my/allow-non-display-clipboard-default)))
 
-(defun my-allow-non-display-clipboard? ()
+(defun my/allow-non-display-clipboard? ()
   "Checks if clipboard copying should be allowed in non-display environemnt."
-  (or my-allow-non-display-clipboard-default
+  (or my/allow-non-display-clipboard-default
       (string= 'restclient-mode major-mode)))
 
-(defvar my-copy-command (cond ((eq system-type 'darwin) "pbcopy")
+(defvar my/copy-command (cond ((eq system-type 'darwin) "pbcopy")
                               ((or (eq system-type 'gnu/linux) (eq system-type 'linux)) "xsel -ib")))
 
-(defvar my-paste-command (cond ((eq system-type 'darwin) "pbpaste")
+(defvar my/paste-command (cond ((eq system-type 'darwin) "pbpaste")
                                ((or (eq system-type 'gnu/linux) (eq system-type 'linux)) "xsel -ob")))
 
 (unless window-system
   (defun cut-function (text &optional push)
-    (when (or (my-allow-non-display-clipboard?) (getenv "DISPLAY"))
+    (when (or (my/allow-non-display-clipboard?) (getenv "DISPLAY"))
       (with-temp-buffer
         (insert text)
-        (call-process-region (point-min) (point-max) my-copy-command))))
+        (call-process-region (point-min) (point-max) my/copy-command))))
   (setq interprogram-cut-function 'cut-function))
 
 ;; No cursor blinking, it's distracting

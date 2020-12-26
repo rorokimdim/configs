@@ -3,7 +3,7 @@
 (add-hook 'js2-mode-hook 'skewer-mode)
 
 (require 'bind-map)
-(bind-map my-js-mode-map
+(bind-map my/js-mode-map
   :keys ("s-,")
   :evil-keys (",")
   :evil-states (normal visual)

@@ -18,14 +18,14 @@
   (add-hook h 'rainbow-delimiters-mode)
   (add-hook h 'turn-on-eldoc-mode)
   (add-hook h 'prettify-symbols-mode)
-  (add-hook h 'my-add-pretty-symbols)
+  (add-hook h 'my/add-pretty-symbols)
   (add-hook h 'paxedit-mode)
-  (add-hook h #'my-add-lispy-shortcuts))
+  (add-hook h #'my/add-lispy-shortcuts))
 
 ;;
 ;; Shortcuts
 ;;
-(defun my-add-lispy-shortcuts ()
+(defun my/add-lispy-shortcuts ()
   "Add shortcuts to a lispy-mode hook."
   (progn
     (evil-local-set-key 'normal (kbd "Y") 'sp-copy-sexp)
@@ -39,7 +39,7 @@
     (evil-local-set-key 'normal (kbd "M->") 'sp-forward-barf-sexp)))
 
 (require 'bind-map)
-(bind-map my-lisp-mode-map
+(bind-map my/lisp-mode-map
   :keys ("s-,")
   :evil-keys (",")
   :evil-states (normal visual)

@@ -17,7 +17,7 @@
 
 ;; Shortcuts for clojure mode
 (require 'bind-map)
-(bind-map my-clj-cljs-mode-map
+(bind-map my/clj-cljs-mode-map
   :keys ("s-,")
   :evil-keys (",")
   :evil-states (normal visual)

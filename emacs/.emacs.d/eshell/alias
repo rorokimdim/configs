@@ -1,4 +1,4 @@
-alias ag my-eshell-ag $1
+alias ag my/eshell-ag $1
 alias aserver cd /aserver:
 alias cal (calendar)
 alias cdc cd ~/workspace/configs/
@@ -12,7 +12,7 @@ alias gd magit-diff-unstaged
 alias gds magit-diff-staged
 alias gl magit-log-head
 alias gs magit-status
-alias h my-goto-function $1
+alias h my/goto-function $1
 alias l ls
 alias ll ls -l
 alias pk eshell-up-peek $1

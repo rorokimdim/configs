@@ -1,6 +1,6 @@
 ;; Shortcuts for lua mode
 (require 'bind-map)
-(bind-map my-lua-mode-map
+(bind-map my/lua-mode-map
   :keys ("s-,")
   :evil-keys (",")
   :evil-states (normal visual)
@@ -12,7 +12,7 @@
              "er" 'lua-send-lua-region
              "ll" (lambda ()
                     (interactive)
-                    (let ((game-directory (file-name-directory (my-get-closest-pathname "main.lua" 3))))
+                    (let ((game-directory (file-name-directory (my/get-closest-pathname "main.lua" 3))))
                       (emamux:run-command (concat "love" " " game-directory))))
              "rq" (lambda ()
                     (interactive)

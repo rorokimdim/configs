@@ -28,13 +28,13 @@
                    (format
                     "make -C \"%sbuild\""
                     (file-name-directory
-                     (my-get-closest-pathname "CMakeLists.txt" 3)))))))
+                     (my/get-closest-pathname "CMakeLists.txt" 3)))))))
 
 (setq compilation-scroll-output 'first-error)
 
 ;; Shortcuts for c/cpp mode
 (require 'bind-map)
-(bind-map my-cxx-mode-map
+(bind-map my/cxx-mode-map
   :keys ("s-,")
   :evil-keys (",")
   :evil-states (normal visual)
@@ -45,7 +45,7 @@
                     (select-window (get-buffer-window "*compilation*")))
              "r" (lambda ()
                    (interactive)
-                   (let ((root-dir (file-name-directory (my-get-closest-pathname "CMakeLists.txt" 3))))
+                   (let ((root-dir (file-name-directory (my/get-closest-pathname "CMakeLists.txt" 3))))
                      (shell-command
                       (format "make -C %s/build && %s/build/main" root-dir root-dir))))
              "h" 'lsp-describe-thing-at-point

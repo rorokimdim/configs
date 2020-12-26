@@ -29,7 +29,7 @@
   :config
   (push 'company-lsp company-backends))
 
-(defun my-lsp-ui-doc-toggle ()
+(defun my/lsp-ui-doc-toggle ()
   "Toggles lsp-ui-doc."
   (interactive)
   (if (lsp-ui-doc--frame-visible-p)

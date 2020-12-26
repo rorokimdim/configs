@@ -33,7 +33,7 @@
 (global-set-key (kbd "C-s-<268632077>") 'toggle-frame-maximized)  ;; ctrl + super + m
 
 ;; Use F2 to eval-and-replace lisp expressions
-(global-set-key [f2] 'my-eval-and-replace)
+(global-set-key [f2] 'my/eval-and-replace)
 
 ;; Use F4/super-r to change window layout
 (global-set-key [f4] 'rotate-layout)
@@ -58,24 +58,24 @@
 ;; For file and buffer stuff
 (require 'bind-map)
 (require 'emamux)
-(bind-map my-back-slash-leader-map
+(bind-map my/back-slash-leader-map
   :keys ("s-\\")
   :evil-keys ("\\")
   :evil-states (normal visual)
   :bindings ("\\" 'counsel-switch-buffer
              "|" 'ffip-split-window-horizontally
              "-" 'ffip-split-window-vertically
-             "*" 'my-kill-all-buffers
+             "*" 'my/kill-all-buffers
              "<" 'centaur-tabs-backward-group
              ">" 'centaur-tabs-forward-group
-             "c" 'my-tmux-open-emacs-config
+             "c" 'my/tmux-open-emacs-config
              "f" 'find-file-in-project
              "m" 'helm-imenu
              "q" 'evil-quit-all
-             "e" 'my-tmux-new-editor
+             "e" 'my/tmux-new-editor
              "r" 'helm-recentf
-             "s" 'my-search-with-ag
-             "b" 'my-neotree-projectile-toggle
+             "s" 'my/search-with-ag
+             "b" 'my/neotree-projectile-toggle
              "pf" 'counsel-projectile-find-file
              "pp" 'centaur-tabs-switch-group
              "po" 'counsel-projectile-switch-project
@@ -85,24 +85,24 @@
              "tl" 'emamux:run-last-command
              "tc" 'emamux:close-panes
              "0" 'centaur-tabs-select-beg-tab
-             "1" (lambda () (interactive) (my-centaur-tabs-jump-to 1))
-             "2" (lambda () (interactive) (my-centaur-tabs-jump-to 2))
-             "3" (lambda () (interactive) (my-centaur-tabs-jump-to 3))
-             "4" (lambda () (interactive) (my-centaur-tabs-jump-to 4))
-             "5" (lambda () (interactive) (my-centaur-tabs-jump-to 5))
-             "6" (lambda () (interactive) (my-centaur-tabs-jump-to 6))
-             "7" (lambda () (interactive) (my-centaur-tabs-jump-to 7))
-             "8" (lambda () (interactive) (my-centaur-tabs-jump-to 8))
-             "9" (lambda () (interactive) (my-centaur-tabs-jump-to 9))
+             "1" (lambda () (interactive) (my/centaur-tabs-jump-to 1))
+             "2" (lambda () (interactive) (my/centaur-tabs-jump-to 2))
+             "3" (lambda () (interactive) (my/centaur-tabs-jump-to 3))
+             "4" (lambda () (interactive) (my/centaur-tabs-jump-to 4))
+             "5" (lambda () (interactive) (my/centaur-tabs-jump-to 5))
+             "6" (lambda () (interactive) (my/centaur-tabs-jump-to 6))
+             "7" (lambda () (interactive) (my/centaur-tabs-jump-to 7))
+             "8" (lambda () (interactive) (my/centaur-tabs-jump-to 8))
+             "9" (lambda () (interactive) (my/centaur-tabs-jump-to 9))
              "$" 'centaur-tabs-select-end-tab
              "x" 'kill-buffer-and-window))
 
 ;; For "programs"
-(bind-map my-back-quote-leader-map
+(bind-map my/back-quote-leader-map
   :keys ("s-`")
   :evil-keys ("`")
   :evil-states (normal visual)
-  :bindings ("`" 'my-browse-project-directory
+  :bindings ("`" 'my/browse-project-directory
              "b" 'helm-bookmarks
              "s" 'eshell
              "d" 'osx-dictionary-search-input
@@ -112,18 +112,18 @@
              "t" 'world-time-list))
 
 ;; For "shells"
-(bind-map my-space-leader-map
+(bind-map my/space-leader-map
   :keys ("s-SPC")
   :evil-keys ("SPC")
   :evil-states (normal visual)
-  :bindings ("'" 'my-tmux-open-shell-in-project-directory
-             "\"" 'my-tmux-open-shell-in-buffer-directory
-             "c" 'my-tmux-cd-configs
-             "d" 'my-tmux-cd-workspace
+  :bindings ("'" 'my/tmux-open-shell-in-project-directory
+             "\"" 'my/tmux-open-shell-in-buffer-directory
+             "c" 'my/tmux-cd-configs
+             "d" 'my/tmux-cd-workspace
              ))
 
 ;; For windows
-(bind-map my-f3-leader-map
+(bind-map my/f3-leader-map
   :keys ("<f3>")
   :bindings ("r" 'rotate-window
              "l" 'rotate-layout
@@ -133,7 +133,7 @@
              "1" 'delete-other-windows))
 
 ;; For anything that needs to be used often
-(bind-map my-comma-leader-map
+(bind-map my/comma-leader-map
   :keys ("s-,")
   :evil-keys (",")
   :evil-states (normal visual)
@@ -163,9 +163,9 @@
              "eb" 'eval-buffer
              "ee" 'eval-last-sexp
              "ef" 'eval-defun
-             "ep" 'my-eval-print-last-sexp
+             "ep" 'my/eval-print-last-sexp
              "er" 'eval-region
-             "ex" 'my-eval-and-replace
+             "ex" 'my/eval-and-replace
 
              "m" 'ace-mc-add-multiple-cursors
              "/" 'helm-swoop
@@ -173,5 +173,5 @@
              "s|" 'ffip-split-window-horizontally
              "s-" 'ffip-split-window-vertically
 
-             "-" 'my-split-window-vertically
-             "|" 'my-split-window-horizontally))
+             "-" 'my/split-window-vertically
+             "|" 'my/split-window-horizontally))

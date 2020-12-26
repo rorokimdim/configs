@@ -15,14 +15,14 @@
 ;;
 (defconst initial-gc-cons-threshold gc-cons-threshold)
 (setq gc-cons-threshold (* 128 1024 1024))
-(defun my-minibuffer-setup-hook ()
+(defun my/minibuffer-setup-hook ()
     (setq gc-cons-threshold most-positive-fixnum))
 
-(defun my-minibuffer-exit-hook ()
+(defun my/minibuffer-exit-hook ()
     (setq gc-cons-threshold initial-gc-cons-threshold))
 
-(add-hook 'minibuffer-setup-hook #'my-minibuffer-setup-hook)
-(add-hook 'minibuffer-exit-hook #'my-minibuffer-exit-hook)
+(add-hook 'minibuffer-setup-hook #'my/minibuffer-setup-hook)
+(add-hook 'minibuffer-exit-hook #'my/minibuffer-exit-hook)
 (add-hook 'after-init-hook (lambda () (setq gc-cons-threshold initial-gc-cons-threshold)))
 
 ;; Define the following variables to remove the compile-log warnings
@@ -55,7 +55,7 @@
 ;; Define package repositories
 (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/") t)
 
-(defvar my-packages
+(defvar my/packages
   '(
     ;; elisp libraries
     a
@@ -182,37 +182,37 @@
     evil-visualstar)
   "A list of packages to ensure are installed at launch.")
 
-(defun my-require-package (package)
+(defun my/require-package (package)
   "Installs PACKAGE unless already installed."
-  (unless (memq package my-packages)
-    (add-to-list 'my-packages package))
+  (unless (memq package my/packages)
+    (add-to-list 'my/packages package))
   (unless (package-installed-p package)
     (package-install package)))
 
-(defun my-require-packages (packages)
+(defun my/require-packages (packages)
   "Ensures PACKAGES are installed. Missing packages are installed automatically."
-  (mapc #'my-require-package packages))
+  (mapc #'my/require-package packages))
 
-(defun my-packages-installed-p ()
-  "Checks if all packages in my-packages are installed."
-  (cl-every #'package-installed-p my-packages))
+(defun my/packages-installed-p ()
+  "Checks if all packages in my/packages are installed."
+  (cl-every #'package-installed-p my/packages))
 
-(defun my-install-packages ()
-  "Installs all packages in my-packages."
-  (unless (my-packages-installed-p)
+(defun my/install-packages ()
+  "Installs all packages in my/packages."
+  (unless (my/packages-installed-p)
     (message "%s" "Refreshing package database...")
     (package-refresh-contents)
     (message "%s" " done.")
-    (my-require-packages my-packages)))
+    (my/require-packages my/packages)))
 
-(defun my-list-foreign-packages ()
-  "Browse installed packages not in my-packages."
+(defun my/list-foreign-packages ()
+  "Browse installed packages not in my/packages."
   (interactive)
   (package-show-package-list
-   (set-difference package-activated-list my-packages)))
+   (set-difference package-activated-list my/packages)))
 
 (package-initialize)
-(my-install-packages)
+(my/install-packages)
 
 (eval-when-compile
   (require 'use-package))

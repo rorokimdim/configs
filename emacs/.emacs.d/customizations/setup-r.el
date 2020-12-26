@@ -1,6 +1,6 @@
 ;; Shortcuts for r mode
 (require 'bind-map)
-(bind-map my-r-mode-map
+(bind-map my/r-mode-map
   :keys ("s-,")
   :evil-keys (",")
   :evil-states (normal visual)

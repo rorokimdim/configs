@@ -2,7 +2,7 @@
 
 ;; Shortcuts for scheme mode
 (require 'bind-map)
-(bind-map my-scheme-mode-map
+(bind-map my/scheme-mode-map
   :keys ("s-,")
   :evil-keys (",")
   :evil-states (normal visual)

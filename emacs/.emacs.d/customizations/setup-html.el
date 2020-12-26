@@ -2,7 +2,7 @@
 (add-hook 'html-mode-hook 'emmet-mode)
 
 (require 'bind-map)
-(bind-map my-html-mode-map
+(bind-map my/html-mode-map
   :keys ("s-,")
   :evil-keys (",")
   :evil-states (normal visual)

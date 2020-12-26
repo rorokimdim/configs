@@ -8,7 +8,7 @@
 
 ;; Shortcuts for sql mode
 (require 'bind-map)
-(bind-map my-sql-mode-map
+(bind-map my/sql-mode-map
   :evil-keys (",")
   :evil-states (normal visual)
   :major-modes (sql-mode)

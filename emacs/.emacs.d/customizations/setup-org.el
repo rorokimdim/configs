@@ -19,7 +19,7 @@
    ))
 
 ;; Don't ask to evaluate certain languages
-(defun my-org-confirm-babel-evaluate (lang body)
+(defun my/org-confirm-babel-evaluate (lang body)
   (not (or (string= lang "clojure")
            (string= lang "dot")
            (string= lang "elisp")
@@ -29,7 +29,7 @@
            (string= lang "racket")
            (string= lang "R")
            )))
-(setq org-confirm-babel-evaluate 'my-org-confirm-babel-evaluate)
+(setq org-confirm-babel-evaluate 'my/org-confirm-babel-evaluate)
 
 ;; Do not indent after using org-edit-special
 (setq org-edit-src-content-indentation 0
@@ -51,12 +51,12 @@
 (require 'org-re-reveal)
 
 ;; Fix source code coloring in html exports
-(defun my-org-inline-css-hook (exporter)
+(defun my/org-inline-css-hook (exporter)
   "Insert custom inline css to automatically set the
  background of code to whatever theme I'm using's background"
   (when (eq exporter 'html)
-    (let* ((my-pre-bg (face-background 'default))
-           (my-pre-fg (face-foreground 'default)))
+    (let* ((my/pre-bg (face-background 'default))
+           (my/pre-fg (face-foreground 'default)))
       (setq
        org-html-head-extra
        (concat
@@ -64,12 +64,12 @@
         (format
          "<style type=\"text/css\">\n pre.src {background-color: %s; color: %s;}
           pre.src:before {background-color: %s; color: %s; top: 10px;}</style>\n"
-         my-pre-bg my-pre-fg my-pre-bg my-pre-fg))))))
-(add-hook 'org-export-before-processing-hook #'my-org-inline-css-hook)
+         my/pre-bg my/pre-fg my/pre-bg my/pre-fg))))))
+(add-hook 'org-export-before-processing-hook #'my/org-inline-css-hook)
 
 ;; Shortcuts for org mode
 (require 'bind-map)
-(bind-map my-org-mode-map
+(bind-map my/org-mode-map
   :keys ("s-,")
   :evil-keys (",")
   :evil-states (normal visual)

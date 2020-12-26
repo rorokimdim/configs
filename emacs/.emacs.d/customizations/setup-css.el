@@ -4,7 +4,7 @@
                            (setq css-indent-offset 2)))
 
 (require 'bind-map)
-(bind-map my-css-mode-map
+(bind-map my/css-mode-map
   :keys ("s-,")
   :evil-keys (",")
   :evil-states (normal visual)

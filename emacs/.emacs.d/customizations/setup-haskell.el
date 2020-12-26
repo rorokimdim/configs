@@ -22,7 +22,7 @@
   (define-key haskell-interactive-mode-map (kbd "C-l") 'haskell-interactive-mode-clear))
 
 (require 'bind-map)
-(bind-map my-haskell-mode-map
+(bind-map my/haskell-mode-map
   :keys ("s-,")
   :evil-keys (",")
   :evil-states (normal visual)
