@@ -2,7 +2,7 @@
 
 if [ $# -eq 0 ]
   then
-    emacsclient -t -e '(if (boundp (quote my/last-buffer-name)) (switch-to-buffer my/last-buffer-name))' --alternate-editor ""
+    emacsclient -t -e '(my/switch-to-last-buffer)' --alternate-editor ""
   else
     ARG=$1
     if [ -d "${ARG}" ] ; then

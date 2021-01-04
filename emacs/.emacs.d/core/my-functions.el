@@ -224,8 +224,14 @@
 
 (defun my/save-last-buffer-name-and-quit-all ()
   (interactive)
-  (setq my/last-buffer-name (current-buffer))
+  (setq my/last-buffer-name (buffer-name))
   (evil-quit-all))
+
+(defun my/switch-to-last-buffer ()
+  (interactive)
+  (if (and (boundp 'my/last-buffer-name)
+           (get-buffer my/last-buffer-name))
+      (switch-to-buffer my/last-buffer-name)))
 
 (defun my/centaur-tabs-jump-to (n)
   (centaur-tabs-select-beg-tab)
