@@ -65,7 +65,7 @@
   :bindings ("\\" 'counsel-switch-buffer
              "|" 'ffip-split-window-horizontally
              "-" 'ffip-split-window-vertically
-             "*" 'my/kill-all-buffers
+             "*" 'my/kill-all-other-buffers
              "<" 'centaur-tabs-backward-group
              ">" 'centaur-tabs-forward-group
              "c" 'my/tmux-open-emacs-config
