@@ -114,15 +114,16 @@
 (defun my/kill-all-buffers ()
   "Kills all buffers except *scratch*."
   (interactive)
-  (mapc 'kill-buffer (delq (get-buffer "*scratch*") (buffer-list))))
+  (mapc 'kill-buffer (->> (buffer-list)
+                          (delq (get-buffer "*scratch*")))))
 
 (defun my/kill-all-other-buffers ()
   "Kills all buffers except current buffer and *scratch*."
   (interactive)
   (mapc 'kill-buffer
-        (delq (current-buffer)
-              (delq (get-buffer "*scratch*")
-                    (buffer-list)))))
+        (->> (buffer-list)
+             (delq (current-buffer))
+             (delq (get-buffer "*scratch*")))))
 
 (defun my/browse-project-directory ()
   "Opens deer on project root directory."
