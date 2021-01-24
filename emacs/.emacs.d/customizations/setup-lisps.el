@@ -13,9 +13,7 @@
              cider-repl-mode-hook))
   (add-hook h #'show-paren-mode)
   (add-hook h #'smartparens-mode)
-  (add-hook h 'show-smartparens-mode)
   (add-hook h 'highlight-parentheses-mode)
-  (add-hook h 'rainbow-delimiters-mode)
   (add-hook h 'turn-on-eldoc-mode)
   (add-hook h 'prettify-symbols-mode)
   (add-hook h 'my/add-pretty-symbols)
@@ -65,6 +63,15 @@
 
 ;; Remove useless comment from scratch buffer
 (setq initial-scratch-message "")
+
+;; Highlight full expression
+(setq show-paren-style 'expression)
+(custom-set-variables
+ '(highlight-parentheses-colors '("firebrick1" "DarkOliveGreen4" "salmon4" "SkyBlue3")))
+(custom-set-faces
+ '(sp-show-pair-from-inside nil)
+ '(highlight-parentheses-highlight ((t (:weight bold))) t)
+ '(show-paren-match ((t (:background "light grey" :foreground "black")))))
 
 ;; aggressive-indent-mode hooks
 (dolist (h '(emacs-lisp-mode-hook

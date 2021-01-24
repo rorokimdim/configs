@@ -68,8 +68,6 @@
     ;; general lispy packages
     highlight-parentheses
     paxedit
-    rainbow-blocks
-    rainbow-delimiters
     smartparens
 
     ;; clojure

@@ -95,28 +95,12 @@
  '(cursor ((t (:background "gray82"))))
  '(helm-source-header ((t (:weight bold :height 1.3 :family "Sans Serif"))))
  '(highlight-indentation-face ((t (:inherit nil))))
- '(hl-line ((t (:background "Black"))))
- '(hl-sexp-face ((t (:background "dark blue"))))
- '(hl-paren-face ((t (:weight ultra-bold))) t)
- '(sp-show-pair-enclosing ((t (:underline t))))
- '(sp-show-pair-match-face ((t (:underline t))))
- '(sp-show-pair-mismatch-face ((t (:strike-through t))))
- '(rainbow-delimiters-depth-1-face ((t (:foreground "#78c5d6"))))
- '(rainbow-delimiters-depth-2-face ((t (:foreground "#bf62a6"))))
- '(rainbow-delimiters-depth-3-face ((t (:foreground "#459ba8"))))
- '(rainbow-delimiters-depth-4-face ((t (:foreground "#e868a2"))))
- '(rainbow-delimiters-depth-5-face ((t (:foreground "#79c267"))))
- '(rainbow-delimiters-depth-6-face ((t (:foreground "#f28c33"))))
- '(rainbow-delimiters-depth-7-face ((t (:foreground "#c5d647"))))
- '(rainbow-delimiters-depth-8-face ((t (:foreground "#f5d63d"))))
- '(rainbow-delimiters-depth-9-face ((t (:foreground "#78c5d6")))))
+ '(hl-line ((t (:background "Black")))))
 
 ;; Set custom variables
 (custom-set-variables
  '(evil-search-module (quote evil-search))
  '(size-indication-mode t)
- '(hl-paren-colors (quote ("firebrick1")))
- '(sp-show-pair-from-inside nil)
  '(neo-window-width 50))
 
 ;; Enable mouse support on terminal

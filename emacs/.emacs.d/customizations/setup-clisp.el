@@ -20,9 +20,9 @@
                       (interactive)
                       (forward-char)
                       (slime-eval-last-expression))
+               "hh" 'slime-documentation
+               "hb" 'slime-documentation-lookup
                "ef" 'slime-eval-defun
                "eb" 'slime-eval-buffer
                "er" 'slime-eval-region
                "r"  'slime-repl)))
-
-
