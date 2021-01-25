@@ -30,11 +30,14 @@
     (evil-local-set-key 'normal (kbd "D") 'sp-kill-sexp)
     (evil-local-set-key 'normal (kbd "(") 'sp-beginning-of-sexp)
     (evil-local-set-key 'normal (kbd ")") 'sp-end-of-sexp)
+    (evil-local-set-key 'normal (kbd "[") 'sp-backward-sexp)
+    (evil-local-set-key 'normal (kbd "]") 'sp-forward-sexp)
     (evil-local-set-key 'normal (kbd "<") 'sp-backward-slurp-sexp)
     (evil-local-set-key 'normal (kbd ">") 'sp-forward-slurp-sexp)
     (evil-local-set-key 'normal (kbd "M-r") 'sp-raise-sexp)
     (evil-local-set-key 'normal (kbd "M-<") 'sp-backward-barf-sexp)
-    (evil-local-set-key 'normal (kbd "M->") 'sp-forward-barf-sexp)))
+    (evil-local-set-key 'normal (kbd "M->") 'sp-forward-barf-sexp)
+    (evil-local-set-key 'normal (kbd "C-c C-f") 'aggressive-indent-indent-defun)))
 
 (require 'bind-map)
 (bind-map my/lisp-mode-map
@@ -64,10 +67,16 @@
 ;; Remove useless comment from scratch buffer
 (setq initial-scratch-message "")
 
-;; Highlight full expression
-(setq show-paren-style 'expression)
+;; Highlight matching parenthesis
+(setq show-paren-style 'parenthesis)
+
+;;
+;; Parenthetical coloring
+;;
 (custom-set-variables
- '(highlight-parentheses-colors '("firebrick1" "DarkOliveGreen4" "salmon4" "SkyBlue3")))
+ '(highlight-parentheses-colors
+   '("firebrick1" "DarkOliveGreen4" "salmon4" "SkyBlue3" "khaki" "purple" "turquoise4" "green" "plum3")))
+
 (custom-set-faces
  '(sp-show-pair-from-inside nil)
  '(highlight-parentheses-highlight ((t (:weight bold))) t)

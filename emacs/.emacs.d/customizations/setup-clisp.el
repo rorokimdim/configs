@@ -1,3 +1,10 @@
+(defun my/slime-repl ()
+  "Starts slime if not started and switch to slime repl."
+  (interactive)
+  (unless (get-process "SLIME Lisp")
+    (slime))
+  (slime-repl))
+
 (when (file-exists-p "~/.roswell/helper.el")
   (load (expand-file-name "~/.roswell/helper.el"))
 
@@ -25,4 +32,4 @@
                "ef" 'slime-eval-defun
                "eb" 'slime-eval-buffer
                "er" 'slime-eval-region
-               "r"  'slime-repl)))
+               "r" 'my/slime-repl)))
