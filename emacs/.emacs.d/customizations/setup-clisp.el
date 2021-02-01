@@ -16,6 +16,9 @@
   (define-key slime-repl-mode-map (kbd "<down>") 'slime-repl-next-input)
   (define-key slime-repl-mode-map (kbd "C-l") 'slime-repl-clear-buffer)
 
+  (add-hook 'lisp-mode-hook 'highlight-defined-mode)
+  (add-hook 'lisp-mode-hook 'lisp-extra-font-lock-mode)
+
   ;; Shortcuts for common lisp mode
   (require 'bind-map)
   (bind-map my/clisp-mode-map

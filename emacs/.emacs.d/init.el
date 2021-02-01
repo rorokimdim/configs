@@ -66,7 +66,9 @@
     ts
 
     ;; general lispy packages
+    highlight-defined
     highlight-parentheses
+    lisp-extra-font-lock
     paxedit
     smartparens
 
