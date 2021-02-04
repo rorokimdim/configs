@@ -47,6 +47,9 @@
 ;; Use fd instead of 'find' for find-file-in-project
 (setq ffip-use-rust-fd t)
 
+;; Save last place in file and go to them when file is opened
+(save-place-mode 1)
+
 ;; ivy
 (use-package counsel
   :after ivy
