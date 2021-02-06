@@ -26,13 +26,11 @@
     :evil-keys (",")
     :evil-states (normal visual)
     :major-modes (lisp-mode)
-    :bindings ("ee" (lambda ()
-                      (interactive)
-                      (forward-char)
-                      (slime-eval-last-expression))
-               "hh" 'slime-documentation
-               "hb" 'slime-documentation-lookup
+    :bindings ("ee" 'slime-eval-last-expression
                "ef" 'slime-eval-defun
                "eb" 'slime-eval-buffer
                "er" 'slime-eval-region
+               "gd" 'slime-edit-definition
+               "hh" 'slime-documentation
+               "hb" 'slime-documentation-lookup
                "r" 'my/slime-repl)))
