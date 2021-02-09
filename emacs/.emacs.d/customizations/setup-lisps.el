@@ -57,7 +57,9 @@
              "{" 'sp-wrap-curly
              "}" 'sp-wrap-curly
              "d" 'sp-kill-sexp
-             "y" 'sp-copy-sexp))
+             "y" 'sp-copy-sexp
+             "n" 'sp-next-sexp
+             "p" 'sp-previous-sexp))
 
 ;; Prevent smarparens from autoclosing single quotes
 (sp-with-modes sp-lisp-modes
@@ -80,7 +82,7 @@
 (custom-set-faces
  '(sp-show-pair-from-inside nil)
  '(highlight-parentheses-highlight ((t (:weight bold))) t)
- '(show-paren-match ((t (:background "light grey" :foreground "black")))))
+ '(show-paren-match ((t (:background "cyan" :foreground "black")))))
 
 ;; aggressive-indent-mode hooks
 (dolist (h '(emacs-lisp-mode-hook
