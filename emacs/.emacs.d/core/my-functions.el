@@ -111,19 +111,23 @@
   (interactive)
   (my/format-date "[%Y-%m-%d %H:%M:%S [%A, %B]]"))
 
-(defun my/kill-all-buffers ()
-  "Kills all buffers except *scratch*."
+(defun my/non-ear-muff-buffers ()
+  "Gets buffers without ear muffs."
+  (remove-if (lambda (b)
+               (message (buffer-name b))
+               (string-prefix-p "*" (s-trim (buffer-name b)))) (buffer-list)))
+
+(defun my/kill-non-ear-muff-buffers ()
+  "Kills all buffers without ear muffs."
   (interactive)
-  (mapc 'kill-buffer (->> (buffer-list)
-                          (delq (get-buffer "*scratch*")))))
+  (mapc 'kill-buffer (my/non-ear-muff-buffers)))
 
 (defun my/kill-all-other-buffers ()
-  "Kills all buffers except current buffer and *scratch*."
+  "Kills all buffers except current buffer and those with ear muffs."
   (interactive)
   (mapc 'kill-buffer
-        (->> (buffer-list)
-             (delq (current-buffer))
-             (delq (get-buffer "*scratch*")))))
+        (->> (my/non-ear-muff-buffers)
+             (delq (current-buffer)))))
 
 (defun my/browse-project-directory ()
   "Opens deer on project root directory."
