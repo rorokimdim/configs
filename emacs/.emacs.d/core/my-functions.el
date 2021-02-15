@@ -27,14 +27,15 @@
   (forward-char)
   (eval-print-last-sexp))
 
-(defun my/kill-this-buffer-if-unique-else-delete-window ()
+(defun my/kill-this-buffer-if-unique ()
   "Kills current buffer if buffer is different from buffers in other visible windows,
-   else just deletes the active window."
+   else just switches to previous buffer."
   (interactive)
   (let* ((bs (mapcar #'window-buffer (window-list)))
          (matches (remove-if-not (lambda (b) (equal b (current-buffer))) bs)))
-    (if (= (length matches) 1) (kill-current-buffer))
-    (if (> (count-windows) 1) (delete-window))))
+    (if (= (length matches) 1)
+        (kill-current-buffer)
+      (previous-buffer))))
 
 (defvar my/uninteresting-buffer-prefixes
   '("*Messages*"

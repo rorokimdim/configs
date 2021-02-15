@@ -77,7 +77,7 @@
 (define-key evil-insert-state-map "\C-h" 'evil-backward-char)
 
 ;; Bind confusing macro-record q key to something useful
-(define-key evil-normal-state-map "q" 'my/kill-this-buffer-if-unique-else-delete-window)
+(define-key evil-normal-state-map "q" 'my/kill-this-buffer-if-unique)
 (define-key evil-normal-state-map "Q" 'my/save-last-buffer-name-and-quit-all)
 
 ;; Remove any search state on ESC key
