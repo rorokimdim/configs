@@ -79,6 +79,12 @@
 ;; No bell
 (setq ring-bell-function 'ignore)
 
+;; Override quit-window to kill buffer and window
+(defun quit-window (&optional a b)
+  "Kills buffer + window on quit-window."
+  (interactive)
+  (kill-buffer-and-window))
+
 ;; Set custom faces
 (custom-set-faces
  '(tab-line ((t (:inherit variable-pitch :background "#181818" :foreground "black" :height 0.9))))
