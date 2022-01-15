@@ -47,9 +47,6 @@
 ;; Use F10 to clear repl buffer
 (global-set-key [f10] 'comint-clear-buffer)
 
-;; Do not ask for keyword when using ffip-split-window-*
-(setq ffip-split-window-without-asking-for-keyword t)
-
 ;;
 ;; bind-maps
 ;; See https://github.com/justbur/emacs-bind-map
@@ -63,8 +60,8 @@
   :evil-keys ("\\")
   :evil-states (normal visual)
   :bindings ("\\" 'counsel-switch-buffer
-             "|" 'ffip-split-window-horizontally
-             "-" 'ffip-split-window-vertically
+             "|" 'my/split-window-horizontally
+             "-" 'my/split-window-vertically
              "*" 'my/kill-all-other-buffers
              "<" 'centaur-tabs-backward-group
              ">" 'centaur-tabs-forward-group
@@ -169,9 +166,6 @@
 
              "m" 'ace-mc-add-multiple-cursors
              "/" 'helm-swoop
-
-             "s|" 'ffip-split-window-horizontally
-             "s-" 'ffip-split-window-vertically
 
              "-" 'my/split-window-vertically
              "|" 'my/split-window-horizontally))
