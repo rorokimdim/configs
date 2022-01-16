@@ -37,7 +37,8 @@
     (evil-local-set-key 'normal (kbd "M-r") 'sp-raise-sexp)
     (evil-local-set-key 'normal (kbd "M-<") 'sp-backward-barf-sexp)
     (evil-local-set-key 'normal (kbd "M->") 'sp-forward-barf-sexp)
-    (evil-local-set-key 'normal (kbd "C-c C-f") 'aggressive-indent-indent-defun)))
+    (evil-local-set-key 'normal (kbd "C-c C-f") 'aggressive-indent-indent-defun)
+    (evil-local-set-key 'insert (kbd "C-c C-f") 'aggressive-indent-indent-defun)))
 
 (require 'bind-map)
 (bind-map my/lisp-mode-map
