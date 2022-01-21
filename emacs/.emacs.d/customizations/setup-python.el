@@ -29,7 +29,6 @@
               (smartparens-mode)
               (show-smartparens-mode)
               (highlight-parentheses-mode)
-              (rainbow-delimiters-mode)
               (setq python-indent-offset 4))))
 
 ;; For some reason doing this inside use-package block above doesn't always work.

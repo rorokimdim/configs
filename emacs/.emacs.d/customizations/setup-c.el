@@ -21,7 +21,6 @@
   (add-hook hook #'smartparens-mode)
   (add-hook hook 'show-smartparens-mode)
   (add-hook hook 'highlight-parentheses-mode)
-  (add-hook hook 'rainbow-delimiters-mode)
   (add-hook hook
             (lambda ()
               (set (make-local-variable 'compile-command)
