@@ -164,7 +164,7 @@
              "er" 'eval-region
              "ex" 'my/eval-and-replace
 
-             "m" 'ace-mc-add-multiple-cursors
+             "m" 'evil-multiedit-match-all
              "/" 'helm-swoop
 
              "-" 'my/split-window-vertically

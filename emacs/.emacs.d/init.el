@@ -115,7 +115,6 @@
 
     ;; rest
     ace-link
-    ace-mc
     ace-window
     aes
     ag
@@ -152,7 +151,6 @@
     lsp-ui
     magit
     move-text
-    multiple-cursors
     neotree
     popwin
     projectile
@@ -176,6 +174,7 @@
     evil-anzu
     evil-escape
     evil-leader
+    evil-multiedit
     evil-numbers
     evil-surround
     evil-visualstar)
@@ -229,9 +228,10 @@
 ;; Hack to enable TAB for org-cycle in evil mode
 (setq evil-want-C-i-jump nil)
 
-(defvar core-dir "~/.emacs.d/core")
-(defvar customizations-dir "~/.emacs.d/customizations")
-(defvar third-party-dir "~/.emacs.d/third-party")
+(defvar emacs-dir (or (getenv "EMACSDIR") "~/.emacs.d"))
+(defvar core-dir (concat emacs-dir "/core"))
+(defvar customizations-dir (concat emacs-dir "/customizations"))
+(defvar third-party-dir (concat emacs-dir "/third-party"))
 (byte-recompile-directory core-dir 0)
 (byte-recompile-directory customizations-dir 0)
 (byte-recompile-directory third-party-dir 0)
