@@ -164,7 +164,12 @@
              "er" 'eval-region
              "ex" 'my/eval-and-replace
 
-             "m" 'evil-multiedit-match-all
+             "ma" 'evil-multiedit-match-all
+             "mn" 'evil-multiedit-match-and-next
+             "mp" 'evil-multiedit-match-and-prev
+             "msn" 'evil-multiedit-match-symbol-and-next
+             "msp" 'evil-multiedit-match-symbol-and-prev
+
              "/" 'helm-swoop
 
              "-" 'my/split-window-vertically
