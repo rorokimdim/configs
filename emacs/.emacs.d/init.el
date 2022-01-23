@@ -152,6 +152,7 @@
     magit
     move-text
     neotree
+    pcre2el
     popwin
     projectile
     ranger
