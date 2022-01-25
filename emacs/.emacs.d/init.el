@@ -41,6 +41,7 @@
 
 ;; Config changes made through the customize UI will be stored here
 (setq custom-file (expand-file-name "custom.el" "~/.emacs.d"))
+(when (file-exists-p custom-file) (load custom-file))
 
 ;; Things to do after emacs finishing loading
 (add-hook 'emacs-startup-hook
@@ -83,7 +84,6 @@
     ccls
 
     ;; python
-    elpy
     virtualenvwrapper
 
     ;; scheme

@@ -6,14 +6,8 @@
 
 (use-package lsp-python-ms
   :ensure t
-  :init (setq lsp-python-ms-auto-install-server t)
-  :hook (python-mode . (lambda ()
-                         (require 'lsp-python-ms)
-                         (lsp))))
-
-(use-package elpy
-  :ensure t
   :after python
+  :init (setq lsp-python-ms-auto-install-server t)
   :config
   (setq-default py-shell-name "ipython")
   (setq-default py-which-bufname "IPython")
@@ -23,17 +17,15 @@
             (lambda ()
               (local-set-key (kbd "<up>") 'comint-previous-input)
               (local-set-key (kbd "<down>") 'comint-next-input)
-              (local-set-key "\C-l" 'comint-clear-buffer)))
+              (local-set-key (kbd "C-l") 'comint-clear-buffer)))
   (add-hook 'python-mode-hook
             (lambda ()
               (smartparens-mode)
               (show-smartparens-mode)
               (highlight-parentheses-mode)
-              (setq python-indent-offset 4))))
-
-;; For some reason doing this inside use-package block above doesn't always work.
-;; Do it here instead.
-(elpy-enable)
+              (setq python-indent-offset 4)
+              (require 'lsp-python-ms)
+              (lsp))))
 
 (require 'bind-map)
 (bind-map my/python-mode-map
@@ -43,17 +35,17 @@
   :major-modes (python-mode)
   :bindings ("gd" 'lsp-find-definition
              "gr" 'lsp-find-references
+             "hh" 'lsp-ui-doc-show
              "r" (lambda ()
                    (interactive)
                    (call-interactively 'run-python)
                    (call-interactively 'python-shell-switch-to-shell))
              "eb" (lambda ()
                     (interactive)
-                    (call-interactively 'elpy-shell-send-region-or-buffer)
+                    (call-interactively 'python-shell-send-buffer)
                     (clear-python-buffer))
              "er" (lambda ()
                     (interactive)
-                    (call-interactively 'elpy-shell-send-region-or-buffer)
+                    (call-interactively 'python-shell-send-region)
                     (clear-python-buffer))
-             "ec" 'clear-python-buffer
              "ef" 'python-shell-send-defun))

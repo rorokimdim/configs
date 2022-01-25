@@ -59,6 +59,7 @@
                        cider-stacktrace-mode
                        haskell-interactive-mode
                        inferior-emacs-lisp-mode
+                       inferior-python-mode
                        geiser-debug-mode
                        slime-repl-mode)
          do (evil-set-initial-state mode 'emacs))
