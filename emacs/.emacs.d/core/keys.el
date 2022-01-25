@@ -14,7 +14,7 @@
 (global-set-key (kbd "<f9>") 'centaur-tabs-forward-group)
 
 ;; git-grep
-(global-set-key (kbd "C-c g") 'helm-git-grep)
+(global-set-key (kbd "C-c g") 'helm-git-grep-at-point)
 
 ;; avy
 (global-set-key (kbd "C-c ,") 'avy-goto-char)
@@ -68,14 +68,17 @@
              "*" 'my/kill-all-other-buffers
              "<" 'centaur-tabs-backward-group
              ">" 'centaur-tabs-forward-group
+             "b" 'my/neotree-projectile-toggle
              "c" 'my/tmux-open-emacs-config
+             "e" 'my/tmux-new-editor
              "f" 'find-file-in-project
+             "gb" 'magit-blame
+             "gg" 'helm-git-grep-at-point
+             "gs" 'magit-status
              "m" 'helm-imenu
              "q" 'evil-quit-all
-             "e" 'my/tmux-new-editor
              "r" 'helm-recentf
              "s" 'my/search-with-ag
-             "b" 'my/neotree-projectile-toggle
              "pf" 'counsel-projectile-find-file
              "pp" 'centaur-tabs-switch-group
              "po" 'counsel-projectile-switch-project
@@ -154,8 +157,6 @@
              "wk" 'evil-window-up
              "wj" 'evil-window-down
              "o" 'ace-window
-
-             "gb" 'magit-blame
 
              "gs" 'find-function
              "gd" 'evil-goto-definition
