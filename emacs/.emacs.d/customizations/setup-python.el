@@ -1,4 +1,5 @@
 (defun clear-python-buffer ()
+  (interactive)
   (let ((old-buffer (buffer-name)))
     (switch-to-buffer "*Python*")
     (comint-clear-buffer)
@@ -9,9 +10,6 @@
   :after python
   :init (setq lsp-python-ms-auto-install-server t)
   :config
-  (setq-default py-shell-name "ipython")
-  (setq-default py-which-bufname "IPython")
-  (setq py-force-py-shell-name-p t)
   (modify-syntax-entry ?_ "w" python-mode-syntax-table)
   (add-hook 'inferior-python-mode-hook
             (lambda ()
@@ -42,10 +40,12 @@
                    (call-interactively 'python-shell-switch-to-shell))
              "eb" (lambda ()
                     (interactive)
-                    (call-interactively 'python-shell-send-buffer)
-                    (clear-python-buffer))
+                    (clear-python-buffer)
+                    (call-interactively 'python-shell-send-buffer))
              "er" (lambda ()
                     (interactive)
-                    (call-interactively 'python-shell-send-region)
-                    (clear-python-buffer))
+                    (clear-python-buffer)
+                    (call-interactively 'python-shell-send-region))
+             "ec" 'clear-python-buffer
+             "ee" 'python-shell-send-statement
              "ef" 'python-shell-send-defun))
