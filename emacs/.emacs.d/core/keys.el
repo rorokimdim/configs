@@ -13,6 +13,9 @@
 (global-set-key (kbd "<f8>") 'centaur-tabs-switch-group)
 (global-set-key (kbd "<f9>") 'centaur-tabs-forward-group)
 
+;; git-grep
+(global-set-key (kbd "C-c g") 'helm-git-grep)
+
 ;; avy
 (global-set-key (kbd "C-c ,") 'avy-goto-char)
 (global-set-key (kbd "C-c f") 'avy-goto-char-in-line)

@@ -142,6 +142,7 @@
     helm
     helm-descbinds
     helm-describe-modes
+    helm-git-grep
     helm-swoop
     helm-tramp
     htmlize
