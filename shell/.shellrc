@@ -27,3 +27,7 @@ if [ -z "$TMUX" ]
 then
     tmux attach -t local || tmux new -s local
 fi
+
+cheat() {
+    curl -Ls cheat.sh/"$1" | less -R
+}
