@@ -61,7 +61,9 @@
                        inferior-emacs-lisp-mode
                        inferior-python-mode
                        geiser-debug-mode
-                       slime-repl-mode)
+                       slime-repl-mode
+                       xref--xref-buffer-mode
+                       xref--transient-buffer-mode)
          do (evil-set-initial-state mode 'emacs))
 
 ;; Use Ctrl-e to go to end of line, like in emacs
