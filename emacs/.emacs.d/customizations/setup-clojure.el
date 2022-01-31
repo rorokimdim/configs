@@ -40,3 +40,4 @@
   (define-key cider-repl-mode-map (kbd "<down>") 'cider-repl-next-input))
 
 (setq cider-repl-display-help-banner nil)
+(setq clojure-toplevel-inside-comment-form t)
