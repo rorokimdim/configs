@@ -160,7 +160,6 @@
     restart-emacs
     rotate
     smex
-    sqlup-mode
     swiper
     synonymous
     tagedit
