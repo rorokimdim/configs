@@ -15,5 +15,35 @@
     {
         "key": "shift+cmd+b",
         "command": "-workbench.action.tasks.build"
+    },
+    {
+        "key": "shift+cmd+enter",
+        "command": "calva.evaluateCurrentTopLevelForm",
+        "when": "calva:connected && calva:keybindingsEnabled && editorTextFocus && editorLangId == 'clojure'"
+    },
+    {
+        "key": "alt+enter",
+        "command": "-calva.evaluateCurrentTopLevelForm",
+        "when": "calva:connected && calva:keybindingsEnabled && editorTextFocus && editorLangId == 'clojure'"
+    },
+    {
+        "key": "cmd+enter",
+        "command": "calva.evaluateSelection",
+        "when": "calva:connected && calva:keybindingsEnabled && editorTextFocus && !suggestWidgetVisible && editorLangId == 'clojure'"
+    },
+    {
+        "key": "ctrl+enter",
+        "command": "-calva.evaluateSelection",
+        "when": "calva:connected && calva:keybindingsEnabled && editorTextFocus && !suggestWidgetVisible && editorLangId == 'clojure'"
+    },
+    {
+        "key": "alt+r",
+        "command": "paredit.raiseSexp",
+        "when": "calva:keybindingsEnabled && editorTextFocus && editorLangId == 'clojure' && paredit:keyMap =~ /original|strict/"
+    },
+    {
+        "key": "ctrl+alt+p ctrl+alt+r",
+        "command": "-paredit.raiseSexp",
+        "when": "calva:keybindingsEnabled && editorTextFocus && editorLangId == 'clojure' && paredit:keyMap =~ /original|strict/"
     }
 ]
