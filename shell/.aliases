@@ -2,6 +2,7 @@ alias ls="ls -GFh"
 alias rm='rm -i'
 alias mv='mv -i'
 alias cp='cp -i'
+alias cdw='cd ~/workspace'
 
 alias v="/usr/local/bin/nvim"
 alias vim="/usr/local/bin/nvim"
