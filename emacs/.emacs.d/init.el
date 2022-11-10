@@ -78,6 +78,7 @@
     clojure-mode-extra-font-locking
     clojure-snippets
     cider
+    clj-refactor
     datomic-snippets
 
     ;; c++
@@ -97,18 +98,7 @@
 
     ;; haskell
     company-ghci
-    flymake-haskell-multi
     haskell-mode
-
-    ;; rust
-    rust-mode
-
-    ;; javascript
-    js2-mode
-    skewer-mode
-
-    ;; go
-    go-mode
 
     ;; themes
     jbeans-theme
@@ -138,7 +128,6 @@
     exec-path-from-shell
     expand-region
     find-file-in-project
-    flycheck
     helm
     helm-descbinds
     helm-describe-modes
@@ -149,7 +138,6 @@
     ivy
     jq-mode
     json-mode
-    lsp-ui
     magit
     move-text
     neotree

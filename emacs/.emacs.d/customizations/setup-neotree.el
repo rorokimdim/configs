@@ -1,3 +1,4 @@
+(require 'evil)
 (require 'neotree)
 
 (evil-define-key 'normal neotree-mode-map (kbd "TAB") 'neotree-enter)

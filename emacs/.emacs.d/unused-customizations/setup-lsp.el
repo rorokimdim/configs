@@ -10,8 +10,8 @@
   (setq lsp-ui-doc-enable nil)
 
   ;; flycheck doesn't seem to work (max depth exceeded error)
-  (setq lsp-diagnostic-package :none)
-  (setq lsp-flycheck-live-reporting nil)
+  ;;(setq lsp-diagnostic-package :none)
+  ;;(setq lsp-flycheck-live-reporting nil)
 
   ;; symbol highlighting has too much visual distraction
   (setq lsp-enable-symbol-highlighting nil)

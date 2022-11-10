@@ -1,33 +1,24 @@
-(setq-default c-basic-offset 4)
+(setq-default c-basic-offset 2)
 
 ;; Treat underscores as part of a symbol for easy searching with */#
 (add-hook 'c-mode-common-hook 'superword-mode)
 (add-hook 'c++-mode-common-hook 'superword-mode)
 
-(use-package ccls
-  :ensure t
-  :config
-  (setq ccls-executable "ccls")
-  :hook ((c-mode c++-mode objc-mode) .
-         (lambda () (require 'ccls) (lsp))))
+(add-to-list 'dash-at-point-mode-alist '(c++-mode . "c,c++,gl,glfw"))
+(add-to-list 'dash-at-point-mode-alist '(c-mode . "c,gl,glfw"))
 
 ;; Fix indentation of switch statements
 (c-set-offset 'case-label '+)
 
 (require 'compile)
 
-;; Assume I am using cmake
 (dolist (hook '(c-mode-hook c++-mode-hook))
   (add-hook hook #'smartparens-mode)
   (add-hook hook 'show-smartparens-mode)
   (add-hook hook 'highlight-parentheses-mode)
   (add-hook hook
             (lambda ()
-              (set (make-local-variable 'compile-command)
-                   (format
-                    "make -C \"%sbuild\""
-                    (file-name-directory
-                     (my/get-closest-pathname "CMakeLists.txt" 3)))))))
+              (set (make-local-variable 'compile-command) "make"))))
 
 (setq compilation-scroll-output 'first-error)
 
@@ -44,10 +35,9 @@
                     (select-window (get-buffer-window "*compilation*")))
              "r" (lambda ()
                    (interactive)
-                   (let ((root-dir (file-name-directory (my/get-closest-pathname "CMakeLists.txt" 3))))
+                   (let ((root-dir (file-name-directory (my/get-closest-pathname "Makefile" 3))))
                      (shell-command
-                      (format "make -C %s/build && %s/build/main" root-dir root-dir))))
-             "h" 'lsp-describe-thing-at-point
+                      (format "make -C %s && %s/main" root-dir root-dir))))
              "m" (lambda ()
                    (interactive)
                    (let ((thing (thing-at-point 'symbol)))

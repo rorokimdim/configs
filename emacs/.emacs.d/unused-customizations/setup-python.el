@@ -5,10 +5,9 @@
     (comint-clear-buffer)
     (switch-to-buffer old-buffer)))
 
-(use-package lsp-python-ms
+(use-package lsp-pyright
   :ensure t
   :after python
-  :init (setq lsp-python-ms-auto-install-server t)
   :config
   (modify-syntax-entry ?_ "w" python-mode-syntax-table)
   (add-hook 'inferior-python-mode-hook
@@ -22,7 +21,7 @@
               (show-smartparens-mode)
               (highlight-parentheses-mode)
               (setq python-indent-offset 4)
-              (require 'lsp-python-ms)
+              (require 'lsp-pyright)
               (lsp))))
 
 (require 'bind-map)

@@ -10,10 +10,19 @@
 (require 'clojure-mode-extra-font-locking)
 
 ;; Use clojure mode for other extensions
+(add-to-list 'auto-mode-alist '("\\.cljc$" . clojure-mode))
 (add-to-list 'auto-mode-alist '("\\.edn$" . clojure-mode))
 (add-to-list 'auto-mode-alist '("\\.closhrc$" . clojure-mode))
 (add-to-list 'auto-mode-alist '("closhrc$" . clojure-mode))
 (add-to-list 'auto-mode-alist '("\\.cljs.*$" . clojurescript-mode))
+
+;; clj-refactor
+(require 'clj-refactor)
+(defun my-clojure-mode-hook ()
+  (clj-refactor-mode 1)
+  (yas-minor-mode 1) ; for adding require/use/import statements
+  (cljr-add-keybindings-with-prefix "C-c C-m"))
+(add-hook 'clojure-mode-hook #'my-clojure-mode-hook)
 
 ;; Shortcuts for clojure mode
 (require 'bind-map)
@@ -32,7 +41,8 @@
              "ef" 'cider-eval-defun-at-point
              "hd" 'cider-clojuredocs
              "hh" 'cider-apropos-select
-             "hw" 'cider-clojuredocs-web))
+             "hw" 'cider-clojuredocs-web
+             "nr" 'cider-ns-refresh))
 
 (with-eval-after-load 'cider-repl
   (define-key cider-repl-mode-map (kbd "C-l") 'cider-repl-clear-buffer)

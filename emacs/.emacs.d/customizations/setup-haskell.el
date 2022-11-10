@@ -45,7 +45,4 @@
 (push 'company-ghci company-backends)
 (add-hook 'haskell-mode-hook 'company-mode)
 
-(require 'flymake-haskell-multi)
-(add-hook 'haskell-mode-hook 'flymake-haskell-multi-load)
-
 (add-hook 'haskell-interactive-mode-hook 'company-mode)
