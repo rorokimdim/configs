@@ -45,7 +45,6 @@ Plug 'rbgrouleff/bclose.vim'
 Plug 'rizzatti/dash.vim'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'tpope/vim-dispatch'
-Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-sexp-mappings-for-regular-people', { 'for': 'clojure' }
 Plug 'tpope/vim-surround'
