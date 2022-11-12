@@ -34,11 +34,7 @@
 ;;
 ;; Makes clipboard work in terminal sessions.
 ;;
-
-;; Sometimes I want clipboard even on non-display terminals, but
-;; that could be slow depending on how the clipboard is accessed. By
-;; default don't allow it, other than in certain modes (like restclient-mode).
-(defvar my/allow-non-display-clipboard-default nil)
+(defvar my/allow-non-display-clipboard-default t)
 
 (defun my/toggle-non-display-clipboard ()
   "Toggles if clipboard copying should be allowed in non-display environemnt by default."
