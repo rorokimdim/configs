@@ -15,6 +15,7 @@
 let mapleader = ","
 let maplocalleader = "\\"
 set nocompatible
+set clipboard=unnamed
 filetype off
 
 """Start of Plug stuff
