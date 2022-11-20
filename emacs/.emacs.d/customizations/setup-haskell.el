@@ -21,6 +21,11 @@
   (define-key haskell-interactive-mode-map (kbd "C-c C-q") 'haskell-interactive-kill)
   (define-key haskell-interactive-mode-map (kbd "C-l") 'haskell-interactive-mode-clear))
 
+(defun my/haskell-module-documentation ()
+  (interactive)
+  (emamux:run-command (concat "hdc :md" " " (read-string "Enter module name: ") " && " "exit"))
+  (emamux:select-pane (emamux:get-runner-pane-id)))
+
 (require 'bind-map)
 (bind-map my/haskell-mode-map
   :keys ("s-,")
@@ -31,8 +36,8 @@
              "if" 'haskell-mode-format-imports
              "ii" 'haskell-add-import
              "bf" 'haskell-mode-stylish-buffer
-             "gd" 'haskell-mode-jump-to-def
-             "hd" 'haskell-describe
+             "gd" 'lsp-find-definition
+             "hd" 'my/haskell-module-documentation
              "hh" 'haskell-hoogle))
 
 (custom-set-variables
@@ -46,3 +51,7 @@
 (add-hook 'haskell-mode-hook 'company-mode)
 
 (add-hook 'haskell-interactive-mode-hook 'company-mode)
+
+(require 'lsp)
+(require 'lsp-haskell)
+(add-hook 'haskell-mode-hook #'lsp)

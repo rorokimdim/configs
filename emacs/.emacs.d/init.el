@@ -73,6 +73,10 @@
     paxedit
     smartparens
 
+    ;; lsp
+    lsp-mode
+    lsp-haskell
+
     ;; clojure
     clojure-mode
     clojure-mode-extra-font-locking
