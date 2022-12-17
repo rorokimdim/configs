@@ -1,0 +1,32 @@
+Plug 'easymotion/vim-easymotion'
+
+let mapleader=","
+
+set easymotion
+map <Leader>, <Plug>(easymotion-s)
+
+set surround
+
+set NERDTree
+nmap <leader>\ :NERDTreeToggle<cr>
+
+nmap <leader>r <action>(RenameElement)
+
+"In insert/command mode use emacs keys
+inoremap <C-a> <ESC>I
+inoremap <C-e> <ESC>A
+inoremap <C-b> <Left>
+inoremap <C-h> <Left>
+inoremap <C-f> <Right>
+inoremap <C-l> <Right>
+
+cnoremap <C-a> <ESC>I
+cnoremap <C-e> <ESC>A
+cnoremap <C-b> <Left>
+cnoremap <C-h> <Left>
+cnoremap <C-l> <Right>
+
+"Custom commands
+command! Config execute ":e ~/.ideavimrc"
+command! Reload execute "source ~/.ideavimrc"
+
