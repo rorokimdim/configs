@@ -114,7 +114,7 @@
              "j" 'calendar
              "t" 'world-time-list))
 
-;; For "shells"
+;; For "shells" and windows
 (bind-map my/space-leader-map
   :keys ("s-SPC")
   :evil-keys ("SPC")
@@ -123,7 +123,12 @@
              "\"" 'my/tmux-open-shell-in-buffer-directory
              "c" 'my/tmux-cd-configs
              "d" 'my/tmux-cd-workspace
-             ))
+             "r" 'rotate-window
+             "l" 'rotate-layout
+             "s" 'ace-swap-window
+             "o" 'ace-window
+             "0" 'delete-window
+             "1" 'delete-other-windows))
 
 ;; For windows
 (bind-map my/f3-leader-map
