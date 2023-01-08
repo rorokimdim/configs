@@ -5,6 +5,9 @@
 ;; Enable ox-rst
 (require 'ox-rst)
 
+;; For <s Tab shortcut to insert source block
+(require 'org-tempo)
+
 ;; Enable org-babel languages
 (org-babel-do-load-languages
  'org-babel-load-languages
