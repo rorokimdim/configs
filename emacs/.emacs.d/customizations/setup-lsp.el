@@ -16,18 +16,14 @@
   ;; symbol highlighting has too much visual distraction
   (setq lsp-enable-symbol-highlighting nil)
 
-  ;; sidelines are annoying most of the time
+  ;; all these are annoying most of the time
+  (setq lsp-headerline-breadcrumb-enable nil)
+  (setq lsp-eldoc-enable-hover nil)
   (setq lsp-ui-sideline-enable nil)
   (setq lsp-ui-sideline-enable nil)
   (setq lsp-ui-sideline-show-diagnostics nil))
 
 (use-package lsp-ui :commands lsp-ui-mode :ensure t)
-
-(use-package company-lsp
-  :ensure t
-  :commands company-lsp
-  :config
-  (push 'company-lsp company-backends))
 
 (defun my/lsp-ui-doc-toggle ()
   "Toggles lsp-ui-doc."
