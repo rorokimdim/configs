@@ -50,4 +50,8 @@
   (define-key cider-repl-mode-map (kbd "<down>") 'cider-repl-next-input))
 
 (setq cider-repl-display-help-banner nil)
+(setq cider-repl-pop-to-buffer-on-connect nil)
+(setq cider-repl-display-in-current-window t)
+(setq cider-repl-buffer-size-limit 10000)
+(setq cider-print-buffer-size nil)
 (setq clojure-toplevel-inside-comment-form t)
