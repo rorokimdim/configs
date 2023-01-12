@@ -54,4 +54,13 @@
 (setq cider-repl-display-in-current-window t)
 (setq cider-repl-buffer-size-limit 10000)
 (setq cider-print-buffer-size nil)
+(setq cider-show-error-buffer nil)
 (setq clojure-toplevel-inside-comment-form t)
+
+(defun my/cider-on-disconnect ()
+  (message "[cider] repl disconnected; killing repl buffer *cider-repl.")
+  (cl-loop for buffer in (buffer-list)
+           do (if (string-prefix-p "*cider-repl" (buffer-name buffer))
+                  (kill-buffer buffer))))
+
+(add-hook 'cider-disconnected-hook #'my/cider-on-disconnect)
