@@ -23,7 +23,7 @@ fi
 #
 # tmux
 #
-if [ -z "$TMUX" ] && [ "$TERM_PROGRAM" = 'iTerm.app' ]
+if [ -z "$TMUX" ] && [ "$TERM_PROGRAM" = 'iTerm.app' ] && [[ ! $(tmux ls | grep attached) ]]
 then
     tmux attach -t local || tmux new -s local
 fi
