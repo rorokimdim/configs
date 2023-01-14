@@ -4,11 +4,14 @@
   (centaur-tabs-mode t)
   (centaur-tabs-group-by-projectile-project)
   (setq
+   centaur-tabs-set-icons nil
+   centaur-tabs-gray-out-icons nil
    centaur-tabs-modified-marker "*"
    centaur-tabs-set-modified-marker t
    centaur-tabs-cycle-scope 'tabs)
   :bind
   (:map evil-normal-state-map
+        ("g j" . centaur-tabs-ace-jump)
         ("g t" . centaur-tabs-forward)
         ("g T" . centaur-tabs-backward))
   :hook
