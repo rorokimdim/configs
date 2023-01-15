@@ -24,3 +24,13 @@
      (string-prefix-p "*" name)
      (and (string-prefix-p "magit" name)
           (not (file-name-extension name))))))
+
+(defun my/fix-centaur-tabs ()
+  (centaur-tabs-mode -1)
+  (centaur-tabs-mode))
+
+(add-hook 'after-make-frame-functions
+          (lambda (frame)
+            (with-selected-frame frame
+              (my/fix-centaur-tabs)))
+          (my/fix-centaur-tabs))
