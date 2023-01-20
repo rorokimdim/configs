@@ -21,25 +21,16 @@ filetype off
 """Start of Plug stuff
 call plug#begin('~/.vim/plugged')
 Plug 'ctrlpvim/ctrlp.vim'
-Plug 'dense-analysis/ale', { 'for': 'clojure' }
 Plug 'easymotion/vim-easymotion'
-Plug 'ervandew/supertab'
 Plug 'flazz/vim-colorschemes'
 Plug 'francoiscabrol/ranger.vim'
-Plug 'guns/vim-sexp', { 'for': 'clojure' }
 Plug 'haya14busa/incsearch-easymotion.vim'
 Plug 'haya14busa/incsearch.vim'
 Plug 'itchyny/vim-haskell-indent'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'kien/rainbow_parentheses.vim'
-Plug 'liquidz/vim-iced', {'for': 'clojure'}
-Plug 'liquidz/vim-iced-coc-source', {'for': 'clojure'}
-Plug 'liquidz/vim-iced-function-list', {'for': 'clojure', 'on': 'IcedBrowseFunction'}
-Plug 'liquidz/vim-iced-project-namespaces', {'for': 'clojure', 'on': 'IcedBrowseNamespace'}
 Plug 'mklabs/split-term.vim'
-Plug 'ndmitchell/ghcid', { 'rtp': 'plugins/nvim' }
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'neovimhaskell/haskell-vim'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'rbgrouleff/bclose.vim'
@@ -47,9 +38,7 @@ Plug 'rizzatti/dash.vim'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-repeat'
-Plug 'tpope/vim-sexp-mappings-for-regular-people', { 'for': 'clojure' }
 Plug 'tpope/vim-surround'
-Plug 'vhdirk/vim-cmake'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-syntastic/syntastic'
@@ -90,7 +79,6 @@ let g:ranger_command_override = 'ranger --cmd "set show_hidden=true"'
 nnoremap `` :RangerWorkingDirectoryExistingOrNewTab<CR>
 
 """Syntastic
-let g:syntastic_mode_map = { 'passive_filetypes': ['cpp'] }
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 0
 let g:syntastic_check_on_open = 0
@@ -107,7 +95,6 @@ nnoremap <leader>ep :silent! lprev<CR>
 "Only run on save
 let g:ale_lint_on_text_changed = 'never'
 let g:ale_lint_on_insert_leave = 0
-let g:ale_linters = {'clojure': ['clj-kondo']}
 
 """Rainbow parentheses everywhere
 let g:rbpt_colorpairs = [
@@ -133,34 +120,10 @@ autocmd Syntax * RainbowParenthesesLoadRound
 autocmd Syntax * RainbowParenthesesLoadSquare
 autocmd Syntax * RainbowParenthesesLoadBraces
 
-"""LanguageClient
-" See https://github.com/autozimu/LanguageClient-neovim
-"""
-nnoremap <F5> :call LanguageClient_contextMenu()<CR>
-map <Leader>lk :call LanguageClient#textDocument_hover()<CR>
-map <Leader>lg :call LanguageClient#textDocument_definition()<CR>
-map <Leader>lr :call LanguageClient#textDocument_rename()<CR>
-map <Leader>lf :call LanguageClient#textDocument_formatting()<CR>
-map <Leader>lb :call LanguageClient#textDocument_references()<CR>
-map <Leader>la :call LanguageClient#textDocument_codeAction()<CR>
-map <Leader>ls :call LanguageClient#textDocument_documentSymbol()<CR><Paste>
-
-hi link ALEError Error
-hi Warning term=underline cterm=underline ctermfg=Yellow gui=undercurl guisp=Gold
-hi link ALEWarning Warning
-hi link ALEInfo SpellCap
-let g:ale_set_highlights = 0
-let g:ale_sign_error = 'x'
-let g:ale_sign_warning = 'w'
-let g:ale_lint_on_enter = 0
-let g:LanguageClient_diagnosticsSignsMax = 0
-let g:LanguageClient_diagnosticsEnable=0
-
 """Autocompletion
 " Use 'Enter'-key to accept a suggestion.
 """
 inoremap <expr> <cr> ((pumvisible())?("\<C-y>"):("\<cr>"))
-let g:SuperTabDefaultCompletionType = "<C-X><C-O>"
 autocmd InsertLeave * if pumvisible() == 0 | pclose | endif
 
 "In insert/command mode use emacs keys
@@ -197,11 +160,6 @@ let g:syntastic_cpp_compiler_options = ' -std=c++17 -stdlib=libc++'
 """Python
 "(Remember to pip install flake8!)
 let g:syntastic_python_checkers = ['flake8']
-
-"""Haskell
-let g:ghcid_command = 'ghcid -c "stack ghci --no-test"'
-let g:haskell_indent_disable = 1  " Use vim-haskell-indent instead
-autocmd Filetype haskell setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
 
 """Tabs
 nnoremap <leader>tn :silent! tabn<CR>
@@ -246,39 +204,6 @@ command! -nargs=? Underline call s:Underline(<q-args>)
 
 set hidden
 
-"Shorcuts for clojure filetype
-autocmd VimEnter *.clj,*.cljc call iced#nrepl#auto_connect()
-autocmd filetype clojure map <leader>cc <Plug>(iced_connect)
-autocmd filetype clojure map <leader>cj <Plug>(iced_jack_in)
-autocmd filetype clojure map <leader>ei <Plug>(iced_eval)<Plug>(sexp_inner_element)
-autocmd filetype clojure map <leader>ee <Plug>(iced_eval)<Plug>(sexp_outer_list)
-autocmd filetype clojure map <leader>en <Plug>(iced_eval_ns)
-autocmd filetype clojure map <leader>et <Plug>(iced_eval_outer_top_list)
-autocmd filetype clojure map <leader>er <Plug>(iced_eval_repl_visual)
-autocmd filetype clojure map <leader>ep <Plug>(iced_print_last)
-autocmd filetype clojure map <leader>eu <Plug>(iced_undef)
-autocmd filetype clojure map <leader>eq <Plug>(iced_interrupt)
-autocmd filetype clojure map <leader>eQ <Plug>(iced_interrupt_all)
-autocmd filetype clojure map <leader>hd <Plug>(iced_document_open)
-autocmd filetype clojure map <leader>hh <Plug>(iced_clojuredocs_open)
-autocmd filetype clojure map <leader>hs <Plug>(iced_source_show)
-autocmd filetype clojure map <leader>ss <Plug>(iced_stdout_buffer_open)
-autocmd filetype clojure map <leader>sl <Plug>(iced_stdout_buffer_clear)
-autocmd filetype clojure map <leader>sq <Plug>(iced_stdout_buffer_close)
-autocmd filetype clojure map <leader>jb <Plug>(iced_def_back)
-autocmd filetype clojure map <leader>jd <Plug>(iced_def_jump)
-autocmd filetype clojure map <leader>jl <Plug>(iced_jump_to_let)
-autocmd filetype clojure map <leader>== <Plug>(iced_format)
-autocmd filetype clojure map <leader>=G <Plug>(iced_format_all)
-
-"Shorcuts for cpp filetype
-autocmd filetype cpp map <leader>cc :Dispatch! make -C build<CR>
-autocmd filetype cpp map <leader>r :Term ./build/main<CR>
-command! -nargs=+ Cppman silent! call system("tmux split-window cppman " . expand(<q-args>))
-autocmd filetype cpp nnoremap <silent><buffer> H <Esc>:Cppman <cword><CR>
-autocmd filetype cpp nnoremap <silent> K :call <SID>show_documentation()<CR>
-autocmd filetype cpp setlocal signcolumn=yes
-
 "Special indent configuration for javascript
 autocmd filetype javascript set sw=2
 autocmd filetype javascript set ts=2
@@ -306,14 +231,6 @@ function s:MkNonExDir(file, buf)
             call mkdir(dir, 'p')
         endif
     endif
-endfunction
-
-function! s:show_documentation()
-  if (index(['vim','help'], &filetype) >= 0)
-    execute 'h '.expand('<cword>')
-  else
-    call CocAction('doHover')
-  endif
 endfunction
 
 augroup BWCCreateDir
