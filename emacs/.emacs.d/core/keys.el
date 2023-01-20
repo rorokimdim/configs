@@ -9,10 +9,6 @@
 (global-set-key (kbd "C-=") 'text-scale-increase)
 (global-set-key (kbd "C--") 'text-scale-decrease)
 
-(global-set-key (kbd "<f7>") 'centaur-tabs-forward-group)
-(global-set-key (kbd "<f8>") 'centaur-tabs-switch-group)
-(global-set-key (kbd "<f9>") 'centaur-tabs-forward-group)
-
 ;; git-grep
 (global-set-key (kbd "C-c g") 'helm-git-grep-at-point)
 
@@ -66,8 +62,6 @@
              "|" 'my/split-window-horizontally
              "-" 'my/split-window-vertically
              "*" 'my/kill-all-other-buffers
-             "<" 'centaur-tabs-backward-group
-             ">" 'centaur-tabs-forward-group
              "b" 'my/neotree-projectile-toggle
              "c" 'my/tmux-open-emacs-config
              "e" 'my/tmux-new-editor
@@ -80,24 +74,12 @@
              "r" 'helm-recentf
              "s" 'my/search-with-ag
              "pf" 'counsel-projectile-find-file
-             "pp" 'centaur-tabs-switch-group
              "po" 'counsel-projectile-switch-project
              "pc" 'projectile-kill-buffers
              "ts" 'emamux:send-command
              "tr" 'emamux:run-command
              "tl" 'emamux:run-last-command
              "tc" 'emamux:close-panes
-             "0" 'centaur-tabs-select-beg-tab
-             "1" (lambda () (interactive) (my/centaur-tabs-jump-to 1))
-             "2" (lambda () (interactive) (my/centaur-tabs-jump-to 2))
-             "3" (lambda () (interactive) (my/centaur-tabs-jump-to 3))
-             "4" (lambda () (interactive) (my/centaur-tabs-jump-to 4))
-             "5" (lambda () (interactive) (my/centaur-tabs-jump-to 5))
-             "6" (lambda () (interactive) (my/centaur-tabs-jump-to 6))
-             "7" (lambda () (interactive) (my/centaur-tabs-jump-to 7))
-             "8" (lambda () (interactive) (my/centaur-tabs-jump-to 8))
-             "9" (lambda () (interactive) (my/centaur-tabs-jump-to 9))
-             "$" 'centaur-tabs-select-end-tab
              "x" 'kill-buffer-and-window))
 
 ;; For "programs"

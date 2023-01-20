@@ -34,7 +34,7 @@
                 clojurescript-mode)
   :bindings ("cj" 'cider-jack-in
              "cc" 'cider-connect
-             "r"  'cider-switch-to-repl-buffer
+             "r" 'cljr-rename-symbol
              "eb" 'cider-eval-buffer
              "ee" 'cider-eval-last-sexp
              "er" 'cider-eval-region

@@ -117,7 +117,6 @@
     anzu
     avy
     bind-map
-    centaur-tabs
     company
     company-math
     counsel

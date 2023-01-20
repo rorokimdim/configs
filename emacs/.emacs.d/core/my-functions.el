@@ -247,11 +247,6 @@
            (get-buffer my/last-buffer-name))
       (switch-to-buffer my/last-buffer-name)))
 
-(defun my/centaur-tabs-jump-to (n)
-  (centaur-tabs-select-beg-tab)
-  (dotimes (i n)
-    (centaur-tabs-forward)))
-
 (defun my/neotree-projectile-toggle ()
   "Switches neotree to current project and toggles it."
   (interactive)
