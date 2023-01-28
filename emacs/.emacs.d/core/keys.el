@@ -70,6 +70,7 @@
              "gg" 'helm-git-grep-at-point
              "gs" 'magit-status
              "m" 'helm-imenu
+             "n" 'my/tmux-open-notes
              "q" 'evil-quit-all
              "r" 'helm-recentf
              "s" 'my/search-with-ag

@@ -100,3 +100,13 @@
 
 ;; Is this better?
 (setq evil-want-fine-undo t)
+
+;; use undo-tree
+(use-package undo-tree
+  :ensure t
+  :after evil
+  :diminish
+  :config
+  (evil-set-undo-system 'undo-tree)
+  (setq undo-tree-history-directory-alist '(("." . "~/.emacs.d/undo")))
+  (global-undo-tree-mode 1))

@@ -155,6 +155,7 @@
     swiper
     synonymous
     tagedit
+    undo-tree
     use-package
     visual-regexp
     visual-regexp-steroids

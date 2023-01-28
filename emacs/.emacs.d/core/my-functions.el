@@ -139,15 +139,13 @@
   "Splits window vertically."
   (interactive)
   (call-interactively 'split-window-below)
-  (other-window 1 nil)
-  (switch-to-buffer "*scratch*"))
+  (other-window 1 nil))
 
 (defun my/split-window-horizontally ()
   "Splits window horizontally."
   (interactive)
   (call-interactively 'split-window-right)
-  (other-window 1 nil)
-  (switch-to-buffer "*scratch*"))
+  (other-window 1 nil))
 
 (defun my/tmux-cd-workspace ()
   "Opens a new tmux window on a workspace directory."
@@ -174,6 +172,11 @@
   "Opens a config file in a new tmux window."
   (interactive)
   (emamux:tmux-run-command nil "new-window" "cd ~/workspace/configs/emacs/.emacs.d; emacsclient -t $(fd -e el | fzf)"))
+
+(defun my/tmux-open-notes ()
+  "Opens a notes file in a new tmux window."
+  (interactive)
+  (emamux:tmux-run-command nil "new-window" "cd ~/workspace/org; emacsclient -t $(fd -e org | fzf)"))
 
 (defun my/tmux-open-shell-in-buffer-directory ()
   "Opens a shell a small tmux window at the top.
