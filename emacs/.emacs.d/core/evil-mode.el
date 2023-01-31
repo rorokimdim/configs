@@ -98,9 +98,6 @@
 ;; Allow moving beyond eol
 (setq evil-move-beyond-eol t)
 
-;; Is this better?
-(setq evil-want-fine-undo t)
-
 ;; use undo-tree
 (use-package undo-tree
   :ensure t
