@@ -98,12 +98,21 @@
 ;; Allow moving beyond eol
 (setq evil-move-beyond-eol t)
 
-;; use undo-tree
-(use-package undo-tree
+;; use undo-fu
+(use-package undo-fu
   :ensure t
   :after evil
   :diminish
   :config
-  (evil-set-undo-system 'undo-tree)
-  (setq undo-tree-history-directory-alist '(("." . "~/.emacs.d/undo")))
-  (global-undo-tree-mode 1))
+  (evil-set-undo-system 'undo-fu)
+  (setq undo-limit 67108864)
+  (setq undo-strong-limit 100663296)
+  (setq undo-outer-limit 1006632960))
+
+(use-package undo-fu-session
+  :ensure t
+  :diminish
+  :config
+  (setq undo-fu-session-directory "~/.emacs.d/undo")
+  (setq undo-fu-session-incompatible-files '("/COMMIT_EDITMSG\\'" "/git-rebase-todo\\'"))
+  (undo-fu-session-global-mode))
