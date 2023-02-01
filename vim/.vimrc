@@ -34,7 +34,6 @@ Plug 'junegunn/fzf.vim'
 Plug 'kien/rainbow_parentheses.vim'
 Plug 'mklabs/split-term.vim'
 Plug 'neovimhaskell/haskell-vim'
-Plug 'ntpeters/vim-better-whitespace'
 Plug 'rbgrouleff/bclose.vim'
 Plug 'rizzatti/dash.vim'
 Plug 'terryma/vim-multiple-cursors'
@@ -73,9 +72,6 @@ set backup
 set swapfile
 set backupdir=~/.vim-tmp
 set directory=~/.vim-tmp
-
-match ErrorMsg '\%>100v.\+'
-match ErrorMsg '\s\+\%#\@<!$'
 
 """Ranger
 let g:ranger_map_keys = 0
@@ -179,10 +175,6 @@ nnoremap \s :silent! Ag<CR>
 
 """Unhighlight last search on escape
 nnoremap <Esc> :nohlsearch<CR><Esc>
-
-"""Highlight rows which are too long
-highlight OverLength ctermbg=red ctermfg=white guibg=#592929
-match OverLength /\%161v.\+/
 
 """Set highlight color for search
 highlight Search cterm=NONE ctermfg=black ctermbg=white
