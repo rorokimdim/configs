@@ -78,6 +78,9 @@ let g:ranger_map_keys = 0
 let g:ranger_command_override = 'ranger --cmd "set show_hidden=true"'
 nnoremap `` :RangerWorkingDirectoryExistingOrNewTab<CR>
 
+"""Dash
+nmap <silent> <leader>d <Plug>DashSearch
+
 """Syntastic
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 0
@@ -203,6 +206,7 @@ set hidden
 
 "Shorcuts for clojure filetype
 autocmd filetype clojure map <leader>ee :ConjureEvalCurrentForm<CR>
+autocmd filetype clojure map <leader>eb :ConjureEvalBuf<CR>
 autocmd filetype clojure map <leader>er :ConjureEvalRootForm<CR>
 autocmd filetype clojure map <leader>e! :ConjureEvalReplaceForm<CR>
 autocmd filetype clojure vmap <leader>E :ConjureEvalVisual<CR>
