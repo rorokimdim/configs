@@ -21,6 +21,7 @@ filetype off
 """Start of Plug stuff
 call plug#begin('~/.vim/plugged')
 Plug 'ctrlpvim/ctrlp.vim'
+Plug 'dense-analysis/ale', { 'for': 'clojure' }
 Plug 'easymotion/vim-easymotion'
 Plug 'flazz/vim-colorschemes'
 Plug 'francoiscabrol/ranger.vim'
@@ -94,10 +95,19 @@ let g:syntastic_enable_signs = 1
 nnoremap <leader>en :silent! lnext<CR>
 nnoremap <leader>ep :silent! lprev<CR>
 
-"""Ale
+"""ALE
+hi link ALEError Error
+hi Warning term=underline cterm=underline ctermfg=Yellow gui=undercurl guisp=Gold
+hi link ALEWarning Warning
+hi link ALEInfo SpellCap
+let g:ale_set_highlights = 0
+let g:ale_sign_error = 'x'
+let g:ale_sign_warning = 'w'
+let g:ale_lint_on_enter = 0
 "Only run on save
 let g:ale_lint_on_text_changed = 'never'
 let g:ale_lint_on_insert_leave = 0
+let g:ale_linters = {'clojure': ['clj-kondo']}
 
 """Rainbow parentheses everywhere
 let g:rbpt_colorpairs = [
@@ -144,16 +154,8 @@ cnoremap <C-h> <Left>
 cnoremap <C-l> <Right>
 
 """Easymotion
-map <Leader> <Plug>(easymotion-prefix)
-nmap <Leader>, <Plug>(easymotion-overwin-f)
-map  <Leader>f <Plug>(easymotion-bd-f)
-nmap <Leader>f <Plug>(easymotion-overwin-f)
-map <Leader>/ <Plug>(incsearch-easymotion-/)
-map <Leader>? <Plug>(incsearch-easymotion-?)
-map <Leader>l <Plug>(easymotion-lineforward)
-map <Leader>j <Plug>(easymotion-j)
-map <Leader>k <Plug>(easymotion-k)
-map <Leader>h <Plug>(easymotion-linebackward)
+let g:EasyMotion_do_mapping = 0 " Disable default mappings
+nmap <Leader><Leader> <Plug>(easymotion-overwin-f)
 let g:EasyMotion_startofline = 0 " keep cursor column when JK motion
 
 """C++
@@ -206,6 +208,20 @@ endfunction
 command! -nargs=? Underline call s:Underline(<q-args>)
 
 set hidden
+
+"Shorcuts for clojure filetype
+autocmd filetype clojure map <leader>ee :ConjureEvalCurrentForm<CR>
+autocmd filetype clojure map <leader>er :ConjureEvalRootForm<CR>
+autocmd filetype clojure map <leader>e! :ConjureEvalReplaceForm<CR>
+autocmd filetype clojure vmap <leader>E :ConjureEvalVisual<CR>
+
+"Shorcuts for cpp filetype
+autocmd filetype cpp map <leader>cc :Dispatch! make -C build<CR>
+autocmd filetype cpp map <leader>r :Term ./build/main<CR>
+command! -nargs=+ Cppman silent! call system("tmux split-window cppman " . expand(<q-args>))
+autocmd filetype cpp nnoremap <silent><buffer> H <Esc>:Cppman <cword><CR>
+autocmd filetype cpp nnoremap <silent> K :call <SID>show_documentation()<CR>
+autocmd filetype cpp setlocal signcolumn=yes
 
 "Special indent configuration for javascript
 autocmd filetype javascript set sw=2
