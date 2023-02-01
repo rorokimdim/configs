@@ -23,6 +23,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'dense-analysis/ale', { 'for': 'clojure' }
 Plug 'easymotion/vim-easymotion'
+Plug 'eranfrie/gitgrep.vim'
 Plug 'flazz/vim-colorschemes'
 Plug 'francoiscabrol/ranger.vim'
 Plug 'guns/vim-sexp'
@@ -80,6 +81,9 @@ nnoremap `` :RangerWorkingDirectoryExistingOrNewTab<CR>
 
 """Dash
 nmap <silent> <leader>d <Plug>DashSearch
+
+"""Git grep
+nnoremap \g :call GitGrep("-w", expand("<cword>"))<CR>
 
 """Syntastic
 let g:syntastic_always_populate_loc_list = 1
