@@ -3,6 +3,7 @@
   :hook (after-init . global-company-mode)
   :config
   (add-to-list 'company-backends 'company-math-symbols-unicode)
+  (add-to-list 'company-backends 'company-restclient)
   (setq company-idle-delay 0.5)
   (setq company-show-numbers t)
   (setq company-tooltip-limit 10)

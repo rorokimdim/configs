@@ -162,6 +162,9 @@
              "msn" 'evil-multiedit-match-symbol-and-next
              "msp" 'evil-multiedit-match-symbol-and-prev
 
+             "to" 'tab-new
+             "tc" 'tab-close
+
              "/" 'helm-swoop
 
              "-" 'my/split-window-vertically

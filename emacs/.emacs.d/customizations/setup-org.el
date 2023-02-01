@@ -18,6 +18,7 @@
    (gnuplot . t)
    (python . t)
    (racket . t)
+   (restclient . t)
    (R . t)
    ))
 
@@ -30,6 +31,7 @@
            (string= lang "gnuplot")
            (string= lang "python")
            (string= lang "racket")
+           (string= lang "restclient")
            (string= lang "R")
            )))
 (setq org-confirm-babel-evaluate 'my/org-confirm-babel-evaluate)
@@ -70,6 +72,14 @@
          my/pre-bg my/pre-fg my/pre-bg my/pre-fg))))))
 (add-hook 'org-export-before-processing-hook #'my/org-inline-css-hook)
 
+(defun my/ob-clear-all-results ()
+  "Clear all results in the buffer."
+  (interactive)
+  (save-excursion
+    (goto-char (point-min))
+    (while (org-babel-next-src-block)
+      (org-babel-remove-result))))
+
 ;; Shortcuts for org mode
 (require 'bind-map)
 (bind-map my/org-mode-map
@@ -84,4 +94,4 @@
              "t" 'org-babel-tangle
              "el" 'org-latex-export-to-latex
              "eh" 'org-html-export-to-html
-             ))
+             "l" 'my/ob-clear-all-results))

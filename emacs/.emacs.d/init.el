@@ -108,6 +108,11 @@
     ;; themes
     jbeans-theme
 
+    ;; restclient
+    restclient
+    company-restclient
+    ob-restclient
+
     ;; rest
     ace-link
     ace-window
