@@ -87,6 +87,7 @@
 
 ;; aggressive-indent-mode hooks
 (dolist (h '(emacs-lisp-mode-hook
+             cider-mode-hook
              clojure-mode-hook
              lisp-interaction-mode-hook
              scheme-mode-hook))
