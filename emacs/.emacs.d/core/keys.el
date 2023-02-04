@@ -108,9 +108,13 @@
              "d" 'my/tmux-cd-workspace
              "r" 'rotate-window
              "l" 'rotate-layout
-             "s" 'ace-swap-window
              "o" 'ace-window
              "p" 'my/tmux-play-cmd
+             "s" 'ace-swap-window
+             "tc" 'tab-close
+             "to" 'tab-new
+             "tm" 'tab-move
+             "ts" 'tab-switch
              "0" 'delete-window
              "1" 'delete-other-windows))
 
