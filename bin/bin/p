@@ -1,0 +1,9 @@
+#!/usr/bin/env zsh
+
+if [ -f .cmds ]; then
+    cmd=$(cat .cmds | fzf)
+    echo ">> $cmd"
+    eval $cmd
+else
+    echo "No .cmds file in current directory."
+fi
