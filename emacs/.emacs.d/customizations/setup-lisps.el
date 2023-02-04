@@ -57,7 +57,7 @@
              "]" 'sp-wrap-square
              "{" 'sp-wrap-curly
              "}" 'sp-wrap-curly
-             "d" 'sp-kill-sexp
+             "x" 'sp-kill-sexp
              "y" 'sp-copy-sexp
              "n" 'sp-next-sexp
              "p" 'sp-previous-sexp))

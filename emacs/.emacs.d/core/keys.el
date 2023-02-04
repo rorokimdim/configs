@@ -131,9 +131,9 @@
   :bindings ("<SPC>" 'er/expand-region
              "," 'avy-goto-char
 
-             "do" 'dumb-jump-go-other-window
-             "dj" 'dumb-jump-go
-             "db" 'dumb-jump-back
+             "do" 'xref-find-definitions-other-window
+             "dj" 'xref-find-definitions
+             "db" 'xref-pop-marker-stack
              "di" 'dumb-jump-go-prompt
 
              "f" 'avy-goto-char-in-line

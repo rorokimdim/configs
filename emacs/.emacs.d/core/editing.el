@@ -13,10 +13,12 @@
         try-complete-lisp-symbol))
 
 (use-package dumb-jump
-    :ensure t
-    :config
-    (setq dumb-jump-selector 'ivy)
-    (setq dumb-jump-prefer-searcher 'rg))
+  :ensure t
+  :config
+  (add-hook 'xref-backend-functions #'dumb-jump-xref-activate)
+  (setq xref-show-definitions-function #'xref-show-definitions-completing-read)
+  (setq dumb-jump-selector 'ivy)
+  (setq dumb-jump-prefer-searcher 'rg))
 
 ;; Interactive search key bindings. By default, C-s runs
 ;; isearch-forward, so this swaps the bindings.
