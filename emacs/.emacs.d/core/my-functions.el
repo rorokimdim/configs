@@ -135,6 +135,12 @@
   (interactive)
   (deer (ffip-get-project-root-directory)))
 
+(defun my/find-file-in-project-new-tab ()
+  "Opens a project file in a new tab."
+  (interactive)
+  (tab-new)
+  (find-file-in-project))
+
 (defun my/split-window-vertically ()
   "Splits window vertically."
   (interactive)

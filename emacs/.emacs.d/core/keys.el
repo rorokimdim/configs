@@ -97,7 +97,7 @@
              "j" 'calendar
              "t" 'world-time-list))
 
-;; For "shells" and windows
+;; For "shells" and windows and tabs
 (bind-map my/space-leader-map
   :keys ("s-SPC")
   :evil-keys ("SPC")
@@ -112,7 +112,7 @@
              "p" 'my/tmux-play-cmd
              "s" 'ace-swap-window
              "tc" 'tab-close
-             "to" 'tab-new
+             "to" 'my/find-file-in-project-new-tab
              "tm" 'tab-move
              "ts" 'tab-switch
              "0" 'delete-window
@@ -167,8 +167,10 @@
              "msn" 'evil-multiedit-match-symbol-and-next
              "msp" 'evil-multiedit-match-symbol-and-prev
 
-             "to" 'tab-new
+             "to" 'my/find-file-in-project-new-tab
              "tc" 'tab-close
+             "tm" 'tab-move
+             "ts" 'tab-switch
 
              "/" 'helm-swoop
 
