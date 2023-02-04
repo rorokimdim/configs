@@ -91,7 +91,7 @@
              "ne" 'org-narrow-to-element
              "ns" 'org-narrow-to-subtree
              "nw" 'widen
-             "t" 'org-babel-tangle
+             "-" 'org-babel-tangle
              "el" 'org-latex-export-to-latex
              "eh" 'org-html-export-to-html
              "l" 'my/ob-clear-all-results))

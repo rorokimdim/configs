@@ -84,6 +84,9 @@
 ;; Set custom faces
 (custom-set-faces
  '(tab-line ((t (:inherit variable-pitch :background "#181818" :foreground "black" :height 0.9))))
+ '(tab-bar ((t (:foreground "blue" :weight ultra-bold))))
+ '(tab-bar-tab ((t (:inherit tab-bar :box (:line-width (1 . 1) :style released-button)))))
+ '(tab-bar-tab-inactive ((t (:inherit tab-bar-tab :foreground "white" :weight ultra-light))))
  '(font-lock-function-name-face ((t (:foreground "#d7affd" :weight bold))))
  '(font-lock-variable-name-face ((t (:foreground "#8ac6f2"))))
  '(org-level-1 ((t (:foreground "#64a8d8" :weight bold))))
