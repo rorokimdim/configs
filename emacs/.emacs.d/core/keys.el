@@ -110,6 +110,7 @@
              "l" 'rotate-layout
              "s" 'ace-swap-window
              "o" 'ace-window
+             "p" 'my/tmux-play-cmd
              "0" 'delete-window
              "1" 'delete-other-windows))
 

@@ -178,6 +178,13 @@
   (interactive)
   (emamux:tmux-run-command nil "new-window" "cd ~/workspace/org; emacsclient -t $(fd -e org | fzf)"))
 
+(defun my/tmux-play-cmd ()
+  "Runs (plays) a command using 'p'."
+  (interactive)
+  (emamux:tmux-run-command nil
+                           "new-window"
+                           (concat "cd " (ffip-get-project-root-directory) "; p | less")))
+
 (defun my/tmux-open-shell-in-buffer-directory ()
   "Opens a shell a small tmux window at the top.
    The shell is opened in current buffer's directory. If no buffer is open, opens shell in ~/workspace."
