@@ -26,6 +26,9 @@
 
 (add-hook 'clojure-mode-hook #'my-clojure-mode-hook)
 
+;; Do not indent ; comments
+(add-hook 'clojure-mode-hook (lambda () (setq-local comment-column 0)))
+
 ;; Shortcuts for clojure mode
 (require 'bind-map)
 (bind-map my/clj-cljs-mode-map

@@ -135,12 +135,11 @@
   (interactive)
   (deer (ffip-get-project-root-directory)))
 
-(defun my/find-file-in-project-new-tab ()
-  "Opens a project file in a new tab."
+(defun my/tab-open ()
+  "Opens a new tab on *scratch* buffer."
   (interactive)
   (tab-new)
-  (switch-to-buffer "*scratch*")
-  (counsel-projectile-find-file))
+  (switch-to-buffer "*scratch*"))
 
 (defun my/split-window-vertically ()
   "Splits window vertically."
