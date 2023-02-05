@@ -139,7 +139,8 @@
   "Opens a project file in a new tab."
   (interactive)
   (tab-new)
-  (find-file-in-project))
+  (switch-to-buffer "*scratch*")
+  (counsel-projectile-find-file))
 
 (defun my/split-window-vertically ()
   "Splits window vertically."
