@@ -135,12 +135,6 @@
   (interactive)
   (deer (ffip-get-project-root-directory)))
 
-(defun my/tab-open ()
-  "Opens a new tab on *scratch* buffer."
-  (interactive)
-  (tab-new)
-  (switch-to-buffer "*scratch*"))
-
 (defun my/split-window-vertically ()
   "Splits window vertically."
   (interactive)

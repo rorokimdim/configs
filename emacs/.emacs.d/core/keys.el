@@ -112,7 +112,7 @@
              "p" 'my/tmux-play-cmd
              "s" 'ace-swap-window
              "tc" 'tab-close
-             "to" 'my/tab-open
+             "to" 'tab-new
              "tm" 'tab-move
              "ts" 'tab-switch
              "0" 'delete-window
@@ -167,7 +167,7 @@
              "msn" 'evil-multiedit-match-symbol-and-next
              "msp" 'evil-multiedit-match-symbol-and-prev
 
-             "to" 'my/tab-open
+             "to" 'tab-new
              "tc" 'tab-close
              "tm" 'tab-move
              "ts" 'tab-switch
