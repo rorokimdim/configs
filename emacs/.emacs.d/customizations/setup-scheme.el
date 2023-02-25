@@ -1,4 +1,4 @@
-(setq geiser-active-implementations '(racket))
+(setq geiser-chez-binary "chez")
 
 ;; Shortcuts for scheme mode
 (require 'bind-map)

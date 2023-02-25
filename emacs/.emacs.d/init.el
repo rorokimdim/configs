@@ -94,6 +94,7 @@
 
     ;; scheme
     geiser
+    geiser-chez
 
     ;; org
     org

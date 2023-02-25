@@ -60,6 +60,7 @@
                        haskell-interactive-mode
                        inferior-emacs-lisp-mode
                        inferior-python-mode
+                       geiser-repl-mode
                        geiser-debug-mode
                        slime-repl-mode
                        xref--xref-buffer-mode
