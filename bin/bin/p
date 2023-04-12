@@ -1,9 +1,44 @@
-#!/usr/bin/env zsh
+#!/usr/bin/env python
 
-if [ -f .cmds ]; then
-    cmd=$(cat .cmds | fzf)
-    echo ">> $cmd"
-    eval $cmd
-else
-    echo "No .cmds file in current directory."
-fi
+import os
+import subprocess
+import sys
+
+
+def read_cmds(path):
+    cmds = {}
+    with open(path) as ifile:
+        for line in ifile:
+            line = line.strip()
+            if not line:
+                continue
+            if line.startswith('#'):
+                continue
+            if line.startswith(':'):
+                splits = line.split(maxsplit=1)
+                cmds[splits[0][1:]] = splits[1]
+            else:
+                cmds[line] = line
+    return cmds
+
+
+try:
+    cmds = read_cmds('.cmds')
+except FileNotFoundError:
+    print('No .cmds file found in current directory.')
+    sys.exit(0)
+
+if not cmds:
+    print('No commands found in .cmds file.')
+    sys.exit(0)
+
+fzf = subprocess.run(
+    ['fzf'],
+    stdout=subprocess.PIPE,
+    input='\n'.join(cmds.keys()),
+    encoding='utf-8')
+
+selected = fzf.stdout.strip()
+cmd = cmds.get(selected)
+if cmd:
+    os.system(cmd)
