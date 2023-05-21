@@ -63,7 +63,9 @@ set ruler
 set nofoldenable
 
 """For make files
-autocmd FileType make set noexpandtab shiftwidth=8 softtabstop=0
+autocmd FileType make setlocal noexpandtab shiftwidth=4 softtabstop=0
+set list
+set listchars=tab:▸·
 
 """Color scheme
 colorscheme jellybeans
