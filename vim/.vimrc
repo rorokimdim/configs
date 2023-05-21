@@ -62,6 +62,9 @@ set incsearch
 set ruler
 set nofoldenable
 
+"""For make files
+autocmd FileType make set noexpandtab shiftwidth=8 softtabstop=0
+
 """Color scheme
 colorscheme jellybeans
 let g:lightline = {
@@ -208,12 +211,16 @@ command! -nargs=? Underline call s:Underline(<q-args>)
 
 set hidden
 
+"Configure for chez scheme
+let g:conjure#client#scheme#stdio#command = "petite"
+let g:conjure#client#scheme#stdio#prompt_pattern = "> $?"
+
 "Shorcuts for clojure filetype
-autocmd filetype clojure map <leader>ee :ConjureEvalCurrentForm<CR>
-autocmd filetype clojure map <leader>eb :ConjureEvalBuf<CR>
-autocmd filetype clojure map <leader>er :ConjureEvalRootForm<CR>
-autocmd filetype clojure map <leader>e! :ConjureEvalReplaceForm<CR>
-autocmd filetype clojure vmap <leader>E :ConjureEvalVisual<CR>
+autocmd filetype clojure,scheme map <leader>ee :ConjureEvalCurrentForm<CR>
+autocmd filetype clojure,scheme map <leader>eb :ConjureEvalBuf<CR>
+autocmd filetype clojure,scheme map <leader>er :ConjureEvalRootForm<CR>
+autocmd filetype clojure,scheme map <leader>e! :ConjureEvalReplaceForm<CR>
+autocmd filetype clojure,scheme vmap <leader>E :ConjureEvalVisual<CR>
 
 "Shorcuts for cpp filetype
 autocmd filetype cpp map <leader>cc :Dispatch! make -C build<CR>
