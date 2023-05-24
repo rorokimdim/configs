@@ -24,6 +24,11 @@
               (require 'lsp-pyright)
               (lsp))))
 
+(setq auto-mode-alist
+      (append '(("SConstruct\\'" . python-mode)
+                ("SConscript\\'" . python-mode))
+              auto-mode-alist))
+
 (require 'bind-map)
 (bind-map my/python-mode-map
   :keys ("s-,")
