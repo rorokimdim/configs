@@ -41,4 +41,5 @@ fzf = subprocess.run(
 selected = fzf.stdout.strip()
 cmd = cmds.get(selected)
 if cmd:
+    print(cmd, file=sys.stderr)
     os.system(cmd)
