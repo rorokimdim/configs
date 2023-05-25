@@ -77,6 +77,7 @@
     ;; lsp
     lsp-mode
     lsp-haskell
+    lsp-ui
 
     ;; clojure
     clojure-mode
@@ -88,9 +89,6 @@
 
     ;; c++
     ccls
-
-    ;; python
-    virtualenvwrapper
 
     ;; scheme
     geiser

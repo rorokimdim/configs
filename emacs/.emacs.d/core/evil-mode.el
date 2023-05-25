@@ -40,6 +40,9 @@
 (define-key evil-normal-state-map "Z" 'origami-recursively-toggle-node)
 (define-key evil-visual-state-map "Z" 'origami-recursively-toggle-node)
 
+
+(define-key evil-normal-state-map "K" 'man-follow)
+
 ;; Shortcuts for evil-numbers
 (require 'evil-numbers)
 (define-key evil-normal-state-map (kbd "C-c +") 'evil-numbers/inc-at-pt)

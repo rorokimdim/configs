@@ -161,6 +161,8 @@
              "er" 'eval-region
              "ex" 'my/eval-and-replace
 
+             "hd" 'describe-function
+
              "ma" 'evil-multiedit-match-all
              "mn" 'evil-multiedit-match-and-next
              "mp" 'evil-multiedit-match-and-prev
