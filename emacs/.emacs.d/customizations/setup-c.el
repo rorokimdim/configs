@@ -16,8 +16,7 @@
   (add-hook hook 'highlight-parentheses-mode)
   (add-hook hook
             (lambda ()
-              (set (make-local-variable 'compile-command)
-                   (format "cd %s && scons" (ffip-get-project-root-directory))))))
+              (set (make-local-variable 'compile-command) "scons -D"))))
 
 (setq compilation-scroll-output 'first-error)
 
@@ -30,13 +29,12 @@
   :major-modes (c-mode)
   :bindings ("cc" (lambda ()
                     (interactive)
-                    (call-interactively 'compile)
+                    (call-interactively 'recompile)
                     (select-window (get-buffer-window "*compilation*")))
              "r" (lambda ()
                    (interactive)
-                   (let ((root-dir (ffip-get-project-root-directory)))
-                     (emamux:run-command  (format "cd %s && scons && ./main && exit" root-dir))
-                     (emamux:select-pane (emamux:get-runner-pane-id))))
+                   (emamux:run-command "scons -D run && exit")
+                   (emamux:select-pane (emamux:get-runner-pane-id)))
              "dd" 'dash-at-point
              "dl" 'dash-at-point-with-docset
              "en" 'flymake-goto-next-error
