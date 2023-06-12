@@ -185,6 +185,23 @@
                            "new-window"
                            (concat "cd " (ffip-get-project-root-directory) "; p | less")))
 
+(defun my/tmux-run-in-buffer-directory (cmd &optional file-to-search-up max-level-up)
+  "Runs a command in tmux window.
+
+  By default, runs the command in the current buffer's directory.
+
+  If FILE-TO-SEARCH-UP is given, runs the command in directory containing FILE-TO-SEARCH-UP.
+
+  MAX-LEVEL-UP determines the level of parent directories to traverse when searching for FILE-TO-SEARCH-UP.
+  "
+  (let ((saved-default-dir default-directory))
+    (cd (file-name-directory (expand-file-name (buffer-file-name))))
+    (when file-to-search-up
+      (cd (file-name-directory (my/get-closest-pathname file-to-search-up (or max-level-up 3)))))
+    (emamux:run-command (concat "cd " default-directory "; " cmd))
+    (emamux:select-pane (emamux:get-runner-pane-id))
+    (cd saved-default-dir)))
+
 (defun my/tmux-open-shell-in-buffer-directory ()
   "Opens a shell a small tmux window at the top.
    The shell is opened in current buffer's directory. If no buffer is open, opens shell in ~/workspace."
@@ -235,7 +252,7 @@
         (level 0))
     (expand-file-name
      file
-     (loop
+     (cl-loop
       for d = default-directory then (expand-file-name ".." d)
       do (setq level (+ level 1))
       if (file-exists-p (expand-file-name file d)) return d

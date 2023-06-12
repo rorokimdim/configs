@@ -8,17 +8,28 @@
 ;; Fix indentation of switch statements
 (c-set-offset 'case-label '+)
 
-(require 'compile)
-
 (dolist (hook '(c-mode-hook))
   (add-hook hook #'smartparens-mode)
   (add-hook hook 'show-smartparens-mode)
-  (add-hook hook 'highlight-parentheses-mode)
-  (add-hook hook
-            (lambda ()
-              (set (make-local-variable 'compile-command) "scons -D"))))
+  (add-hook hook 'highlight-parentheses-mode))
 
 (setq compilation-scroll-output 'first-error)
+
+(defun scons/run ()
+  (interactive)
+  (my/tmux-run-in-buffer-directory "scons" "SConstruct" 4))
+
+(defun scons/run-clean ()
+  (interactive)
+  (my/tmux-run-in-buffer-directory "scons -c *" "SConstruct" 4))
+
+(defun scons/run-main ()
+  (interactive)
+  (my/tmux-run-in-buffer-directory "scons main" "SConstruct" 4))
+
+(defun scons/run-test ()
+  (interactive)
+  (my/tmux-run-in-buffer-directory "scons test" "SConstruct" 4))
 
 ;; Shortcuts for c/cpp mode
 (require 'bind-map)
@@ -27,14 +38,11 @@
   :evil-keys (",")
   :evil-states (normal visual)
   :major-modes (c-mode)
-  :bindings ("cc" (lambda ()
-                    (interactive)
-                    (call-interactively 'recompile)
-                    (select-window (get-buffer-window "*compilation*")))
-             "r" (lambda ()
-                   (interactive)
-                   (emamux:run-command "scons -D run && exit")
-                   (emamux:select-pane (emamux:get-runner-pane-id)))
+  :bindings ("cc" 'scons/run
+             "rr" 'scons/run
+             "rc" 'scons/run-clean
+             "rm" 'scons/run-main
+             "rt" 'scons/run-test
              "dd" 'dash-at-point
              "dl" 'dash-at-point-with-docset
              "en" 'flymake-goto-next-error
