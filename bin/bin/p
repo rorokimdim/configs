@@ -32,14 +32,24 @@ if not cmds:
     print('No commands found in .cmds file.')
     sys.exit(0)
 
-fzf = subprocess.run(
-    ['fzf'],
-    stdout=subprocess.PIPE,
-    input='\n'.join(cmds.keys()),
-    encoding='utf-8')
 
-selected = fzf.stdout.strip()
-cmd = cmds.get(selected)
+if len(sys.argv) > 1:
+    key = sys.argv[1]
+    if key.startswith(':'):
+        key = key[1:]
+    cmd = cmds.get(key)
+    if cmd is None:
+        print(f'Invalid key {key}')
+else:
+    fzf = subprocess.run(
+        ['fzf'],
+        stdout=subprocess.PIPE,
+        input='\n'.join(cmds.keys()),
+        encoding='utf-8')
+
+    selected = fzf.stdout.strip()
+    cmd = cmds.get(selected)
+
 if cmd:
     print(cmd, file=sys.stderr)
     os.system(cmd)
