@@ -1,12 +1,13 @@
 #!/usr/bin/env python
 
 import os
+import pathlib
 import subprocess
 import sys
 
 
-def read_cmds(path):
-    cmds = {}
+def read_cmds(path, cmds=None):
+    cmds = cmds or {}
     with open(path) as ifile:
         for line in ifile:
             line = line.strip()
@@ -22,8 +23,17 @@ def read_cmds(path):
     return cmds
 
 
+# Read .cmds from home directory
+cmds = {}
+
 try:
-    cmds = read_cmds('.cmds')
+    cmds = read_cmds(os.path.join(pathlib.Path.home(), '.cmds'), cmds=cmds)
+except FileNotFoundError:
+    # ignore. Not required to have a .cmds in home directory
+    pass
+
+try:
+    cmds = read_cmds('.cmds', cmds=cmds)
 except FileNotFoundError:
     print('No .cmds file found in current directory.')
     sys.exit(0)
