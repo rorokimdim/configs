@@ -35,8 +35,8 @@ except FileNotFoundError:
 try:
     cmds = read_cmds('.cmds', cmds=cmds)
 except FileNotFoundError:
-    print('No .cmds file found in current directory.')
-    sys.exit(0)
+    # ignore
+    pass
 
 if not cmds:
     print('No commands found in .cmds file.')
