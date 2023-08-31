@@ -55,7 +55,7 @@
  cider-repl-display-help-banner nil
  cider-repl-pop-to-buffer-on-connect nil
  cider-repl-display-in-current-window t
- cider-repl-buffer-size-limit 5000
+ cider-repl-buffer-size-limit 20000
  cider-print-buffer-size nil
  cider-show-error-buffer nil
  clojure-toplevel-inside-comment-form t
