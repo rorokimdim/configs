@@ -161,7 +161,6 @@
     tagedit
     undo-fu
     undo-fu-session
-    use-package
     visual-regexp
     visual-regexp-steroids
     which-key
